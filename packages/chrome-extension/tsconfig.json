@@ -1,0 +1,85 @@
+{
+  "compilerOptions": {
+    "typeRoots": [
+      "./src/types/index.d.ts",
+      "../../node_modules/@types"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "lib": [
+      "esnext",
+      "ES2017",
+      "DOM",
+      "dom.iterable"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@assets": [
+        "src/fe/assets"
+      ],
+      "@assets/*": [
+        "src/fe/assets/*"
+      ],
+      "@components/*": [
+        "src/fe/components/*"
+      ],
+      "@constants/fe": [
+        "src/fe/constants.ts"
+      ],
+      "@context": [
+        "src/fe/context"
+      ],
+      "@context/*": [
+        "src/fe/context/*"
+      ],
+      "@hooks/*": [
+        "src/fe/hooks/*"
+      ],
+      "@hooks": [
+        "src/fe/hooks"
+      ],
+      "@screens": [
+        "src/fe/screens"
+      ],
+      "@services": [
+        "src/fe/services"
+      ],
+      "@services/*": [
+        "src/fe/services/*"
+      ],
+      "@settings": [
+        "src/settings"
+      ],
+      "@units": [
+        "src/fe/units"
+      ],
+      "@units/*": [
+        "src/fe/units/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@utils": [
+        "src/utils"
+      ],
+    },
+    "target": "ESNext",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "isolatedModules": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
+    "noImplicitUseStrict": false,
+    "removeComments": true,
+    "importHelpers": true,
+    "noLib": false,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "preserveConstEnums": true,
+    "allowSyntheticDefaultImports": true,
+    "suppressImplicitAnyIndexErrors": true
+  }
+}

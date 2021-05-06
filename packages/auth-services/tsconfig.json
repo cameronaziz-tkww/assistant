@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "target": "es5",
+    "outDir": ".build",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": [
+      "es2015"
+    ],
+    "paths": {
+      "types/*": [
+        "../../node_modules/@types/*",
+        "./src/types/*",
+      ]
+    },
+    "baseUrl": ".",
+    "typeRoots": [
+      "../../node_modules/@types",
+      "./src/types"
+    ],
+    "rootDir": "./src"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    ".serverless/**/*",
+    "./node_modues/**/*",
+    "../../node_modues/**/*",
+    "./.build/**/*",
+  ]
+}

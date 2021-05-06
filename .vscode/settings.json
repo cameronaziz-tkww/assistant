@@ -1,0 +1,11 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.exclude": {
+    "**/.build": true,
+    "**/node_modules": true,
+    "**/.serverless": true,
+    "yarn.lock": true,
+    "packages/chrome-extension/app/bundle-bg.js": true,
+    "packages/chrome-extension/app/bundle-fe.js": true
+  }
+}

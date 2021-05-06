@@ -1,0 +1,41 @@
+{
+  "name": "@tkww-assistant/root",
+  "version": "0.1.0",
+  "description": "TKWW Assistant",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "dev": "concurrently \"yarn as:dev\" \"yarn ce:dev\"",
+    "build": "yarn as:build && yarn ce:build",
+    "as:dev": "yarn workspace @tkww-assistant/auth-services dev",
+    "as:deploy": "yarn workspace @tkww-assistant/auth-services deploy",
+    "as:build": "yarn workspace @tkww-assistant/auth-services build",
+    "ce:dev": "yarn workspace @tkww-assistant/chrome-extension dev",
+    "ce:build": "yarn workspace @tkww-assistant/chrome-extension build",
+    "ce:lint": "yarn workspace @tkww-assistant/chrome-extension lint",
+    "reset": "yarn reset:modules && yarn reset:yarn",
+    "reset:modules": "rm -rf node_modules/ yarn.lock packages/*/node_modules",
+    "reset:yarn": "yarn cache clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkwwlab/tkww-assistant.git"
+  },
+  "author": "Cameron Aziz",
+  "license": "UNLICENSED",
+  "dependencies": {},
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "concurrently": "^6.0.2",
+    "eslint": "^7.24.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "typescript": "^4.2.4"
+  }
+}

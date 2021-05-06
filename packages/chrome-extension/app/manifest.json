@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "Dashboard",
+	"version": "0.1",
+	"description": "New Tab Dashboard",
+	"chrome_url_overrides": {
+		"newtab": "./frontend.html"
+	},
+	"permissions": [
+		"storage",
+		"identity",
+		"tabs",
+		"https://github.com/*",
+		"https://api.atlassian.com/*",
+		"https://app.honeybadger.io/*"
+	],
+	"background": {
+		"scripts": [
+			"./bundle-bg.js"
+		],
+		"persistent": false
+	}
+}
