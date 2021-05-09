@@ -1,22 +1,28 @@
 import { global } from '@context';
 import { chrome } from '@utils';
-import { useEffect } from 'react';
 import useInit from './useInit';
 
 const useRememberSelections: Hooks.Global.UseRememberSelections = () => {
-  const trackedState = global.useTrackedState();
-  const { init } = useInit();
+  const { rememberSelections } = global.useTrackedState();
+  const initialize = useInit();
 
-  useEffect(
-    () => {
-      const hangup = init('filters');
+  const init = () => {
+    initialize.init('filters');
+  };
 
-      // return () => {
-      //   hangup();
-      // };
-    },
-    [],
-  );
+  const storeSelections = <T extends App.Filter.Item>(filters: App.Filter.FilterWrapper<T>[]) => {
+    if (rememberSelections) {
+      const opinionatedFilters = filters.filter((filter) => filter.state !== 'omit');
+      chrome.runtime.send({
+        type: 'STORAGE_SET',
+        key: 'filters',
+        data: {
+          storedFilters: opinionatedFilters,
+          rememberSelections: true,
+        },
+      });
+    }
+  };
 
   const setRememberSelections = (nextState: boolean) => {
     chrome.runtime.send({
@@ -27,11 +33,13 @@ const useRememberSelections: Hooks.Global.UseRememberSelections = () => {
         storedFilters: [],
       },
     });
-
   };
+
   return {
-    rememberSelections: trackedState.rememberSelections,
+    rememberSelections,
     setRememberSelections,
+    storeSelections,
+    init,
   };
 };
 

@@ -19,8 +19,7 @@ declare namespace App {
   type Any = ShouldDefineType;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   type UnknownObject = Record<string, ShouldDefineType>;
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  type UnknownFunction = (...args: ShouldDefineType[]) => ShouldDefineType;
+  type UnknownFunction<T extends ShouldDefineType = ShouldDefineType, U extends ShouldDefineType = ShouldDefineType> = (...args: T[]) => U;
   type NoTail<T extends ShouldDefineType[]> = T extends [...infer Items, ShouldDefineType] ? Items : ShouldDefineType[];
   type Tail<T extends ShouldDefineType[]> = T extends [...ShouldDefineType, infer Item] ? Item : ShouldDefineType[];
 

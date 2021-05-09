@@ -40,7 +40,7 @@ export const Input = styled.input<App.Input.StyledInputProps>`
     if (isDisabled) {
       return colors.tertiary.background;
     }
-    return getRGBA(colors.primary.background, 0.6);
+    return colors.primary.background;
   }};
   user-select: ${({ isDisabled }) => isDisabled ? 'none' : 'auto'};;
   border-radius: ${({ theme }) => theme.sizes.md.borderRadius};
@@ -121,7 +121,6 @@ export const AfterNode = styled.span<AfterNodeProps>`
 export const Clear = styled(IoIosCloseCircleOutline)`
   position: absolute;
   right: 4px;
-  top: 3px;
 
   &:hover {
     cursor: pointer;
@@ -134,6 +133,7 @@ export const Clear = styled(IoIosCloseCircleOutline)`
 
 export const SearchContainer = styled.div`
   display: flex;
+  position: relative;
   align-items: center;
 `;
 

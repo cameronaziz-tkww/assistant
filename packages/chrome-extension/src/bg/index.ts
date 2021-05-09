@@ -1,5 +1,4 @@
-import { chrome } from '@utils';
-import format from 'date-fns/format';
+import { chrome, log } from '@utils';
 import Github from './github';
 import History from './history';
 import Honeybadger from './honeybadger';
@@ -45,8 +44,7 @@ const messages: Runtime.MessageType[] = [
 chrome.runtime.listen(
   messages,
   (message: Runtime.Message) => {
-    const now = format(new Date(), "HH:mm:ss.SSS");
-    console.log(`~ Receive Message`, message, now);
+    log.message(message, 'Receive');
     switch (message.type) {
       case 'history/FEED_FETCH': {
         history.fetch(message);
@@ -73,6 +71,7 @@ chrome.runtime.listen(
         break;
       }
       case 'github/REPOSITORIES_UPDATE_WATCHED': {
+        log.payload('watcher');
         github.write(message);
         break;
       }

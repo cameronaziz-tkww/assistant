@@ -1,4 +1,4 @@
-import { chrome, secondsAgo, uniqueBy } from '@utils';
+import { chrome, listDifferences, log, secondsAgo, uniqueBy, uuid } from '@utils';
 import type { GithubAPI } from '../api';
 import type Storage from '../storage';
 
@@ -12,16 +12,10 @@ class Repositories {
   private lastLocal: number;
   private lastRemote: number;
   private isRunning: boolean;
-  private lastTab: number | undefined;
   private storage: Storage;
   private lastSend: App.Github.Repository[];
 
   constructor(api: GithubAPI, storage: Storage) {
-    chrome.tabs.onActivated.addListener(() => {
-      if (this.lastTab) {
-        this.lastTab = undefined;
-      }
-    });
     this.lastLocal = secondsAgo(LOCAL_TIME + 100);
     this.lastSend = [];
     this.lastRemote = secondsAgo(REMOTE_TIME - 100);
@@ -30,9 +24,10 @@ class Repositories {
     this.repositoriesInstance = [];
     this.watchedList = [];
     this.isRunning = false;
+    this.storage.listen('githubRepositories', this.watchGithubRepositories);
   }
 
-  fetch = async (message: Runtime.Github.RepositoriesFetch): Promise<void> => {
+  public fetch = async (message: Runtime.Github.RepositoriesFetch): Promise<void> => {
     const needsLocal = secondsAgo(LOCAL_TIME) > this.lastLocal;
     const needsRemote = secondsAgo(REMOTE_TIME) > this.lastRemote;
     const { id } = message.meta;
@@ -59,16 +54,23 @@ class Repositories {
     name: repo.name,
   });
 
-  write = async (message: Runtime.Github.RepositoriesUpdateWatched): Promise<void> => {
+  private watchGithubRepositories = (data: Storage.Github.GithubRepositories | null) => {
+    // this.watchedList = data?.watchedList || [];
+    // this.repositoriesInstance = data?.repositories || [];
+    // this.send();
+  }
+
+  public write = async (message: Runtime.Github.RepositoriesUpdateWatched): Promise<void> => {
     const { id, nextIsWatched } = message;
-    const repo = this.repositoriesInstance.find((repo) => repo.id === id);
+    const repo = this.repositories.find((repo) => repo.id === id);
     if (!repo) {
       return;
     }
 
     const watchedIndex = this.watchedList.findIndex((repo) => repo.id === id);
+    log.payload(watchedIndex);
     if (!nextIsWatched) {
-      this.watchedList = this.watchedList.splice(watchedIndex, 1);
+      this.watchedList.splice(watchedIndex, 1);
     }
 
     if (nextIsWatched && watchedIndex < 0) {
@@ -76,12 +78,22 @@ class Repositories {
       this.watchedList.push(watched);
     }
 
-    this.save(id);
-
+    await this.save();
+    this.send();
   };
 
   private convert = (repositories: Storage.Github.Repositories[]) => repositories
-    .sort((a, b) => {
+    .map((repo) => ({
+      ...repo,
+      isWatched: this.watchedList.findIndex((r) => repo.id === r.id) > -1,
+    }));
+
+  private isUnique = (repo: App.Github.Repository): string =>
+    `${repo.owner}/${repo.name}`;
+
+  private get repositories(): App.Github.Repository[] {
+    const repositories = uniqueBy(this.convert(this.repositoriesInstance), this.isUnique);
+    repositories.sort((a, b) => {
       const aName = a.name.toUpperCase();
       const bName = b.name.toUpperCase();
 
@@ -94,26 +106,17 @@ class Repositories {
       }
 
       return 0;
-    })
-    .map((repo) => ({
-      ...repo,
-      isWatched: this.watchedList.findIndex((r) => repo.id === r.id) > -1,
-    }));
-
-  private isUnique = (repo: App.Github.Repository): string =>
-    `${repo.owner}/${repo.name}`;
-
-  private get repositories(): App.Github.Repository[] {
-    return uniqueBy(this.convert(this.repositoriesInstance), this.isUnique);
+    });
+    return repositories;
   }
 
-  private send = (id: string, done: boolean): void => {
+  private send = (id?: string, done?: boolean): void => {
     chrome.runtime.respond({
       type: 'github/REPOSITORIES_RESPONSE',
       data: this.repositories,
       meta: {
-        id,
-        done,
+        id: id || uuid(),
+        done: done || true,
       },
     });
   };
@@ -124,29 +127,26 @@ class Repositories {
     }
   };
 
-  private partialResponse = ([id, repositories]: App.Reactor.PartialRepositoryList) => {
-
-    const remoteRepos = this.prep(repositories);
-
-    chrome.runtime.respond({
-      type: 'github/REPOSITORIES_RESPONSE',
-      data: this.convert(remoteRepos),
-      meta: {
-        id,
-        done: true,
-      },
-    });
-  }
-
   private localFetch = async (id: string, done: boolean): Promise<void> => {
     const local = await this.storage.readProperty('githubRepositories');
     this.lastLocal = secondsAgo(0);
-    this.repositoriesInstance = local?.repositories || [];
+    if (local) {
+      const nextLocalRepositories = listDifferences(local.repositories, this.repositoriesInstance);
+      const nextLocalWatched = listDifferences(local.watchedList, this.watchedList);
+      const repositoryChanges = nextLocalRepositories.length > 0;
+      const watchedChanges = nextLocalRepositories.length > 0;
 
-    this.watchedList = local?.watchedList || [];
+      if (repositoryChanges) {
+        this.repositoriesInstance = [...this.repositoriesInstance, ...nextLocalRepositories];
+      }
 
-    this.send(id, done);
-
+      if (watchedChanges) {
+        this.watchedList = [...this.watchedList, ...nextLocalWatched];
+      }
+      if (watchedChanges || repositoryChanges) {
+        this.send(id, done);
+      }
+    }
   };
 
   private prep = (repositories: API.Github.RepositoryFull[]): Storage.Github.Repositories[] =>
@@ -165,18 +165,32 @@ class Repositories {
       return;
     }
 
-    this.isRunning = true;
-    const repositories = await this.api.fetchRepositories(id);
-    this.lastRemote = secondsAgo(0);
-    const remoteRepos = this.prep(repositories);
+    const hasChanges = await this.remoteGet();
 
-    this.repositoriesInstance = remoteRepos;
-    this.isRunning = false;
-    this.send(id, done);
-    this.save(id);
+    if (hasChanges) {
+      this.send(id, done);
+      this.save(id);
+    }
   };
 
-  private save = (id: string) => {
+  private remoteGet = async (): Promise<boolean> => {
+    this.isRunning = true;
+    const repositories = await this.api.fetchRepositories();
+    this.lastRemote = secondsAgo(0);
+    const remoteRepos = this.prep(repositories);
+    const nextRemote = listDifferences(remoteRepos, this.repositoriesInstance);
+    this.isRunning = false;
+
+    if (nextRemote.length > 0) {
+      this.repositoriesInstance = [...this.repositoriesInstance, ...nextRemote];
+      return true;
+    }
+
+    return false;
+
+  }
+
+  private save = (id?: string) =>
     this.storage.setProperty({
       key: 'githubRepositories',
       data: {
@@ -184,11 +198,10 @@ class Repositories {
         watchedList: this.watchedList,
       },
       meta: {
-        id,
+        id: id || uuid(),
       },
       overwrite: true,
     });
-  }
 }
 
 export default Repositories;

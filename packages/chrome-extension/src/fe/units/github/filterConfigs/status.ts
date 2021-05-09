@@ -18,7 +18,7 @@ const readable: Mapping = {
   PENDING: 'Pending',
 };
 
-const create = (pullRequest: App.Github.PullRequest, mapping: App.Filter.CreateMapping): void => {
+const create: App.Filter.Create<App.Github.PullRequest> = (pullRequest, mapping): void => {
   const { status } = pullRequest;
   if (!mapping[readable[status.state]]) {
     mapping[status.state] = {
@@ -31,8 +31,8 @@ const create = (pullRequest: App.Github.PullRequest, mapping: App.Filter.CreateM
 
 };
 
-const run = (pullRequest: App.Github.PullRequest, full: string): boolean =>
-  readable[pullRequest.status.state] === full;
+const run = (pullRequest: App.Github.PullRequest, id: string): boolean =>
+  readable[pullRequest.status.state] === id;
 
 export default {
   id: 'github-status',

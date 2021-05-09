@@ -1,25 +1,23 @@
-import { chrome, deepmerge, epoch, Reactor, uuid } from '@utils';
+import { chrome, deepmerge, epoch, uuid } from '@utils';
 import EventEmitter from 'eventemitter3';
 import defaultStorage from './defaultStorage';
 
-const { storage } = chrome;
 const { runtime, storage: { local, sync } } = chrome;
 
 const bus = new EventEmitter();
 
 interface Callback<T extends keyof Storage.All> {
-  (data: Storage.All[T]): void;
+  (data: Storage.All[T] | null): void;
 }
 
-type Listeners = {
-  [K in keyof Storage.All]?: Set<Callback<K>>
+type Listeners<T extends keyof Storage.All> = {
+  [K in T]?: Set<Callback<T>>;
 }
 
 class Storage {
   private started: boolean;
-  private reactor: Reactor<keyof Storage.All>;
   private store: Storage.AllStore;
-  private listeners: Listeners;
+  private listeners: Listeners<keyof Storage.All>;
 
   constructor() {
     this.started = false;
@@ -28,17 +26,11 @@ class Storage {
     this.store = {
       installEpoch: 0,
     };
-    this.reactor = new Reactor();
-    this.start();
 
+    this.start();
   }
 
   private start = () => {
-    storage.onChanged.addListener(this.localListener);
-    this.postStart();
-  }
-
-  private postStart = () => {
     local.get(
       'installEpoch',
       (data) => {
@@ -56,17 +48,11 @@ class Storage {
     );
   };
 
-  private localListener = (changes: Chrome.Storage.Changes) => {
-    Object
-      .keys(changes)
-      .forEach((key) => {
-        if (changes[key]) {
-          const item = key as keyof Storage.All;
-          const value = changes[item]?.newValue;
-          this.store[key] = value;
-          this.dispatchListeners(item, value);
-        }
-      });
+  public listen = <T extends keyof Storage.All>(key: T, listener: Callback<T>): void => {
+    if (!this.listeners[key]) {
+      this.listeners[key] = new Set();
+    }
+    (this.listeners[key] as Set<Callback<T>>).add(listener);
   }
 
   private fetch = () => {
@@ -170,23 +156,14 @@ class Storage {
   removeProperty = async <T extends keyof Storage.All>(key: T): Promise<void> => {
     this.store[key] = undefined;
     await this.localRemove(key);
-    // const syncPromise = this.syncRemove(key);
     this.dispatchListeners(key);
-  }
-
-  listen = <T extends keyof Storage.All>(eventName: T, callback: Callback<T>): void => {
-    if (!this.listeners[eventName]) {
-      this.listeners[eventName] = new Set() as Listeners[T];
-    }
-    const listeners = this.listeners[eventName];
-    listeners?.add(callback as App.ShouldDefineType);
   }
 
   private dispatchListeners = <T extends keyof Storage.All>(key: T, value?: Storage.All[T]) => {
     const listeners = this.listeners[key];
     if (listeners) {
-      listeners.forEach((listener) => {
-        listener(value);
+      (listeners as Set<Callback<T>>).forEach((listener) => {
+        listener(value || null);
       });
     }
   }
@@ -200,8 +177,6 @@ class Storage {
       },
     });
 
-  // isOnlyArray = <T extends keyof Storage.OnlyArrays, U extends keyof Storage.OnlyArrays[T]>(unknown: Storage.All[keyof Storage.All], property: U): unknown is Storage.OnlyArrays[keyof Storage.OnlyArrays] =>
-  //   !!unknown && Array.isArray((unknown as Storage.OnlyArrays[keyof Storage.OnlyArrays])[property])
   isOnlyArray = <T extends keyof Storage.OnlyArrays, U extends keyof Storage.OnlyArrays[T]>(unknown: App.ShouldDefineType): unknown is Storage.OnlyArrays[T][U] =>
     Array.isArray(unknown)
 
@@ -249,7 +224,7 @@ class Storage {
         },
       );
 
-      this.dispatchListeners(key, data as Storage.All[T]);
+      this.dispatchListeners(key, data);
       runtime.respond({
         type: 'STORAGE_ON',
         key,

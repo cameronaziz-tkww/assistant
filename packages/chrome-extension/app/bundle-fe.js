@@ -141,22 +141,22 @@
             var title = 'browser';
             var platform = 'browser';
             var browser = true;
-            var env = {};
+            var env$1 = {};
             var argv = [];
             var version = ''; // empty string to avoid regexp issues
             var versions = {};
             var release = {};
-            var config = {};
+            var config$1 = {};
 
-            function noop$1() {}
+            function noop$2() {}
 
-            var on$1 = noop$1;
-            var addListener$1 = noop$1;
-            var once = noop$1;
-            var off = noop$1;
-            var removeListener = noop$1;
-            var removeAllListeners = noop$1;
-            var emit = noop$1;
+            var on$1 = noop$2;
+            var addListener$1 = noop$2;
+            var once = noop$2;
+            var off = noop$2;
+            var removeListener = noop$2;
+            var removeAllListeners = noop$2;
+            var emit = noop$2;
 
             function binding(name) {
                 throw new Error('process.binding is not supported');
@@ -205,7 +205,7 @@
               nextTick: nextTick,
               title: title,
               browser: browser,
-              env: env,
+              env: env$1,
               argv: argv,
               version: version,
               versions: versions,
@@ -223,9 +223,11 @@
               hrtime: hrtime,
               platform: platform,
               release: release,
-              config: config,
+              config: config$1,
               uptime: uptime
             };
+
+            function n$1(n){for(var r=arguments.length,t=Array(r>1?r-1:0),e=1;e<r;e++)t[e-1]=arguments[e];{var i=Y$1[n],o=i?"function"==typeof i?i.apply(null,t):i:"unknown error nr: "+n;throw Error("[Immer] "+o)}}function r$1(n){return !!n&&!!n[Q$1]}function t$1(n){return !!n&&(function(n){if(!n||"object"!=typeof n)return !1;var r=Object.getPrototypeOf(n);if(null===r)return !0;var t=Object.hasOwnProperty.call(r,"constructor")&&r.constructor;return "function"==typeof t&&Function.toString.call(t)===Z$1}(n)||Array.isArray(n)||!!n[L$1]||!!n.constructor[L$1]||s$1(n)||v$1(n))}function i$4(n,r,t){void 0===t&&(t=!1),0===o$1(n)?(t?Object.keys:nn)(n).forEach((function(e){t&&"symbol"==typeof e||r(e,n[e],n);})):n.forEach((function(t,e){return r(e,t,n)}));}function o$1(n){var r=n[Q$1];return r?r.i>3?r.i-4:r.i:Array.isArray(n)?1:s$1(n)?2:v$1(n)?3:0}function u$1(n,r){return 2===o$1(n)?n.has(r):Object.prototype.hasOwnProperty.call(n,r)}function a$2(n,r){return 2===o$1(n)?n.get(r):n[r]}function f$2(n,r,t){var e=o$1(n);2===e?n.set(r,t):3===e?(n.delete(r),n.add(t)):n[r]=t;}function c$1(n,r){return n===r?0!==n||1/n==1/r:n!=n&&r!=r}function s$1(n){return X$1&&n instanceof Map}function v$1(n){return q$1&&n instanceof Set}function p$1(n){return n.o||n.t}function l$2(n){if(Array.isArray(n))return Array.prototype.slice.call(n);var r=rn(n);delete r[Q$1];for(var t=nn(r),e=0;e<t.length;e++){var i=t[e],o=r[i];!1===o.writable&&(o.writable=!0,o.configurable=!0),(o.get||o.set)&&(r[i]={configurable:!0,writable:!0,enumerable:o.enumerable,value:n[i]});}return Object.create(Object.getPrototypeOf(n),r)}function d(n,e){return void 0===e&&(e=!1),y$2(n)||r$1(n)||!t$1(n)?n:(o$1(n)>1&&(n.set=n.add=n.clear=n.delete=h),Object.freeze(n),e&&i$4(n,(function(n,r){return d(r,!0)}),!0),n)}function h(){n$1(2);}function y$2(n){return null==n||"object"!=typeof n||Object.isFrozen(n)}function b$2(r){var t=tn[r];return t||n$1(18,r),t}function _$1(){return U$2||n$1(0),U$2}function j$3(n,r){r&&(b$2("Patches"),n.u=[],n.s=[],n.v=r);}function g$2(n){O$2(n),n.p.forEach(S$2),n.p=null;}function O$2(n){n===U$2&&(U$2=n.l);}function w$2(n){return U$2={p:[],l:U$2,h:n,m:!0,_:0}}function S$2(n){var r=n[Q$1];0===r.i||1===r.i?r.j():r.g=!0;}function P$1(r,e){e._=e.p.length;var i=e.p[0],o=void 0!==r&&r!==i;return e.h.O||b$2("ES5").S(e,r,o),o?(i[Q$1].P&&(g$2(e),n$1(4)),t$1(r)&&(r=M$2(e,r),e.l||x$2(e,r)),e.u&&b$2("Patches").M(i[Q$1],r,e.u,e.s)):r=M$2(e,i,[]),g$2(e),e.u&&e.v(e.u,e.s),r!==H$1?r:void 0}function M$2(n,r,t){if(y$2(r))return r;var e=r[Q$1];if(!e)return i$4(r,(function(i,o){return A$1(n,e,r,i,o,t)}),!0),r;if(e.A!==n)return r;if(!e.P)return x$2(n,e.t,!0),e.t;if(!e.I){e.I=!0,e.A._--;var o=4===e.i||5===e.i?e.o=l$2(e.k):e.o;i$4(3===e.i?new Set(o):o,(function(r,i){return A$1(n,e,o,r,i,t)})),x$2(n,o,!1),t&&n.u&&b$2("Patches").R(e,t,n.u,n.s);}return e.o}function A$1(e,i,o,a,c,s){if(c===o&&n$1(5),r$1(c)){var v=M$2(e,c,s&&i&&3!==i.i&&!u$1(i.D,a)?s.concat(a):void 0);if(f$2(o,a,v),!r$1(v))return;e.m=!1;}if(t$1(c)&&!y$2(c)){if(!e.h.F&&e._<1)return;M$2(e,c),i&&i.A.l||x$2(e,c);}}function x$2(n,r,t){void 0===t&&(t=!1),n.h.F&&n.m&&d(r,t);}function z$1(n,r){var t=n[Q$1];return (t?p$1(t):n)[r]}function I$1(n,r){if(r in n)for(var t=Object.getPrototypeOf(n);t;){var e=Object.getOwnPropertyDescriptor(t,r);if(e)return e;t=Object.getPrototypeOf(t);}}function k$2(n){n.P||(n.P=!0,n.l&&k$2(n.l));}function E$4(n){n.o||(n.o=l$2(n.t));}function R$1(n,r,t){var e=s$1(r)?b$2("MapSet").N(r,t):v$1(r)?b$2("MapSet").T(r,t):n.O?function(n,r){var t=Array.isArray(n),e={i:t?1:0,A:r?r.A:_$1(),P:!1,I:!1,D:{},l:r,t:n,k:null,o:null,j:null,C:!1},i=e,o=en;t&&(i=[e],o=on);var u=Proxy.revocable(i,o),a=u.revoke,f=u.proxy;return e.k=f,e.j=a,f}(r,t):b$2("ES5").J(r,t);return (t?t.A:_$1()).p.push(e),e}function D$1(e){return r$1(e)||n$1(22,e),function n(r){if(!t$1(r))return r;var e,u=r[Q$1],c=o$1(r);if(u){if(!u.P&&(u.i<4||!b$2("ES5").K(u)))return u.t;u.I=!0,e=F$1(r,c),u.I=!1;}else e=F$1(r,c);return i$4(e,(function(r,t){u&&a$2(u.t,r)===t||f$2(e,r,n(t));})),3===c?new Set(e):e}(e)}function F$1(n,r){switch(r){case 2:return new Map(n);case 3:return Array.from(n)}return l$2(n)}var G$1,U$2,W$2="undefined"!=typeof Symbol&&"symbol"==typeof Symbol("x"),X$1="undefined"!=typeof Map,q$1="undefined"!=typeof Set,B$2="undefined"!=typeof Proxy&&void 0!==Proxy.revocable&&"undefined"!=typeof Reflect,H$1=W$2?Symbol.for("immer-nothing"):((G$1={})["immer-nothing"]=!0,G$1),L$1=W$2?Symbol.for("immer-draftable"):"__$immer_draftable",Q$1=W$2?Symbol.for("immer-state"):"__$immer_state",Y$1={0:"Illegal state",1:"Immer drafts cannot have computed properties",2:"This object has been frozen and should not be mutated",3:function(n){return "Cannot use a proxy that has been revoked. Did you pass an object from inside an immer function to an async process? "+n},4:"An immer producer returned a new value *and* modified its draft. Either return a new value *or* modify the draft.",5:"Immer forbids circular references",6:"The first or second argument to `produce` must be a function",7:"The third argument to `produce` must be a function or undefined",8:"First argument to `createDraft` must be a plain object, an array, or an immerable object",9:"First argument to `finishDraft` must be a draft returned by `createDraft`",10:"The given draft is already finalized",11:"Object.defineProperty() cannot be used on an Immer draft",12:"Object.setPrototypeOf() cannot be used on an Immer draft",13:"Immer only supports deleting array indices",14:"Immer only supports setting array indices and the 'length' property",15:function(n){return "Cannot apply patch, path doesn't resolve: "+n},16:'Sets cannot have "replace" patches.',17:function(n){return "Unsupported patch operation: "+n},18:function(n){return "The plugin for '"+n+"' has not been loaded into Immer. To enable the plugin, import and call `enable"+n+"()` when initializing your application."},20:"Cannot use proxies if Proxy, Proxy.revocable or Reflect are not available",21:function(n){return "produce can only be called on things that are draftable: plain objects, arrays, Map, Set or classes that are marked with '[immerable]: true'. Got '"+n+"'"},22:function(n){return "'current' expects a draft, got: "+n},23:function(n){return "'original' expects a draft, got: "+n},24:"Patching reserved attributes like __proto__, prototype and constructor is not allowed"},Z$1=""+Object.prototype.constructor,nn="undefined"!=typeof Reflect&&Reflect.ownKeys?Reflect.ownKeys:void 0!==Object.getOwnPropertySymbols?function(n){return Object.getOwnPropertyNames(n).concat(Object.getOwnPropertySymbols(n))}:Object.getOwnPropertyNames,rn=Object.getOwnPropertyDescriptors||function(n){var r={};return nn(n).forEach((function(t){r[t]=Object.getOwnPropertyDescriptor(n,t);})),r},tn={},en={get:function(n,r){if(r===Q$1)return n;var e=p$1(n);if(!u$1(e,r))return function(n,r,t){var e,i=I$1(r,t);return i?"value"in i?i.value:null===(e=i.get)||void 0===e?void 0:e.call(n.k):void 0}(n,e,r);var i=e[r];return n.I||!t$1(i)?i:i===z$1(n.t,r)?(E$4(n),n.o[r]=R$1(n.A.h,i,n)):i},has:function(n,r){return r in p$1(n)},ownKeys:function(n){return Reflect.ownKeys(p$1(n))},set:function(n,r,t){var e=I$1(p$1(n),r);if(null==e?void 0:e.set)return e.set.call(n.k,t),!0;if(!n.P){var i=z$1(p$1(n),r),o=null==i?void 0:i[Q$1];if(o&&o.t===t)return n.o[r]=t,n.D[r]=!1,!0;if(c$1(t,i)&&(void 0!==t||u$1(n.t,r)))return !0;E$4(n),k$2(n);}return n.o[r]===t&&"number"!=typeof t||(n.o[r]=t,n.D[r]=!0,!0)},deleteProperty:function(n,r){return void 0!==z$1(n.t,r)||r in n.t?(n.D[r]=!1,E$4(n),k$2(n)):delete n.D[r],n.o&&delete n.o[r],!0},getOwnPropertyDescriptor:function(n,r){var t=p$1(n),e=Reflect.getOwnPropertyDescriptor(t,r);return e?{writable:!0,configurable:1!==n.i||"length"!==r,enumerable:e.enumerable,value:t[r]}:e},defineProperty:function(){n$1(11);},getPrototypeOf:function(n){return Object.getPrototypeOf(n.t)},setPrototypeOf:function(){n$1(12);}},on={};i$4(en,(function(n,r){on[n]=function(){return arguments[0]=arguments[0][0],r.apply(this,arguments)};})),on.deleteProperty=function(r,t){return isNaN(parseInt(t))&&n$1(13),en.deleteProperty.call(this,r[0],t)},on.set=function(r,t,e){return "length"!==t&&isNaN(parseInt(t))&&n$1(14),en.set.call(this,r[0],t,e,r[0])};var un=function(){function e(r){var e=this;this.O=B$2,this.F=!0,this.produce=function(r,i,o){if("function"==typeof r&&"function"!=typeof i){var u=i;i=r;var a=e;return function(n){var r=this;void 0===n&&(n=u);for(var t=arguments.length,e=Array(t>1?t-1:0),o=1;o<t;o++)e[o-1]=arguments[o];return a.produce(n,(function(n){var t;return (t=i).call.apply(t,[r,n].concat(e))}))}}var f;if("function"!=typeof i&&n$1(6),void 0!==o&&"function"!=typeof o&&n$1(7),t$1(r)){var c=w$2(e),s=R$1(e,r,void 0),v=!0;try{f=i(s),v=!1;}finally{v?g$2(c):O$2(c);}return "undefined"!=typeof Promise&&f instanceof Promise?f.then((function(n){return j$3(c,o),P$1(n,c)}),(function(n){throw g$2(c),n})):(j$3(c,o),P$1(f,c))}if(!r||"object"!=typeof r){if((f=i(r))===H$1)return;return void 0===f&&(f=r),e.F&&d(f,!0),f}n$1(21,r);},this.produceWithPatches=function(n,r){return "function"==typeof n?function(r){for(var t=arguments.length,i=Array(t>1?t-1:0),o=1;o<t;o++)i[o-1]=arguments[o];return e.produceWithPatches(r,(function(r){return n.apply(void 0,[r].concat(i))}))}:[e.produce(n,r,(function(n,r){t=n,i=r;})),t,i];var t,i;},"boolean"==typeof(null==r?void 0:r.useProxies)&&this.setUseProxies(r.useProxies),"boolean"==typeof(null==r?void 0:r.autoFreeze)&&this.setAutoFreeze(r.autoFreeze);}var i=e.prototype;return i.createDraft=function(e){t$1(e)||n$1(8),r$1(e)&&(e=D$1(e));var i=w$2(this),o=R$1(this,e,void 0);return o[Q$1].C=!0,O$2(i),o},i.finishDraft=function(r,t){var e=r&&r[Q$1];(e&&e.C||n$1(9),e.I&&n$1(10));var i=e.A;return j$3(i,t),P$1(void 0,i)},i.setAutoFreeze=function(n){this.F=n;},i.setUseProxies=function(r){r&&!B$2&&n$1(20),this.O=r;},i.applyPatches=function(n,t){var e;for(e=t.length-1;e>=0;e--){var i=t[e];if(0===i.path.length&&"replace"===i.op){n=i.value;break}}var o=b$2("Patches").$;return r$1(n)?o(n,t):this.produce(n,(function(n){return o(n,t.slice(e+1))}))},e}(),an=new un,fn=an.produce;an.produceWithPatches.bind(an);var sn=an.setAutoFreeze.bind(an);an.setUseProxies.bind(an);an.applyPatches.bind(an);an.createDraft.bind(an);an.finishDraft.bind(an);
 
             function getAugmentedNamespace(n) {
             	if (n.__esModule) return n;
@@ -3357,23 +3359,23 @@
              * This source code is licensed under the MIT license found in the
              * LICENSE file in the root directory of this source tree.
              */
-            function y$2(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return "Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!react)throw Error(y$2(227));var ba=new Set;function da(a,b){ea(a,b);ea(a+"Capture",b);}
+            function y$1(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return "Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!react)throw Error(y$1(227));var ba=new Set;function da(a,b){ea(a,b);ea(a+"Capture",b);}
             function ea(a,b){for(a=0;a<b.length;a++)ba.add(b[a]);}
-            var fa=!("undefined"===typeof window||"undefined"===typeof window.document||"undefined"===typeof window.document.createElement);function B$2(a,b,c,d,e,f,g){this.acceptsBooleans=2===b||3===b||4===b;this.attributeName=d;this.attributeNamespace=e;this.mustUseProperty=c;this.propertyName=a;this.type=b;this.sanitizeURL=f;this.removeEmptyString=g;}[["acceptCharset","accept-charset"],["className","class"],["htmlFor","for"],["httpEquiv","http-equiv"]].forEach(function(a){var b=a[0];new B$2(b,1,!1,a[1],null,!1,!1);});["contentEditable","draggable","spellCheck","value"].forEach(function(a){new B$2(a,2,!1,a.toLowerCase(),null,!1,!1);});
-            "allowFullScreen async autoFocus autoPlay controls default defer disabled disablePictureInPicture disableRemotePlayback formNoValidate hidden loop noModule noValidate open playsInline readOnly required reversed scoped seamless itemScope".split(" ").forEach(function(a){new B$2(a,3,!1,a.toLowerCase(),null,!1,!1);});
-            ["rowSpan","start"].forEach(function(a){new B$2(a,5,!1,a.toLowerCase(),null,!1,!1);});var oa=/[\-:]([a-z])/g;function pa(a){return a[1].toUpperCase()}
+            var fa=!("undefined"===typeof window||"undefined"===typeof window.document||"undefined"===typeof window.document.createElement);function B$1(a,b,c,d,e,f,g){this.acceptsBooleans=2===b||3===b||4===b;this.attributeName=d;this.attributeNamespace=e;this.mustUseProperty=c;this.propertyName=a;this.type=b;this.sanitizeURL=f;this.removeEmptyString=g;}[["acceptCharset","accept-charset"],["className","class"],["htmlFor","for"],["httpEquiv","http-equiv"]].forEach(function(a){var b=a[0];new B$1(b,1,!1,a[1],null,!1,!1);});["contentEditable","draggable","spellCheck","value"].forEach(function(a){new B$1(a,2,!1,a.toLowerCase(),null,!1,!1);});
+            "allowFullScreen async autoFocus autoPlay controls default defer disabled disablePictureInPicture disableRemotePlayback formNoValidate hidden loop noModule noValidate open playsInline readOnly required reversed scoped seamless itemScope".split(" ").forEach(function(a){new B$1(a,3,!1,a.toLowerCase(),null,!1,!1);});
+            ["rowSpan","start"].forEach(function(a){new B$1(a,5,!1,a.toLowerCase(),null,!1,!1);});var oa=/[\-:]([a-z])/g;function pa(a){return a[1].toUpperCase()}
             "accent-height alignment-baseline arabic-form baseline-shift cap-height clip-path clip-rule color-interpolation color-interpolation-filters color-profile color-rendering dominant-baseline enable-background fill-opacity fill-rule flood-color flood-opacity font-family font-size font-size-adjust font-stretch font-style font-variant font-weight glyph-name glyph-orientation-horizontal glyph-orientation-vertical horiz-adv-x horiz-origin-x image-rendering letter-spacing lighting-color marker-end marker-mid marker-start overline-position overline-thickness paint-order panose-1 pointer-events rendering-intent shape-rendering stop-color stop-opacity strikethrough-position strikethrough-thickness stroke-dasharray stroke-dashoffset stroke-linecap stroke-linejoin stroke-miterlimit stroke-opacity stroke-width text-anchor text-decoration text-rendering underline-position underline-thickness unicode-bidi unicode-range units-per-em v-alphabetic v-hanging v-ideographic v-mathematical vector-effect vert-adv-y vert-origin-x vert-origin-y word-spacing writing-mode xmlns:xlink x-height".split(" ").forEach(function(a){a.replace(oa,
-            pa);});"xlink:actuate xlink:arcrole xlink:role xlink:show xlink:title xlink:type".split(" ").forEach(function(a){a.replace(oa,pa);});["xml:base","xml:lang","xml:space"].forEach(function(a){a.replace(oa,pa);});["tabIndex","crossOrigin"].forEach(function(a){new B$2(a,1,!1,a.toLowerCase(),null,!1,!1);});
-            ["src","href","action","formAction"].forEach(function(a){new B$2(a,1,!1,a.toLowerCase(),null,!0,!0);});
+            pa);});"xlink:actuate xlink:arcrole xlink:role xlink:show xlink:title xlink:type".split(" ").forEach(function(a){a.replace(oa,pa);});["xml:base","xml:lang","xml:space"].forEach(function(a){a.replace(oa,pa);});["tabIndex","crossOrigin"].forEach(function(a){new B$1(a,1,!1,a.toLowerCase(),null,!1,!1);});
+            ["src","href","action","formAction"].forEach(function(a){new B$1(a,1,!1,a.toLowerCase(),null,!0,!0);});
             var ra=react.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-            if("function"===typeof Symbol&&Symbol.for){var E$4=Symbol.for;E$4("react.element");E$4("react.portal");E$4("react.fragment");E$4("react.strict_mode");E$4("react.profiler");E$4("react.provider");E$4("react.context");E$4("react.forward_ref");E$4("react.suspense");E$4("react.suspense_list");E$4("react.memo");E$4("react.lazy");E$4("react.block");E$4("react.scope");E$4("react.opaque.id");E$4("react.debug_trace_mode");E$4("react.offscreen");E$4("react.legacy_hidden");}
+            if("function"===typeof Symbol&&Symbol.for){var E$3=Symbol.for;E$3("react.element");E$3("react.portal");E$3("react.fragment");E$3("react.strict_mode");E$3("react.profiler");E$3("react.provider");E$3("react.context");E$3("react.forward_ref");E$3("react.suspense");E$3("react.suspense_list");E$3("react.memo");E$3("react.lazy");E$3("react.block");E$3("react.scope");E$3("react.opaque.id");E$3("react.debug_trace_mode");E$3("react.offscreen");E$3("react.legacy_hidden");}
             var kb={html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"};
             var nb;(function(a){return "undefined"!==typeof MSApp&&MSApp.execUnsafeLocalFunction?function(b,c,d,e){MSApp.execUnsafeLocalFunction(function(){return a(b,c,d,e)});}:a})(function(a,b){if(a.namespaceURI!==kb.svg||"innerHTML"in a)a.innerHTML=b;else {nb=nb||document.createElement("div");nb.innerHTML="<svg>"+b.valueOf().toString()+"</svg>";for(b=nb.firstChild;a.firstChild;)a.removeChild(a.firstChild);for(;b.firstChild;)a.appendChild(b.firstChild);}});
             var qb={animationIterationCount:!0,borderImageOutset:!0,borderImageSlice:!0,borderImageWidth:!0,boxFlex:!0,boxFlexGroup:!0,boxOrdinalGroup:!0,columnCount:!0,columns:!0,flex:!0,flexGrow:!0,flexPositive:!0,flexShrink:!0,flexNegative:!0,flexOrder:!0,gridArea:!0,gridRow:!0,gridRowEnd:!0,gridRowSpan:!0,gridRowStart:!0,gridColumn:!0,gridColumnEnd:!0,gridColumnSpan:!0,gridColumnStart:!0,fontWeight:!0,lineClamp:!0,lineHeight:!0,opacity:!0,order:!0,orphans:!0,tabSize:!0,widows:!0,zIndex:!0,zoom:!0,fillOpacity:!0,
             floodOpacity:!0,stopOpacity:!0,strokeDasharray:!0,strokeDashoffset:!0,strokeMiterlimit:!0,strokeOpacity:!0,strokeWidth:!0},rb=["Webkit","ms","Moz","O"];Object.keys(qb).forEach(function(a){rb.forEach(function(b){b=b+a.charAt(0).toUpperCase()+a.substring(1);qb[b]=qb[a];});});objectAssign({menuitem:!0},{area:!0,base:!0,br:!0,col:!0,embed:!0,hr:!0,img:!0,input:!0,keygen:!0,link:!0,meta:!0,param:!0,source:!0,track:!0,wbr:!0});
-            var Pb=!1;if(fa)try{var Qb={};Object.defineProperty(Qb,"passive",{get:function(){Pb=!0;}});window.addEventListener("test",Qb,Qb);window.removeEventListener("test",Qb,Qb);}catch(a){Pb=!1;}function Zb(a){var b=a,c=a;if(a.alternate)for(;b.return;)b=b.return;else {a=b;do b=a,0!==(b.flags&1026)&&(c=b.return),a=b.return;while(a)}return 3===b.tag?c:null}function ac(a){if(Zb(a)!==a)throw Error(y$2(188));}
-            function bc(a){var b=a.alternate;if(!b){b=Zb(a);if(null===b)throw Error(y$2(188));return b!==a?null:a}for(var c=a,d=b;;){var e=c.return;if(null===e)break;var f=e.alternate;if(null===f){d=e.return;if(null!==d){c=d;continue}break}if(e.child===f.child){for(f=e.child;f;){if(f===c)return ac(e),a;if(f===d)return ac(e),b;f=f.sibling;}throw Error(y$2(188));}if(c.return!==d.return)c=e,d=f;else {for(var g=!1,h=e.child;h;){if(h===c){g=!0;c=e;d=f;break}if(h===d){g=!0;d=e;c=f;break}h=h.sibling;}if(!g){for(h=f.child;h;){if(h===
-            c){g=!0;c=f;d=e;break}if(h===d){g=!0;d=f;c=e;break}h=h.sibling;}if(!g)throw Error(y$2(189));}}if(c.alternate!==d)throw Error(y$2(190));}if(3!==c.tag)throw Error(y$2(188));return c.stateNode.current===c?a:b}function cc(a){a=bc(a);if(!a)return null;for(var b=a;;){if(5===b.tag||6===b.tag)return b;if(b.child)b.child.return=b,b=b.child;else {if(b===a)break;for(;!b.sibling;){if(!b.return||b.return===a)return null;b=b.return;}b.sibling.return=b.return;b=b.sibling;}}return null}
+            var Pb=!1;if(fa)try{var Qb={};Object.defineProperty(Qb,"passive",{get:function(){Pb=!0;}});window.addEventListener("test",Qb,Qb);window.removeEventListener("test",Qb,Qb);}catch(a){Pb=!1;}function Zb(a){var b=a,c=a;if(a.alternate)for(;b.return;)b=b.return;else {a=b;do b=a,0!==(b.flags&1026)&&(c=b.return),a=b.return;while(a)}return 3===b.tag?c:null}function ac(a){if(Zb(a)!==a)throw Error(y$1(188));}
+            function bc(a){var b=a.alternate;if(!b){b=Zb(a);if(null===b)throw Error(y$1(188));return b!==a?null:a}for(var c=a,d=b;;){var e=c.return;if(null===e)break;var f=e.alternate;if(null===f){d=e.return;if(null!==d){c=d;continue}break}if(e.child===f.child){for(f=e.child;f;){if(f===c)return ac(e),a;if(f===d)return ac(e),b;f=f.sibling;}throw Error(y$1(188));}if(c.return!==d.return)c=e,d=f;else {for(var g=!1,h=e.child;h;){if(h===c){g=!0;c=e;d=f;break}if(h===d){g=!0;d=e;c=f;break}h=h.sibling;}if(!g){for(h=f.child;h;){if(h===
+            c){g=!0;c=f;d=e;break}if(h===d){g=!0;d=f;c=e;break}h=h.sibling;}if(!g)throw Error(y$1(189));}}if(c.alternate!==d)throw Error(y$1(190));}if(3!==c.tag)throw Error(y$1(188));return c.stateNode.current===c?a:b}function cc(a){a=bc(a);if(!a)return null;for(var b=a;;){if(5===b.tag||6===b.tag)return b;if(b.child)b.child.return=b,b=b.child;else {if(b===a)break;for(;!b.sibling;){if(!b.return||b.return===a)return null;b=b.return;}b.sibling.return=b.return;b=b.sibling;}}return null}
             function Dc(a,b){var c={};c[a.toLowerCase()]=b.toLowerCase();c["Webkit"+a]="webkit"+b;c["Moz"+a]="moz"+b;return c}var Ec={animationend:Dc("Animation","AnimationEnd"),animationiteration:Dc("Animation","AnimationIteration"),animationstart:Dc("Animation","AnimationStart"),transitionend:Dc("Transition","TransitionEnd")},Fc={},Gc={};
             fa&&(Gc=document.createElement("div").style,"AnimationEvent"in window||(delete Ec.animationend.animation,delete Ec.animationiteration.animation,delete Ec.animationstart.animation),"TransitionEvent"in window||delete Ec.transitionend.transition);function Hc(a){if(Fc[a])return Fc[a];if(!Ec[a])return a;var b=Ec[a],c;for(c in b)if(b.hasOwnProperty(c)&&c in Gc)return Fc[a]=b[c];return a}
             var Ic=Hc("animationend"),Jc=Hc("animationiteration"),Kc=Hc("animationstart"),Lc=Hc("transitionend"),Mc=new Map,Nc=new Map,Oc=["abort","abort",Ic,"animationEnd",Jc,"animationIteration",Kc,"animationStart","canplay","canPlay","canplaythrough","canPlayThrough","durationchange","durationChange","emptied","emptied","encrypted","encrypted","ended","ended","error","error","gotpointercapture","gotPointerCapture","load","load","loadeddata","loadedData","loadedmetadata","loadedMetadata","loadstart","loadStart",
@@ -30004,6 +30006,2440 @@
                 ...chrome.identity,
             };
 
+            function requiredArgs(required, args) {
+              if (args.length < required) {
+                throw new TypeError(required + ' argument' + (required > 1 ? 's' : '') + ' required, but only ' + args.length + ' present');
+              }
+            }
+
+            /**
+             * @name toDate
+             * @category Common Helpers
+             * @summary Convert the given argument to an instance of Date.
+             *
+             * @description
+             * Convert the given argument to an instance of Date.
+             *
+             * If the argument is an instance of Date, the function returns its clone.
+             *
+             * If the argument is a number, it is treated as a timestamp.
+             *
+             * If the argument is none of the above, the function returns Invalid Date.
+             *
+             * **Note**: *all* Date arguments passed to any *date-fns* function is processed by `toDate`.
+             *
+             * @param {Date|Number} argument - the value to convert
+             * @returns {Date} the parsed date in the local time zone
+             * @throws {TypeError} 1 argument required
+             *
+             * @example
+             * // Clone the date:
+             * const result = toDate(new Date(2014, 1, 11, 11, 30, 30))
+             * //=> Tue Feb 11 2014 11:30:30
+             *
+             * @example
+             * // Convert the timestamp to date:
+             * const result = toDate(1392098430000)
+             * //=> Tue Feb 11 2014 11:30:30
+             */
+
+            function toDate(argument) {
+              requiredArgs(1, arguments);
+              var argStr = Object.prototype.toString.call(argument); // Clone the date
+
+              if (argument instanceof Date || typeof argument === 'object' && argStr === '[object Date]') {
+                // Prevent the date to lose the milliseconds when passed to new Date() in IE10
+                return new Date(argument.getTime());
+              } else if (typeof argument === 'number' || argStr === '[object Number]') {
+                return new Date(argument);
+              } else {
+                if ((typeof argument === 'string' || argStr === '[object String]') && typeof console !== 'undefined') {
+                  // eslint-disable-next-line no-console
+                  console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://git.io/fjule"); // eslint-disable-next-line no-console
+
+                  console.warn(new Error().stack);
+                }
+
+                return new Date(NaN);
+              }
+            }
+
+            /**
+             * @name isValid
+             * @category Common Helpers
+             * @summary Is the given date valid?
+             *
+             * @description
+             * Returns false if argument is Invalid Date and true otherwise.
+             * Argument is converted to Date using `toDate`. See [toDate]{@link https://date-fns.org/docs/toDate}
+             * Invalid Date is a Date, whose time value is NaN.
+             *
+             * Time value of Date: http://es5.github.io/#x15.9.1.1
+             *
+             * ### v2.0.0 breaking changes:
+             *
+             * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+             *
+             * - Now `isValid` doesn't throw an exception
+             *   if the first argument is not an instance of Date.
+             *   Instead, argument is converted beforehand using `toDate`.
+             *
+             *   Examples:
+             *
+             *   | `isValid` argument        | Before v2.0.0 | v2.0.0 onward |
+             *   |---------------------------|---------------|---------------|
+             *   | `new Date()`              | `true`        | `true`        |
+             *   | `new Date('2016-01-01')`  | `true`        | `true`        |
+             *   | `new Date('')`            | `false`       | `false`       |
+             *   | `new Date(1488370835081)` | `true`        | `true`        |
+             *   | `new Date(NaN)`           | `false`       | `false`       |
+             *   | `'2016-01-01'`            | `TypeError`   | `false`       |
+             *   | `''`                      | `TypeError`   | `false`       |
+             *   | `1488370835081`           | `TypeError`   | `true`        |
+             *   | `NaN`                     | `TypeError`   | `false`       |
+             *
+             *   We introduce this change to make *date-fns* consistent with ECMAScript behavior
+             *   that try to coerce arguments to the expected type
+             *   (which is also the case with other *date-fns* functions).
+             *
+             * @param {*} date - the date to check
+             * @returns {Boolean} the date is valid
+             * @throws {TypeError} 1 argument required
+             *
+             * @example
+             * // For the valid date:
+             * var result = isValid(new Date(2014, 1, 31))
+             * //=> true
+             *
+             * @example
+             * // For the value, convertable into a date:
+             * var result = isValid(1393804800000)
+             * //=> true
+             *
+             * @example
+             * // For the invalid date:
+             * var result = isValid(new Date(''))
+             * //=> false
+             */
+
+            function isValid(dirtyDate) {
+              requiredArgs(1, arguments);
+              var date = toDate(dirtyDate);
+              return !isNaN(date);
+            }
+
+            var formatDistanceLocale = {
+              lessThanXSeconds: {
+                one: 'less than a second',
+                other: 'less than {{count}} seconds'
+              },
+              xSeconds: {
+                one: '1 second',
+                other: '{{count}} seconds'
+              },
+              halfAMinute: 'half a minute',
+              lessThanXMinutes: {
+                one: 'less than a minute',
+                other: 'less than {{count}} minutes'
+              },
+              xMinutes: {
+                one: '1 minute',
+                other: '{{count}} minutes'
+              },
+              aboutXHours: {
+                one: 'about 1 hour',
+                other: 'about {{count}} hours'
+              },
+              xHours: {
+                one: '1 hour',
+                other: '{{count}} hours'
+              },
+              xDays: {
+                one: '1 day',
+                other: '{{count}} days'
+              },
+              aboutXWeeks: {
+                one: 'about 1 week',
+                other: 'about {{count}} weeks'
+              },
+              xWeeks: {
+                one: '1 week',
+                other: '{{count}} weeks'
+              },
+              aboutXMonths: {
+                one: 'about 1 month',
+                other: 'about {{count}} months'
+              },
+              xMonths: {
+                one: '1 month',
+                other: '{{count}} months'
+              },
+              aboutXYears: {
+                one: 'about 1 year',
+                other: 'about {{count}} years'
+              },
+              xYears: {
+                one: '1 year',
+                other: '{{count}} years'
+              },
+              overXYears: {
+                one: 'over 1 year',
+                other: 'over {{count}} years'
+              },
+              almostXYears: {
+                one: 'almost 1 year',
+                other: 'almost {{count}} years'
+              }
+            };
+            function formatDistance$1(token, count, options) {
+              options = options || {};
+              var result;
+
+              if (typeof formatDistanceLocale[token] === 'string') {
+                result = formatDistanceLocale[token];
+              } else if (count === 1) {
+                result = formatDistanceLocale[token].one;
+              } else {
+                result = formatDistanceLocale[token].other.replace('{{count}}', count);
+              }
+
+              if (options.addSuffix) {
+                if (options.comparison > 0) {
+                  return 'in ' + result;
+                } else {
+                  return result + ' ago';
+                }
+              }
+
+              return result;
+            }
+
+            function buildFormatLongFn(args) {
+              return function (dirtyOptions) {
+                var options = dirtyOptions || {};
+                var width = options.width ? String(options.width) : args.defaultWidth;
+                var format = args.formats[width] || args.formats[args.defaultWidth];
+                return format;
+              };
+            }
+
+            var dateFormats = {
+              full: 'EEEE, MMMM do, y',
+              long: 'MMMM do, y',
+              medium: 'MMM d, y',
+              short: 'MM/dd/yyyy'
+            };
+            var timeFormats = {
+              full: 'h:mm:ss a zzzz',
+              long: 'h:mm:ss a z',
+              medium: 'h:mm:ss a',
+              short: 'h:mm a'
+            };
+            var dateTimeFormats = {
+              full: "{{date}} 'at' {{time}}",
+              long: "{{date}} 'at' {{time}}",
+              medium: '{{date}}, {{time}}',
+              short: '{{date}}, {{time}}'
+            };
+            var formatLong = {
+              date: buildFormatLongFn({
+                formats: dateFormats,
+                defaultWidth: 'full'
+              }),
+              time: buildFormatLongFn({
+                formats: timeFormats,
+                defaultWidth: 'full'
+              }),
+              dateTime: buildFormatLongFn({
+                formats: dateTimeFormats,
+                defaultWidth: 'full'
+              })
+            };
+
+            var formatRelativeLocale = {
+              lastWeek: "'last' eeee 'at' p",
+              yesterday: "'yesterday at' p",
+              today: "'today at' p",
+              tomorrow: "'tomorrow at' p",
+              nextWeek: "eeee 'at' p",
+              other: 'P'
+            };
+            function formatRelative(token, _date, _baseDate, _options) {
+              return formatRelativeLocale[token];
+            }
+
+            function buildLocalizeFn(args) {
+              return function (dirtyIndex, dirtyOptions) {
+                var options = dirtyOptions || {};
+                var context = options.context ? String(options.context) : 'standalone';
+                var valuesArray;
+
+                if (context === 'formatting' && args.formattingValues) {
+                  var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
+                  var width = options.width ? String(options.width) : defaultWidth;
+                  valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
+                } else {
+                  var _defaultWidth = args.defaultWidth;
+
+                  var _width = options.width ? String(options.width) : args.defaultWidth;
+
+                  valuesArray = args.values[_width] || args.values[_defaultWidth];
+                }
+
+                var index = args.argumentCallback ? args.argumentCallback(dirtyIndex) : dirtyIndex;
+                return valuesArray[index];
+              };
+            }
+
+            var eraValues = {
+              narrow: ['B', 'A'],
+              abbreviated: ['BC', 'AD'],
+              wide: ['Before Christ', 'Anno Domini']
+            };
+            var quarterValues = {
+              narrow: ['1', '2', '3', '4'],
+              abbreviated: ['Q1', 'Q2', 'Q3', 'Q4'],
+              wide: ['1st quarter', '2nd quarter', '3rd quarter', '4th quarter'] // Note: in English, the names of days of the week and months are capitalized.
+              // If you are making a new locale based on this one, check if the same is true for the language you're working on.
+              // Generally, formatted dates should look like they are in the middle of a sentence,
+              // e.g. in Spanish language the weekdays and months should be in the lowercase.
+
+            };
+            var monthValues = {
+              narrow: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+              abbreviated: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+              wide: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+            };
+            var dayValues = {
+              narrow: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+              short: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+              abbreviated: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+              wide: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+            };
+            var dayPeriodValues = {
+              narrow: {
+                am: 'a',
+                pm: 'p',
+                midnight: 'mi',
+                noon: 'n',
+                morning: 'morning',
+                afternoon: 'afternoon',
+                evening: 'evening',
+                night: 'night'
+              },
+              abbreviated: {
+                am: 'AM',
+                pm: 'PM',
+                midnight: 'midnight',
+                noon: 'noon',
+                morning: 'morning',
+                afternoon: 'afternoon',
+                evening: 'evening',
+                night: 'night'
+              },
+              wide: {
+                am: 'a.m.',
+                pm: 'p.m.',
+                midnight: 'midnight',
+                noon: 'noon',
+                morning: 'morning',
+                afternoon: 'afternoon',
+                evening: 'evening',
+                night: 'night'
+              }
+            };
+            var formattingDayPeriodValues = {
+              narrow: {
+                am: 'a',
+                pm: 'p',
+                midnight: 'mi',
+                noon: 'n',
+                morning: 'in the morning',
+                afternoon: 'in the afternoon',
+                evening: 'in the evening',
+                night: 'at night'
+              },
+              abbreviated: {
+                am: 'AM',
+                pm: 'PM',
+                midnight: 'midnight',
+                noon: 'noon',
+                morning: 'in the morning',
+                afternoon: 'in the afternoon',
+                evening: 'in the evening',
+                night: 'at night'
+              },
+              wide: {
+                am: 'a.m.',
+                pm: 'p.m.',
+                midnight: 'midnight',
+                noon: 'noon',
+                morning: 'in the morning',
+                afternoon: 'in the afternoon',
+                evening: 'in the evening',
+                night: 'at night'
+              }
+            };
+
+            function ordinalNumber(dirtyNumber, _dirtyOptions) {
+              var number = Number(dirtyNumber); // If ordinal numbers depend on context, for example,
+              // if they are different for different grammatical genders,
+              // use `options.unit`:
+              //
+              //   var options = dirtyOptions || {}
+              //   var unit = String(options.unit)
+              //
+              // where `unit` can be 'year', 'quarter', 'month', 'week', 'date', 'dayOfYear',
+              // 'day', 'hour', 'minute', 'second'
+
+              var rem100 = number % 100;
+
+              if (rem100 > 20 || rem100 < 10) {
+                switch (rem100 % 10) {
+                  case 1:
+                    return number + 'st';
+
+                  case 2:
+                    return number + 'nd';
+
+                  case 3:
+                    return number + 'rd';
+                }
+              }
+
+              return number + 'th';
+            }
+
+            var localize = {
+              ordinalNumber: ordinalNumber,
+              era: buildLocalizeFn({
+                values: eraValues,
+                defaultWidth: 'wide'
+              }),
+              quarter: buildLocalizeFn({
+                values: quarterValues,
+                defaultWidth: 'wide',
+                argumentCallback: function (quarter) {
+                  return Number(quarter) - 1;
+                }
+              }),
+              month: buildLocalizeFn({
+                values: monthValues,
+                defaultWidth: 'wide'
+              }),
+              day: buildLocalizeFn({
+                values: dayValues,
+                defaultWidth: 'wide'
+              }),
+              dayPeriod: buildLocalizeFn({
+                values: dayPeriodValues,
+                defaultWidth: 'wide',
+                formattingValues: formattingDayPeriodValues,
+                defaultFormattingWidth: 'wide'
+              })
+            };
+
+            function buildMatchPatternFn(args) {
+              return function (dirtyString, dirtyOptions) {
+                var string = String(dirtyString);
+                var options = dirtyOptions || {};
+                var matchResult = string.match(args.matchPattern);
+
+                if (!matchResult) {
+                  return null;
+                }
+
+                var matchedString = matchResult[0];
+                var parseResult = string.match(args.parsePattern);
+
+                if (!parseResult) {
+                  return null;
+                }
+
+                var value = args.valueCallback ? args.valueCallback(parseResult[0]) : parseResult[0];
+                value = options.valueCallback ? options.valueCallback(value) : value;
+                return {
+                  value: value,
+                  rest: string.slice(matchedString.length)
+                };
+              };
+            }
+
+            function buildMatchFn(args) {
+              return function (dirtyString, dirtyOptions) {
+                var string = String(dirtyString);
+                var options = dirtyOptions || {};
+                var width = options.width;
+                var matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
+                var matchResult = string.match(matchPattern);
+
+                if (!matchResult) {
+                  return null;
+                }
+
+                var matchedString = matchResult[0];
+                var parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
+                var value;
+
+                if (Object.prototype.toString.call(parsePatterns) === '[object Array]') {
+                  value = findIndex(parsePatterns, function (pattern) {
+                    return pattern.test(matchedString);
+                  });
+                } else {
+                  value = findKey(parsePatterns, function (pattern) {
+                    return pattern.test(matchedString);
+                  });
+                }
+
+                value = args.valueCallback ? args.valueCallback(value) : value;
+                value = options.valueCallback ? options.valueCallback(value) : value;
+                return {
+                  value: value,
+                  rest: string.slice(matchedString.length)
+                };
+              };
+            }
+
+            function findKey(object, predicate) {
+              for (var key in object) {
+                if (object.hasOwnProperty(key) && predicate(object[key])) {
+                  return key;
+                }
+              }
+            }
+
+            function findIndex(array, predicate) {
+              for (var key = 0; key < array.length; key++) {
+                if (predicate(array[key])) {
+                  return key;
+                }
+              }
+            }
+
+            var matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i;
+            var parseOrdinalNumberPattern = /\d+/i;
+            var matchEraPatterns = {
+              narrow: /^(b|a)/i,
+              abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
+              wide: /^(before christ|before common era|anno domini|common era)/i
+            };
+            var parseEraPatterns = {
+              any: [/^b/i, /^(a|c)/i]
+            };
+            var matchQuarterPatterns = {
+              narrow: /^[1234]/i,
+              abbreviated: /^q[1234]/i,
+              wide: /^[1234](th|st|nd|rd)? quarter/i
+            };
+            var parseQuarterPatterns = {
+              any: [/1/i, /2/i, /3/i, /4/i]
+            };
+            var matchMonthPatterns = {
+              narrow: /^[jfmasond]/i,
+              abbreviated: /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
+              wide: /^(january|february|march|april|may|june|july|august|september|october|november|december)/i
+            };
+            var parseMonthPatterns = {
+              narrow: [/^j/i, /^f/i, /^m/i, /^a/i, /^m/i, /^j/i, /^j/i, /^a/i, /^s/i, /^o/i, /^n/i, /^d/i],
+              any: [/^ja/i, /^f/i, /^mar/i, /^ap/i, /^may/i, /^jun/i, /^jul/i, /^au/i, /^s/i, /^o/i, /^n/i, /^d/i]
+            };
+            var matchDayPatterns = {
+              narrow: /^[smtwf]/i,
+              short: /^(su|mo|tu|we|th|fr|sa)/i,
+              abbreviated: /^(sun|mon|tue|wed|thu|fri|sat)/i,
+              wide: /^(sunday|monday|tuesday|wednesday|thursday|friday|saturday)/i
+            };
+            var parseDayPatterns = {
+              narrow: [/^s/i, /^m/i, /^t/i, /^w/i, /^t/i, /^f/i, /^s/i],
+              any: [/^su/i, /^m/i, /^tu/i, /^w/i, /^th/i, /^f/i, /^sa/i]
+            };
+            var matchDayPeriodPatterns = {
+              narrow: /^(a|p|mi|n|(in the|at) (morning|afternoon|evening|night))/i,
+              any: /^([ap]\.?\s?m\.?|midnight|noon|(in the|at) (morning|afternoon|evening|night))/i
+            };
+            var parseDayPeriodPatterns = {
+              any: {
+                am: /^a/i,
+                pm: /^p/i,
+                midnight: /^mi/i,
+                noon: /^no/i,
+                morning: /morning/i,
+                afternoon: /afternoon/i,
+                evening: /evening/i,
+                night: /night/i
+              }
+            };
+            var match = {
+              ordinalNumber: buildMatchPatternFn({
+                matchPattern: matchOrdinalNumberPattern,
+                parsePattern: parseOrdinalNumberPattern,
+                valueCallback: function (value) {
+                  return parseInt(value, 10);
+                }
+              }),
+              era: buildMatchFn({
+                matchPatterns: matchEraPatterns,
+                defaultMatchWidth: 'wide',
+                parsePatterns: parseEraPatterns,
+                defaultParseWidth: 'any'
+              }),
+              quarter: buildMatchFn({
+                matchPatterns: matchQuarterPatterns,
+                defaultMatchWidth: 'wide',
+                parsePatterns: parseQuarterPatterns,
+                defaultParseWidth: 'any',
+                valueCallback: function (index) {
+                  return index + 1;
+                }
+              }),
+              month: buildMatchFn({
+                matchPatterns: matchMonthPatterns,
+                defaultMatchWidth: 'wide',
+                parsePatterns: parseMonthPatterns,
+                defaultParseWidth: 'any'
+              }),
+              day: buildMatchFn({
+                matchPatterns: matchDayPatterns,
+                defaultMatchWidth: 'wide',
+                parsePatterns: parseDayPatterns,
+                defaultParseWidth: 'any'
+              }),
+              dayPeriod: buildMatchFn({
+                matchPatterns: matchDayPeriodPatterns,
+                defaultMatchWidth: 'any',
+                parsePatterns: parseDayPeriodPatterns,
+                defaultParseWidth: 'any'
+              })
+            };
+
+            /**
+             * @type {Locale}
+             * @category Locales
+             * @summary English locale (United States).
+             * @language English
+             * @iso-639-2 eng
+             * @author Sasha Koss [@kossnocorp]{@link https://github.com/kossnocorp}
+             * @author Lesha Koss [@leshakoss]{@link https://github.com/leshakoss}
+             */
+
+            var locale = {
+              code: 'en-US',
+              formatDistance: formatDistance$1,
+              formatLong: formatLong,
+              formatRelative: formatRelative,
+              localize: localize,
+              match: match,
+              options: {
+                weekStartsOn: 0
+                /* Sunday */
+                ,
+                firstWeekContainsDate: 1
+              }
+            };
+
+            function toInteger(dirtyNumber) {
+              if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
+                return NaN;
+              }
+
+              var number = Number(dirtyNumber);
+
+              if (isNaN(number)) {
+                return number;
+              }
+
+              return number < 0 ? Math.ceil(number) : Math.floor(number);
+            }
+
+            /**
+             * @name addMilliseconds
+             * @category Millisecond Helpers
+             * @summary Add the specified number of milliseconds to the given date.
+             *
+             * @description
+             * Add the specified number of milliseconds to the given date.
+             *
+             * ### v2.0.0 breaking changes:
+             *
+             * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+             *
+             * @param {Date|Number} date - the date to be changed
+             * @param {Number} amount - the amount of milliseconds to be added. Positive decimals will be rounded using `Math.floor`, decimals less than zero will be rounded using `Math.ceil`.
+             * @returns {Date} the new date with the milliseconds added
+             * @throws {TypeError} 2 arguments required
+             *
+             * @example
+             * // Add 750 milliseconds to 10 July 2014 12:45:30.000:
+             * const result = addMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
+             * //=> Thu Jul 10 2014 12:45:30.750
+             */
+
+            function addMilliseconds(dirtyDate, dirtyAmount) {
+              requiredArgs(2, arguments);
+              var timestamp = toDate(dirtyDate).getTime();
+              var amount = toInteger(dirtyAmount);
+              return new Date(timestamp + amount);
+            }
+
+            /**
+             * @name subMilliseconds
+             * @category Millisecond Helpers
+             * @summary Subtract the specified number of milliseconds from the given date.
+             *
+             * @description
+             * Subtract the specified number of milliseconds from the given date.
+             *
+             * ### v2.0.0 breaking changes:
+             *
+             * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+             *
+             * @param {Date|Number} date - the date to be changed
+             * @param {Number} amount - the amount of milliseconds to be subtracted. Positive decimals will be rounded using `Math.floor`, decimals less than zero will be rounded using `Math.ceil`.
+             * @returns {Date} the new date with the milliseconds subtracted
+             * @throws {TypeError} 2 arguments required
+             *
+             * @example
+             * // Subtract 750 milliseconds from 10 July 2014 12:45:30.000:
+             * const result = subMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
+             * //=> Thu Jul 10 2014 12:45:29.250
+             */
+
+            function subMilliseconds(dirtyDate, dirtyAmount) {
+              requiredArgs(2, arguments);
+              var amount = toInteger(dirtyAmount);
+              return addMilliseconds(dirtyDate, -amount);
+            }
+
+            function addLeadingZeros(number, targetLength) {
+              var sign = number < 0 ? '-' : '';
+              var output = Math.abs(number).toString();
+
+              while (output.length < targetLength) {
+                output = '0' + output;
+              }
+
+              return sign + output;
+            }
+
+            /*
+             * |     | Unit                           |     | Unit                           |
+             * |-----|--------------------------------|-----|--------------------------------|
+             * |  a  | AM, PM                         |  A* |                                |
+             * |  d  | Day of month                   |  D  |                                |
+             * |  h  | Hour [1-12]                    |  H  | Hour [0-23]                    |
+             * |  m  | Minute                         |  M  | Month                          |
+             * |  s  | Second                         |  S  | Fraction of second             |
+             * |  y  | Year (abs)                     |  Y  |                                |
+             *
+             * Letters marked by * are not implemented but reserved by Unicode standard.
+             */
+
+            var formatters$1 = {
+              // Year
+              y(date, token) {
+                // From http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_tokens
+                // | Year     |     y | yy |   yyy |  yyyy | yyyyy |
+                // |----------|-------|----|-------|-------|-------|
+                // | AD 1     |     1 | 01 |   001 |  0001 | 00001 |
+                // | AD 12    |    12 | 12 |   012 |  0012 | 00012 |
+                // | AD 123   |   123 | 23 |   123 |  0123 | 00123 |
+                // | AD 1234  |  1234 | 34 |  1234 |  1234 | 01234 |
+                // | AD 12345 | 12345 | 45 | 12345 | 12345 | 12345 |
+                var signedYear = date.getUTCFullYear(); // Returns 1 for 1 BC (which is year 0 in JavaScript)
+
+                var year = signedYear > 0 ? signedYear : 1 - signedYear;
+                return addLeadingZeros(token === 'yy' ? year % 100 : year, token.length);
+              },
+
+              // Month
+              M(date, token) {
+                var month = date.getUTCMonth();
+                return token === 'M' ? String(month + 1) : addLeadingZeros(month + 1, 2);
+              },
+
+              // Day of the month
+              d(date, token) {
+                return addLeadingZeros(date.getUTCDate(), token.length);
+              },
+
+              // AM or PM
+              a(date, token) {
+                var dayPeriodEnumValue = date.getUTCHours() / 12 >= 1 ? 'pm' : 'am';
+
+                switch (token) {
+                  case 'a':
+                  case 'aa':
+                    return dayPeriodEnumValue.toUpperCase();
+
+                  case 'aaa':
+                    return dayPeriodEnumValue;
+
+                  case 'aaaaa':
+                    return dayPeriodEnumValue[0];
+
+                  case 'aaaa':
+                  default:
+                    return dayPeriodEnumValue === 'am' ? 'a.m.' : 'p.m.';
+                }
+              },
+
+              // Hour [1-12]
+              h(date, token) {
+                return addLeadingZeros(date.getUTCHours() % 12 || 12, token.length);
+              },
+
+              // Hour [0-23]
+              H(date, token) {
+                return addLeadingZeros(date.getUTCHours(), token.length);
+              },
+
+              // Minute
+              m(date, token) {
+                return addLeadingZeros(date.getUTCMinutes(), token.length);
+              },
+
+              // Second
+              s(date, token) {
+                return addLeadingZeros(date.getUTCSeconds(), token.length);
+              },
+
+              // Fraction of second
+              S(date, token) {
+                var numberOfDigits = token.length;
+                var milliseconds = date.getUTCMilliseconds();
+                var fractionalSeconds = Math.floor(milliseconds * Math.pow(10, numberOfDigits - 3));
+                return addLeadingZeros(fractionalSeconds, token.length);
+              }
+
+            };
+
+            var MILLISECONDS_IN_DAY = 86400000; // This function will be a part of public API when UTC function will be implemented.
+            // See issue: https://github.com/date-fns/date-fns/issues/376
+
+            function getUTCDayOfYear(dirtyDate) {
+              requiredArgs(1, arguments);
+              var date = toDate(dirtyDate);
+              var timestamp = date.getTime();
+              date.setUTCMonth(0, 1);
+              date.setUTCHours(0, 0, 0, 0);
+              var startOfYearTimestamp = date.getTime();
+              var difference = timestamp - startOfYearTimestamp;
+              return Math.floor(difference / MILLISECONDS_IN_DAY) + 1;
+            }
+
+            // See issue: https://github.com/date-fns/date-fns/issues/376
+
+            function startOfUTCISOWeek(dirtyDate) {
+              requiredArgs(1, arguments);
+              var weekStartsOn = 1;
+              var date = toDate(dirtyDate);
+              var day = date.getUTCDay();
+              var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
+              date.setUTCDate(date.getUTCDate() - diff);
+              date.setUTCHours(0, 0, 0, 0);
+              return date;
+            }
+
+            // See issue: https://github.com/date-fns/date-fns/issues/376
+
+            function getUTCISOWeekYear(dirtyDate) {
+              requiredArgs(1, arguments);
+              var date = toDate(dirtyDate);
+              var year = date.getUTCFullYear();
+              var fourthOfJanuaryOfNextYear = new Date(0);
+              fourthOfJanuaryOfNextYear.setUTCFullYear(year + 1, 0, 4);
+              fourthOfJanuaryOfNextYear.setUTCHours(0, 0, 0, 0);
+              var startOfNextYear = startOfUTCISOWeek(fourthOfJanuaryOfNextYear);
+              var fourthOfJanuaryOfThisYear = new Date(0);
+              fourthOfJanuaryOfThisYear.setUTCFullYear(year, 0, 4);
+              fourthOfJanuaryOfThisYear.setUTCHours(0, 0, 0, 0);
+              var startOfThisYear = startOfUTCISOWeek(fourthOfJanuaryOfThisYear);
+
+              if (date.getTime() >= startOfNextYear.getTime()) {
+                return year + 1;
+              } else if (date.getTime() >= startOfThisYear.getTime()) {
+                return year;
+              } else {
+                return year - 1;
+              }
+            }
+
+            // See issue: https://github.com/date-fns/date-fns/issues/376
+
+            function startOfUTCISOWeekYear(dirtyDate) {
+              requiredArgs(1, arguments);
+              var year = getUTCISOWeekYear(dirtyDate);
+              var fourthOfJanuary = new Date(0);
+              fourthOfJanuary.setUTCFullYear(year, 0, 4);
+              fourthOfJanuary.setUTCHours(0, 0, 0, 0);
+              var date = startOfUTCISOWeek(fourthOfJanuary);
+              return date;
+            }
+
+            var MILLISECONDS_IN_WEEK$1 = 604800000; // This function will be a part of public API when UTC function will be implemented.
+            // See issue: https://github.com/date-fns/date-fns/issues/376
+
+            function getUTCISOWeek(dirtyDate) {
+              requiredArgs(1, arguments);
+              var date = toDate(dirtyDate);
+              var diff = startOfUTCISOWeek(date).getTime() - startOfUTCISOWeekYear(date).getTime(); // Round the number of days to the nearest integer
+              // because the number of milliseconds in a week is not constant
+              // (e.g. it's different in the week of the daylight saving time clock shift)
+
+              return Math.round(diff / MILLISECONDS_IN_WEEK$1) + 1;
+            }
+
+            // See issue: https://github.com/date-fns/date-fns/issues/376
+
+            function startOfUTCWeek(dirtyDate, dirtyOptions) {
+              requiredArgs(1, arguments);
+              var options = dirtyOptions || {};
+              var locale = options.locale;
+              var localeWeekStartsOn = locale && locale.options && locale.options.weekStartsOn;
+              var defaultWeekStartsOn = localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
+              var weekStartsOn = options.weekStartsOn == null ? defaultWeekStartsOn : toInteger(options.weekStartsOn); // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
+
+              if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
+                throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
+              }
+
+              var date = toDate(dirtyDate);
+              var day = date.getUTCDay();
+              var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
+              date.setUTCDate(date.getUTCDate() - diff);
+              date.setUTCHours(0, 0, 0, 0);
+              return date;
+            }
+
+            // See issue: https://github.com/date-fns/date-fns/issues/376
+
+            function getUTCWeekYear(dirtyDate, dirtyOptions) {
+              requiredArgs(1, arguments);
+              var date = toDate(dirtyDate, dirtyOptions);
+              var year = date.getUTCFullYear();
+              var options = dirtyOptions || {};
+              var locale = options.locale;
+              var localeFirstWeekContainsDate = locale && locale.options && locale.options.firstWeekContainsDate;
+              var defaultFirstWeekContainsDate = localeFirstWeekContainsDate == null ? 1 : toInteger(localeFirstWeekContainsDate);
+              var firstWeekContainsDate = options.firstWeekContainsDate == null ? defaultFirstWeekContainsDate : toInteger(options.firstWeekContainsDate); // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
+
+              if (!(firstWeekContainsDate >= 1 && firstWeekContainsDate <= 7)) {
+                throw new RangeError('firstWeekContainsDate must be between 1 and 7 inclusively');
+              }
+
+              var firstWeekOfNextYear = new Date(0);
+              firstWeekOfNextYear.setUTCFullYear(year + 1, 0, firstWeekContainsDate);
+              firstWeekOfNextYear.setUTCHours(0, 0, 0, 0);
+              var startOfNextYear = startOfUTCWeek(firstWeekOfNextYear, dirtyOptions);
+              var firstWeekOfThisYear = new Date(0);
+              firstWeekOfThisYear.setUTCFullYear(year, 0, firstWeekContainsDate);
+              firstWeekOfThisYear.setUTCHours(0, 0, 0, 0);
+              var startOfThisYear = startOfUTCWeek(firstWeekOfThisYear, dirtyOptions);
+
+              if (date.getTime() >= startOfNextYear.getTime()) {
+                return year + 1;
+              } else if (date.getTime() >= startOfThisYear.getTime()) {
+                return year;
+              } else {
+                return year - 1;
+              }
+            }
+
+            // See issue: https://github.com/date-fns/date-fns/issues/376
+
+            function startOfUTCWeekYear(dirtyDate, dirtyOptions) {
+              requiredArgs(1, arguments);
+              var options = dirtyOptions || {};
+              var locale = options.locale;
+              var localeFirstWeekContainsDate = locale && locale.options && locale.options.firstWeekContainsDate;
+              var defaultFirstWeekContainsDate = localeFirstWeekContainsDate == null ? 1 : toInteger(localeFirstWeekContainsDate);
+              var firstWeekContainsDate = options.firstWeekContainsDate == null ? defaultFirstWeekContainsDate : toInteger(options.firstWeekContainsDate);
+              var year = getUTCWeekYear(dirtyDate, dirtyOptions);
+              var firstWeek = new Date(0);
+              firstWeek.setUTCFullYear(year, 0, firstWeekContainsDate);
+              firstWeek.setUTCHours(0, 0, 0, 0);
+              var date = startOfUTCWeek(firstWeek, dirtyOptions);
+              return date;
+            }
+
+            var MILLISECONDS_IN_WEEK = 604800000; // This function will be a part of public API when UTC function will be implemented.
+            // See issue: https://github.com/date-fns/date-fns/issues/376
+
+            function getUTCWeek(dirtyDate, options) {
+              requiredArgs(1, arguments);
+              var date = toDate(dirtyDate);
+              var diff = startOfUTCWeek(date, options).getTime() - startOfUTCWeekYear(date, options).getTime(); // Round the number of days to the nearest integer
+              // because the number of milliseconds in a week is not constant
+              // (e.g. it's different in the week of the daylight saving time clock shift)
+
+              return Math.round(diff / MILLISECONDS_IN_WEEK) + 1;
+            }
+
+            var dayPeriodEnum = {
+              am: 'am',
+              pm: 'pm',
+              midnight: 'midnight',
+              noon: 'noon',
+              morning: 'morning',
+              afternoon: 'afternoon',
+              evening: 'evening',
+              night: 'night'
+              /*
+               * |     | Unit                           |     | Unit                           |
+               * |-----|--------------------------------|-----|--------------------------------|
+               * |  a  | AM, PM                         |  A* | Milliseconds in day            |
+               * |  b  | AM, PM, noon, midnight         |  B  | Flexible day period            |
+               * |  c  | Stand-alone local day of week  |  C* | Localized hour w/ day period   |
+               * |  d  | Day of month                   |  D  | Day of year                    |
+               * |  e  | Local day of week              |  E  | Day of week                    |
+               * |  f  |                                |  F* | Day of week in month           |
+               * |  g* | Modified Julian day            |  G  | Era                            |
+               * |  h  | Hour [1-12]                    |  H  | Hour [0-23]                    |
+               * |  i! | ISO day of week                |  I! | ISO week of year               |
+               * |  j* | Localized hour w/ day period   |  J* | Localized hour w/o day period  |
+               * |  k  | Hour [1-24]                    |  K  | Hour [0-11]                    |
+               * |  l* | (deprecated)                   |  L  | Stand-alone month              |
+               * |  m  | Minute                         |  M  | Month                          |
+               * |  n  |                                |  N  |                                |
+               * |  o! | Ordinal number modifier        |  O  | Timezone (GMT)                 |
+               * |  p! | Long localized time            |  P! | Long localized date            |
+               * |  q  | Stand-alone quarter            |  Q  | Quarter                        |
+               * |  r* | Related Gregorian year         |  R! | ISO week-numbering year        |
+               * |  s  | Second                         |  S  | Fraction of second             |
+               * |  t! | Seconds timestamp              |  T! | Milliseconds timestamp         |
+               * |  u  | Extended year                  |  U* | Cyclic year                    |
+               * |  v* | Timezone (generic non-locat.)  |  V* | Timezone (location)            |
+               * |  w  | Local week of year             |  W* | Week of month                  |
+               * |  x  | Timezone (ISO-8601 w/o Z)      |  X  | Timezone (ISO-8601)            |
+               * |  y  | Year (abs)                     |  Y  | Local week-numbering year      |
+               * |  z  | Timezone (specific non-locat.) |  Z* | Timezone (aliases)             |
+               *
+               * Letters marked by * are not implemented but reserved by Unicode standard.
+               *
+               * Letters marked by ! are non-standard, but implemented by date-fns:
+               * - `o` modifies the previous token to turn it into an ordinal (see `format` docs)
+               * - `i` is ISO day of week. For `i` and `ii` is returns numeric ISO week days,
+               *   i.e. 7 for Sunday, 1 for Monday, etc.
+               * - `I` is ISO week of year, as opposed to `w` which is local week of year.
+               * - `R` is ISO week-numbering year, as opposed to `Y` which is local week-numbering year.
+               *   `R` is supposed to be used in conjunction with `I` and `i`
+               *   for universal ISO week-numbering date, whereas
+               *   `Y` is supposed to be used in conjunction with `w` and `e`
+               *   for week-numbering date specific to the locale.
+               * - `P` is long localized date format
+               * - `p` is long localized time format
+               */
+
+            };
+            var formatters = {
+              // Era
+              G: function (date, token, localize) {
+                var era = date.getUTCFullYear() > 0 ? 1 : 0;
+
+                switch (token) {
+                  // AD, BC
+                  case 'G':
+                  case 'GG':
+                  case 'GGG':
+                    return localize.era(era, {
+                      width: 'abbreviated'
+                    });
+                  // A, B
+
+                  case 'GGGGG':
+                    return localize.era(era, {
+                      width: 'narrow'
+                    });
+                  // Anno Domini, Before Christ
+
+                  case 'GGGG':
+                  default:
+                    return localize.era(era, {
+                      width: 'wide'
+                    });
+                }
+              },
+              // Year
+              y: function (date, token, localize) {
+                // Ordinal number
+                if (token === 'yo') {
+                  var signedYear = date.getUTCFullYear(); // Returns 1 for 1 BC (which is year 0 in JavaScript)
+
+                  var year = signedYear > 0 ? signedYear : 1 - signedYear;
+                  return localize.ordinalNumber(year, {
+                    unit: 'year'
+                  });
+                }
+
+                return formatters$1.y(date, token);
+              },
+              // Local week-numbering year
+              Y: function (date, token, localize, options) {
+                var signedWeekYear = getUTCWeekYear(date, options); // Returns 1 for 1 BC (which is year 0 in JavaScript)
+
+                var weekYear = signedWeekYear > 0 ? signedWeekYear : 1 - signedWeekYear; // Two digit year
+
+                if (token === 'YY') {
+                  var twoDigitYear = weekYear % 100;
+                  return addLeadingZeros(twoDigitYear, 2);
+                } // Ordinal number
+
+
+                if (token === 'Yo') {
+                  return localize.ordinalNumber(weekYear, {
+                    unit: 'year'
+                  });
+                } // Padding
+
+
+                return addLeadingZeros(weekYear, token.length);
+              },
+              // ISO week-numbering year
+              R: function (date, token) {
+                var isoWeekYear = getUTCISOWeekYear(date); // Padding
+
+                return addLeadingZeros(isoWeekYear, token.length);
+              },
+              // Extended year. This is a single number designating the year of this calendar system.
+              // The main difference between `y` and `u` localizers are B.C. years:
+              // | Year | `y` | `u` |
+              // |------|-----|-----|
+              // | AC 1 |   1 |   1 |
+              // | BC 1 |   1 |   0 |
+              // | BC 2 |   2 |  -1 |
+              // Also `yy` always returns the last two digits of a year,
+              // while `uu` pads single digit years to 2 characters and returns other years unchanged.
+              u: function (date, token) {
+                var year = date.getUTCFullYear();
+                return addLeadingZeros(year, token.length);
+              },
+              // Quarter
+              Q: function (date, token, localize) {
+                var quarter = Math.ceil((date.getUTCMonth() + 1) / 3);
+
+                switch (token) {
+                  // 1, 2, 3, 4
+                  case 'Q':
+                    return String(quarter);
+                  // 01, 02, 03, 04
+
+                  case 'QQ':
+                    return addLeadingZeros(quarter, 2);
+                  // 1st, 2nd, 3rd, 4th
+
+                  case 'Qo':
+                    return localize.ordinalNumber(quarter, {
+                      unit: 'quarter'
+                    });
+                  // Q1, Q2, Q3, Q4
+
+                  case 'QQQ':
+                    return localize.quarter(quarter, {
+                      width: 'abbreviated',
+                      context: 'formatting'
+                    });
+                  // 1, 2, 3, 4 (narrow quarter; could be not numerical)
+
+                  case 'QQQQQ':
+                    return localize.quarter(quarter, {
+                      width: 'narrow',
+                      context: 'formatting'
+                    });
+                  // 1st quarter, 2nd quarter, ...
+
+                  case 'QQQQ':
+                  default:
+                    return localize.quarter(quarter, {
+                      width: 'wide',
+                      context: 'formatting'
+                    });
+                }
+              },
+              // Stand-alone quarter
+              q: function (date, token, localize) {
+                var quarter = Math.ceil((date.getUTCMonth() + 1) / 3);
+
+                switch (token) {
+                  // 1, 2, 3, 4
+                  case 'q':
+                    return String(quarter);
+                  // 01, 02, 03, 04
+
+                  case 'qq':
+                    return addLeadingZeros(quarter, 2);
+                  // 1st, 2nd, 3rd, 4th
+
+                  case 'qo':
+                    return localize.ordinalNumber(quarter, {
+                      unit: 'quarter'
+                    });
+                  // Q1, Q2, Q3, Q4
+
+                  case 'qqq':
+                    return localize.quarter(quarter, {
+                      width: 'abbreviated',
+                      context: 'standalone'
+                    });
+                  // 1, 2, 3, 4 (narrow quarter; could be not numerical)
+
+                  case 'qqqqq':
+                    return localize.quarter(quarter, {
+                      width: 'narrow',
+                      context: 'standalone'
+                    });
+                  // 1st quarter, 2nd quarter, ...
+
+                  case 'qqqq':
+                  default:
+                    return localize.quarter(quarter, {
+                      width: 'wide',
+                      context: 'standalone'
+                    });
+                }
+              },
+              // Month
+              M: function (date, token, localize) {
+                var month = date.getUTCMonth();
+
+                switch (token) {
+                  case 'M':
+                  case 'MM':
+                    return formatters$1.M(date, token);
+                  // 1st, 2nd, ..., 12th
+
+                  case 'Mo':
+                    return localize.ordinalNumber(month + 1, {
+                      unit: 'month'
+                    });
+                  // Jan, Feb, ..., Dec
+
+                  case 'MMM':
+                    return localize.month(month, {
+                      width: 'abbreviated',
+                      context: 'formatting'
+                    });
+                  // J, F, ..., D
+
+                  case 'MMMMM':
+                    return localize.month(month, {
+                      width: 'narrow',
+                      context: 'formatting'
+                    });
+                  // January, February, ..., December
+
+                  case 'MMMM':
+                  default:
+                    return localize.month(month, {
+                      width: 'wide',
+                      context: 'formatting'
+                    });
+                }
+              },
+              // Stand-alone month
+              L: function (date, token, localize) {
+                var month = date.getUTCMonth();
+
+                switch (token) {
+                  // 1, 2, ..., 12
+                  case 'L':
+                    return String(month + 1);
+                  // 01, 02, ..., 12
+
+                  case 'LL':
+                    return addLeadingZeros(month + 1, 2);
+                  // 1st, 2nd, ..., 12th
+
+                  case 'Lo':
+                    return localize.ordinalNumber(month + 1, {
+                      unit: 'month'
+                    });
+                  // Jan, Feb, ..., Dec
+
+                  case 'LLL':
+                    return localize.month(month, {
+                      width: 'abbreviated',
+                      context: 'standalone'
+                    });
+                  // J, F, ..., D
+
+                  case 'LLLLL':
+                    return localize.month(month, {
+                      width: 'narrow',
+                      context: 'standalone'
+                    });
+                  // January, February, ..., December
+
+                  case 'LLLL':
+                  default:
+                    return localize.month(month, {
+                      width: 'wide',
+                      context: 'standalone'
+                    });
+                }
+              },
+              // Local week of year
+              w: function (date, token, localize, options) {
+                var week = getUTCWeek(date, options);
+
+                if (token === 'wo') {
+                  return localize.ordinalNumber(week, {
+                    unit: 'week'
+                  });
+                }
+
+                return addLeadingZeros(week, token.length);
+              },
+              // ISO week of year
+              I: function (date, token, localize) {
+                var isoWeek = getUTCISOWeek(date);
+
+                if (token === 'Io') {
+                  return localize.ordinalNumber(isoWeek, {
+                    unit: 'week'
+                  });
+                }
+
+                return addLeadingZeros(isoWeek, token.length);
+              },
+              // Day of the month
+              d: function (date, token, localize) {
+                if (token === 'do') {
+                  return localize.ordinalNumber(date.getUTCDate(), {
+                    unit: 'date'
+                  });
+                }
+
+                return formatters$1.d(date, token);
+              },
+              // Day of year
+              D: function (date, token, localize) {
+                var dayOfYear = getUTCDayOfYear(date);
+
+                if (token === 'Do') {
+                  return localize.ordinalNumber(dayOfYear, {
+                    unit: 'dayOfYear'
+                  });
+                }
+
+                return addLeadingZeros(dayOfYear, token.length);
+              },
+              // Day of week
+              E: function (date, token, localize) {
+                var dayOfWeek = date.getUTCDay();
+
+                switch (token) {
+                  // Tue
+                  case 'E':
+                  case 'EE':
+                  case 'EEE':
+                    return localize.day(dayOfWeek, {
+                      width: 'abbreviated',
+                      context: 'formatting'
+                    });
+                  // T
+
+                  case 'EEEEE':
+                    return localize.day(dayOfWeek, {
+                      width: 'narrow',
+                      context: 'formatting'
+                    });
+                  // Tu
+
+                  case 'EEEEEE':
+                    return localize.day(dayOfWeek, {
+                      width: 'short',
+                      context: 'formatting'
+                    });
+                  // Tuesday
+
+                  case 'EEEE':
+                  default:
+                    return localize.day(dayOfWeek, {
+                      width: 'wide',
+                      context: 'formatting'
+                    });
+                }
+              },
+              // Local day of week
+              e: function (date, token, localize, options) {
+                var dayOfWeek = date.getUTCDay();
+                var localDayOfWeek = (dayOfWeek - options.weekStartsOn + 8) % 7 || 7;
+
+                switch (token) {
+                  // Numerical value (Nth day of week with current locale or weekStartsOn)
+                  case 'e':
+                    return String(localDayOfWeek);
+                  // Padded numerical value
+
+                  case 'ee':
+                    return addLeadingZeros(localDayOfWeek, 2);
+                  // 1st, 2nd, ..., 7th
+
+                  case 'eo':
+                    return localize.ordinalNumber(localDayOfWeek, {
+                      unit: 'day'
+                    });
+
+                  case 'eee':
+                    return localize.day(dayOfWeek, {
+                      width: 'abbreviated',
+                      context: 'formatting'
+                    });
+                  // T
+
+                  case 'eeeee':
+                    return localize.day(dayOfWeek, {
+                      width: 'narrow',
+                      context: 'formatting'
+                    });
+                  // Tu
+
+                  case 'eeeeee':
+                    return localize.day(dayOfWeek, {
+                      width: 'short',
+                      context: 'formatting'
+                    });
+                  // Tuesday
+
+                  case 'eeee':
+                  default:
+                    return localize.day(dayOfWeek, {
+                      width: 'wide',
+                      context: 'formatting'
+                    });
+                }
+              },
+              // Stand-alone local day of week
+              c: function (date, token, localize, options) {
+                var dayOfWeek = date.getUTCDay();
+                var localDayOfWeek = (dayOfWeek - options.weekStartsOn + 8) % 7 || 7;
+
+                switch (token) {
+                  // Numerical value (same as in `e`)
+                  case 'c':
+                    return String(localDayOfWeek);
+                  // Padded numerical value
+
+                  case 'cc':
+                    return addLeadingZeros(localDayOfWeek, token.length);
+                  // 1st, 2nd, ..., 7th
+
+                  case 'co':
+                    return localize.ordinalNumber(localDayOfWeek, {
+                      unit: 'day'
+                    });
+
+                  case 'ccc':
+                    return localize.day(dayOfWeek, {
+                      width: 'abbreviated',
+                      context: 'standalone'
+                    });
+                  // T
+
+                  case 'ccccc':
+                    return localize.day(dayOfWeek, {
+                      width: 'narrow',
+                      context: 'standalone'
+                    });
+                  // Tu
+
+                  case 'cccccc':
+                    return localize.day(dayOfWeek, {
+                      width: 'short',
+                      context: 'standalone'
+                    });
+                  // Tuesday
+
+                  case 'cccc':
+                  default:
+                    return localize.day(dayOfWeek, {
+                      width: 'wide',
+                      context: 'standalone'
+                    });
+                }
+              },
+              // ISO day of week
+              i: function (date, token, localize) {
+                var dayOfWeek = date.getUTCDay();
+                var isoDayOfWeek = dayOfWeek === 0 ? 7 : dayOfWeek;
+
+                switch (token) {
+                  // 2
+                  case 'i':
+                    return String(isoDayOfWeek);
+                  // 02
+
+                  case 'ii':
+                    return addLeadingZeros(isoDayOfWeek, token.length);
+                  // 2nd
+
+                  case 'io':
+                    return localize.ordinalNumber(isoDayOfWeek, {
+                      unit: 'day'
+                    });
+                  // Tue
+
+                  case 'iii':
+                    return localize.day(dayOfWeek, {
+                      width: 'abbreviated',
+                      context: 'formatting'
+                    });
+                  // T
+
+                  case 'iiiii':
+                    return localize.day(dayOfWeek, {
+                      width: 'narrow',
+                      context: 'formatting'
+                    });
+                  // Tu
+
+                  case 'iiiiii':
+                    return localize.day(dayOfWeek, {
+                      width: 'short',
+                      context: 'formatting'
+                    });
+                  // Tuesday
+
+                  case 'iiii':
+                  default:
+                    return localize.day(dayOfWeek, {
+                      width: 'wide',
+                      context: 'formatting'
+                    });
+                }
+              },
+              // AM or PM
+              a: function (date, token, localize) {
+                var hours = date.getUTCHours();
+                var dayPeriodEnumValue = hours / 12 >= 1 ? 'pm' : 'am';
+
+                switch (token) {
+                  case 'a':
+                  case 'aa':
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'abbreviated',
+                      context: 'formatting'
+                    });
+
+                  case 'aaa':
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'abbreviated',
+                      context: 'formatting'
+                    }).toLowerCase();
+
+                  case 'aaaaa':
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'narrow',
+                      context: 'formatting'
+                    });
+
+                  case 'aaaa':
+                  default:
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'wide',
+                      context: 'formatting'
+                    });
+                }
+              },
+              // AM, PM, midnight, noon
+              b: function (date, token, localize) {
+                var hours = date.getUTCHours();
+                var dayPeriodEnumValue;
+
+                if (hours === 12) {
+                  dayPeriodEnumValue = dayPeriodEnum.noon;
+                } else if (hours === 0) {
+                  dayPeriodEnumValue = dayPeriodEnum.midnight;
+                } else {
+                  dayPeriodEnumValue = hours / 12 >= 1 ? 'pm' : 'am';
+                }
+
+                switch (token) {
+                  case 'b':
+                  case 'bb':
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'abbreviated',
+                      context: 'formatting'
+                    });
+
+                  case 'bbb':
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'abbreviated',
+                      context: 'formatting'
+                    }).toLowerCase();
+
+                  case 'bbbbb':
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'narrow',
+                      context: 'formatting'
+                    });
+
+                  case 'bbbb':
+                  default:
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'wide',
+                      context: 'formatting'
+                    });
+                }
+              },
+              // in the morning, in the afternoon, in the evening, at night
+              B: function (date, token, localize) {
+                var hours = date.getUTCHours();
+                var dayPeriodEnumValue;
+
+                if (hours >= 17) {
+                  dayPeriodEnumValue = dayPeriodEnum.evening;
+                } else if (hours >= 12) {
+                  dayPeriodEnumValue = dayPeriodEnum.afternoon;
+                } else if (hours >= 4) {
+                  dayPeriodEnumValue = dayPeriodEnum.morning;
+                } else {
+                  dayPeriodEnumValue = dayPeriodEnum.night;
+                }
+
+                switch (token) {
+                  case 'B':
+                  case 'BB':
+                  case 'BBB':
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'abbreviated',
+                      context: 'formatting'
+                    });
+
+                  case 'BBBBB':
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'narrow',
+                      context: 'formatting'
+                    });
+
+                  case 'BBBB':
+                  default:
+                    return localize.dayPeriod(dayPeriodEnumValue, {
+                      width: 'wide',
+                      context: 'formatting'
+                    });
+                }
+              },
+              // Hour [1-12]
+              h: function (date, token, localize) {
+                if (token === 'ho') {
+                  var hours = date.getUTCHours() % 12;
+                  if (hours === 0) hours = 12;
+                  return localize.ordinalNumber(hours, {
+                    unit: 'hour'
+                  });
+                }
+
+                return formatters$1.h(date, token);
+              },
+              // Hour [0-23]
+              H: function (date, token, localize) {
+                if (token === 'Ho') {
+                  return localize.ordinalNumber(date.getUTCHours(), {
+                    unit: 'hour'
+                  });
+                }
+
+                return formatters$1.H(date, token);
+              },
+              // Hour [0-11]
+              K: function (date, token, localize) {
+                var hours = date.getUTCHours() % 12;
+
+                if (token === 'Ko') {
+                  return localize.ordinalNumber(hours, {
+                    unit: 'hour'
+                  });
+                }
+
+                return addLeadingZeros(hours, token.length);
+              },
+              // Hour [1-24]
+              k: function (date, token, localize) {
+                var hours = date.getUTCHours();
+                if (hours === 0) hours = 24;
+
+                if (token === 'ko') {
+                  return localize.ordinalNumber(hours, {
+                    unit: 'hour'
+                  });
+                }
+
+                return addLeadingZeros(hours, token.length);
+              },
+              // Minute
+              m: function (date, token, localize) {
+                if (token === 'mo') {
+                  return localize.ordinalNumber(date.getUTCMinutes(), {
+                    unit: 'minute'
+                  });
+                }
+
+                return formatters$1.m(date, token);
+              },
+              // Second
+              s: function (date, token, localize) {
+                if (token === 'so') {
+                  return localize.ordinalNumber(date.getUTCSeconds(), {
+                    unit: 'second'
+                  });
+                }
+
+                return formatters$1.s(date, token);
+              },
+              // Fraction of second
+              S: function (date, token) {
+                return formatters$1.S(date, token);
+              },
+              // Timezone (ISO-8601. If offset is 0, output is always `'Z'`)
+              X: function (date, token, _localize, options) {
+                var originalDate = options._originalDate || date;
+                var timezoneOffset = originalDate.getTimezoneOffset();
+
+                if (timezoneOffset === 0) {
+                  return 'Z';
+                }
+
+                switch (token) {
+                  // Hours and optional minutes
+                  case 'X':
+                    return formatTimezoneWithOptionalMinutes(timezoneOffset);
+                  // Hours, minutes and optional seconds without `:` delimiter
+                  // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+                  // so this token always has the same output as `XX`
+
+                  case 'XXXX':
+                  case 'XX':
+                    // Hours and minutes without `:` delimiter
+                    return formatTimezone(timezoneOffset);
+                  // Hours, minutes and optional seconds with `:` delimiter
+                  // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+                  // so this token always has the same output as `XXX`
+
+                  case 'XXXXX':
+                  case 'XXX': // Hours and minutes with `:` delimiter
+
+                  default:
+                    return formatTimezone(timezoneOffset, ':');
+                }
+              },
+              // Timezone (ISO-8601. If offset is 0, output is `'+00:00'` or equivalent)
+              x: function (date, token, _localize, options) {
+                var originalDate = options._originalDate || date;
+                var timezoneOffset = originalDate.getTimezoneOffset();
+
+                switch (token) {
+                  // Hours and optional minutes
+                  case 'x':
+                    return formatTimezoneWithOptionalMinutes(timezoneOffset);
+                  // Hours, minutes and optional seconds without `:` delimiter
+                  // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+                  // so this token always has the same output as `xx`
+
+                  case 'xxxx':
+                  case 'xx':
+                    // Hours and minutes without `:` delimiter
+                    return formatTimezone(timezoneOffset);
+                  // Hours, minutes and optional seconds with `:` delimiter
+                  // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+                  // so this token always has the same output as `xxx`
+
+                  case 'xxxxx':
+                  case 'xxx': // Hours and minutes with `:` delimiter
+
+                  default:
+                    return formatTimezone(timezoneOffset, ':');
+                }
+              },
+              // Timezone (GMT)
+              O: function (date, token, _localize, options) {
+                var originalDate = options._originalDate || date;
+                var timezoneOffset = originalDate.getTimezoneOffset();
+
+                switch (token) {
+                  // Short
+                  case 'O':
+                  case 'OO':
+                  case 'OOO':
+                    return 'GMT' + formatTimezoneShort(timezoneOffset, ':');
+                  // Long
+
+                  case 'OOOO':
+                  default:
+                    return 'GMT' + formatTimezone(timezoneOffset, ':');
+                }
+              },
+              // Timezone (specific non-location)
+              z: function (date, token, _localize, options) {
+                var originalDate = options._originalDate || date;
+                var timezoneOffset = originalDate.getTimezoneOffset();
+
+                switch (token) {
+                  // Short
+                  case 'z':
+                  case 'zz':
+                  case 'zzz':
+                    return 'GMT' + formatTimezoneShort(timezoneOffset, ':');
+                  // Long
+
+                  case 'zzzz':
+                  default:
+                    return 'GMT' + formatTimezone(timezoneOffset, ':');
+                }
+              },
+              // Seconds timestamp
+              t: function (date, token, _localize, options) {
+                var originalDate = options._originalDate || date;
+                var timestamp = Math.floor(originalDate.getTime() / 1000);
+                return addLeadingZeros(timestamp, token.length);
+              },
+              // Milliseconds timestamp
+              T: function (date, token, _localize, options) {
+                var originalDate = options._originalDate || date;
+                var timestamp = originalDate.getTime();
+                return addLeadingZeros(timestamp, token.length);
+              }
+            };
+
+            function formatTimezoneShort(offset, dirtyDelimiter) {
+              var sign = offset > 0 ? '-' : '+';
+              var absOffset = Math.abs(offset);
+              var hours = Math.floor(absOffset / 60);
+              var minutes = absOffset % 60;
+
+              if (minutes === 0) {
+                return sign + String(hours);
+              }
+
+              var delimiter = dirtyDelimiter || '';
+              return sign + String(hours) + delimiter + addLeadingZeros(minutes, 2);
+            }
+
+            function formatTimezoneWithOptionalMinutes(offset, dirtyDelimiter) {
+              if (offset % 60 === 0) {
+                var sign = offset > 0 ? '-' : '+';
+                return sign + addLeadingZeros(Math.abs(offset) / 60, 2);
+              }
+
+              return formatTimezone(offset, dirtyDelimiter);
+            }
+
+            function formatTimezone(offset, dirtyDelimiter) {
+              var delimiter = dirtyDelimiter || '';
+              var sign = offset > 0 ? '-' : '+';
+              var absOffset = Math.abs(offset);
+              var hours = addLeadingZeros(Math.floor(absOffset / 60), 2);
+              var minutes = addLeadingZeros(absOffset % 60, 2);
+              return sign + hours + delimiter + minutes;
+            }
+
+            function dateLongFormatter(pattern, formatLong) {
+              switch (pattern) {
+                case 'P':
+                  return formatLong.date({
+                    width: 'short'
+                  });
+
+                case 'PP':
+                  return formatLong.date({
+                    width: 'medium'
+                  });
+
+                case 'PPP':
+                  return formatLong.date({
+                    width: 'long'
+                  });
+
+                case 'PPPP':
+                default:
+                  return formatLong.date({
+                    width: 'full'
+                  });
+              }
+            }
+
+            function timeLongFormatter(pattern, formatLong) {
+              switch (pattern) {
+                case 'p':
+                  return formatLong.time({
+                    width: 'short'
+                  });
+
+                case 'pp':
+                  return formatLong.time({
+                    width: 'medium'
+                  });
+
+                case 'ppp':
+                  return formatLong.time({
+                    width: 'long'
+                  });
+
+                case 'pppp':
+                default:
+                  return formatLong.time({
+                    width: 'full'
+                  });
+              }
+            }
+
+            function dateTimeLongFormatter(pattern, formatLong) {
+              var matchResult = pattern.match(/(P+)(p+)?/);
+              var datePattern = matchResult[1];
+              var timePattern = matchResult[2];
+
+              if (!timePattern) {
+                return dateLongFormatter(pattern, formatLong);
+              }
+
+              var dateTimeFormat;
+
+              switch (datePattern) {
+                case 'P':
+                  dateTimeFormat = formatLong.dateTime({
+                    width: 'short'
+                  });
+                  break;
+
+                case 'PP':
+                  dateTimeFormat = formatLong.dateTime({
+                    width: 'medium'
+                  });
+                  break;
+
+                case 'PPP':
+                  dateTimeFormat = formatLong.dateTime({
+                    width: 'long'
+                  });
+                  break;
+
+                case 'PPPP':
+                default:
+                  dateTimeFormat = formatLong.dateTime({
+                    width: 'full'
+                  });
+                  break;
+              }
+
+              return dateTimeFormat.replace('{{date}}', dateLongFormatter(datePattern, formatLong)).replace('{{time}}', timeLongFormatter(timePattern, formatLong));
+            }
+
+            var longFormatters = {
+              p: timeLongFormatter,
+              P: dateTimeLongFormatter
+            };
+
+            /**
+             * Google Chrome as of 67.0.3396.87 introduced timezones with offset that includes seconds.
+             * They usually appear for dates that denote time before the timezones were introduced
+             * (e.g. for 'Europe/Prague' timezone the offset is GMT+00:57:44 before 1 October 1891
+             * and GMT+01:00:00 after that date)
+             *
+             * Date#getTimezoneOffset returns the offset in minutes and would return 57 for the example above,
+             * which would lead to incorrect calculations.
+             *
+             * This function returns the timezone offset in milliseconds that takes seconds in account.
+             */
+            function getTimezoneOffsetInMilliseconds(date) {
+              var utcDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds()));
+              utcDate.setUTCFullYear(date.getFullYear());
+              return date.getTime() - utcDate.getTime();
+            }
+
+            var protectedDayOfYearTokens = ['D', 'DD'];
+            var protectedWeekYearTokens = ['YY', 'YYYY'];
+            function isProtectedDayOfYearToken(token) {
+              return protectedDayOfYearTokens.indexOf(token) !== -1;
+            }
+            function isProtectedWeekYearToken(token) {
+              return protectedWeekYearTokens.indexOf(token) !== -1;
+            }
+            function throwProtectedError(token, format, input) {
+              if (token === 'YYYY') {
+                throw new RangeError("Use `yyyy` instead of `YYYY` (in `".concat(format, "`) for formatting years to the input `").concat(input, "`; see: https://git.io/fxCyr"));
+              } else if (token === 'YY') {
+                throw new RangeError("Use `yy` instead of `YY` (in `".concat(format, "`) for formatting years to the input `").concat(input, "`; see: https://git.io/fxCyr"));
+              } else if (token === 'D') {
+                throw new RangeError("Use `d` instead of `D` (in `".concat(format, "`) for formatting days of the month to the input `").concat(input, "`; see: https://git.io/fxCyr"));
+              } else if (token === 'DD') {
+                throw new RangeError("Use `dd` instead of `DD` (in `".concat(format, "`) for formatting days of the month to the input `").concat(input, "`; see: https://git.io/fxCyr"));
+              }
+            }
+
+            // - [yYQqMLwIdDecihHKkms]o matches any available ordinal number token
+            //   (one of the certain letters followed by `o`)
+            // - (\w)\1* matches any sequences of the same letter
+            // - '' matches two quote characters in a row
+            // - '(''|[^'])+('|$) matches anything surrounded by two quote characters ('),
+            //   except a single quote symbol, which ends the sequence.
+            //   Two quote characters do not end the sequence.
+            //   If there is no matching single quote
+            //   then the sequence will continue until the end of the string.
+            // - . matches any single character unmatched by previous parts of the RegExps
+
+            var formattingTokensRegExp = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g; // This RegExp catches symbols escaped by quotes, and also
+            // sequences of symbols P, p, and the combinations like `PPPPPPPppppp`
+
+            var longFormattingTokensRegExp = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g;
+            var escapedStringRegExp = /^'([^]*?)'?$/;
+            var doubleQuoteRegExp = /''/g;
+            var unescapedLatinCharacterRegExp = /[a-zA-Z]/;
+            /**
+             * @name format
+             * @category Common Helpers
+             * @summary Format the date.
+             *
+             * @description
+             * Return the formatted date string in the given format. The result may vary by locale.
+             *
+             * > ⚠️ Please note that the `format` tokens differ from Moment.js and other libraries.
+             * > See: https://git.io/fxCyr
+             *
+             * The characters wrapped between two single quotes characters (') are escaped.
+             * Two single quotes in a row, whether inside or outside a quoted sequence, represent a 'real' single quote.
+             * (see the last example)
+             *
+             * Format of the string is based on Unicode Technical Standard #35:
+             * https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table
+             * with a few additions (see note 7 below the table).
+             *
+             * Accepted patterns:
+             * | Unit                            | Pattern | Result examples                   | Notes |
+             * |---------------------------------|---------|-----------------------------------|-------|
+             * | Era                             | G..GGG  | AD, BC                            |       |
+             * |                                 | GGGG    | Anno Domini, Before Christ        | 2     |
+             * |                                 | GGGGG   | A, B                              |       |
+             * | Calendar year                   | y       | 44, 1, 1900, 2017                 | 5     |
+             * |                                 | yo      | 44th, 1st, 0th, 17th              | 5,7   |
+             * |                                 | yy      | 44, 01, 00, 17                    | 5     |
+             * |                                 | yyy     | 044, 001, 1900, 2017              | 5     |
+             * |                                 | yyyy    | 0044, 0001, 1900, 2017            | 5     |
+             * |                                 | yyyyy   | ...                               | 3,5   |
+             * | Local week-numbering year       | Y       | 44, 1, 1900, 2017                 | 5     |
+             * |                                 | Yo      | 44th, 1st, 1900th, 2017th         | 5,7   |
+             * |                                 | YY      | 44, 01, 00, 17                    | 5,8   |
+             * |                                 | YYY     | 044, 001, 1900, 2017              | 5     |
+             * |                                 | YYYY    | 0044, 0001, 1900, 2017            | 5,8   |
+             * |                                 | YYYYY   | ...                               | 3,5   |
+             * | ISO week-numbering year         | R       | -43, 0, 1, 1900, 2017             | 5,7   |
+             * |                                 | RR      | -43, 00, 01, 1900, 2017           | 5,7   |
+             * |                                 | RRR     | -043, 000, 001, 1900, 2017        | 5,7   |
+             * |                                 | RRRR    | -0043, 0000, 0001, 1900, 2017     | 5,7   |
+             * |                                 | RRRRR   | ...                               | 3,5,7 |
+             * | Extended year                   | u       | -43, 0, 1, 1900, 2017             | 5     |
+             * |                                 | uu      | -43, 01, 1900, 2017               | 5     |
+             * |                                 | uuu     | -043, 001, 1900, 2017             | 5     |
+             * |                                 | uuuu    | -0043, 0001, 1900, 2017           | 5     |
+             * |                                 | uuuuu   | ...                               | 3,5   |
+             * | Quarter (formatting)            | Q       | 1, 2, 3, 4                        |       |
+             * |                                 | Qo      | 1st, 2nd, 3rd, 4th                | 7     |
+             * |                                 | QQ      | 01, 02, 03, 04                    |       |
+             * |                                 | QQQ     | Q1, Q2, Q3, Q4                    |       |
+             * |                                 | QQQQ    | 1st quarter, 2nd quarter, ...     | 2     |
+             * |                                 | QQQQQ   | 1, 2, 3, 4                        | 4     |
+             * | Quarter (stand-alone)           | q       | 1, 2, 3, 4                        |       |
+             * |                                 | qo      | 1st, 2nd, 3rd, 4th                | 7     |
+             * |                                 | qq      | 01, 02, 03, 04                    |       |
+             * |                                 | qqq     | Q1, Q2, Q3, Q4                    |       |
+             * |                                 | qqqq    | 1st quarter, 2nd quarter, ...     | 2     |
+             * |                                 | qqqqq   | 1, 2, 3, 4                        | 4     |
+             * | Month (formatting)              | M       | 1, 2, ..., 12                     |       |
+             * |                                 | Mo      | 1st, 2nd, ..., 12th               | 7     |
+             * |                                 | MM      | 01, 02, ..., 12                   |       |
+             * |                                 | MMM     | Jan, Feb, ..., Dec                |       |
+             * |                                 | MMMM    | January, February, ..., December  | 2     |
+             * |                                 | MMMMM   | J, F, ..., D                      |       |
+             * | Month (stand-alone)             | L       | 1, 2, ..., 12                     |       |
+             * |                                 | Lo      | 1st, 2nd, ..., 12th               | 7     |
+             * |                                 | LL      | 01, 02, ..., 12                   |       |
+             * |                                 | LLL     | Jan, Feb, ..., Dec                |       |
+             * |                                 | LLLL    | January, February, ..., December  | 2     |
+             * |                                 | LLLLL   | J, F, ..., D                      |       |
+             * | Local week of year              | w       | 1, 2, ..., 53                     |       |
+             * |                                 | wo      | 1st, 2nd, ..., 53th               | 7     |
+             * |                                 | ww      | 01, 02, ..., 53                   |       |
+             * | ISO week of year                | I       | 1, 2, ..., 53                     | 7     |
+             * |                                 | Io      | 1st, 2nd, ..., 53th               | 7     |
+             * |                                 | II      | 01, 02, ..., 53                   | 7     |
+             * | Day of month                    | d       | 1, 2, ..., 31                     |       |
+             * |                                 | do      | 1st, 2nd, ..., 31st               | 7     |
+             * |                                 | dd      | 01, 02, ..., 31                   |       |
+             * | Day of year                     | D       | 1, 2, ..., 365, 366               | 9     |
+             * |                                 | Do      | 1st, 2nd, ..., 365th, 366th       | 7     |
+             * |                                 | DD      | 01, 02, ..., 365, 366             | 9     |
+             * |                                 | DDD     | 001, 002, ..., 365, 366           |       |
+             * |                                 | DDDD    | ...                               | 3     |
+             * | Day of week (formatting)        | E..EEE  | Mon, Tue, Wed, ..., Sun           |       |
+             * |                                 | EEEE    | Monday, Tuesday, ..., Sunday      | 2     |
+             * |                                 | EEEEE   | M, T, W, T, F, S, S               |       |
+             * |                                 | EEEEEE  | Mo, Tu, We, Th, Fr, Su, Sa        |       |
+             * | ISO day of week (formatting)    | i       | 1, 2, 3, ..., 7                   | 7     |
+             * |                                 | io      | 1st, 2nd, ..., 7th                | 7     |
+             * |                                 | ii      | 01, 02, ..., 07                   | 7     |
+             * |                                 | iii     | Mon, Tue, Wed, ..., Sun           | 7     |
+             * |                                 | iiii    | Monday, Tuesday, ..., Sunday      | 2,7   |
+             * |                                 | iiiii   | M, T, W, T, F, S, S               | 7     |
+             * |                                 | iiiiii  | Mo, Tu, We, Th, Fr, Su, Sa        | 7     |
+             * | Local day of week (formatting)  | e       | 2, 3, 4, ..., 1                   |       |
+             * |                                 | eo      | 2nd, 3rd, ..., 1st                | 7     |
+             * |                                 | ee      | 02, 03, ..., 01                   |       |
+             * |                                 | eee     | Mon, Tue, Wed, ..., Sun           |       |
+             * |                                 | eeee    | Monday, Tuesday, ..., Sunday      | 2     |
+             * |                                 | eeeee   | M, T, W, T, F, S, S               |       |
+             * |                                 | eeeeee  | Mo, Tu, We, Th, Fr, Su, Sa        |       |
+             * | Local day of week (stand-alone) | c       | 2, 3, 4, ..., 1                   |       |
+             * |                                 | co      | 2nd, 3rd, ..., 1st                | 7     |
+             * |                                 | cc      | 02, 03, ..., 01                   |       |
+             * |                                 | ccc     | Mon, Tue, Wed, ..., Sun           |       |
+             * |                                 | cccc    | Monday, Tuesday, ..., Sunday      | 2     |
+             * |                                 | ccccc   | M, T, W, T, F, S, S               |       |
+             * |                                 | cccccc  | Mo, Tu, We, Th, Fr, Su, Sa        |       |
+             * | AM, PM                          | a..aa   | AM, PM                            |       |
+             * |                                 | aaa     | am, pm                            |       |
+             * |                                 | aaaa    | a.m., p.m.                        | 2     |
+             * |                                 | aaaaa   | a, p                              |       |
+             * | AM, PM, noon, midnight          | b..bb   | AM, PM, noon, midnight            |       |
+             * |                                 | bbb     | am, pm, noon, midnight            |       |
+             * |                                 | bbbb    | a.m., p.m., noon, midnight        | 2     |
+             * |                                 | bbbbb   | a, p, n, mi                       |       |
+             * | Flexible day period             | B..BBB  | at night, in the morning, ...     |       |
+             * |                                 | BBBB    | at night, in the morning, ...     | 2     |
+             * |                                 | BBBBB   | at night, in the morning, ...     |       |
+             * | Hour [1-12]                     | h       | 1, 2, ..., 11, 12                 |       |
+             * |                                 | ho      | 1st, 2nd, ..., 11th, 12th         | 7     |
+             * |                                 | hh      | 01, 02, ..., 11, 12               |       |
+             * | Hour [0-23]                     | H       | 0, 1, 2, ..., 23                  |       |
+             * |                                 | Ho      | 0th, 1st, 2nd, ..., 23rd          | 7     |
+             * |                                 | HH      | 00, 01, 02, ..., 23               |       |
+             * | Hour [0-11]                     | K       | 1, 2, ..., 11, 0                  |       |
+             * |                                 | Ko      | 1st, 2nd, ..., 11th, 0th          | 7     |
+             * |                                 | KK      | 01, 02, ..., 11, 00               |       |
+             * | Hour [1-24]                     | k       | 24, 1, 2, ..., 23                 |       |
+             * |                                 | ko      | 24th, 1st, 2nd, ..., 23rd         | 7     |
+             * |                                 | kk      | 24, 01, 02, ..., 23               |       |
+             * | Minute                          | m       | 0, 1, ..., 59                     |       |
+             * |                                 | mo      | 0th, 1st, ..., 59th               | 7     |
+             * |                                 | mm      | 00, 01, ..., 59                   |       |
+             * | Second                          | s       | 0, 1, ..., 59                     |       |
+             * |                                 | so      | 0th, 1st, ..., 59th               | 7     |
+             * |                                 | ss      | 00, 01, ..., 59                   |       |
+             * | Fraction of second              | S       | 0, 1, ..., 9                      |       |
+             * |                                 | SS      | 00, 01, ..., 99                   |       |
+             * |                                 | SSS     | 000, 001, ..., 999                |       |
+             * |                                 | SSSS    | ...                               | 3     |
+             * | Timezone (ISO-8601 w/ Z)        | X       | -08, +0530, Z                     |       |
+             * |                                 | XX      | -0800, +0530, Z                   |       |
+             * |                                 | XXX     | -08:00, +05:30, Z                 |       |
+             * |                                 | XXXX    | -0800, +0530, Z, +123456          | 2     |
+             * |                                 | XXXXX   | -08:00, +05:30, Z, +12:34:56      |       |
+             * | Timezone (ISO-8601 w/o Z)       | x       | -08, +0530, +00                   |       |
+             * |                                 | xx      | -0800, +0530, +0000               |       |
+             * |                                 | xxx     | -08:00, +05:30, +00:00            | 2     |
+             * |                                 | xxxx    | -0800, +0530, +0000, +123456      |       |
+             * |                                 | xxxxx   | -08:00, +05:30, +00:00, +12:34:56 |       |
+             * | Timezone (GMT)                  | O...OOO | GMT-8, GMT+5:30, GMT+0            |       |
+             * |                                 | OOOO    | GMT-08:00, GMT+05:30, GMT+00:00   | 2     |
+             * | Timezone (specific non-locat.)  | z...zzz | GMT-8, GMT+5:30, GMT+0            | 6     |
+             * |                                 | zzzz    | GMT-08:00, GMT+05:30, GMT+00:00   | 2,6   |
+             * | Seconds timestamp               | t       | 512969520                         | 7     |
+             * |                                 | tt      | ...                               | 3,7   |
+             * | Milliseconds timestamp          | T       | 512969520900                      | 7     |
+             * |                                 | TT      | ...                               | 3,7   |
+             * | Long localized date             | P       | 04/29/1453                        | 7     |
+             * |                                 | PP      | Apr 29, 1453                      | 7     |
+             * |                                 | PPP     | April 29th, 1453                  | 7     |
+             * |                                 | PPPP    | Friday, April 29th, 1453          | 2,7   |
+             * | Long localized time             | p       | 12:00 AM                          | 7     |
+             * |                                 | pp      | 12:00:00 AM                       | 7     |
+             * |                                 | ppp     | 12:00:00 AM GMT+2                 | 7     |
+             * |                                 | pppp    | 12:00:00 AM GMT+02:00             | 2,7   |
+             * | Combination of date and time    | Pp      | 04/29/1453, 12:00 AM              | 7     |
+             * |                                 | PPpp    | Apr 29, 1453, 12:00:00 AM         | 7     |
+             * |                                 | PPPppp  | April 29th, 1453 at ...           | 7     |
+             * |                                 | PPPPpppp| Friday, April 29th, 1453 at ...   | 2,7   |
+             * Notes:
+             * 1. "Formatting" units (e.g. formatting quarter) in the default en-US locale
+             *    are the same as "stand-alone" units, but are different in some languages.
+             *    "Formatting" units are declined according to the rules of the language
+             *    in the context of a date. "Stand-alone" units are always nominative singular:
+             *
+             *    `format(new Date(2017, 10, 6), 'do LLLL', {locale: cs}) //=> '6. listopad'`
+             *
+             *    `format(new Date(2017, 10, 6), 'do MMMM', {locale: cs}) //=> '6. listopadu'`
+             *
+             * 2. Any sequence of the identical letters is a pattern, unless it is escaped by
+             *    the single quote characters (see below).
+             *    If the sequence is longer than listed in table (e.g. `EEEEEEEEEEE`)
+             *    the output will be the same as default pattern for this unit, usually
+             *    the longest one (in case of ISO weekdays, `EEEE`). Default patterns for units
+             *    are marked with "2" in the last column of the table.
+             *
+             *    `format(new Date(2017, 10, 6), 'MMM') //=> 'Nov'`
+             *
+             *    `format(new Date(2017, 10, 6), 'MMMM') //=> 'November'`
+             *
+             *    `format(new Date(2017, 10, 6), 'MMMMM') //=> 'N'`
+             *
+             *    `format(new Date(2017, 10, 6), 'MMMMMM') //=> 'November'`
+             *
+             *    `format(new Date(2017, 10, 6), 'MMMMMMM') //=> 'November'`
+             *
+             * 3. Some patterns could be unlimited length (such as `yyyyyyyy`).
+             *    The output will be padded with zeros to match the length of the pattern.
+             *
+             *    `format(new Date(2017, 10, 6), 'yyyyyyyy') //=> '00002017'`
+             *
+             * 4. `QQQQQ` and `qqqqq` could be not strictly numerical in some locales.
+             *    These tokens represent the shortest form of the quarter.
+             *
+             * 5. The main difference between `y` and `u` patterns are B.C. years:
+             *
+             *    | Year | `y` | `u` |
+             *    |------|-----|-----|
+             *    | AC 1 |   1 |   1 |
+             *    | BC 1 |   1 |   0 |
+             *    | BC 2 |   2 |  -1 |
+             *
+             *    Also `yy` always returns the last two digits of a year,
+             *    while `uu` pads single digit years to 2 characters and returns other years unchanged:
+             *
+             *    | Year | `yy` | `uu` |
+             *    |------|------|------|
+             *    | 1    |   01 |   01 |
+             *    | 14   |   14 |   14 |
+             *    | 376  |   76 |  376 |
+             *    | 1453 |   53 | 1453 |
+             *
+             *    The same difference is true for local and ISO week-numbering years (`Y` and `R`),
+             *    except local week-numbering years are dependent on `options.weekStartsOn`
+             *    and `options.firstWeekContainsDate` (compare [getISOWeekYear]{@link https://date-fns.org/docs/getISOWeekYear}
+             *    and [getWeekYear]{@link https://date-fns.org/docs/getWeekYear}).
+             *
+             * 6. Specific non-location timezones are currently unavailable in `date-fns`,
+             *    so right now these tokens fall back to GMT timezones.
+             *
+             * 7. These patterns are not in the Unicode Technical Standard #35:
+             *    - `i`: ISO day of week
+             *    - `I`: ISO week of year
+             *    - `R`: ISO week-numbering year
+             *    - `t`: seconds timestamp
+             *    - `T`: milliseconds timestamp
+             *    - `o`: ordinal number modifier
+             *    - `P`: long localized date
+             *    - `p`: long localized time
+             *
+             * 8. `YY` and `YYYY` tokens represent week-numbering years but they are often confused with years.
+             *    You should enable `options.useAdditionalWeekYearTokens` to use them. See: https://git.io/fxCyr
+             *
+             * 9. `D` and `DD` tokens represent days of the year but they are ofthen confused with days of the month.
+             *    You should enable `options.useAdditionalDayOfYearTokens` to use them. See: https://git.io/fxCyr
+             *
+             * ### v2.0.0 breaking changes:
+             *
+             * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+             *
+             * - The second argument is now required for the sake of explicitness.
+             *
+             *   ```javascript
+             *   // Before v2.0.0
+             *   format(new Date(2016, 0, 1))
+             *
+             *   // v2.0.0 onward
+             *   format(new Date(2016, 0, 1), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
+             *   ```
+             *
+             * - New format string API for `format` function
+             *   which is based on [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table).
+             *   See [this post](https://blog.date-fns.org/post/unicode-tokens-in-date-fns-v2-sreatyki91jg) for more details.
+             *
+             * - Characters are now escaped using single quote symbols (`'`) instead of square brackets.
+             *
+             * @param {Date|Number} date - the original date
+             * @param {String} format - the string of tokens
+             * @param {Object} [options] - an object with options.
+             * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
+             * @param {0|1|2|3|4|5|6} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+             * @param {Number} [options.firstWeekContainsDate=1] - the day of January, which is
+             * @param {Boolean} [options.useAdditionalWeekYearTokens=false] - if true, allows usage of the week-numbering year tokens `YY` and `YYYY`;
+             *   see: https://git.io/fxCyr
+             * @param {Boolean} [options.useAdditionalDayOfYearTokens=false] - if true, allows usage of the day of year tokens `D` and `DD`;
+             *   see: https://git.io/fxCyr
+             * @returns {String} the formatted date string
+             * @throws {TypeError} 2 arguments required
+             * @throws {RangeError} `date` must not be Invalid Date
+             * @throws {RangeError} `options.locale` must contain `localize` property
+             * @throws {RangeError} `options.locale` must contain `formatLong` property
+             * @throws {RangeError} `options.weekStartsOn` must be between 0 and 6
+             * @throws {RangeError} `options.firstWeekContainsDate` must be between 1 and 7
+             * @throws {RangeError} use `yyyy` instead of `YYYY` for formatting years using [format provided] to the input [input provided]; see: https://git.io/fxCyr
+             * @throws {RangeError} use `yy` instead of `YY` for formatting years using [format provided] to the input [input provided]; see: https://git.io/fxCyr
+             * @throws {RangeError} use `d` instead of `D` for formatting days of the month using [format provided] to the input [input provided]; see: https://git.io/fxCyr
+             * @throws {RangeError} use `dd` instead of `DD` for formatting days of the month using [format provided] to the input [input provided]; see: https://git.io/fxCyr
+             * @throws {RangeError} format string contains an unescaped latin alphabet character
+             *
+             * @example
+             * // Represent 11 February 2014 in middle-endian format:
+             * var result = format(new Date(2014, 1, 11), 'MM/dd/yyyy')
+             * //=> '02/11/2014'
+             *
+             * @example
+             * // Represent 2 July 2014 in Esperanto:
+             * import { eoLocale } from 'date-fns/locale/eo'
+             * var result = format(new Date(2014, 6, 2), "do 'de' MMMM yyyy", {
+             *   locale: eoLocale
+             * })
+             * //=> '2-a de julio 2014'
+             *
+             * @example
+             * // Escape string by single quote characters:
+             * var result = format(new Date(2014, 6, 2, 15), "h 'o''clock'")
+             * //=> "3 o'clock"
+             */
+
+            function format$2(dirtyDate, dirtyFormatStr, dirtyOptions) {
+              requiredArgs(2, arguments);
+              var formatStr = String(dirtyFormatStr);
+              var options = dirtyOptions || {};
+              var locale$1 = options.locale || locale;
+              var localeFirstWeekContainsDate = locale$1.options && locale$1.options.firstWeekContainsDate;
+              var defaultFirstWeekContainsDate = localeFirstWeekContainsDate == null ? 1 : toInteger(localeFirstWeekContainsDate);
+              var firstWeekContainsDate = options.firstWeekContainsDate == null ? defaultFirstWeekContainsDate : toInteger(options.firstWeekContainsDate); // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
+
+              if (!(firstWeekContainsDate >= 1 && firstWeekContainsDate <= 7)) {
+                throw new RangeError('firstWeekContainsDate must be between 1 and 7 inclusively');
+              }
+
+              var localeWeekStartsOn = locale$1.options && locale$1.options.weekStartsOn;
+              var defaultWeekStartsOn = localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
+              var weekStartsOn = options.weekStartsOn == null ? defaultWeekStartsOn : toInteger(options.weekStartsOn); // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
+
+              if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
+                throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
+              }
+
+              if (!locale$1.localize) {
+                throw new RangeError('locale must contain localize property');
+              }
+
+              if (!locale$1.formatLong) {
+                throw new RangeError('locale must contain formatLong property');
+              }
+
+              var originalDate = toDate(dirtyDate);
+
+              if (!isValid(originalDate)) {
+                throw new RangeError('Invalid time value');
+              } // Convert the date in system timezone to the same date in UTC+00:00 timezone.
+              // This ensures that when UTC functions will be implemented, locales will be compatible with them.
+              // See an issue about UTC functions: https://github.com/date-fns/date-fns/issues/376
+
+
+              var timezoneOffset = getTimezoneOffsetInMilliseconds(originalDate);
+              var utcDate = subMilliseconds(originalDate, timezoneOffset);
+              var formatterOptions = {
+                firstWeekContainsDate: firstWeekContainsDate,
+                weekStartsOn: weekStartsOn,
+                locale: locale$1,
+                _originalDate: originalDate
+              };
+              var result = formatStr.match(longFormattingTokensRegExp).map(function (substring) {
+                var firstCharacter = substring[0];
+
+                if (firstCharacter === 'p' || firstCharacter === 'P') {
+                  var longFormatter = longFormatters[firstCharacter];
+                  return longFormatter(substring, locale$1.formatLong, formatterOptions);
+                }
+
+                return substring;
+              }).join('').match(formattingTokensRegExp).map(function (substring) {
+                // Replace two single quote characters with one single quote character
+                if (substring === "''") {
+                  return "'";
+                }
+
+                var firstCharacter = substring[0];
+
+                if (firstCharacter === "'") {
+                  return cleanEscapedString(substring);
+                }
+
+                var formatter = formatters[firstCharacter];
+
+                if (formatter) {
+                  if (!options.useAdditionalWeekYearTokens && isProtectedWeekYearToken(substring)) {
+                    throwProtectedError(substring, dirtyFormatStr, dirtyDate);
+                  }
+
+                  if (!options.useAdditionalDayOfYearTokens && isProtectedDayOfYearToken(substring)) {
+                    throwProtectedError(substring, dirtyFormatStr, dirtyDate);
+                  }
+
+                  return formatter(utcDate, substring, locale$1.localize, formatterOptions);
+                }
+
+                if (firstCharacter.match(unescapedLatinCharacterRegExp)) {
+                  throw new RangeError('Format string contains an unescaped latin alphabet character `' + firstCharacter + '`');
+                }
+
+                return substring;
+              }).join('');
+              return result;
+            }
+
+            function cleanEscapedString(input) {
+              return input.match(escapedStringRegExp)[1].replace(doubleQuoteRegExp, "'");
+            }
+
+            const CHROME_EXTENSION_ID = 'cgglhlnkgeldlcmeemjlpooddpojhdnj';
+            const FETCH_UNIT = true;
+            const IS_DEV$1 = true;
+            const DISABLED_UNITS = [];
+            const SERVICE_ENDPOINT = 'http://localhost:3000/dev/';
+
+            var dev = /*#__PURE__*/Object.freeze({
+                        __proto__: null,
+                        CHROME_EXTENSION_ID: CHROME_EXTENSION_ID,
+                        FETCH_UNIT: FETCH_UNIT,
+                        IS_DEV: IS_DEV$1,
+                        DISABLED_UNITS: DISABLED_UNITS,
+                        SERVICE_ENDPOINT: SERVICE_ENDPOINT
+            });
+
+            const env = dev;
+`https://${env.CHROME_EXTENSION_ID}.chromiumapp.org`;
+`https://${env.CHROME_EXTENSION_ID}.chromiumapp.org/provider_cb`;
+            env.SERVICE_ENDPOINT;
+            env.FETCH_UNIT;
+            const IS_DEV = env.IS_DEV;
+            env.DISABLED_UNITS;
+
+            const logMessage = (message, logType) => {
+                if (!IS_DEV) {
+                    return;
+                }
+                const now = format$2(new Date(), 'HH:mm:ss.SSS');
+                const { type, ...rest } = message;
+                const color = logType === 'Receive' ? '#54ced9' : '#d954c1';
+                console.group(`%c ${logType} ${type} - ${now}`, `color: ${color}`);
+                console.log(rest);
+                console.groupEnd();
+            };
+            const logPayload = (name, payload) => {
+                if (!IS_DEV) {
+                    return;
+                }
+                const now = format$2(new Date(), 'HH:mm:ss.SSS');
+                console.group(`%c ${name} - ${now}`, 'color: #d9b654');
+                if (payload) {
+                    console.log(payload);
+                }
+                console.groupEnd();
+            };
+            const log = {
+                message: logMessage,
+                payload: logPayload,
+            };
+
             const REGEX = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
             const validate = (uuid) => typeof uuid === 'string' && REGEX.test(uuid);
             const rnds8 = new Uint8Array(16);
@@ -30039,6 +32475,7 @@
             };
 
             const respond = (message) => {
+                log.message(message, 'Respond');
                 chrome.runtime.sendMessage(message);
             };
             const send$6 = (message) => {
@@ -30083,7 +32520,7 @@
                 send: send$6,
             };
 
-            const get$1 = (key) => new Promise((resolve) => {
+            const get$2 = (key) => new Promise((resolve) => {
                 chrome.storage.local.get(key, (data) => {
                     if (Object.keys(data).length === 0) {
                         resolve(null);
@@ -30092,7 +32529,7 @@
                 });
             });
             const getData = async (key) => {
-                const response = await get$1(key);
+                const response = await get$2(key);
                 if (response) {
                     return response.data;
                 }
@@ -30170,7 +32607,7 @@
                 guards: guards$6,
                 addListener,
                 inferStorage,
-                get: get$1,
+                get: get$2,
                 getData,
                 predicate,
                 remove,
@@ -30185,7 +32622,23 @@
                 identity: identity$1,
             };
 
-            const counts = (config, full, items) => items.filter((item, index) => config.run(item, full, index)).length;
+            const applyFilter = (items, appliedFilterGroups) => {
+                const appliedFilters = Object.values(appliedFilterGroups);
+                if (appliedFilters.length === 0) {
+                    return items;
+                }
+                return items.filter((item) => appliedFilters.every((appliedFilter) => {
+                    if (appliedFilter.state === 'include') {
+                        return appliedFilter.applied.some((applied) => appliedFilter.config.run(item, applied.itemId));
+                    }
+                    if (appliedFilter.state === 'exclude') {
+                        return !appliedFilter.applied.every((applied) => appliedFilter.config.run(item, applied.itemId));
+                    }
+                    return true;
+                }));
+            };
+
+            const counts = (config, full, items) => items.filter((item) => config.run(item, full)).length;
 
             const colors$1 = [
                 '#DBD821',
@@ -30217,28 +32670,29 @@
                     }
                     return 0;
                 })
-                    .map(([key, filter], index) => [
-                    key,
-                    {
+                    .map(([key, filter], index) => {
+                    const filterCounts = counts(config, filter.full, items);
+                    return {
+                        key,
+                        config,
+                        counts: {
+                            currentCount: filterCounts,
+                            total: filterCounts,
+                        },
                         groupId: config.id,
                         state: 'omit',
                         filter: {
                             ...filter,
                             color: getColor$1(index, filter.color),
                         },
-                    },
-                ])
-                    .reduce((acc, [key, filter]) => {
-                    const filterCounts = counts(config, filter.filter.full, items);
-                    filter.counts = {
-                        currentCount: filterCounts,
-                        total: filterCounts,
                     };
-                    filter.config = config;
-                    acc[key] = filter;
+                })
+                    .reduce((acc, filter) => {
+                    acc[filter.key] = filter;
                     return acc;
                 }, {});
                 return {
+                    appliedFilters: [],
                     id: config.id,
                     label: config.label,
                     filters: currentFilters,
@@ -30268,6 +32722,7 @@
             var filterBuilder = {
                 parseProps,
                 createFilterConfigs,
+                applyFilter,
             };
 
             const hexToRGB = (hex) => {
@@ -31265,7 +33720,7 @@
 
             var hoistNonReactStatics_cjs = hoistNonReactStatics;
 
-            function v$1(){return (v$1=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r]);}return e}).apply(this,arguments)}var g$2=function(e,t){for(var n=[e[0]],r=0,o=t.length;r<o;r+=1)n.push(t[r],e[r+1]);return n},S$2=function(t){return null!==t&&"object"==typeof t&&"[object Object]"===(t.toString?t.toString():Object.prototype.toString.call(t))&&!reactIs.typeOf(t)},w$2=Object.freeze([]),E$3=Object.freeze({});function b$2(e){return "function"==typeof e}function _$1(e){return "string"==typeof e&&e||e.displayName||e.name||"Component"}function N(e){return e&&"string"==typeof e.styledComponentId}var A$1="undefined"!=typeof process&&(process.env.REACT_APP_SC_ATTR||process.env.SC_ATTR)||"data-styled",I$1="undefined"!=typeof window&&"HTMLElement"in window,P$1=Boolean("boolean"==typeof SC_DISABLE_SPEEDY?SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&""!==process.env.REACT_APP_SC_DISABLE_SPEEDY?"false"!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&process.env.REACT_APP_SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env.SC_DISABLE_SPEEDY&&""!==process.env.SC_DISABLE_SPEEDY?"false"!==process.env.SC_DISABLE_SPEEDY&&process.env.SC_DISABLE_SPEEDY:"production"!=="development"),O$2={},R$1={1:"Cannot create styled-component for component: %s.\n\n",2:"Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",3:"Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",4:"The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",5:"The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",6:"Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",7:'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',8:'ThemeProvider: Please make your "theme" prop an object.\n\n',9:"Missing document `<head>`\n\n",10:"Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",11:"_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",12:"It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",13:"%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",14:'ThemeProvider: "theme" prop is required.\n\n',15:"A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",16:"Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",17:"CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n"};function D$1(){for(var e=arguments.length<=0?void 0:arguments[0],t=[],n=1,r=arguments.length;n<r;n+=1)t.push(n<0||arguments.length<=n?void 0:arguments[n]);return t.forEach((function(t){e=e.replace(/%[a-z]/,t);})),e}function j$3(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];throw new Error(D$1.apply(void 0,[R$1[e]].concat(n)).trim())}var T=function(){function e(e){this.groupSizes=new Uint32Array(512),this.length=512,this.tag=e;}var t=e.prototype;return t.indexOfGroup=function(e){for(var t=0,n=0;n<e;n++)t+=this.groupSizes[n];return t},t.insertRules=function(e,t){if(e>=this.groupSizes.length){for(var n=this.groupSizes,r=n.length,o=r;e>=o;)(o<<=1)<0&&j$3(16,""+e);this.groupSizes=new Uint32Array(o),this.groupSizes.set(n),this.length=o;for(var i=r;i<o;i++)this.groupSizes[i]=0;}for(var s=this.indexOfGroup(e+1),a=0,c=t.length;a<c;a++)this.tag.insertRule(s,t[a])&&(this.groupSizes[e]++,s++);},t.clearGroup=function(e){if(e<this.length){var t=this.groupSizes[e],n=this.indexOfGroup(e),r=n+t;this.groupSizes[e]=0;for(var o=n;o<r;o++)this.tag.deleteRule(n);}},t.getGroup=function(e){var t="";if(e>=this.length||0===this.groupSizes[e])return t;for(var n=this.groupSizes[e],r=this.indexOfGroup(e),o=r+n,i=r;i<o;i++)t+=this.tag.getRule(i)+"/*!sc*/\n";return t},e}(),k$2=new Map,x$2=new Map,V=1,B$1=function(e){if(k$2.has(e))return k$2.get(e);for(;x$2.has(V);)V++;var t=V++;return ((0|t)<0||t>1<<30)&&j$3(16,""+t),k$2.set(e,t),x$2.set(t,e),t},M$2=function(e){return x$2.get(e)},z$1=function(e,t){k$2.set(e,t),x$2.set(t,e);},L$1="style["+A$1+'][data-styled-version="5.3.0"]',G$1=new RegExp("^"+A$1+'\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'),F$1=function(e,t,n){for(var r,o=n.split(","),i=0,s=o.length;i<s;i++)(r=o[i])&&e.registerName(t,r);},Y$1=function(e,t){for(var n=t.innerHTML.split("/*!sc*/\n"),r=[],o=0,i=n.length;o<i;o++){var s=n[o].trim();if(s){var a=s.match(G$1);if(a){var c=0|parseInt(a[1],10),u=a[2];0!==c&&(z$1(u,c),F$1(e,u,a[3]),e.getTag().insertRules(c,r)),r.length=0;}else r.push(s);}}},q$1=function(){return "undefined"!=typeof window&&void 0!==window.__webpack_nonce__?window.__webpack_nonce__:null},H$1=function(e){var t=document.head,n=e||t,r=document.createElement("style"),o=function(e){for(var t=e.childNodes,n=t.length;n>=0;n--){var r=t[n];if(r&&1===r.nodeType&&r.hasAttribute(A$1))return r}}(n),i=void 0!==o?o.nextSibling:null;r.setAttribute(A$1,"active"),r.setAttribute("data-styled-version","5.3.0");var s=q$1();return s&&r.setAttribute("nonce",s),n.insertBefore(r,i),r},$=function(){function e(e){var t=this.element=H$1(e);t.appendChild(document.createTextNode("")),this.sheet=function(e){if(e.sheet)return e.sheet;for(var t=document.styleSheets,n=0,r=t.length;n<r;n++){var o=t[n];if(o.ownerNode===e)return o}j$3(17);}(t),this.length=0;}var t=e.prototype;return t.insertRule=function(e,t){try{return this.sheet.insertRule(t,e),this.length++,!0}catch(e){return !1}},t.deleteRule=function(e){this.sheet.deleteRule(e),this.length--;},t.getRule=function(e){var t=this.sheet.cssRules[e];return void 0!==t&&"string"==typeof t.cssText?t.cssText:""},e}(),W$2=function(){function e(e){var t=this.element=H$1(e);this.nodes=t.childNodes,this.length=0;}var t=e.prototype;return t.insertRule=function(e,t){if(e<=this.length&&e>=0){var n=document.createTextNode(t),r=this.nodes[e];return this.element.insertBefore(n,r||null),this.length++,!0}return !1},t.deleteRule=function(e){this.element.removeChild(this.nodes[e]),this.length--;},t.getRule=function(e){return e<this.length?this.nodes[e].textContent:""},e}(),U$2=function(){function e(e){this.rules=[],this.length=0;}var t=e.prototype;return t.insertRule=function(e,t){return e<=this.length&&(this.rules.splice(e,0,t),this.length++,!0)},t.deleteRule=function(e){this.rules.splice(e,1),this.length--;},t.getRule=function(e){return e<this.length?this.rules[e]:""},e}(),J=I$1,X$1={isServer:!I$1,useCSSOMInjection:!P$1},Z$1=function(){function e(e,t,n){void 0===e&&(e=E$3),void 0===t&&(t={}),this.options=v$1({},X$1,{},e),this.gs=t,this.names=new Map(n),!this.options.isServer&&I$1&&J&&(J=!1,function(e){for(var t=document.querySelectorAll(L$1),n=0,r=t.length;n<r;n++){var o=t[n];o&&"active"!==o.getAttribute(A$1)&&(Y$1(e,o),o.parentNode&&o.parentNode.removeChild(o));}}(this));}e.registerId=function(e){return B$1(e)};var t=e.prototype;return t.reconstructWithOptions=function(t,n){return void 0===n&&(n=!0),new e(v$1({},this.options,{},t),this.gs,n&&this.names||void 0)},t.allocateGSInstance=function(e){return this.gs[e]=(this.gs[e]||0)+1},t.getTag=function(){return this.tag||(this.tag=(n=(t=this.options).isServer,r=t.useCSSOMInjection,o=t.target,e=n?new U$2(o):r?new $(o):new W$2(o),new T(e)));var e,t,n,r,o;},t.hasNameForId=function(e,t){return this.names.has(e)&&this.names.get(e).has(t)},t.registerName=function(e,t){if(B$1(e),this.names.has(e))this.names.get(e).add(t);else {var n=new Set;n.add(t),this.names.set(e,n);}},t.insertRules=function(e,t,n){this.registerName(e,t),this.getTag().insertRules(B$1(e),n);},t.clearNames=function(e){this.names.has(e)&&this.names.get(e).clear();},t.clearRules=function(e){this.getTag().clearGroup(B$1(e)),this.clearNames(e);},t.clearTag=function(){this.tag=void 0;},t.toString=function(){return function(e){for(var t=e.getTag(),n=t.length,r="",o=0;o<n;o++){var i=M$2(o);if(void 0!==i){var s=e.names.get(i),a=t.getGroup(o);if(void 0!==s&&0!==a.length){var c=A$1+".g"+o+'[id="'+i+'"]',u="";void 0!==s&&s.forEach((function(e){e.length>0&&(u+=e+",");})),r+=""+a+c+'{content:"'+u+'"}/*!sc*/\n';}}}return r}(this)},e}(),K=/(a)(d)/gi,Q$1=function(e){return String.fromCharCode(e+(e>25?39:97))};function ee(e){var t,n="";for(t=Math.abs(e);t>52;t=t/52|0)n=Q$1(t%52)+n;return (Q$1(t%52)+n).replace(K,"$1-$2")}var te=function(e,t){for(var n=t.length;n;)e=33*e^t.charCodeAt(--n);return e},ne=function(e){return te(5381,e)};function re(e){for(var t=0;t<e.length;t+=1){var n=e[t];if(b$2(n)&&!N(n))return !1}return !0}var oe=ne("5.3.0"),ie=function(){function e(e,t,n){this.rules=e,this.staticRulesId="",this.isStatic="production"==="development",this.componentId=t,this.baseHash=te(oe,t),this.baseStyle=n,Z$1.registerId(t);}return e.prototype.generateAndInjectStyles=function(e,t,n){var r=this.componentId,o=[];if(this.baseStyle&&o.push(this.baseStyle.generateAndInjectStyles(e,t,n)),this.isStatic&&!n.hash)if(this.staticRulesId&&t.hasNameForId(r,this.staticRulesId))o.push(this.staticRulesId);else {var i=Ne(this.rules,e,t,n).join(""),s=ee(te(this.baseHash,i.length)>>>0);if(!t.hasNameForId(r,s)){var a=n(i,"."+s,void 0,r);t.insertRules(r,s,a);}o.push(s),this.staticRulesId=s;}else {for(var c=this.rules.length,u=te(this.baseHash,n.hash),l="",d=0;d<c;d++){var h=this.rules[d];if("string"==typeof h)l+=h,(u=te(u,h+d));else if(h){var p=Ne(h,e,t,n),f=Array.isArray(p)?p.join(""):p;u=te(u,f+d),l+=f;}}if(l){var m=ee(u>>>0);if(!t.hasNameForId(r,m)){var y=n(l,"."+m,void 0,r);t.insertRules(r,m,y);}o.push(m);}}return o.join(" ")},e}(),se=/^\s*\/\/.*$/gm,ae=[":","[",".","#"];function ce(e){var t,n,r,o,i=void 0===e?E$3:e,s=i.options,a=void 0===s?E$3:s,c=i.plugins,u=void 0===c?w$2:c,l=new stylis_min(a),d=[],h=function(e){function t(t){if(t)try{e(t+"}");}catch(e){}}return function(n,r,o,i,s,a,c,u,l,d){switch(n){case 1:if(0===l&&64===r.charCodeAt(0))return e(r+";"),"";break;case 2:if(0===u)return r+"/*|*/";break;case 3:switch(u){case 102:case 112:return e(o[0]+r),"";default:return r+(0===d?"/*|*/":"")}case-2:r.split("/*|*/}").forEach(t);}}}((function(e){d.push(e);})),f=function(e,r,i){return 0===r&&-1!==ae.indexOf(i[n.length])||i.match(o)?e:"."+t};function m(e,i,s,a){void 0===a&&(a="&");var c=e.replace(se,""),u=i&&s?s+" "+i+" { "+c+" }":c;return t=a,n=i,r=new RegExp("\\"+n+"\\b","g"),o=new RegExp("(\\"+n+"\\b){2,}"),l(s||!i?"":i,u)}return l.use([].concat(u,[function(e,t,o){2===e&&o.length&&o[0].lastIndexOf(n)>0&&(o[0]=o[0].replace(r,f));},h,function(e){if(-2===e){var t=d;return d=[],t}}])),m.hash=u.length?u.reduce((function(e,t){return t.name||j$3(15),te(e,t.name)}),5381).toString():"",m}var ue=react.createContext();ue.Consumer;var de=react.createContext(),he=(de.Consumer,new Z$1),pe=ce();function fe(){return react.useContext(ue)||he}function me(){return react.useContext(de)||pe}var ve=function(){function e(e,t){var n=this;this.inject=function(e,t){void 0===t&&(t=pe);var r=n.name+t.hash;e.hasNameForId(n.id,r)||e.insertRules(n.id,r,t(n.rules,r,"@keyframes"));},this.toString=function(){return j$3(12,String(n.name))},this.name=e,this.id="sc-keyframes-"+e,this.rules=t;}return e.prototype.getName=function(e){return void 0===e&&(e=pe),this.name+e.hash},e}(),ge=/([A-Z])/,Se=/([A-Z])/g,we=/^ms-/,Ee=function(e){return "-"+e.toLowerCase()};function be(e){return ge.test(e)?e.replace(Se,Ee).replace(we,"-ms-"):e}var _e=function(e){return null==e||!1===e||""===e};function Ne(e,n,r,o){if(Array.isArray(e)){for(var i,s=[],a=0,c=e.length;a<c;a+=1)""!==(i=Ne(e[a],n,r,o))&&(Array.isArray(i)?s.push.apply(s,i):s.push(i));return s}if(_e(e))return "";if(N(e))return "."+e.styledComponentId;if(b$2(e)){if("function"!=typeof(l=e)||l.prototype&&l.prototype.isReactComponent||!n)return e;var u=e(n);return reactIs.isElement(u)&&console.warn(_$1(e)+" is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details."),Ne(u,n,r,o)}var l;return e instanceof ve?r?(e.inject(r,o),e.getName(o)):e:S$2(e)?function e(t,n){var r,o,i=[];for(var s in t)t.hasOwnProperty(s)&&!_e(t[s])&&(S$2(t[s])?i.push.apply(i,e(t[s],s)):b$2(t[s])?i.push(be(s)+":",t[s],";"):i.push(be(s)+": "+(r=s,null==(o=t[s])||"boolean"==typeof o||""===o?"":"number"!=typeof o||0===o||r in unitlessKeys?String(o).trim():o+"px")+";"));return n?[n+" {"].concat(i,["}"]):i}(e):e.toString()}function Ae(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];return b$2(e)||S$2(e)?Ne(g$2(w$2,[e].concat(n))):0===n.length&&1===e.length&&"string"==typeof e[0]?e:Ne(g$2(e,n))}var Ce=/invalid hook call/i,Ie=new Set,Pe=function(e,t){{var n="The component "+e+(t?' with the id of "'+t+'"':"")+" has been created dynamically.\nYou may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.";try{react.useRef(),Ie.has(n)||(console.warn(n),Ie.add(n));}catch(e){Ce.test(e.message)&&Ie.delete(n);}}},Oe=function(e,t,n){return void 0===n&&(n=E$3),e.theme!==n.theme&&e.theme||t||n.theme},Re=/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,De=/(^-|-$)/g;function je(e){return e.replace(Re,"-").replace(De,"")}var Te=function(e){return ee(ne(e)>>>0)};function ke(e){return "string"==typeof e&&(e.charAt(0)===e.charAt(0).toLowerCase())}var xe=function(e){return "function"==typeof e||"object"==typeof e&&null!==e&&!Array.isArray(e)},Ve=function(e){return "__proto__"!==e&&"constructor"!==e&&"prototype"!==e};function Be(e,t,n){var r=e[n];xe(t)&&xe(r)?Me(r,t):e[n]=t;}function Me(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];for(var o=0,i=n;o<i.length;o++){var s=i[o];if(xe(s))for(var a in s)Ve(a)&&Be(e,s[a],a);}return e}var ze=react.createContext();ze.Consumer;function Ge(e){var t=react.useContext(ze),n=react.useMemo((function(){return function(e,t){if(!e)return j$3(14);if(b$2(e)){var n=e(t);return null!==n&&!Array.isArray(n)&&"object"==typeof n?n:j$3(7)}return Array.isArray(e)||"object"!=typeof e?j$3(8):t?v$1({},t,{},e):e}(e.theme,t)}),[e.theme,t]);return e.children?react.createElement(ze.Provider,{value:n},e.children):null}var Fe={};function Ye(e,t,n){var o=N(e),s=!ke(e),a=t.attrs,c=void 0===a?w$2:a,d=t.componentId,h=void 0===d?function(e,t){var n="string"!=typeof e?"sc":je(e);Fe[n]=(Fe[n]||0)+1;var r=n+"-"+Te("5.3.0"+n+Fe[n]);return t?t+"-"+r:r}(t.displayName,t.parentComponentId):d,p=t.displayName,f=void 0===p?function(e){return ke(e)?"styled."+e:"Styled("+_$1(e)+")"}(e):p,g=t.displayName&&t.componentId?je(t.displayName)+"-"+t.componentId:t.componentId||h,S=o&&e.attrs?Array.prototype.concat(e.attrs,c).filter(Boolean):c,A=t.shouldForwardProp;o&&e.shouldForwardProp&&(A=t.shouldForwardProp?function(n,r,o){return e.shouldForwardProp(n,r,o)&&t.shouldForwardProp(n,r,o)}:e.shouldForwardProp);var C,I=new ie(n,g,o?e.componentStyle:void 0),P=I.isStatic&&0===c.length,O=function(e,t){return function(e,t,n,r){var o=e.attrs,s=e.componentStyle,a=e.defaultProps,c=e.foldedComponentIds,d=e.shouldForwardProp,h=e.styledComponentId,p=e.target;react.useDebugValue(h);var f=function(e,t,n){void 0===e&&(e=E$3);var r=v$1({},t,{theme:e}),o={};return n.forEach((function(e){var t,n,i,s=e;for(t in b$2(s)&&(s=s(r)),s)r[t]=o[t]="className"===t?(n=o[t],i=s[t],n&&i?n+" "+i:n||i):s[t];})),[r,o]}(Oe(t,react.useContext(ze),a)||E$3,t,o),y=f[0],g=f[1],S=function(e,t,n,r){var o=fe(),i=me(),s=t?e.generateAndInjectStyles(E$3,o,i):e.generateAndInjectStyles(n,o,i);return react.useDebugValue(s),!t&&r&&r(s),s}(s,r,y,e.warnTooManyClasses),w=n,_=g.$as||t.$as||g.as||t.as||p,N=ke(_),A=g!==t?v$1({},t,{},g):t,C={};for(var I in A)"$"!==I[0]&&"as"!==I&&("forwardedAs"===I?C.as=A[I]:(d?d(I,index$1,_):!N||index$1(I))&&(C[I]=A[I]));return t.style&&g.style!==t.style&&(C.style=v$1({},t.style,{},g.style)),C.className=Array.prototype.concat(c,h,S!==h?S:null,t.className,g.className).filter(Boolean).join(" "),C.ref=w,react.createElement(_,C)}(C,e,t,P)};return O.displayName=f,(C=react.forwardRef(O)).attrs=S,C.componentStyle=I,C.displayName=f,C.shouldForwardProp=A,C.foldedComponentIds=o?Array.prototype.concat(e.foldedComponentIds,e.styledComponentId):w$2,C.styledComponentId=g,C.target=o?e.target:e,C.withComponent=function(e){var r=t.componentId,o=function(e,t){if(null==e)return {};var n,r,o={},i=Object.keys(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(t,["componentId"]),i=r&&r+"-"+(ke(e)?e:je(_$1(e)));return Ye(e,v$1({},o,{attrs:S,componentId:i}),n)},Object.defineProperty(C,"defaultProps",{get:function(){return this._foldedDefaultProps},set:function(t){this._foldedDefaultProps=o?Me({},e.defaultProps,t):t;}}),(Pe(f,g),C.warnTooManyClasses=function(e,t){var n={},r=!1;return function(o){if(!r&&(n[o]=!0,Object.keys(n).length>=200)){var i=t?' with the id of "'+t+'"':"";console.warn("Over 200 classes were generated for component "+e+i+".\nConsider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"),r=!0,n={};}}}(f,g)),C.toString=function(){return "."+C.styledComponentId},s&&hoistNonReactStatics_cjs(C,e,{attrs:!0,componentStyle:!0,displayName:!0,foldedComponentIds:!0,shouldForwardProp:!0,styledComponentId:!0,target:!0,withComponent:!0}),C}var qe=function(e){return function e(t,r,o){if(void 0===o&&(o=E$3),!reactIs.isValidElementType(r))return j$3(1,String(r));var i=function(){return t(r,o,Ae.apply(void 0,arguments))};return i.withConfig=function(n){return e(t,r,v$1({},o,{},n))},i.attrs=function(n){return e(t,r,v$1({},o,{attrs:Array.prototype.concat(o.attrs,n).filter(Boolean)}))},i}(Ye,e)};["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","head","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","marquee","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","title","tr","track","u","ul","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","marker","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","textPath","tspan"].forEach((function(e){qe[e]=qe(e);}));var He=function(){function e(e,t){this.rules=e,this.componentId=t,this.isStatic=re(e),Z$1.registerId(this.componentId+1);}var t=e.prototype;return t.createStyles=function(e,t,n,r){var o=r(Ne(this.rules,t,n,r).join(""),""),i=this.componentId+e;n.insertRules(i,i,o);},t.removeStyles=function(e,t){t.clearRules(this.componentId+e);},t.renderStyles=function(e,t,n,r){e>2&&Z$1.registerId(this.componentId+e),this.removeStyles(e,n),this.createStyles(e,t,n,r);},e}();function $e(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),o=1;o<t;o++)n[o-1]=arguments[o];var s=Ae.apply(void 0,[e].concat(n)),a="sc-global-"+Te(JSON.stringify(s)),u=new He(s,a);function l(e){var t=fe(),n=me(),o=react.useContext(ze),l=react.useRef(t.allocateGSInstance(a)).current;return react.Children.count(e.children)&&console.warn("The global style component "+a+" was given child JSX. createGlobalStyle does not render children."),s.some((function(e){return "string"==typeof e&&-1!==e.indexOf("@import")}))&&console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app."),react.useLayoutEffect((function(){return h(l,e,t,o,n),function(){return u.removeStyles(l,t)}}),[l,e,t,o,n]),null}function h(e,t,n,r,o){if(u.isStatic)u.renderStyles(e,O$2,n,o);else {var i=v$1({},t,{theme:Oe(t,r,l.defaultProps)});u.renderStyles(e,i,n,o);}}return Pe(a),react.memo(l)}function We(e){"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];var o=Ae.apply(void 0,[e].concat(n)).join(""),i=Te(o);return new ve(i,o)}"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"),(window["__styled-components-init__"]=window["__styled-components-init__"]||0,1===window["__styled-components-init__"]&&console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."),window["__styled-components-init__"]+=1);
+            function v(){return (v=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r]);}return e}).apply(this,arguments)}var g$1=function(e,t){for(var n=[e[0]],r=0,o=t.length;r<o;r+=1)n.push(t[r],e[r+1]);return n},S$1=function(t){return null!==t&&"object"==typeof t&&"[object Object]"===(t.toString?t.toString():Object.prototype.toString.call(t))&&!reactIs.typeOf(t)},w$1=Object.freeze([]),E$2=Object.freeze({});function b$1(e){return "function"==typeof e}function _(e){return "string"==typeof e&&e||e.displayName||e.name||"Component"}function N(e){return e&&"string"==typeof e.styledComponentId}var A="undefined"!=typeof process&&(process.env.REACT_APP_SC_ATTR||process.env.SC_ATTR)||"data-styled",I="undefined"!=typeof window&&"HTMLElement"in window,P=Boolean("boolean"==typeof SC_DISABLE_SPEEDY?SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&""!==process.env.REACT_APP_SC_DISABLE_SPEEDY?"false"!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&process.env.REACT_APP_SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env.SC_DISABLE_SPEEDY&&""!==process.env.SC_DISABLE_SPEEDY?"false"!==process.env.SC_DISABLE_SPEEDY&&process.env.SC_DISABLE_SPEEDY:"production"!=="development"),O$1={},R={1:"Cannot create styled-component for component: %s.\n\n",2:"Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",3:"Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",4:"The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",5:"The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",6:"Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",7:'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',8:'ThemeProvider: Please make your "theme" prop an object.\n\n',9:"Missing document `<head>`\n\n",10:"Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",11:"_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",12:"It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",13:"%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",14:'ThemeProvider: "theme" prop is required.\n\n',15:"A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",16:"Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",17:"CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n"};function D(){for(var e=arguments.length<=0?void 0:arguments[0],t=[],n=1,r=arguments.length;n<r;n+=1)t.push(n<0||arguments.length<=n?void 0:arguments[n]);return t.forEach((function(t){e=e.replace(/%[a-z]/,t);})),e}function j$2(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];throw new Error(D.apply(void 0,[R[e]].concat(n)).trim())}var T=function(){function e(e){this.groupSizes=new Uint32Array(512),this.length=512,this.tag=e;}var t=e.prototype;return t.indexOfGroup=function(e){for(var t=0,n=0;n<e;n++)t+=this.groupSizes[n];return t},t.insertRules=function(e,t){if(e>=this.groupSizes.length){for(var n=this.groupSizes,r=n.length,o=r;e>=o;)(o<<=1)<0&&j$2(16,""+e);this.groupSizes=new Uint32Array(o),this.groupSizes.set(n),this.length=o;for(var i=r;i<o;i++)this.groupSizes[i]=0;}for(var s=this.indexOfGroup(e+1),a=0,c=t.length;a<c;a++)this.tag.insertRule(s,t[a])&&(this.groupSizes[e]++,s++);},t.clearGroup=function(e){if(e<this.length){var t=this.groupSizes[e],n=this.indexOfGroup(e),r=n+t;this.groupSizes[e]=0;for(var o=n;o<r;o++)this.tag.deleteRule(n);}},t.getGroup=function(e){var t="";if(e>=this.length||0===this.groupSizes[e])return t;for(var n=this.groupSizes[e],r=this.indexOfGroup(e),o=r+n,i=r;i<o;i++)t+=this.tag.getRule(i)+"/*!sc*/\n";return t},e}(),k$1=new Map,x$1=new Map,V=1,B=function(e){if(k$1.has(e))return k$1.get(e);for(;x$1.has(V);)V++;var t=V++;return ((0|t)<0||t>1<<30)&&j$2(16,""+t),k$1.set(e,t),x$1.set(t,e),t},M$1=function(e){return x$1.get(e)},z=function(e,t){k$1.set(e,t),x$1.set(t,e);},L="style["+A+'][data-styled-version="5.3.0"]',G=new RegExp("^"+A+'\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'),F=function(e,t,n){for(var r,o=n.split(","),i=0,s=o.length;i<s;i++)(r=o[i])&&e.registerName(t,r);},Y=function(e,t){for(var n=t.innerHTML.split("/*!sc*/\n"),r=[],o=0,i=n.length;o<i;o++){var s=n[o].trim();if(s){var a=s.match(G);if(a){var c=0|parseInt(a[1],10),u=a[2];0!==c&&(z(u,c),F(e,u,a[3]),e.getTag().insertRules(c,r)),r.length=0;}else r.push(s);}}},q=function(){return "undefined"!=typeof window&&void 0!==window.__webpack_nonce__?window.__webpack_nonce__:null},H=function(e){var t=document.head,n=e||t,r=document.createElement("style"),o=function(e){for(var t=e.childNodes,n=t.length;n>=0;n--){var r=t[n];if(r&&1===r.nodeType&&r.hasAttribute(A))return r}}(n),i=void 0!==o?o.nextSibling:null;r.setAttribute(A,"active"),r.setAttribute("data-styled-version","5.3.0");var s=q();return s&&r.setAttribute("nonce",s),n.insertBefore(r,i),r},$=function(){function e(e){var t=this.element=H(e);t.appendChild(document.createTextNode("")),this.sheet=function(e){if(e.sheet)return e.sheet;for(var t=document.styleSheets,n=0,r=t.length;n<r;n++){var o=t[n];if(o.ownerNode===e)return o}j$2(17);}(t),this.length=0;}var t=e.prototype;return t.insertRule=function(e,t){try{return this.sheet.insertRule(t,e),this.length++,!0}catch(e){return !1}},t.deleteRule=function(e){this.sheet.deleteRule(e),this.length--;},t.getRule=function(e){var t=this.sheet.cssRules[e];return void 0!==t&&"string"==typeof t.cssText?t.cssText:""},e}(),W$1=function(){function e(e){var t=this.element=H(e);this.nodes=t.childNodes,this.length=0;}var t=e.prototype;return t.insertRule=function(e,t){if(e<=this.length&&e>=0){var n=document.createTextNode(t),r=this.nodes[e];return this.element.insertBefore(n,r||null),this.length++,!0}return !1},t.deleteRule=function(e){this.element.removeChild(this.nodes[e]),this.length--;},t.getRule=function(e){return e<this.length?this.nodes[e].textContent:""},e}(),U$1=function(){function e(e){this.rules=[],this.length=0;}var t=e.prototype;return t.insertRule=function(e,t){return e<=this.length&&(this.rules.splice(e,0,t),this.length++,!0)},t.deleteRule=function(e){this.rules.splice(e,1),this.length--;},t.getRule=function(e){return e<this.length?this.rules[e]:""},e}(),J=I,X={isServer:!I,useCSSOMInjection:!P},Z=function(){function e(e,t,n){void 0===e&&(e=E$2),void 0===t&&(t={}),this.options=v({},X,{},e),this.gs=t,this.names=new Map(n),!this.options.isServer&&I&&J&&(J=!1,function(e){for(var t=document.querySelectorAll(L),n=0,r=t.length;n<r;n++){var o=t[n];o&&"active"!==o.getAttribute(A)&&(Y(e,o),o.parentNode&&o.parentNode.removeChild(o));}}(this));}e.registerId=function(e){return B(e)};var t=e.prototype;return t.reconstructWithOptions=function(t,n){return void 0===n&&(n=!0),new e(v({},this.options,{},t),this.gs,n&&this.names||void 0)},t.allocateGSInstance=function(e){return this.gs[e]=(this.gs[e]||0)+1},t.getTag=function(){return this.tag||(this.tag=(n=(t=this.options).isServer,r=t.useCSSOMInjection,o=t.target,e=n?new U$1(o):r?new $(o):new W$1(o),new T(e)));var e,t,n,r,o;},t.hasNameForId=function(e,t){return this.names.has(e)&&this.names.get(e).has(t)},t.registerName=function(e,t){if(B(e),this.names.has(e))this.names.get(e).add(t);else {var n=new Set;n.add(t),this.names.set(e,n);}},t.insertRules=function(e,t,n){this.registerName(e,t),this.getTag().insertRules(B(e),n);},t.clearNames=function(e){this.names.has(e)&&this.names.get(e).clear();},t.clearRules=function(e){this.getTag().clearGroup(B(e)),this.clearNames(e);},t.clearTag=function(){this.tag=void 0;},t.toString=function(){return function(e){for(var t=e.getTag(),n=t.length,r="",o=0;o<n;o++){var i=M$1(o);if(void 0!==i){var s=e.names.get(i),a=t.getGroup(o);if(void 0!==s&&0!==a.length){var c=A+".g"+o+'[id="'+i+'"]',u="";void 0!==s&&s.forEach((function(e){e.length>0&&(u+=e+",");})),r+=""+a+c+'{content:"'+u+'"}/*!sc*/\n';}}}return r}(this)},e}(),K=/(a)(d)/gi,Q=function(e){return String.fromCharCode(e+(e>25?39:97))};function ee(e){var t,n="";for(t=Math.abs(e);t>52;t=t/52|0)n=Q(t%52)+n;return (Q(t%52)+n).replace(K,"$1-$2")}var te=function(e,t){for(var n=t.length;n;)e=33*e^t.charCodeAt(--n);return e},ne=function(e){return te(5381,e)};function re(e){for(var t=0;t<e.length;t+=1){var n=e[t];if(b$1(n)&&!N(n))return !1}return !0}var oe=ne("5.3.0"),ie=function(){function e(e,t,n){this.rules=e,this.staticRulesId="",this.isStatic="production"==="development",this.componentId=t,this.baseHash=te(oe,t),this.baseStyle=n,Z.registerId(t);}return e.prototype.generateAndInjectStyles=function(e,t,n){var r=this.componentId,o=[];if(this.baseStyle&&o.push(this.baseStyle.generateAndInjectStyles(e,t,n)),this.isStatic&&!n.hash)if(this.staticRulesId&&t.hasNameForId(r,this.staticRulesId))o.push(this.staticRulesId);else {var i=Ne(this.rules,e,t,n).join(""),s=ee(te(this.baseHash,i.length)>>>0);if(!t.hasNameForId(r,s)){var a=n(i,"."+s,void 0,r);t.insertRules(r,s,a);}o.push(s),this.staticRulesId=s;}else {for(var c=this.rules.length,u=te(this.baseHash,n.hash),l="",d=0;d<c;d++){var h=this.rules[d];if("string"==typeof h)l+=h,(u=te(u,h+d));else if(h){var p=Ne(h,e,t,n),f=Array.isArray(p)?p.join(""):p;u=te(u,f+d),l+=f;}}if(l){var m=ee(u>>>0);if(!t.hasNameForId(r,m)){var y=n(l,"."+m,void 0,r);t.insertRules(r,m,y);}o.push(m);}}return o.join(" ")},e}(),se=/^\s*\/\/.*$/gm,ae=[":","[",".","#"];function ce(e){var t,n,r,o,i=void 0===e?E$2:e,s=i.options,a=void 0===s?E$2:s,c=i.plugins,u=void 0===c?w$1:c,l=new stylis_min(a),d=[],h=function(e){function t(t){if(t)try{e(t+"}");}catch(e){}}return function(n,r,o,i,s,a,c,u,l,d){switch(n){case 1:if(0===l&&64===r.charCodeAt(0))return e(r+";"),"";break;case 2:if(0===u)return r+"/*|*/";break;case 3:switch(u){case 102:case 112:return e(o[0]+r),"";default:return r+(0===d?"/*|*/":"")}case-2:r.split("/*|*/}").forEach(t);}}}((function(e){d.push(e);})),f=function(e,r,i){return 0===r&&-1!==ae.indexOf(i[n.length])||i.match(o)?e:"."+t};function m(e,i,s,a){void 0===a&&(a="&");var c=e.replace(se,""),u=i&&s?s+" "+i+" { "+c+" }":c;return t=a,n=i,r=new RegExp("\\"+n+"\\b","g"),o=new RegExp("(\\"+n+"\\b){2,}"),l(s||!i?"":i,u)}return l.use([].concat(u,[function(e,t,o){2===e&&o.length&&o[0].lastIndexOf(n)>0&&(o[0]=o[0].replace(r,f));},h,function(e){if(-2===e){var t=d;return d=[],t}}])),m.hash=u.length?u.reduce((function(e,t){return t.name||j$2(15),te(e,t.name)}),5381).toString():"",m}var ue=react.createContext();ue.Consumer;var de=react.createContext(),he=(de.Consumer,new Z),pe=ce();function fe(){return react.useContext(ue)||he}function me(){return react.useContext(de)||pe}var ve=function(){function e(e,t){var n=this;this.inject=function(e,t){void 0===t&&(t=pe);var r=n.name+t.hash;e.hasNameForId(n.id,r)||e.insertRules(n.id,r,t(n.rules,r,"@keyframes"));},this.toString=function(){return j$2(12,String(n.name))},this.name=e,this.id="sc-keyframes-"+e,this.rules=t;}return e.prototype.getName=function(e){return void 0===e&&(e=pe),this.name+e.hash},e}(),ge=/([A-Z])/,Se=/([A-Z])/g,we=/^ms-/,Ee=function(e){return "-"+e.toLowerCase()};function be(e){return ge.test(e)?e.replace(Se,Ee).replace(we,"-ms-"):e}var _e=function(e){return null==e||!1===e||""===e};function Ne(e,n,r,o){if(Array.isArray(e)){for(var i,s=[],a=0,c=e.length;a<c;a+=1)""!==(i=Ne(e[a],n,r,o))&&(Array.isArray(i)?s.push.apply(s,i):s.push(i));return s}if(_e(e))return "";if(N(e))return "."+e.styledComponentId;if(b$1(e)){if("function"!=typeof(l=e)||l.prototype&&l.prototype.isReactComponent||!n)return e;var u=e(n);return reactIs.isElement(u)&&console.warn(_(e)+" is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details."),Ne(u,n,r,o)}var l;return e instanceof ve?r?(e.inject(r,o),e.getName(o)):e:S$1(e)?function e(t,n){var r,o,i=[];for(var s in t)t.hasOwnProperty(s)&&!_e(t[s])&&(S$1(t[s])?i.push.apply(i,e(t[s],s)):b$1(t[s])?i.push(be(s)+":",t[s],";"):i.push(be(s)+": "+(r=s,null==(o=t[s])||"boolean"==typeof o||""===o?"":"number"!=typeof o||0===o||r in unitlessKeys?String(o).trim():o+"px")+";"));return n?[n+" {"].concat(i,["}"]):i}(e):e.toString()}function Ae(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];return b$1(e)||S$1(e)?Ne(g$1(w$1,[e].concat(n))):0===n.length&&1===e.length&&"string"==typeof e[0]?e:Ne(g$1(e,n))}var Ce=/invalid hook call/i,Ie=new Set,Pe=function(e,t){{var n="The component "+e+(t?' with the id of "'+t+'"':"")+" has been created dynamically.\nYou may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.";try{react.useRef(),Ie.has(n)||(console.warn(n),Ie.add(n));}catch(e){Ce.test(e.message)&&Ie.delete(n);}}},Oe=function(e,t,n){return void 0===n&&(n=E$2),e.theme!==n.theme&&e.theme||t||n.theme},Re=/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,De=/(^-|-$)/g;function je(e){return e.replace(Re,"-").replace(De,"")}var Te=function(e){return ee(ne(e)>>>0)};function ke(e){return "string"==typeof e&&(e.charAt(0)===e.charAt(0).toLowerCase())}var xe=function(e){return "function"==typeof e||"object"==typeof e&&null!==e&&!Array.isArray(e)},Ve=function(e){return "__proto__"!==e&&"constructor"!==e&&"prototype"!==e};function Be(e,t,n){var r=e[n];xe(t)&&xe(r)?Me(r,t):e[n]=t;}function Me(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];for(var o=0,i=n;o<i.length;o++){var s=i[o];if(xe(s))for(var a in s)Ve(a)&&Be(e,s[a],a);}return e}var ze=react.createContext();ze.Consumer;function Ge(e){var t=react.useContext(ze),n=react.useMemo((function(){return function(e,t){if(!e)return j$2(14);if(b$1(e)){var n=e(t);return null!==n&&!Array.isArray(n)&&"object"==typeof n?n:j$2(7)}return Array.isArray(e)||"object"!=typeof e?j$2(8):t?v({},t,{},e):e}(e.theme,t)}),[e.theme,t]);return e.children?react.createElement(ze.Provider,{value:n},e.children):null}var Fe={};function Ye(e,t,n){var o=N(e),s=!ke(e),a=t.attrs,c=void 0===a?w$1:a,d=t.componentId,h=void 0===d?function(e,t){var n="string"!=typeof e?"sc":je(e);Fe[n]=(Fe[n]||0)+1;var r=n+"-"+Te("5.3.0"+n+Fe[n]);return t?t+"-"+r:r}(t.displayName,t.parentComponentId):d,p=t.displayName,f=void 0===p?function(e){return ke(e)?"styled."+e:"Styled("+_(e)+")"}(e):p,g=t.displayName&&t.componentId?je(t.displayName)+"-"+t.componentId:t.componentId||h,S=o&&e.attrs?Array.prototype.concat(e.attrs,c).filter(Boolean):c,A=t.shouldForwardProp;o&&e.shouldForwardProp&&(A=t.shouldForwardProp?function(n,r,o){return e.shouldForwardProp(n,r,o)&&t.shouldForwardProp(n,r,o)}:e.shouldForwardProp);var C,I=new ie(n,g,o?e.componentStyle:void 0),P=I.isStatic&&0===c.length,O=function(e,t){return function(e,t,n,r){var o=e.attrs,s=e.componentStyle,a=e.defaultProps,c=e.foldedComponentIds,d=e.shouldForwardProp,h=e.styledComponentId,p=e.target;react.useDebugValue(h);var f=function(e,t,n){void 0===e&&(e=E$2);var r=v({},t,{theme:e}),o={};return n.forEach((function(e){var t,n,i,s=e;for(t in b$1(s)&&(s=s(r)),s)r[t]=o[t]="className"===t?(n=o[t],i=s[t],n&&i?n+" "+i:n||i):s[t];})),[r,o]}(Oe(t,react.useContext(ze),a)||E$2,t,o),y=f[0],g=f[1],S=function(e,t,n,r){var o=fe(),i=me(),s=t?e.generateAndInjectStyles(E$2,o,i):e.generateAndInjectStyles(n,o,i);return react.useDebugValue(s),!t&&r&&r(s),s}(s,r,y,e.warnTooManyClasses),w=n,_=g.$as||t.$as||g.as||t.as||p,N=ke(_),A=g!==t?v({},t,{},g):t,C={};for(var I in A)"$"!==I[0]&&"as"!==I&&("forwardedAs"===I?C.as=A[I]:(d?d(I,index$1,_):!N||index$1(I))&&(C[I]=A[I]));return t.style&&g.style!==t.style&&(C.style=v({},t.style,{},g.style)),C.className=Array.prototype.concat(c,h,S!==h?S:null,t.className,g.className).filter(Boolean).join(" "),C.ref=w,react.createElement(_,C)}(C,e,t,P)};return O.displayName=f,(C=react.forwardRef(O)).attrs=S,C.componentStyle=I,C.displayName=f,C.shouldForwardProp=A,C.foldedComponentIds=o?Array.prototype.concat(e.foldedComponentIds,e.styledComponentId):w$1,C.styledComponentId=g,C.target=o?e.target:e,C.withComponent=function(e){var r=t.componentId,o=function(e,t){if(null==e)return {};var n,r,o={},i=Object.keys(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(t,["componentId"]),i=r&&r+"-"+(ke(e)?e:je(_(e)));return Ye(e,v({},o,{attrs:S,componentId:i}),n)},Object.defineProperty(C,"defaultProps",{get:function(){return this._foldedDefaultProps},set:function(t){this._foldedDefaultProps=o?Me({},e.defaultProps,t):t;}}),(Pe(f,g),C.warnTooManyClasses=function(e,t){var n={},r=!1;return function(o){if(!r&&(n[o]=!0,Object.keys(n).length>=200)){var i=t?' with the id of "'+t+'"':"";console.warn("Over 200 classes were generated for component "+e+i+".\nConsider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"),r=!0,n={};}}}(f,g)),C.toString=function(){return "."+C.styledComponentId},s&&hoistNonReactStatics_cjs(C,e,{attrs:!0,componentStyle:!0,displayName:!0,foldedComponentIds:!0,shouldForwardProp:!0,styledComponentId:!0,target:!0,withComponent:!0}),C}var qe=function(e){return function e(t,r,o){if(void 0===o&&(o=E$2),!reactIs.isValidElementType(r))return j$2(1,String(r));var i=function(){return t(r,o,Ae.apply(void 0,arguments))};return i.withConfig=function(n){return e(t,r,v({},o,{},n))},i.attrs=function(n){return e(t,r,v({},o,{attrs:Array.prototype.concat(o.attrs,n).filter(Boolean)}))},i}(Ye,e)};["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","head","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","marquee","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","title","tr","track","u","ul","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","marker","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","textPath","tspan"].forEach((function(e){qe[e]=qe(e);}));var He=function(){function e(e,t){this.rules=e,this.componentId=t,this.isStatic=re(e),Z.registerId(this.componentId+1);}var t=e.prototype;return t.createStyles=function(e,t,n,r){var o=r(Ne(this.rules,t,n,r).join(""),""),i=this.componentId+e;n.insertRules(i,i,o);},t.removeStyles=function(e,t){t.clearRules(this.componentId+e);},t.renderStyles=function(e,t,n,r){e>2&&Z.registerId(this.componentId+e),this.removeStyles(e,n),this.createStyles(e,t,n,r);},e}();function $e(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),o=1;o<t;o++)n[o-1]=arguments[o];var s=Ae.apply(void 0,[e].concat(n)),a="sc-global-"+Te(JSON.stringify(s)),u=new He(s,a);function l(e){var t=fe(),n=me(),o=react.useContext(ze),l=react.useRef(t.allocateGSInstance(a)).current;return react.Children.count(e.children)&&console.warn("The global style component "+a+" was given child JSX. createGlobalStyle does not render children."),s.some((function(e){return "string"==typeof e&&-1!==e.indexOf("@import")}))&&console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app."),react.useLayoutEffect((function(){return h(l,e,t,o,n),function(){return u.removeStyles(l,t)}}),[l,e,t,o,n]),null}function h(e,t,n,r,o){if(u.isStatic)u.renderStyles(e,O$1,n,o);else {var i=v({},t,{theme:Oe(t,r,l.defaultProps)});u.renderStyles(e,i,n,o);}}return Pe(a),react.memo(l)}function We(e){"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];var o=Ae.apply(void 0,[e].concat(n)).join(""),i=Te(o);return new ve(i,o)}"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"),(window["__styled-components-init__"]=window["__styled-components-init__"]||0,1===window["__styled-components-init__"]&&console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."),window["__styled-components-init__"]+=1);
 
             const GlobalStyle = $e `
   html,
@@ -31328,7 +33783,7 @@
                 return s.charAt(0).toUpperCase() + s.slice(1);
             };
 
-            const isObject$1 = (item) => {
+            const isObject$2 = (item) => {
                 return (item === Object(item) && !Array.isArray(item));
             };
             const deepMerge = (arrayMergeKeys, target, ...sources) => {
@@ -31336,16 +33791,16 @@
                     return target;
                 }
                 const result = target;
-                if (isObject$1(result)) {
+                if (isObject$2(result)) {
                     const len = sources.length;
                     for (let i = 0; i < len; i += 1) {
                         const elm = sources[i];
-                        if (isObject$1(elm)) {
+                        if (isObject$2(elm)) {
                             for (const key in elm) {
                                 if (elm.hasOwnProperty(key)) {
                                     const mergeKey = arrayMergeKeys ? arrayMergeKeys[key] : undefined;
-                                    if (isObject$1(elm[key])) {
-                                        if (!result[key] || !isObject$1(result[key])) {
+                                    if (isObject$2(elm[key])) {
+                                        if (!result[key] || !isObject$2(result[key])) {
                                             result[key] = {};
                                         }
                                         deepMerge(mergeKey, result[key], elm[key]);
@@ -31492,6 +33947,26 @@
             }
             const instance = new Memoize();
             Object.freeze(instance);
+
+            const throttle = (func, limit) => {
+                let lastFunc;
+                let lastRan;
+                return function (...args) {
+                    if (!lastRan) {
+                        func.apply(this, args);
+                        lastRan = Date.now();
+                    }
+                    else {
+                        clearTimeout(lastFunc);
+                        lastFunc = setTimeout(() => {
+                            if ((Date.now() - lastRan) >= limit) {
+                                func.apply(this, args);
+                                lastRan = Date.now();
+                            }
+                        }, limit - (Date.now() - lastRan));
+                    }
+                };
+            };
 
             const validURL = (str) => {
                 const pattern = new RegExp('^(https?:\\/\\/)?' +
@@ -31641,7 +34116,7 @@
                 'blue-dark': '#4169e1',
                 blue: '#007FFF',
                 green: '#26FF64',
-                grey: '#696969',
+                grey: '#B6B6B6',
                 'grey-dark': '#3D4035',
                 'grey-light': '#DBD7D2',
                 red: '#FF2626',
@@ -31804,9 +34279,9 @@
             var Arr = typeof Uint8Array !== 'undefined' ? Uint8Array : Array;
 
             var code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
-            for (var i$4 = 0, len = code.length; i$4 < len; ++i$4) {
-              lookup[i$4] = code[i$4];
-              revLookup[code.charCodeAt(i$4)] = i$4;
+            for (var i$3 = 0, len = code.length; i$3 < len; ++i$3) {
+              lookup[i$3] = code[i$3];
+              revLookup[code.charCodeAt(i$3)] = i$3;
             }
 
             // Support decoding URL-safe base64 strings, as Node.js does.
@@ -34983,8 +37458,8 @@
 
             var base64Regex = /[A-Za-z0-9\/+]/;
             var base64Chars = [];
-            for (var i$3 = 0; i$3 < 256; i$3++)
-                base64Chars[i$3] = base64Regex.test(String.fromCharCode(i$3));
+            for (var i$2 = 0; i$2 < 256; i$2++)
+                base64Chars[i$2] = base64Regex.test(String.fromCharCode(i$2));
 
             var plusChar = '+'.charCodeAt(0), 
                 minusChar = '-'.charCodeAt(0),
@@ -35946,8 +38421,8 @@
                 UNASSIGNED_NODE = new Array(0x100),
                 DEF_CHAR = -1;
 
-            for (var i$2 = 0; i$2 < 0x100; i$2++)
-                UNASSIGNED_NODE[i$2] = UNASSIGNED$1;
+            for (var i$1 = 0; i$1 < 0x100; i$1++)
+                UNASSIGNED_NODE[i$1] = UNASSIGNED$1;
 
 
             // Class DBCSCodec reads and initializes mapping tables.
@@ -45302,8 +47777,6 @@
             }
             });
 
-            function n$1(n){for(var r=arguments.length,t=Array(r>1?r-1:0),e=1;e<r;e++)t[e-1]=arguments[e];{var i=Y[n],o=i?"function"==typeof i?i.apply(null,t):i:"unknown error nr: "+n;throw Error("[Immer] "+o)}}function r$1(n){return !!n&&!!n[Q]}function t$1(n){return !!n&&(function(n){if(!n||"object"!=typeof n)return !1;var r=Object.getPrototypeOf(n);if(null===r)return !0;var t=Object.hasOwnProperty.call(r,"constructor")&&r.constructor;return "function"==typeof t&&Function.toString.call(t)===Z}(n)||Array.isArray(n)||!!n[L]||!!n.constructor[L]||s$1(n)||v(n))}function i$1(n,r,t){void 0===t&&(t=!1),0===o$1(n)?(t?Object.keys:nn)(n).forEach((function(e){t&&"symbol"==typeof e||r(e,n[e],n);})):n.forEach((function(t,e){return r(e,t,n)}));}function o$1(n){var r=n[Q];return r?r.i>3?r.i-4:r.i:Array.isArray(n)?1:s$1(n)?2:v(n)?3:0}function u$1(n,r){return 2===o$1(n)?n.has(r):Object.prototype.hasOwnProperty.call(n,r)}function a$2(n,r){return 2===o$1(n)?n.get(r):n[r]}function f$2(n,r,t){var e=o$1(n);2===e?n.set(r,t):3===e?(n.delete(r),n.add(t)):n[r]=t;}function c$1(n,r){return n===r?0!==n||1/n==1/r:n!=n&&r!=r}function s$1(n){return X&&n instanceof Map}function v(n){return q&&n instanceof Set}function p$1(n){return n.o||n.t}function l$2(n){if(Array.isArray(n))return Array.prototype.slice.call(n);var r=rn(n);delete r[Q];for(var t=nn(r),e=0;e<t.length;e++){var i=t[e],o=r[i];!1===o.writable&&(o.writable=!0,o.configurable=!0),(o.get||o.set)&&(r[i]={configurable:!0,writable:!0,enumerable:o.enumerable,value:n[i]});}return Object.create(Object.getPrototypeOf(n),r)}function d(n,e){return void 0===e&&(e=!1),y$1(n)||r$1(n)||!t$1(n)?n:(o$1(n)>1&&(n.set=n.add=n.clear=n.delete=h),Object.freeze(n),e&&i$1(n,(function(n,r){return d(r,!0)}),!0),n)}function h(){n$1(2);}function y$1(n){return null==n||"object"!=typeof n||Object.isFrozen(n)}function b$1(r){var t=tn[r];return t||n$1(18,r),t}function _(){return U$1||n$1(0),U$1}function j$2(n,r){r&&(b$1("Patches"),n.u=[],n.s=[],n.v=r);}function g$1(n){O$1(n),n.p.forEach(S$1),n.p=null;}function O$1(n){n===U$1&&(U$1=n.l);}function w$1(n){return U$1={p:[],l:U$1,h:n,m:!0,_:0}}function S$1(n){var r=n[Q];0===r.i||1===r.i?r.j():r.g=!0;}function P(r,e){e._=e.p.length;var i=e.p[0],o=void 0!==r&&r!==i;return e.h.O||b$1("ES5").S(e,r,o),o?(i[Q].P&&(g$1(e),n$1(4)),t$1(r)&&(r=M$1(e,r),e.l||x$1(e,r)),e.u&&b$1("Patches").M(i[Q],r,e.u,e.s)):r=M$1(e,i,[]),g$1(e),e.u&&e.v(e.u,e.s),r!==H?r:void 0}function M$1(n,r,t){if(y$1(r))return r;var e=r[Q];if(!e)return i$1(r,(function(i,o){return A(n,e,r,i,o,t)}),!0),r;if(e.A!==n)return r;if(!e.P)return x$1(n,e.t,!0),e.t;if(!e.I){e.I=!0,e.A._--;var o=4===e.i||5===e.i?e.o=l$2(e.k):e.o;i$1(3===e.i?new Set(o):o,(function(r,i){return A(n,e,o,r,i,t)})),x$1(n,o,!1),t&&n.u&&b$1("Patches").R(e,t,n.u,n.s);}return e.o}function A(e,i,o,a,c,s){if(c===o&&n$1(5),r$1(c)){var v=M$1(e,c,s&&i&&3!==i.i&&!u$1(i.D,a)?s.concat(a):void 0);if(f$2(o,a,v),!r$1(v))return;e.m=!1;}if(t$1(c)&&!y$1(c)){if(!e.h.F&&e._<1)return;M$1(e,c),i&&i.A.l||x$1(e,c);}}function x$1(n,r,t){void 0===t&&(t=!1),n.h.F&&n.m&&d(r,t);}function z(n,r){var t=n[Q];return (t?p$1(t):n)[r]}function I(n,r){if(r in n)for(var t=Object.getPrototypeOf(n);t;){var e=Object.getOwnPropertyDescriptor(t,r);if(e)return e;t=Object.getPrototypeOf(t);}}function k$1(n){n.P||(n.P=!0,n.l&&k$1(n.l));}function E$2(n){n.o||(n.o=l$2(n.t));}function R(n,r,t){var e=s$1(r)?b$1("MapSet").N(r,t):v(r)?b$1("MapSet").T(r,t):n.O?function(n,r){var t=Array.isArray(n),e={i:t?1:0,A:r?r.A:_(),P:!1,I:!1,D:{},l:r,t:n,k:null,o:null,j:null,C:!1},i=e,o=en;t&&(i=[e],o=on);var u=Proxy.revocable(i,o),a=u.revoke,f=u.proxy;return e.k=f,e.j=a,f}(r,t):b$1("ES5").J(r,t);return (t?t.A:_()).p.push(e),e}function D(e){return r$1(e)||n$1(22,e),function n(r){if(!t$1(r))return r;var e,u=r[Q],c=o$1(r);if(u){if(!u.P&&(u.i<4||!b$1("ES5").K(u)))return u.t;u.I=!0,e=F(r,c),u.I=!1;}else e=F(r,c);return i$1(e,(function(r,t){u&&a$2(u.t,r)===t||f$2(e,r,n(t));})),3===c?new Set(e):e}(e)}function F(n,r){switch(r){case 2:return new Map(n);case 3:return Array.from(n)}return l$2(n)}var G,U$1,W$1="undefined"!=typeof Symbol&&"symbol"==typeof Symbol("x"),X="undefined"!=typeof Map,q="undefined"!=typeof Set,B="undefined"!=typeof Proxy&&void 0!==Proxy.revocable&&"undefined"!=typeof Reflect,H=W$1?Symbol.for("immer-nothing"):((G={})["immer-nothing"]=!0,G),L=W$1?Symbol.for("immer-draftable"):"__$immer_draftable",Q=W$1?Symbol.for("immer-state"):"__$immer_state",Y={0:"Illegal state",1:"Immer drafts cannot have computed properties",2:"This object has been frozen and should not be mutated",3:function(n){return "Cannot use a proxy that has been revoked. Did you pass an object from inside an immer function to an async process? "+n},4:"An immer producer returned a new value *and* modified its draft. Either return a new value *or* modify the draft.",5:"Immer forbids circular references",6:"The first or second argument to `produce` must be a function",7:"The third argument to `produce` must be a function or undefined",8:"First argument to `createDraft` must be a plain object, an array, or an immerable object",9:"First argument to `finishDraft` must be a draft returned by `createDraft`",10:"The given draft is already finalized",11:"Object.defineProperty() cannot be used on an Immer draft",12:"Object.setPrototypeOf() cannot be used on an Immer draft",13:"Immer only supports deleting array indices",14:"Immer only supports setting array indices and the 'length' property",15:function(n){return "Cannot apply patch, path doesn't resolve: "+n},16:'Sets cannot have "replace" patches.',17:function(n){return "Unsupported patch operation: "+n},18:function(n){return "The plugin for '"+n+"' has not been loaded into Immer. To enable the plugin, import and call `enable"+n+"()` when initializing your application."},20:"Cannot use proxies if Proxy, Proxy.revocable or Reflect are not available",21:function(n){return "produce can only be called on things that are draftable: plain objects, arrays, Map, Set or classes that are marked with '[immerable]: true'. Got '"+n+"'"},22:function(n){return "'current' expects a draft, got: "+n},23:function(n){return "'original' expects a draft, got: "+n},24:"Patching reserved attributes like __proto__, prototype and constructor is not allowed"},Z=""+Object.prototype.constructor,nn="undefined"!=typeof Reflect&&Reflect.ownKeys?Reflect.ownKeys:void 0!==Object.getOwnPropertySymbols?function(n){return Object.getOwnPropertyNames(n).concat(Object.getOwnPropertySymbols(n))}:Object.getOwnPropertyNames,rn=Object.getOwnPropertyDescriptors||function(n){var r={};return nn(n).forEach((function(t){r[t]=Object.getOwnPropertyDescriptor(n,t);})),r},tn={},en={get:function(n,r){if(r===Q)return n;var e=p$1(n);if(!u$1(e,r))return function(n,r,t){var e,i=I(r,t);return i?"value"in i?i.value:null===(e=i.get)||void 0===e?void 0:e.call(n.k):void 0}(n,e,r);var i=e[r];return n.I||!t$1(i)?i:i===z(n.t,r)?(E$2(n),n.o[r]=R(n.A.h,i,n)):i},has:function(n,r){return r in p$1(n)},ownKeys:function(n){return Reflect.ownKeys(p$1(n))},set:function(n,r,t){var e=I(p$1(n),r);if(null==e?void 0:e.set)return e.set.call(n.k,t),!0;if(!n.P){var i=z(p$1(n),r),o=null==i?void 0:i[Q];if(o&&o.t===t)return n.o[r]=t,n.D[r]=!1,!0;if(c$1(t,i)&&(void 0!==t||u$1(n.t,r)))return !0;E$2(n),k$1(n);}return n.o[r]===t&&"number"!=typeof t||(n.o[r]=t,n.D[r]=!0,!0)},deleteProperty:function(n,r){return void 0!==z(n.t,r)||r in n.t?(n.D[r]=!1,E$2(n),k$1(n)):delete n.D[r],n.o&&delete n.o[r],!0},getOwnPropertyDescriptor:function(n,r){var t=p$1(n),e=Reflect.getOwnPropertyDescriptor(t,r);return e?{writable:!0,configurable:1!==n.i||"length"!==r,enumerable:e.enumerable,value:t[r]}:e},defineProperty:function(){n$1(11);},getPrototypeOf:function(n){return Object.getPrototypeOf(n.t)},setPrototypeOf:function(){n$1(12);}},on={};i$1(en,(function(n,r){on[n]=function(){return arguments[0]=arguments[0][0],r.apply(this,arguments)};})),on.deleteProperty=function(r,t){return isNaN(parseInt(t))&&n$1(13),en.deleteProperty.call(this,r[0],t)},on.set=function(r,t,e){return "length"!==t&&isNaN(parseInt(t))&&n$1(14),en.set.call(this,r[0],t,e,r[0])};var un=function(){function e(r){var e=this;this.O=B,this.F=!0,this.produce=function(r,i,o){if("function"==typeof r&&"function"!=typeof i){var u=i;i=r;var a=e;return function(n){var r=this;void 0===n&&(n=u);for(var t=arguments.length,e=Array(t>1?t-1:0),o=1;o<t;o++)e[o-1]=arguments[o];return a.produce(n,(function(n){var t;return (t=i).call.apply(t,[r,n].concat(e))}))}}var f;if("function"!=typeof i&&n$1(6),void 0!==o&&"function"!=typeof o&&n$1(7),t$1(r)){var c=w$1(e),s=R(e,r,void 0),v=!0;try{f=i(s),v=!1;}finally{v?g$1(c):O$1(c);}return "undefined"!=typeof Promise&&f instanceof Promise?f.then((function(n){return j$2(c,o),P(n,c)}),(function(n){throw g$1(c),n})):(j$2(c,o),P(f,c))}if(!r||"object"!=typeof r){if((f=i(r))===H)return;return void 0===f&&(f=r),e.F&&d(f,!0),f}n$1(21,r);},this.produceWithPatches=function(n,r){return "function"==typeof n?function(r){for(var t=arguments.length,i=Array(t>1?t-1:0),o=1;o<t;o++)i[o-1]=arguments[o];return e.produceWithPatches(r,(function(r){return n.apply(void 0,[r].concat(i))}))}:[e.produce(n,r,(function(n,r){t=n,i=r;})),t,i];var t,i;},"boolean"==typeof(null==r?void 0:r.useProxies)&&this.setUseProxies(r.useProxies),"boolean"==typeof(null==r?void 0:r.autoFreeze)&&this.setAutoFreeze(r.autoFreeze);}var i=e.prototype;return i.createDraft=function(e){t$1(e)||n$1(8),r$1(e)&&(e=D(e));var i=w$1(this),o=R(this,e,void 0);return o[Q].C=!0,O$1(i),o},i.finishDraft=function(r,t){var e=r&&r[Q];(e&&e.C||n$1(9),e.I&&n$1(10));var i=e.A;return j$2(i,t),P(void 0,i)},i.setAutoFreeze=function(n){this.F=n;},i.setUseProxies=function(r){r&&!B&&n$1(20),this.O=r;},i.applyPatches=function(n,t){var e;for(e=t.length-1;e>=0;e--){var i=t[e];if(0===i.path.length&&"replace"===i.op){n=i.value;break}}var o=b$1("Patches").$;return r$1(n)?o(n,t):this.produce(n,(function(n){return o(n,t.slice(e+1))}))},e}(),an=new un,fn=an.produce;an.produceWithPatches.bind(an);an.setAutoFreeze.bind(an);an.setUseProxies.bind(an);an.applyPatches.bind(an);an.createDraft.bind(an);an.finishDraft.bind(an);
-
             const p=Symbol(),a$1=Symbol(),f$1="undefined"==typeof window||/ServerSideRendering/.test(window.navigator&&window.navigator.userAgent)?react.useEffect:react.useLayoutEffect,l$1=scheduler.unstable_runWithPriority?e=>scheduler.unstable_runWithPriority(scheduler.unstable_NormalPriority,e):e=>e();function w(n){const o=react.createContext({[p]:{v:{current:n},n:{current:-1},l:new Set,u:e=>e()}});var c;return o[a$1]=o.Provider,o.Provider=(c=o.Provider,({value:e,children:n})=>{const o=react.useRef(e),u=react.useRef(0),s=react.useRef();if(!s.current){const e=new Set,r=r=>{reactDom.unstable_batchedUpdates(()=>{u.current+=1,e.forEach(e=>e([u.current])),r();});};s.current={[p]:{v:o,n:u,l:e,u:r}};}return f$1(()=>{o.current=e,u.current+=1,l$1(()=>{s.current[p].l.forEach(r=>{r([u.current,e]);});});},[e]),react.createElement(c,{value:s.current},n)}),delete o.Consumer,o}function E$1(e,r){const t=react.useContext(e)[p];if("object"==typeof process&&"production"!=="development"&&!t)throw new Error("useContextSelector requires special context");const{v:{current:c},n:{current:u},l:s}=t,i=r(c),[d,a]=react.useReducer((e,t)=>{if(!t)return [c,i];if(t[0]<=u)return Object.is(e[1],i)?e:[c,i];try{if(2===t.length){if(Object.is(e[0],t[1]))return e;const n=r(t[1]);return Object.is(e[1],n)?e:[t[1],n]}}catch(e){}return [...e]},[c,i]);return Object.is(d[1],i)||a(),f$1(()=>(s.add(a),()=>{s.delete(a);}),[s]),d[1]}function b(e){const r=react.useContext(e)[p];if("object"==typeof process&&"production"!=="development"&&!r)throw new Error("useContextUpdate requires special context");const{u:t}=r;return t}
 
             const e=Symbol(),t=Symbol(),r=Symbol(),n=Object.getPrototypeOf,o=new WeakMap,s=e=>e&&(o.has(e)?o.get(e):n(e)===Object.prototype||n(e)===Array.prototype),c=e=>"object"==typeof e&&null!==e,l=(n,o)=>{let s=!1;const c=(e,t)=>{if(!s){let r=e.a.get(n);r||(r=new Set,e.a.set(n,r)),r.add(t);}},l={f:o,get(e,t){return t===r?n:(c(this,t),i(e[t],this.a,this.c))},has(e,r){return r===t?(s=!0,this.a.delete(n),!0):(c(this,r),r in e)},ownKeys(t){return c(this,e),Reflect.ownKeys(t)}};return o&&(l.set=l.deleteProperty=()=>!1),l},i=(e,t,o)=>{if(!s(e))return e;const c=e[r]||e,i=(e=>Object.isFrozen(e)||Object.values(Object.getOwnPropertyDescriptors(e)).some(e=>!e.writable))(c);let u=o&&o.get(c);return u&&u.f===i||(u=l(c,i),u.p=new Proxy(i?(e=>{if(Array.isArray(e))return Array.from(e);const t=Object.getOwnPropertyDescriptors(e);return Object.values(t).forEach(e=>{e.configurable=!0;}),Object.create(n(e),t)})(c):c,u),o&&o.set(c,u)),u.a=t,u.c=o,u.p},u=(e,t)=>{const r=Reflect.ownKeys(e),n=Reflect.ownKeys(t);return r.length!==n.length||r.some((e,t)=>e!==n[t])},a=1,f=2,y=4,g=(t,r,n,o,s=0)=>{if(Object.is(t,r)&&(!c(t)||0==(2&s)))return !1;if(!c(t)||!c(r))return !0;const l=n.get(t);if(!l)return 0==(1&s);if(o&&0==(2&s)){const e=o.get(t);if(e&&e.n===r)return e.g;o.set(t,{n:r,g:!1});}let i=null;for(const c of l){const l=c===e?u(t,r):g(t[c],r[c],n,o,s>>>2<<2|s>>>2);if(!0!==l&&!1!==l||(i=l),i)break}return null===i&&(i=0==(1&s)),o&&0==(2&s)&&o.set(t,{n:r,g:i}),i},j$1=(e,t)=>{const r=[],n=(e,o)=>{const s=t.get(e);s?s.forEach(t=>{n(e[t],o?[...o,t]:[t]);}):o&&r.push(o);};return n(e),r};
@@ -45334,18 +47807,46 @@
                 }, [props]);
                 return [state, setState];
             };
-            const { Provider: Provider$6, useTrackedState: useTrackedState$6, useUpdate: useUpdate$6, useSelector, } = W(useFiltersState);
+            const { Provider: Provider$6, useTrackedState: useTrackedState$6, useUpdate: useUpdate$6, useSelector: useSelector$1, } = W(useFiltersState);
             const useSetDraft$6 = () => {
                 const setState = useUpdate$6();
                 return react.useCallback((draftUpdater) => {
-                    setState(fn(draftUpdater));
+                    const production = fn(draftUpdater);
+                    setState(production);
                 }, [setState]);
             };
             var filters = {
                 Provider: Provider$6,
                 useTrackedState: useTrackedState$6,
                 useSetDraft: useSetDraft$6,
-                useSelector,
+                useSelector: useSelector$1,
+            };
+
+            const useAppliedFilters = () => {
+                const { filterConfigs } = useTrackedState$6();
+                const appliedFilters = useSelector$1((state) => state.filterGroups.flatMap((group) => group.appliedFilters));
+                const appliedFiltersByGroup = appliedFilters.reduce((acc, cur) => {
+                    const current = acc[cur.groupId];
+                    if (!current) {
+                        const config = filterConfigs.find((filter) => filter.id === cur.groupId);
+                        if (!config) {
+                            return acc;
+                        }
+                        acc[cur.groupId] = {
+                            state: cur.state,
+                            applied: [],
+                            config,
+                            groupId: cur.groupId,
+                        };
+                    }
+                    acc[cur.groupId].applied.push(cur);
+                    return acc;
+                }, {});
+                return {
+                    configs: filterConfigs,
+                    appliedFilters,
+                    appliedFiltersByGroup,
+                };
             };
 
             const defaultFilters$1 = [
@@ -45390,6 +47891,7 @@
             const initialState$7 = {
                 rememberSelections: false,
                 hasInit: [],
+                storedFilters: [],
                 visibleUnits: [],
                 reactor: new Reactor(),
             };
@@ -45458,7 +47960,7 @@
                 settings: defaultSettings,
             };
             const useJiraState = () => react.useState(initialState$4);
-            const { Provider: Provider$2, useTrackedState: useTrackedState$2, useUpdate: useUpdate$2, } = W(useJiraState);
+            const { Provider: Provider$2, useTrackedState: useTrackedState$2, useUpdate: useUpdate$2, useSelector, } = W(useJiraState);
             const useSetDraft$2 = () => {
                 const setState = useUpdate$2();
                 const setDraft = react.useCallback((draftUpdater) => {
@@ -45470,6 +47972,7 @@
                 Provider: Provider$2,
                 useTrackedState: useTrackedState$2,
                 useSetDraft: useSetDraft$2,
+                useSelector,
             };
 
             const initialState$3 = {
@@ -45511,20 +48014,235 @@
                 useSetDraft,
             };
 
-            const useClearFilters = () => {
+            const useApplyFilter = () => {
                 const setDraft = filters.useSetDraft();
-                const handle = react.useCallback((groupId) => {
+                const state = filters.useTrackedState();
+                const has = (filters, state) => filters.some((filter) => filter.state === state);
+                const getNextStates = (currentState, filterId, group) => {
+                    const allButClicked = group.appliedFilters
+                        .filter((groupCurrent) => filterId !== groupCurrent.itemId);
+                    const next = group.lastState === 'include' ? 'exclude' : 'include';
+                    const allOmit = has(allButClicked, 'omit');
+                    if (allButClicked.length === 0 || allOmit) {
+                        switch (currentState) {
+                            case 'include': {
+                                return {
+                                    current: 'omit',
+                                    last: 'include',
+                                };
+                            }
+                            case 'exclude': {
+                                return {
+                                    current: 'omit',
+                                    last: 'exclude',
+                                };
+                            }
+                            case 'omit': {
+                                return {
+                                    current: next,
+                                    last: 'omit',
+                                };
+                            }
+                        }
+                    }
+                    const hasIncludes = has(allButClicked, 'include');
+                    if (hasIncludes) {
+                        return {
+                            current: currentState === 'include' ? 'omit' : 'include',
+                            last: 'include',
+                        };
+                    }
+                    const hasExclude = has(allButClicked, 'exclude');
+                    if (hasExclude) {
+                        return {
+                            current: currentState === 'exclude' ? 'omit' : 'exclude',
+                            last: 'exclude',
+                        };
+                    }
+                    return {
+                        current: next,
+                        last: next,
+                    };
+                };
+                const applyFilter = (groupId, filterId) => {
+                    const group = state.filterGroups.find((group) => group.id === groupId);
+                    if (!group) {
+                        return;
+                    }
+                    const currentFilter = group.appliedFilters.find((filter) => filter.itemId === filterId);
+                    const nextStates = getNextStates(currentFilter?.state || 'omit', filterId, group);
                     setDraft((draft) => {
-                        return draft.currentFilters.filter((draftFilter) => draftFilter.groupId !== groupId);
+                        const index = draft.filterGroups.findIndex((group) => group.id === groupId);
+                        if (index < 0) {
+                            return;
+                        }
+                        draft.filterGroups[index].lastState = nextStates.last;
+                        const filterIndex = draft.currentFilters.findIndex((filter) => filter.filter.id === filterId);
+                        if (filterIndex > -1) {
+                            draft.currentFilters[filterIndex].state = nextStates.current;
+                        }
+                        const appliedFilterIndex = draft.filterGroups[index].appliedFilters.findIndex((filter) => filter.itemId === filterId);
+                        if (appliedFilterIndex < 0) {
+                            draft.filterGroups[index].appliedFilters.push({
+                                itemId: filterId,
+                                groupId: groupId,
+                                state: nextStates.current,
+                            });
+                            return draft;
+                        }
+                        draft.filterGroups[index].appliedFilters[appliedFilterIndex].state = nextStates.current;
+                        return draft;
                     });
-                }, [setDraft]);
+                };
+                return applyFilter;
+            };
+
+            const useDispatchEvent = () => {
+                const trackedState = Global$2.useTrackedState();
+                const dispatch = (event) => {
+                    const { reactor } = trackedState;
+                    reactor.dispatchEvent('filter', event);
+                };
                 return {
-                    handle,
+                    dispatch,
+                };
+            };
+
+            const useListenEvents = (unit) => {
+                const trackedState = Global$2.useTrackedState();
+                const listen = react.useCallback((eventName, callback) => {
+                    const { reactor } = trackedState;
+                    const localCallback = (event) => {
+                        if (event.unit === unit) {
+                            callback(event);
+                        }
+                    };
+                    reactor.addEventListener(eventName, localCallback);
+                }, []);
+                return {
+                    listen,
+                };
+            };
+
+            const { storage: { guards: guards$5 }, runtime: { send: send$5, listen: listen$5 } } = chrome$1;
+            const useInit$3 = () => {
+                const { hasInit } = Global$2.useTrackedState();
+                const setDraft = Global$2.useSetDraft();
+                const storageOn = (message) => {
+                    if (guards$5.filters(message)) {
+                        const { rememberSelections, storedFilters } = message.data;
+                        setDraft((draft) => {
+                            draft.storedFilters = storedFilters;
+                            draft.rememberSelections = rememberSelections;
+                        });
+                        return;
+                    }
+                    if (guards$5.visibleUnits(message)) {
+                        const { data } = message;
+                        setDraft((draft) => {
+                            draft.visibleUnits = data;
+                        });
+                        return;
+                    }
+                };
+                const getStorageKey = (initType) => {
+                    switch (initType) {
+                        case 'filters': return 'filters';
+                        case 'units': return 'visibleUnits';
+                        default: throw Error('Bad Init Type');
+                    }
+                };
+                const init = (initType) => {
+                    if (!hasInit.includes(initType)) {
+                        listen$5('STORAGE_ON', storageOn);
+                        setDraft((draft) => {
+                            draft.hasInit = [...draft.hasInit, initType];
+                        });
+                        send$5({ type: 'STORAGE_GET', key: getStorageKey(initType) });
+                        return true;
+                    }
+                    return false;
+                };
+                return {
+                    hasInit,
+                    init,
+                };
+            };
+
+            const useRememberSelections = () => {
+                const { rememberSelections } = Global$2.useTrackedState();
+                const initialize = useInit$3();
+                const init = () => {
+                    initialize.init('filters');
+                };
+                const storeSelections = (filters) => {
+                    if (rememberSelections) {
+                        const opinionatedFilters = filters.filter((filter) => filter.state !== 'omit');
+                        chrome$1.runtime.send({
+                            type: 'STORAGE_SET',
+                            key: 'filters',
+                            data: {
+                                storedFilters: opinionatedFilters,
+                                rememberSelections: true,
+                            },
+                        });
+                    }
+                };
+                const setRememberSelections = (nextState) => {
+                    chrome$1.runtime.send({
+                        type: 'STORAGE_SET',
+                        key: 'filters',
+                        data: {
+                            rememberSelections: nextState,
+                            storedFilters: [],
+                        },
+                    });
+                };
+                return {
+                    rememberSelections,
+                    setRememberSelections,
+                    storeSelections,
+                    init,
+                };
+            };
+
+            const allVisibleUnits = [
+                'github',
+                'highlights',
+                'history',
+                'jira',
+                'links',
+            ];
+
+            const useUnits = () => {
+                const { visibleUnits } = Global$2.useTrackedState();
+                const setDraft = Global$2.useSetDraft();
+                const { init } = useInit$3();
+                react.useEffect(() => {
+                    init('units');
+                }, []);
+                const setVisibleUnit = (unit, nextState) => {
+                    const units = nextState ? [...visibleUnits, unit] : visibleUnits.filter((u) => u !== unit);
+                    setDraft((draft) => {
+                        draft.visibleUnits = units;
+                    });
+                    chrome$1.runtime.send({
+                        type: 'STORAGE_SET',
+                        key: 'visibleUnits',
+                        data: units,
+                    });
+                };
+                return {
+                    allUnits: allVisibleUnits,
+                    visibleUnits,
+                    setVisibleUnit,
                 };
             };
 
             const useClickFilter = () => {
-                const setDraft = filters.useSetDraft();
+                const setDraft = useSetDraft$6();
+                const state = useTrackedState$6();
+                const { storeSelections } = useRememberSelections();
                 const has = (group, state) => group.some((item) => item.filter.state === state);
                 const filterItems = (draft) => {
                     const { currentFilters, allItems } = draft;
@@ -45550,7 +48268,7 @@
                     }, []);
                     return allItems.filter((item, index) => {
                         const predicate = (state, hasIncludes, hasIgnore) => {
-                            const match = !!state.config?.run(item, state.filter.filter.full, index);
+                            const match = !!state.config?.run(item, state.filter.filter.full);
                             if (match === true) {
                                 if (state.filter.state === 'include') {
                                     return true;
@@ -45604,8 +48322,12 @@
                         default: return allowable;
                     }
                 };
-                const handle = react.useCallback((clickedFilter) => {
-                    const { filter: { id: filterId }, groupId, state: clickedFilterState } = clickedFilter;
+                const handle = react.useCallback((id, groupId) => {
+                    const clickedFilter = state.currentFilters.find((filter) => filter.filter.id === id && filter.groupId === groupId);
+                    if (!clickedFilter) {
+                        return;
+                    }
+                    const { filter: { id: filterId }, state: clickedFilterState } = clickedFilter;
                     setDraft((draft) => {
                         const { currentFilters, filterGroups } = draft;
                         const currentFilter = currentFilters.find((draftCurrent) => filterId === draftCurrent.filter.id && groupId === draftCurrent.groupId);
@@ -45651,6 +48373,7 @@
                         return draft;
                     });
                     setDraft((draft) => {
+                        storeSelections(draft.currentFilters);
                         draft.filteredItems = filterItems(draft);
                     });
                 }, [setDraft]);
@@ -45669,17 +48392,11 @@
                 }
                 const data = [];
                 for (const filter in group.filters) {
-                    data.push(group.filters[filter]);
+                    const item = group.filters[filter];
+                    data.push(item);
                 }
                 return {
                     filters: data,
-                };
-            };
-
-            const useFilterGroups = () => {
-                const state = filters.useTrackedState();
-                return {
-                    groups: state.filterGroups,
                 };
             };
 
@@ -45717,12 +48434,12 @@
                 };
             };
 
-            const { storage: { guards: guards$5 }, runtime: { send: send$5, listen: listen$5 } } = chrome$1;
+            const { storage: { guards: guards$4 }, runtime: { send: send$4, listen: listen$4 } } = chrome$1;
             const useAuthCheck$2 = () => {
                 const setDraft = github.useSetDraft();
                 const trackedState = github.useTrackedState();
                 const listener = (message) => {
-                    if (!guards$5.isAuthenticatedMessage(message, 'github')) {
+                    if (!guards$4.isAuthenticatedMessage(message, 'github')) {
                         return;
                     }
                     const status = message.isAuthenticated ? 'is' : 'not';
@@ -45732,9 +48449,9 @@
                 };
                 const check = () => {
                     const message = messageTypes.isAuthenticated('github');
-                    const hangup = listen$5(message, listener);
+                    const hangup = listen$4(message, listener);
                     const type = messageTypes.authenticateCheck('github');
-                    send$5({
+                    send$4({
                         type,
                     });
                     return hangup;
@@ -45826,12 +48543,12 @@
                 return init;
             };
 
-            const { storage: { guards: guards$4 }, runtime: { send: send$4, listen: listen$4 } } = chrome$1;
+            const { storage: { guards: guards$3 }, runtime: { send: send$3, listen: listen$3 } } = chrome$1;
             const useInitSettings$1 = () => {
                 const setDraft = github.useSetDraft();
                 const [isFetching, setIsFetching] = react.useState(false);
                 const listener = (message) => {
-                    if (!guards$4.githubSettings(message)) {
+                    if (!guards$3.githubSettings(message)) {
                         return;
                     }
                     const { data, meta } = message;
@@ -45843,17 +48560,17 @@
                     });
                 };
                 const init = () => {
-                    const hangup = listen$4('STORAGE_ON', listener);
+                    const hangup = listen$3('STORAGE_ON', listener);
                     if (!isFetching) {
                         setIsFetching(true);
-                        send$4({ type: 'STORAGE_GET', key: 'githubSettings' });
+                        send$3({ type: 'STORAGE_GET', key: 'githubSettings' });
                     }
                     return hangup;
                 };
                 return init;
             };
 
-            const useInit$3 = () => {
+            const useInit$2 = () => {
                 const initPullRequests = useInitIssues$1();
                 const initRepositories = useInitRepositories();
                 const initSettings = useInitSettings$1();
@@ -45902,7 +48619,7 @@
 
             const usePullRequests = () => {
                 const trackedState = github.useTrackedState();
-                const { init } = useInit$3();
+                const { init } = useInit$2();
                 const initPullRequests = () => {
                     init('pullRequests');
                 };
@@ -45912,9 +48629,1814 @@
                 };
             };
 
+            /**
+             * Fuse.js v6.4.6 - Lightweight fuzzy-search (http://fusejs.io)
+             *
+             * Copyright (c) 2021 Kiro Risk (http://kiro.me)
+             * All Rights Reserved. Apache Software License 2.0
+             *
+             * http://www.apache.org/licenses/LICENSE-2.0
+             */
+
+            function isArray(value) {
+              return !Array.isArray
+                ? getTag(value) === '[object Array]'
+                : Array.isArray(value)
+            }
+
+            // Adapted from: https://github.com/lodash/lodash/blob/master/.internal/baseToString.js
+            const INFINITY = 1 / 0;
+            function baseToString(value) {
+              // Exit early for strings to avoid a performance hit in some environments.
+              if (typeof value == 'string') {
+                return value
+              }
+              let result = value + '';
+              return result == '0' && 1 / value == -INFINITY ? '-0' : result
+            }
+
+            function toString(value) {
+              return value == null ? '' : baseToString(value)
+            }
+
+            function isString(value) {
+              return typeof value === 'string'
+            }
+
+            function isNumber(value) {
+              return typeof value === 'number'
+            }
+
+            // Adapted from: https://github.com/lodash/lodash/blob/master/isBoolean.js
+            function isBoolean(value) {
+              return (
+                value === true ||
+                value === false ||
+                (isObjectLike(value) && getTag(value) == '[object Boolean]')
+              )
+            }
+
+            function isObject$1(value) {
+              return typeof value === 'object'
+            }
+
+            // Checks if `value` is object-like.
+            function isObjectLike(value) {
+              return isObject$1(value) && value !== null
+            }
+
+            function isDefined(value) {
+              return value !== undefined && value !== null
+            }
+
+            function isBlank(value) {
+              return !value.trim().length
+            }
+
+            // Gets the `toStringTag` of `value`.
+            // Adapted from: https://github.com/lodash/lodash/blob/master/.internal/getTag.js
+            function getTag(value) {
+              return value == null
+                ? value === undefined
+                  ? '[object Undefined]'
+                  : '[object Null]'
+                : Object.prototype.toString.call(value)
+            }
+
+            const EXTENDED_SEARCH_UNAVAILABLE = 'Extended search is not available';
+
+            const INCORRECT_INDEX_TYPE = "Incorrect 'index' type";
+
+            const LOGICAL_SEARCH_INVALID_QUERY_FOR_KEY = (key) =>
+              `Invalid value for key ${key}`;
+
+            const PATTERN_LENGTH_TOO_LARGE = (max) =>
+              `Pattern length exceeds max of ${max}.`;
+
+            const MISSING_KEY_PROPERTY = (name) => `Missing ${name} property in key`;
+
+            const INVALID_KEY_WEIGHT_VALUE = (key) =>
+              `Property 'weight' in key '${key}' must be a positive integer`;
+
+            const hasOwn = Object.prototype.hasOwnProperty;
+
+            class KeyStore {
+              constructor(keys) {
+                this._keys = [];
+                this._keyMap = {};
+
+                let totalWeight = 0;
+
+                keys.forEach((key) => {
+                  let obj = createKey(key);
+
+                  totalWeight += obj.weight;
+
+                  this._keys.push(obj);
+                  this._keyMap[obj.id] = obj;
+
+                  totalWeight += obj.weight;
+                });
+
+                // Normalize weights so that their sum is equal to 1
+                this._keys.forEach((key) => {
+                  key.weight /= totalWeight;
+                });
+              }
+              get(keyId) {
+                return this._keyMap[keyId]
+              }
+              keys() {
+                return this._keys
+              }
+              toJSON() {
+                return JSON.stringify(this._keys)
+              }
+            }
+
+            function createKey(key) {
+              let path = null;
+              let id = null;
+              let src = null;
+              let weight = 1;
+
+              if (isString(key) || isArray(key)) {
+                src = key;
+                path = createKeyPath(key);
+                id = createKeyId(key);
+              } else {
+                if (!hasOwn.call(key, 'name')) {
+                  throw new Error(MISSING_KEY_PROPERTY('name'))
+                }
+
+                const name = key.name;
+                src = name;
+
+                if (hasOwn.call(key, 'weight')) {
+                  weight = key.weight;
+
+                  if (weight <= 0) {
+                    throw new Error(INVALID_KEY_WEIGHT_VALUE(name))
+                  }
+                }
+
+                path = createKeyPath(name);
+                id = createKeyId(name);
+              }
+
+              return { path, id, weight, src }
+            }
+
+            function createKeyPath(key) {
+              return isArray(key) ? key : key.split('.')
+            }
+
+            function createKeyId(key) {
+              return isArray(key) ? key.join('.') : key
+            }
+
+            function get$1(obj, path) {
+              let list = [];
+              let arr = false;
+
+              const deepGet = (obj, path, index) => {
+                if (!isDefined(obj)) {
+                  return
+                }
+                if (!path[index]) {
+                  // If there's no path left, we've arrived at the object we care about.
+                  list.push(obj);
+                } else {
+                  let key = path[index];
+
+                  const value = obj[key];
+
+                  if (!isDefined(value)) {
+                    return
+                  }
+
+                  // If we're at the last value in the path, and if it's a string/number/bool,
+                  // add it to the list
+                  if (
+                    index === path.length - 1 &&
+                    (isString(value) || isNumber(value) || isBoolean(value))
+                  ) {
+                    list.push(toString(value));
+                  } else if (isArray(value)) {
+                    arr = true;
+                    // Search each item in the array.
+                    for (let i = 0, len = value.length; i < len; i += 1) {
+                      deepGet(value[i], path, index + 1);
+                    }
+                  } else if (path.length) {
+                    // An object. Recurse further.
+                    deepGet(value, path, index + 1);
+                  }
+                }
+              };
+
+              // Backwards compatibility (since path used to be a string)
+              deepGet(obj, isString(path) ? path.split('.') : path, 0);
+
+              return arr ? list : list[0]
+            }
+
+            const MatchOptions = {
+              // Whether the matches should be included in the result set. When `true`, each record in the result
+              // set will include the indices of the matched characters.
+              // These can consequently be used for highlighting purposes.
+              includeMatches: false,
+              // When `true`, the matching function will continue to the end of a search pattern even if
+              // a perfect match has already been located in the string.
+              findAllMatches: false,
+              // Minimum number of characters that must be matched before a result is considered a match
+              minMatchCharLength: 1
+            };
+
+            const BasicOptions = {
+              // When `true`, the algorithm continues searching to the end of the input even if a perfect
+              // match is found before the end of the same input.
+              isCaseSensitive: false,
+              // When true, the matching function will continue to the end of a search pattern even if
+              includeScore: false,
+              // List of properties that will be searched. This also supports nested properties.
+              keys: [],
+              // Whether to sort the result list, by score
+              shouldSort: true,
+              // Default sort function: sort by ascending score, ascending index
+              sortFn: (a, b) =>
+                a.score === b.score ? (a.idx < b.idx ? -1 : 1) : a.score < b.score ? -1 : 1
+            };
+
+            const FuzzyOptions = {
+              // Approximately where in the text is the pattern expected to be found?
+              location: 0,
+              // At what point does the match algorithm give up. A threshold of '0.0' requires a perfect match
+              // (of both letters and location), a threshold of '1.0' would match anything.
+              threshold: 0.6,
+              // Determines how close the match must be to the fuzzy location (specified above).
+              // An exact letter match which is 'distance' characters away from the fuzzy location
+              // would score as a complete mismatch. A distance of '0' requires the match be at
+              // the exact location specified, a threshold of '1000' would require a perfect match
+              // to be within 800 characters of the fuzzy location to be found using a 0.8 threshold.
+              distance: 100
+            };
+
+            const AdvancedOptions = {
+              // When `true`, it enables the use of unix-like search commands
+              useExtendedSearch: false,
+              // The get function to use when fetching an object's properties.
+              // The default will search nested paths *ie foo.bar.baz*
+              getFn: get$1,
+              // When `true`, search will ignore `location` and `distance`, so it won't matter
+              // where in the string the pattern appears.
+              // More info: https://fusejs.io/concepts/scoring-theory.html#fuzziness-score
+              ignoreLocation: false,
+              // When `true`, the calculation for the relevance score (used for sorting) will
+              // ignore the field-length norm.
+              // More info: https://fusejs.io/concepts/scoring-theory.html#field-length-norm
+              ignoreFieldNorm: false
+            };
+
+            var Config = {
+              ...BasicOptions,
+              ...MatchOptions,
+              ...FuzzyOptions,
+              ...AdvancedOptions
+            };
+
+            const SPACE = /[^ ]+/g;
+
+            // Field-length norm: the shorter the field, the higher the weight.
+            // Set to 3 decimals to reduce index size.
+            function norm(mantissa = 3) {
+              const cache = new Map();
+              const m = Math.pow(10, mantissa);
+
+              return {
+                get(value) {
+                  const numTokens = value.match(SPACE).length;
+
+                  if (cache.has(numTokens)) {
+                    return cache.get(numTokens)
+                  }
+
+                  const norm = 1 / Math.sqrt(numTokens);
+
+                  // In place of `toFixed(mantissa)`, for faster computation
+                  const n = parseFloat(Math.round(norm * m) / m);
+
+                  cache.set(numTokens, n);
+
+                  return n
+                },
+                clear() {
+                  cache.clear();
+                }
+              }
+            }
+
+            class FuseIndex {
+              constructor({ getFn = Config.getFn } = {}) {
+                this.norm = norm(3);
+                this.getFn = getFn;
+                this.isCreated = false;
+
+                this.setIndexRecords();
+              }
+              setSources(docs = []) {
+                this.docs = docs;
+              }
+              setIndexRecords(records = []) {
+                this.records = records;
+              }
+              setKeys(keys = []) {
+                this.keys = keys;
+                this._keysMap = {};
+                keys.forEach((key, idx) => {
+                  this._keysMap[key.id] = idx;
+                });
+              }
+              create() {
+                if (this.isCreated || !this.docs.length) {
+                  return
+                }
+
+                this.isCreated = true;
+
+                // List is Array<String>
+                if (isString(this.docs[0])) {
+                  this.docs.forEach((doc, docIndex) => {
+                    this._addString(doc, docIndex);
+                  });
+                } else {
+                  // List is Array<Object>
+                  this.docs.forEach((doc, docIndex) => {
+                    this._addObject(doc, docIndex);
+                  });
+                }
+
+                this.norm.clear();
+              }
+              // Adds a doc to the end of the index
+              add(doc) {
+                const idx = this.size();
+
+                if (isString(doc)) {
+                  this._addString(doc, idx);
+                } else {
+                  this._addObject(doc, idx);
+                }
+              }
+              // Removes the doc at the specified index of the index
+              removeAt(idx) {
+                this.records.splice(idx, 1);
+
+                // Change ref index of every subsquent doc
+                for (let i = idx, len = this.size(); i < len; i += 1) {
+                  this.records[i].i -= 1;
+                }
+              }
+              getValueForItemAtKeyId(item, keyId) {
+                return item[this._keysMap[keyId]]
+              }
+              size() {
+                return this.records.length
+              }
+              _addString(doc, docIndex) {
+                if (!isDefined(doc) || isBlank(doc)) {
+                  return
+                }
+
+                let record = {
+                  v: doc,
+                  i: docIndex,
+                  n: this.norm.get(doc)
+                };
+
+                this.records.push(record);
+              }
+              _addObject(doc, docIndex) {
+                let record = { i: docIndex, $: {} };
+
+                // Iterate over every key (i.e, path), and fetch the value at that key
+                this.keys.forEach((key, keyIndex) => {
+                  // console.log(key)
+                  let value = this.getFn(doc, key.path);
+
+                  if (!isDefined(value)) {
+                    return
+                  }
+
+                  if (isArray(value)) {
+                    let subRecords = [];
+                    const stack = [{ nestedArrIndex: -1, value }];
+
+                    while (stack.length) {
+                      const { nestedArrIndex, value } = stack.pop();
+
+                      if (!isDefined(value)) {
+                        continue
+                      }
+
+                      if (isString(value) && !isBlank(value)) {
+                        let subRecord = {
+                          v: value,
+                          i: nestedArrIndex,
+                          n: this.norm.get(value)
+                        };
+
+                        subRecords.push(subRecord);
+                      } else if (isArray(value)) {
+                        value.forEach((item, k) => {
+                          stack.push({
+                            nestedArrIndex: k,
+                            value: item
+                          });
+                        });
+                      }
+                    }
+                    record.$[keyIndex] = subRecords;
+                  } else if (!isBlank(value)) {
+                    let subRecord = {
+                      v: value,
+                      n: this.norm.get(value)
+                    };
+
+                    record.$[keyIndex] = subRecord;
+                  }
+                });
+
+                this.records.push(record);
+              }
+              toJSON() {
+                return {
+                  keys: this.keys,
+                  records: this.records
+                }
+              }
+            }
+
+            function createIndex(keys, docs, { getFn = Config.getFn } = {}) {
+              const myIndex = new FuseIndex({ getFn });
+              myIndex.setKeys(keys.map(createKey));
+              myIndex.setSources(docs);
+              myIndex.create();
+              return myIndex
+            }
+
+            function parseIndex(data, { getFn = Config.getFn } = {}) {
+              const { keys, records } = data;
+              const myIndex = new FuseIndex({ getFn });
+              myIndex.setKeys(keys);
+              myIndex.setIndexRecords(records);
+              return myIndex
+            }
+
+            function computeScore(
+              pattern,
+              {
+                errors = 0,
+                currentLocation = 0,
+                expectedLocation = 0,
+                distance = Config.distance,
+                ignoreLocation = Config.ignoreLocation
+              } = {}
+            ) {
+              const accuracy = errors / pattern.length;
+
+              if (ignoreLocation) {
+                return accuracy
+              }
+
+              const proximity = Math.abs(expectedLocation - currentLocation);
+
+              if (!distance) {
+                // Dodge divide by zero error.
+                return proximity ? 1.0 : accuracy
+              }
+
+              return accuracy + proximity / distance
+            }
+
+            function convertMaskToIndices(
+              matchmask = [],
+              minMatchCharLength = Config.minMatchCharLength
+            ) {
+              let indices = [];
+              let start = -1;
+              let end = -1;
+              let i = 0;
+
+              for (let len = matchmask.length; i < len; i += 1) {
+                let match = matchmask[i];
+                if (match && start === -1) {
+                  start = i;
+                } else if (!match && start !== -1) {
+                  end = i - 1;
+                  if (end - start + 1 >= minMatchCharLength) {
+                    indices.push([start, end]);
+                  }
+                  start = -1;
+                }
+              }
+
+              // (i-1 - start) + 1 => i - start
+              if (matchmask[i - 1] && i - start >= minMatchCharLength) {
+                indices.push([start, i - 1]);
+              }
+
+              return indices
+            }
+
+            // Machine word size
+            const MAX_BITS = 32;
+
+            function search(
+              text,
+              pattern,
+              patternAlphabet,
+              {
+                location = Config.location,
+                distance = Config.distance,
+                threshold = Config.threshold,
+                findAllMatches = Config.findAllMatches,
+                minMatchCharLength = Config.minMatchCharLength,
+                includeMatches = Config.includeMatches,
+                ignoreLocation = Config.ignoreLocation
+              } = {}
+            ) {
+              if (pattern.length > MAX_BITS) {
+                throw new Error(PATTERN_LENGTH_TOO_LARGE(MAX_BITS))
+              }
+
+              const patternLen = pattern.length;
+              // Set starting location at beginning text and initialize the alphabet.
+              const textLen = text.length;
+              // Handle the case when location > text.length
+              const expectedLocation = Math.max(0, Math.min(location, textLen));
+              // Highest score beyond which we give up.
+              let currentThreshold = threshold;
+              // Is there a nearby exact match? (speedup)
+              let bestLocation = expectedLocation;
+
+              // Performance: only computer matches when the minMatchCharLength > 1
+              // OR if `includeMatches` is true.
+              const computeMatches = minMatchCharLength > 1 || includeMatches;
+              // A mask of the matches, used for building the indices
+              const matchMask = computeMatches ? Array(textLen) : [];
+
+              let index;
+
+              // Get all exact matches, here for speed up
+              while ((index = text.indexOf(pattern, bestLocation)) > -1) {
+                let score = computeScore(pattern, {
+                  currentLocation: index,
+                  expectedLocation,
+                  distance,
+                  ignoreLocation
+                });
+
+                currentThreshold = Math.min(score, currentThreshold);
+                bestLocation = index + patternLen;
+
+                if (computeMatches) {
+                  let i = 0;
+                  while (i < patternLen) {
+                    matchMask[index + i] = 1;
+                    i += 1;
+                  }
+                }
+              }
+
+              // Reset the best location
+              bestLocation = -1;
+
+              let lastBitArr = [];
+              let finalScore = 1;
+              let binMax = patternLen + textLen;
+
+              const mask = 1 << (patternLen - 1);
+
+              for (let i = 0; i < patternLen; i += 1) {
+                // Scan for the best match; each iteration allows for one more error.
+                // Run a binary search to determine how far from the match location we can stray
+                // at this error level.
+                let binMin = 0;
+                let binMid = binMax;
+
+                while (binMin < binMid) {
+                  const score = computeScore(pattern, {
+                    errors: i,
+                    currentLocation: expectedLocation + binMid,
+                    expectedLocation,
+                    distance,
+                    ignoreLocation
+                  });
+
+                  if (score <= currentThreshold) {
+                    binMin = binMid;
+                  } else {
+                    binMax = binMid;
+                  }
+
+                  binMid = Math.floor((binMax - binMin) / 2 + binMin);
+                }
+
+                // Use the result from this iteration as the maximum for the next.
+                binMax = binMid;
+
+                let start = Math.max(1, expectedLocation - binMid + 1);
+                let finish = findAllMatches
+                  ? textLen
+                  : Math.min(expectedLocation + binMid, textLen) + patternLen;
+
+                // Initialize the bit array
+                let bitArr = Array(finish + 2);
+
+                bitArr[finish + 1] = (1 << i) - 1;
+
+                for (let j = finish; j >= start; j -= 1) {
+                  let currentLocation = j - 1;
+                  let charMatch = patternAlphabet[text.charAt(currentLocation)];
+
+                  if (computeMatches) {
+                    // Speed up: quick bool to int conversion (i.e, `charMatch ? 1 : 0`)
+                    matchMask[currentLocation] = +!!charMatch;
+                  }
+
+                  // First pass: exact match
+                  bitArr[j] = ((bitArr[j + 1] << 1) | 1) & charMatch;
+
+                  // Subsequent passes: fuzzy match
+                  if (i) {
+                    bitArr[j] |=
+                      ((lastBitArr[j + 1] | lastBitArr[j]) << 1) | 1 | lastBitArr[j + 1];
+                  }
+
+                  if (bitArr[j] & mask) {
+                    finalScore = computeScore(pattern, {
+                      errors: i,
+                      currentLocation,
+                      expectedLocation,
+                      distance,
+                      ignoreLocation
+                    });
+
+                    // This match will almost certainly be better than any existing match.
+                    // But check anyway.
+                    if (finalScore <= currentThreshold) {
+                      // Indeed it is
+                      currentThreshold = finalScore;
+                      bestLocation = currentLocation;
+
+                      // Already passed `loc`, downhill from here on in.
+                      if (bestLocation <= expectedLocation) {
+                        break
+                      }
+
+                      // When passing `bestLocation`, don't exceed our current distance from `expectedLocation`.
+                      start = Math.max(1, 2 * expectedLocation - bestLocation);
+                    }
+                  }
+                }
+
+                // No hope for a (better) match at greater error levels.
+                const score = computeScore(pattern, {
+                  errors: i + 1,
+                  currentLocation: expectedLocation,
+                  expectedLocation,
+                  distance,
+                  ignoreLocation
+                });
+
+                if (score > currentThreshold) {
+                  break
+                }
+
+                lastBitArr = bitArr;
+              }
+
+              const result = {
+                isMatch: bestLocation >= 0,
+                // Count exact matches (those with a score of 0) to be "almost" exact
+                score: Math.max(0.001, finalScore)
+              };
+
+              if (computeMatches) {
+                const indices = convertMaskToIndices(matchMask, minMatchCharLength);
+                if (!indices.length) {
+                  result.isMatch = false;
+                } else if (includeMatches) {
+                  result.indices = indices;
+                }
+              }
+
+              return result
+            }
+
+            function createPatternAlphabet(pattern) {
+              let mask = {};
+
+              for (let i = 0, len = pattern.length; i < len; i += 1) {
+                const char = pattern.charAt(i);
+                mask[char] = (mask[char] || 0) | (1 << (len - i - 1));
+              }
+
+              return mask
+            }
+
+            class BitapSearch {
+              constructor(
+                pattern,
+                {
+                  location = Config.location,
+                  threshold = Config.threshold,
+                  distance = Config.distance,
+                  includeMatches = Config.includeMatches,
+                  findAllMatches = Config.findAllMatches,
+                  minMatchCharLength = Config.minMatchCharLength,
+                  isCaseSensitive = Config.isCaseSensitive,
+                  ignoreLocation = Config.ignoreLocation
+                } = {}
+              ) {
+                this.options = {
+                  location,
+                  threshold,
+                  distance,
+                  includeMatches,
+                  findAllMatches,
+                  minMatchCharLength,
+                  isCaseSensitive,
+                  ignoreLocation
+                };
+
+                this.pattern = isCaseSensitive ? pattern : pattern.toLowerCase();
+
+                this.chunks = [];
+
+                if (!this.pattern.length) {
+                  return
+                }
+
+                const addChunk = (pattern, startIndex) => {
+                  this.chunks.push({
+                    pattern,
+                    alphabet: createPatternAlphabet(pattern),
+                    startIndex
+                  });
+                };
+
+                const len = this.pattern.length;
+
+                if (len > MAX_BITS) {
+                  let i = 0;
+                  const remainder = len % MAX_BITS;
+                  const end = len - remainder;
+
+                  while (i < end) {
+                    addChunk(this.pattern.substr(i, MAX_BITS), i);
+                    i += MAX_BITS;
+                  }
+
+                  if (remainder) {
+                    const startIndex = len - MAX_BITS;
+                    addChunk(this.pattern.substr(startIndex), startIndex);
+                  }
+                } else {
+                  addChunk(this.pattern, 0);
+                }
+              }
+
+              searchIn(text) {
+                const { isCaseSensitive, includeMatches } = this.options;
+
+                if (!isCaseSensitive) {
+                  text = text.toLowerCase();
+                }
+
+                // Exact match
+                if (this.pattern === text) {
+                  let result = {
+                    isMatch: true,
+                    score: 0
+                  };
+
+                  if (includeMatches) {
+                    result.indices = [[0, text.length - 1]];
+                  }
+
+                  return result
+                }
+
+                // Otherwise, use Bitap algorithm
+                const {
+                  location,
+                  distance,
+                  threshold,
+                  findAllMatches,
+                  minMatchCharLength,
+                  ignoreLocation
+                } = this.options;
+
+                let allIndices = [];
+                let totalScore = 0;
+                let hasMatches = false;
+
+                this.chunks.forEach(({ pattern, alphabet, startIndex }) => {
+                  const { isMatch, score, indices } = search(text, pattern, alphabet, {
+                    location: location + startIndex,
+                    distance,
+                    threshold,
+                    findAllMatches,
+                    minMatchCharLength,
+                    includeMatches,
+                    ignoreLocation
+                  });
+
+                  if (isMatch) {
+                    hasMatches = true;
+                  }
+
+                  totalScore += score;
+
+                  if (isMatch && indices) {
+                    allIndices = [...allIndices, ...indices];
+                  }
+                });
+
+                let result = {
+                  isMatch: hasMatches,
+                  score: hasMatches ? totalScore / this.chunks.length : 1
+                };
+
+                if (hasMatches && includeMatches) {
+                  result.indices = allIndices;
+                }
+
+                return result
+              }
+            }
+
+            class BaseMatch {
+              constructor(pattern) {
+                this.pattern = pattern;
+              }
+              static isMultiMatch(pattern) {
+                return getMatch(pattern, this.multiRegex)
+              }
+              static isSingleMatch(pattern) {
+                return getMatch(pattern, this.singleRegex)
+              }
+              search(/*text*/) {}
+            }
+
+            function getMatch(pattern, exp) {
+              const matches = pattern.match(exp);
+              return matches ? matches[1] : null
+            }
+
+            // Token: 'file
+
+            class ExactMatch extends BaseMatch {
+              constructor(pattern) {
+                super(pattern);
+              }
+              static get type() {
+                return 'exact'
+              }
+              static get multiRegex() {
+                return /^="(.*)"$/
+              }
+              static get singleRegex() {
+                return /^=(.*)$/
+              }
+              search(text) {
+                const isMatch = text === this.pattern;
+
+                return {
+                  isMatch,
+                  score: isMatch ? 0 : 1,
+                  indices: [0, this.pattern.length - 1]
+                }
+              }
+            }
+
+            // Token: !fire
+
+            class InverseExactMatch extends BaseMatch {
+              constructor(pattern) {
+                super(pattern);
+              }
+              static get type() {
+                return 'inverse-exact'
+              }
+              static get multiRegex() {
+                return /^!"(.*)"$/
+              }
+              static get singleRegex() {
+                return /^!(.*)$/
+              }
+              search(text) {
+                const index = text.indexOf(this.pattern);
+                const isMatch = index === -1;
+
+                return {
+                  isMatch,
+                  score: isMatch ? 0 : 1,
+                  indices: [0, text.length - 1]
+                }
+              }
+            }
+
+            // Token: ^file
+
+            class PrefixExactMatch extends BaseMatch {
+              constructor(pattern) {
+                super(pattern);
+              }
+              static get type() {
+                return 'prefix-exact'
+              }
+              static get multiRegex() {
+                return /^\^"(.*)"$/
+              }
+              static get singleRegex() {
+                return /^\^(.*)$/
+              }
+              search(text) {
+                const isMatch = text.startsWith(this.pattern);
+
+                return {
+                  isMatch,
+                  score: isMatch ? 0 : 1,
+                  indices: [0, this.pattern.length - 1]
+                }
+              }
+            }
+
+            // Token: !^fire
+
+            class InversePrefixExactMatch extends BaseMatch {
+              constructor(pattern) {
+                super(pattern);
+              }
+              static get type() {
+                return 'inverse-prefix-exact'
+              }
+              static get multiRegex() {
+                return /^!\^"(.*)"$/
+              }
+              static get singleRegex() {
+                return /^!\^(.*)$/
+              }
+              search(text) {
+                const isMatch = !text.startsWith(this.pattern);
+
+                return {
+                  isMatch,
+                  score: isMatch ? 0 : 1,
+                  indices: [0, text.length - 1]
+                }
+              }
+            }
+
+            // Token: .file$
+
+            class SuffixExactMatch extends BaseMatch {
+              constructor(pattern) {
+                super(pattern);
+              }
+              static get type() {
+                return 'suffix-exact'
+              }
+              static get multiRegex() {
+                return /^"(.*)"\$$/
+              }
+              static get singleRegex() {
+                return /^(.*)\$$/
+              }
+              search(text) {
+                const isMatch = text.endsWith(this.pattern);
+
+                return {
+                  isMatch,
+                  score: isMatch ? 0 : 1,
+                  indices: [text.length - this.pattern.length, text.length - 1]
+                }
+              }
+            }
+
+            // Token: !.file$
+
+            class InverseSuffixExactMatch extends BaseMatch {
+              constructor(pattern) {
+                super(pattern);
+              }
+              static get type() {
+                return 'inverse-suffix-exact'
+              }
+              static get multiRegex() {
+                return /^!"(.*)"\$$/
+              }
+              static get singleRegex() {
+                return /^!(.*)\$$/
+              }
+              search(text) {
+                const isMatch = !text.endsWith(this.pattern);
+                return {
+                  isMatch,
+                  score: isMatch ? 0 : 1,
+                  indices: [0, text.length - 1]
+                }
+              }
+            }
+
+            class FuzzyMatch extends BaseMatch {
+              constructor(
+                pattern,
+                {
+                  location = Config.location,
+                  threshold = Config.threshold,
+                  distance = Config.distance,
+                  includeMatches = Config.includeMatches,
+                  findAllMatches = Config.findAllMatches,
+                  minMatchCharLength = Config.minMatchCharLength,
+                  isCaseSensitive = Config.isCaseSensitive,
+                  ignoreLocation = Config.ignoreLocation
+                } = {}
+              ) {
+                super(pattern);
+                this._bitapSearch = new BitapSearch(pattern, {
+                  location,
+                  threshold,
+                  distance,
+                  includeMatches,
+                  findAllMatches,
+                  minMatchCharLength,
+                  isCaseSensitive,
+                  ignoreLocation
+                });
+              }
+              static get type() {
+                return 'fuzzy'
+              }
+              static get multiRegex() {
+                return /^"(.*)"$/
+              }
+              static get singleRegex() {
+                return /^(.*)$/
+              }
+              search(text) {
+                return this._bitapSearch.searchIn(text)
+              }
+            }
+
+            // Token: 'file
+
+            class IncludeMatch extends BaseMatch {
+              constructor(pattern) {
+                super(pattern);
+              }
+              static get type() {
+                return 'include'
+              }
+              static get multiRegex() {
+                return /^'"(.*)"$/
+              }
+              static get singleRegex() {
+                return /^'(.*)$/
+              }
+              search(text) {
+                let location = 0;
+                let index;
+
+                const indices = [];
+                const patternLen = this.pattern.length;
+
+                // Get all exact matches
+                while ((index = text.indexOf(this.pattern, location)) > -1) {
+                  location = index + patternLen;
+                  indices.push([index, location - 1]);
+                }
+
+                const isMatch = !!indices.length;
+
+                return {
+                  isMatch,
+                  score: isMatch ? 0 : 1,
+                  indices
+                }
+              }
+            }
+
+            // ❗Order is important. DO NOT CHANGE.
+            const searchers = [
+              ExactMatch,
+              IncludeMatch,
+              PrefixExactMatch,
+              InversePrefixExactMatch,
+              InverseSuffixExactMatch,
+              SuffixExactMatch,
+              InverseExactMatch,
+              FuzzyMatch
+            ];
+
+            const searchersLen = searchers.length;
+
+            // Regex to split by spaces, but keep anything in quotes together
+            const SPACE_RE = / +(?=([^\"]*\"[^\"]*\")*[^\"]*$)/;
+            const OR_TOKEN = '|';
+
+            // Return a 2D array representation of the query, for simpler parsing.
+            // Example:
+            // "^core go$ | rb$ | py$ xy$" => [["^core", "go$"], ["rb$"], ["py$", "xy$"]]
+            function parseQuery(pattern, options = {}) {
+              return pattern.split(OR_TOKEN).map((item) => {
+                let query = item
+                  .trim()
+                  .split(SPACE_RE)
+                  .filter((item) => item && !!item.trim());
+
+                let results = [];
+                for (let i = 0, len = query.length; i < len; i += 1) {
+                  const queryItem = query[i];
+
+                  // 1. Handle multiple query match (i.e, once that are quoted, like `"hello world"`)
+                  let found = false;
+                  let idx = -1;
+                  while (!found && ++idx < searchersLen) {
+                    const searcher = searchers[idx];
+                    let token = searcher.isMultiMatch(queryItem);
+                    if (token) {
+                      results.push(new searcher(token, options));
+                      found = true;
+                    }
+                  }
+
+                  if (found) {
+                    continue
+                  }
+
+                  // 2. Handle single query matches (i.e, once that are *not* quoted)
+                  idx = -1;
+                  while (++idx < searchersLen) {
+                    const searcher = searchers[idx];
+                    let token = searcher.isSingleMatch(queryItem);
+                    if (token) {
+                      results.push(new searcher(token, options));
+                      break
+                    }
+                  }
+                }
+
+                return results
+              })
+            }
+
+            // These extended matchers can return an array of matches, as opposed
+            // to a singl match
+            const MultiMatchSet = new Set([FuzzyMatch.type, IncludeMatch.type]);
+
+            /**
+             * Command-like searching
+             * ======================
+             *
+             * Given multiple search terms delimited by spaces.e.g. `^jscript .python$ ruby !java`,
+             * search in a given text.
+             *
+             * Search syntax:
+             *
+             * | Token       | Match type                 | Description                            |
+             * | ----------- | -------------------------- | -------------------------------------- |
+             * | `jscript`   | fuzzy-match                | Items that fuzzy match `jscript`       |
+             * | `=scheme`   | exact-match                | Items that are `scheme`                |
+             * | `'python`   | include-match              | Items that include `python`            |
+             * | `!ruby`     | inverse-exact-match        | Items that do not include `ruby`       |
+             * | `^java`     | prefix-exact-match         | Items that start with `java`           |
+             * | `!^earlang` | inverse-prefix-exact-match | Items that do not start with `earlang` |
+             * | `.js$`      | suffix-exact-match         | Items that end with `.js`              |
+             * | `!.go$`     | inverse-suffix-exact-match | Items that do not end with `.go`       |
+             *
+             * A single pipe character acts as an OR operator. For example, the following
+             * query matches entries that start with `core` and end with either`go`, `rb`,
+             * or`py`.
+             *
+             * ```
+             * ^core go$ | rb$ | py$
+             * ```
+             */
+            class ExtendedSearch {
+              constructor(
+                pattern,
+                {
+                  isCaseSensitive = Config.isCaseSensitive,
+                  includeMatches = Config.includeMatches,
+                  minMatchCharLength = Config.minMatchCharLength,
+                  ignoreLocation = Config.ignoreLocation,
+                  findAllMatches = Config.findAllMatches,
+                  location = Config.location,
+                  threshold = Config.threshold,
+                  distance = Config.distance
+                } = {}
+              ) {
+                this.query = null;
+                this.options = {
+                  isCaseSensitive,
+                  includeMatches,
+                  minMatchCharLength,
+                  findAllMatches,
+                  ignoreLocation,
+                  location,
+                  threshold,
+                  distance
+                };
+
+                this.pattern = isCaseSensitive ? pattern : pattern.toLowerCase();
+                this.query = parseQuery(this.pattern, this.options);
+              }
+
+              static condition(_, options) {
+                return options.useExtendedSearch
+              }
+
+              searchIn(text) {
+                const query = this.query;
+
+                if (!query) {
+                  return {
+                    isMatch: false,
+                    score: 1
+                  }
+                }
+
+                const { includeMatches, isCaseSensitive } = this.options;
+
+                text = isCaseSensitive ? text : text.toLowerCase();
+
+                let numMatches = 0;
+                let allIndices = [];
+                let totalScore = 0;
+
+                // ORs
+                for (let i = 0, qLen = query.length; i < qLen; i += 1) {
+                  const searchers = query[i];
+
+                  // Reset indices
+                  allIndices.length = 0;
+                  numMatches = 0;
+
+                  // ANDs
+                  for (let j = 0, pLen = searchers.length; j < pLen; j += 1) {
+                    const searcher = searchers[j];
+                    const { isMatch, indices, score } = searcher.search(text);
+
+                    if (isMatch) {
+                      numMatches += 1;
+                      totalScore += score;
+                      if (includeMatches) {
+                        const type = searcher.constructor.type;
+                        if (MultiMatchSet.has(type)) {
+                          allIndices = [...allIndices, ...indices];
+                        } else {
+                          allIndices.push(indices);
+                        }
+                      }
+                    } else {
+                      totalScore = 0;
+                      numMatches = 0;
+                      allIndices.length = 0;
+                      break
+                    }
+                  }
+
+                  // OR condition, so if TRUE, return
+                  if (numMatches) {
+                    let result = {
+                      isMatch: true,
+                      score: totalScore / numMatches
+                    };
+
+                    if (includeMatches) {
+                      result.indices = allIndices;
+                    }
+
+                    return result
+                  }
+                }
+
+                // Nothing was matched
+                return {
+                  isMatch: false,
+                  score: 1
+                }
+              }
+            }
+
+            const registeredSearchers = [];
+
+            function register(...args) {
+              registeredSearchers.push(...args);
+            }
+
+            function createSearcher(pattern, options) {
+              for (let i = 0, len = registeredSearchers.length; i < len; i += 1) {
+                let searcherClass = registeredSearchers[i];
+                if (searcherClass.condition(pattern, options)) {
+                  return new searcherClass(pattern, options)
+                }
+              }
+
+              return new BitapSearch(pattern, options)
+            }
+
+            const LogicalOperator = {
+              AND: '$and',
+              OR: '$or'
+            };
+
+            const KeyType = {
+              PATH: '$path',
+              PATTERN: '$val'
+            };
+
+            const isExpression = (query) =>
+              !!(query[LogicalOperator.AND] || query[LogicalOperator.OR]);
+
+            const isPath = (query) => !!query[KeyType.PATH];
+
+            const isLeaf = (query) =>
+              !isArray(query) && isObject$1(query) && !isExpression(query);
+
+            const convertToExplicit = (query) => ({
+              [LogicalOperator.AND]: Object.keys(query).map((key) => ({
+                [key]: query[key]
+              }))
+            });
+
+            // When `auto` is `true`, the parse function will infer and initialize and add
+            // the appropriate `Searcher` instance
+            function parse(query, options, { auto = true } = {}) {
+              const next = (query) => {
+                let keys = Object.keys(query);
+
+                const isQueryPath = isPath(query);
+
+                if (!isQueryPath && keys.length > 1 && !isExpression(query)) {
+                  return next(convertToExplicit(query))
+                }
+
+                if (isLeaf(query)) {
+                  const key = isQueryPath ? query[KeyType.PATH] : keys[0];
+
+                  const pattern = isQueryPath ? query[KeyType.PATTERN] : query[key];
+
+                  if (!isString(pattern)) {
+                    throw new Error(LOGICAL_SEARCH_INVALID_QUERY_FOR_KEY(key))
+                  }
+
+                  const obj = {
+                    keyId: createKeyId(key),
+                    pattern
+                  };
+
+                  if (auto) {
+                    obj.searcher = createSearcher(pattern, options);
+                  }
+
+                  return obj
+                }
+
+                let node = {
+                  children: [],
+                  operator: keys[0]
+                };
+
+                keys.forEach((key) => {
+                  const value = query[key];
+
+                  if (isArray(value)) {
+                    value.forEach((item) => {
+                      node.children.push(next(item));
+                    });
+                  }
+                });
+
+                return node
+              };
+
+              if (!isExpression(query)) {
+                query = convertToExplicit(query);
+              }
+
+              return next(query)
+            }
+
+            // Practical scoring function
+            function computeScore$1(
+              results,
+              { ignoreFieldNorm = Config.ignoreFieldNorm }
+            ) {
+              results.forEach((result) => {
+                let totalScore = 1;
+
+                result.matches.forEach(({ key, norm, score }) => {
+                  const weight = key ? key.weight : null;
+
+                  totalScore *= Math.pow(
+                    score === 0 && weight ? Number.EPSILON : score,
+                    (weight || 1) * (ignoreFieldNorm ? 1 : norm)
+                  );
+                });
+
+                result.score = totalScore;
+              });
+            }
+
+            function transformMatches(result, data) {
+              const matches = result.matches;
+              data.matches = [];
+
+              if (!isDefined(matches)) {
+                return
+              }
+
+              matches.forEach((match) => {
+                if (!isDefined(match.indices) || !match.indices.length) {
+                  return
+                }
+
+                const { indices, value } = match;
+
+                let obj = {
+                  indices,
+                  value
+                };
+
+                if (match.key) {
+                  obj.key = match.key.src;
+                }
+
+                if (match.idx > -1) {
+                  obj.refIndex = match.idx;
+                }
+
+                data.matches.push(obj);
+              });
+            }
+
+            function transformScore(result, data) {
+              data.score = result.score;
+            }
+
+            function format$1(
+              results,
+              docs,
+              {
+                includeMatches = Config.includeMatches,
+                includeScore = Config.includeScore
+              } = {}
+            ) {
+              const transformers = [];
+
+              if (includeMatches) transformers.push(transformMatches);
+              if (includeScore) transformers.push(transformScore);
+
+              return results.map((result) => {
+                const { idx } = result;
+
+                const data = {
+                  item: docs[idx],
+                  refIndex: idx
+                };
+
+                if (transformers.length) {
+                  transformers.forEach((transformer) => {
+                    transformer(result, data);
+                  });
+                }
+
+                return data
+              })
+            }
+
+            class Fuse {
+              constructor(docs, options = {}, index) {
+                this.options = { ...Config, ...options };
+
+                if (
+                  this.options.useExtendedSearch &&
+                  !true
+                ) {
+                  throw new Error(EXTENDED_SEARCH_UNAVAILABLE)
+                }
+
+                this._keyStore = new KeyStore(this.options.keys);
+
+                this.setCollection(docs, index);
+              }
+
+              setCollection(docs, index) {
+                this._docs = docs;
+
+                if (index && !(index instanceof FuseIndex)) {
+                  throw new Error(INCORRECT_INDEX_TYPE)
+                }
+
+                this._myIndex =
+                  index ||
+                  createIndex(this.options.keys, this._docs, {
+                    getFn: this.options.getFn
+                  });
+              }
+
+              add(doc) {
+                if (!isDefined(doc)) {
+                  return
+                }
+
+                this._docs.push(doc);
+                this._myIndex.add(doc);
+              }
+
+              remove(predicate = (/* doc, idx */) => false) {
+                const results = [];
+
+                for (let i = 0, len = this._docs.length; i < len; i += 1) {
+                  const doc = this._docs[i];
+                  if (predicate(doc, i)) {
+                    this.removeAt(i);
+                    i -= 1;
+                    len -= 1;
+
+                    results.push(doc);
+                  }
+                }
+
+                return results
+              }
+
+              removeAt(idx) {
+                this._docs.splice(idx, 1);
+                this._myIndex.removeAt(idx);
+              }
+
+              getIndex() {
+                return this._myIndex
+              }
+
+              search(query, { limit = -1 } = {}) {
+                const {
+                  includeMatches,
+                  includeScore,
+                  shouldSort,
+                  sortFn,
+                  ignoreFieldNorm
+                } = this.options;
+
+                let results = isString(query)
+                  ? isString(this._docs[0])
+                    ? this._searchStringList(query)
+                    : this._searchObjectList(query)
+                  : this._searchLogical(query);
+
+                computeScore$1(results, { ignoreFieldNorm });
+
+                if (shouldSort) {
+                  results.sort(sortFn);
+                }
+
+                if (isNumber(limit) && limit > -1) {
+                  results = results.slice(0, limit);
+                }
+
+                return format$1(results, this._docs, {
+                  includeMatches,
+                  includeScore
+                })
+              }
+
+              _searchStringList(query) {
+                const searcher = createSearcher(query, this.options);
+                const { records } = this._myIndex;
+                const results = [];
+
+                // Iterate over every string in the index
+                records.forEach(({ v: text, i: idx, n: norm }) => {
+                  if (!isDefined(text)) {
+                    return
+                  }
+
+                  const { isMatch, score, indices } = searcher.searchIn(text);
+
+                  if (isMatch) {
+                    results.push({
+                      item: text,
+                      idx,
+                      matches: [{ score, value: text, norm, indices }]
+                    });
+                  }
+                });
+
+                return results
+              }
+
+              _searchLogical(query) {
+
+                const expression = parse(query, this.options);
+
+                const evaluate = (node, item, idx) => {
+                  if (!node.children) {
+                    const { keyId, searcher } = node;
+
+                    const matches = this._findMatches({
+                      key: this._keyStore.get(keyId),
+                      value: this._myIndex.getValueForItemAtKeyId(item, keyId),
+                      searcher
+                    });
+
+                    if (matches && matches.length) {
+                      return [
+                        {
+                          idx,
+                          item,
+                          matches
+                        }
+                      ]
+                    }
+
+                    return []
+                  }
+
+                  /*eslint indent: [2, 2, {"SwitchCase": 1}]*/
+                  switch (node.operator) {
+                    case LogicalOperator.AND: {
+                      const res = [];
+                      for (let i = 0, len = node.children.length; i < len; i += 1) {
+                        const child = node.children[i];
+                        const result = evaluate(child, item, idx);
+                        if (result.length) {
+                          res.push(...result);
+                        } else {
+                          return []
+                        }
+                      }
+                      return res
+                    }
+                    case LogicalOperator.OR: {
+                      const res = [];
+                      for (let i = 0, len = node.children.length; i < len; i += 1) {
+                        const child = node.children[i];
+                        const result = evaluate(child, item, idx);
+                        if (result.length) {
+                          res.push(...result);
+                          break
+                        }
+                      }
+                      return res
+                    }
+                  }
+                };
+
+                const records = this._myIndex.records;
+                const resultMap = {};
+                const results = [];
+
+                records.forEach(({ $: item, i: idx }) => {
+                  if (isDefined(item)) {
+                    let expResults = evaluate(expression, item, idx);
+
+                    if (expResults.length) {
+                      // Dedupe when adding
+                      if (!resultMap[idx]) {
+                        resultMap[idx] = { idx, item, matches: [] };
+                        results.push(resultMap[idx]);
+                      }
+                      expResults.forEach(({ matches }) => {
+                        resultMap[idx].matches.push(...matches);
+                      });
+                    }
+                  }
+                });
+
+                return results
+              }
+
+              _searchObjectList(query) {
+                const searcher = createSearcher(query, this.options);
+                const { keys, records } = this._myIndex;
+                const results = [];
+
+                // List is Array<Object>
+                records.forEach(({ $: item, i: idx }) => {
+                  if (!isDefined(item)) {
+                    return
+                  }
+
+                  let matches = [];
+
+                  // Iterate over every key (i.e, path), and fetch the value at that key
+                  keys.forEach((key, keyIndex) => {
+                    matches.push(
+                      ...this._findMatches({
+                        key,
+                        value: item[keyIndex],
+                        searcher
+                      })
+                    );
+                  });
+
+                  if (matches.length) {
+                    results.push({
+                      idx,
+                      item,
+                      matches
+                    });
+                  }
+                });
+
+                return results
+              }
+              _findMatches({ key, value, searcher }) {
+                if (!isDefined(value)) {
+                  return []
+                }
+
+                let matches = [];
+
+                if (isArray(value)) {
+                  value.forEach(({ v: text, i: idx, n: norm }) => {
+                    if (!isDefined(text)) {
+                      return
+                    }
+
+                    const { isMatch, score, indices } = searcher.searchIn(text);
+
+                    if (isMatch) {
+                      matches.push({
+                        score,
+                        key,
+                        value: text,
+                        idx,
+                        norm,
+                        indices
+                      });
+                    }
+                  });
+                } else {
+                  const { v: text, n: norm } = value;
+
+                  const { isMatch, score, indices } = searcher.searchIn(text);
+
+                  if (isMatch) {
+                    matches.push({ score, key, value: text, norm, indices });
+                  }
+                }
+
+                return matches
+              }
+            }
+
+            Fuse.version = '6.4.6';
+            Fuse.createIndex = createIndex;
+            Fuse.parseIndex = parseIndex;
+            Fuse.config = Config;
+
+            {
+              Fuse.parseQuery = parse;
+            }
+
+            {
+              register(ExtendedSearch);
+            }
+
             const useRepositories = () => {
                 const setDraft = github.useSetDraft();
                 const { repositories } = github.useTrackedState();
+                const [localRepositories, setLocalRepositories] = react.useState(repositories);
+                react.useEffect(() => {
+                    setLocalRepositories(repositories);
+                }, [repositories]);
+                const filter = throttle((value) => {
+                    if (value.length === 0) {
+                        setLocalRepositories(repositories);
+                        return;
+                    }
+                    const options = {
+                        isCaseSensitive: false,
+                        keys: [{
+                                name: 'name',
+                                weight: 0.8,
+                            },
+                            {
+                                name: 'organizationName',
+                                weight: 0.2,
+                            }],
+                    };
+                    const fuse = new Fuse(repositories, options);
+                    const result = fuse.search(value);
+                    setLocalRepositories(result.map((item) => item.item));
+                }, 100);
                 const updateWatched = react.useCallback((repository) => {
                     setDraft((draft) => {
                         const index = draft.repositories.findIndex((draftRepository) => draftRepository.fullName === repository.fullName);
@@ -45929,20 +50451,21 @@
                         id: repository.id,
                     });
                 }, []);
-                const unwatched = repositories.filter((repo) => !repo.isWatched);
+                const unwatched = localRepositories.filter((repo) => !repo.isWatched);
                 const state = {
-                    all: repositories,
-                    watched: repositories.filter((repo) => repo.isWatched),
+                    all: localRepositories,
+                    watched: localRepositories.filter((repo) => repo.isWatched),
                     unwatched,
                 };
                 return {
                     repositories: state,
                     updateWatched,
+                    filter,
                 };
             };
 
             const useSettings$1 = (keys) => {
-                const { init: initSettings } = useInit$3();
+                const { init: initSettings } = useInit$2();
                 const state = github.useTrackedState();
                 const { settings: settingsState } = state;
                 const init = () => {
@@ -45977,132 +50500,6 @@
                         chrome$1.runtime.send({ type: 'STORAGE_SET', key: 'githubSettings', data: draft.settings });
                     });
                 }, [setDraft]);
-            };
-
-            const useDispatchEvent = () => {
-                const trackedState = Global$2.useTrackedState();
-                const dispatch = (event) => {
-                    const { reactor } = trackedState;
-                    reactor.dispatchEvent('filter', event);
-                };
-                return {
-                    dispatch,
-                };
-            };
-
-            const useListenEvents = (unit) => {
-                const trackedState = Global$2.useTrackedState();
-                const listen = react.useCallback((eventName, callback) => {
-                    const { reactor } = trackedState;
-                    const localCallback = (event) => {
-                        if (event.unit === unit) {
-                            callback(event);
-                        }
-                    };
-                    reactor.addEventListener(eventName, localCallback);
-                }, []);
-                return {
-                    listen,
-                };
-            };
-
-            const { storage: { guards: guards$3 }, runtime: { send: send$3, listen: listen$3 } } = chrome$1;
-            const useInit$2 = () => {
-                const { hasInit } = Global$2.useTrackedState();
-                const setDraft = Global$2.useSetDraft();
-                const storageOn = (message) => {
-                    if (guards$3.filters(message)) {
-                        const { rememberSelections } = message.data;
-                        setDraft((draft) => {
-                            draft.rememberSelections = rememberSelections;
-                        });
-                        return;
-                    }
-                    if (guards$3.visibleUnits(message)) {
-                        const { data } = message;
-                        setDraft((draft) => {
-                            draft.visibleUnits = data;
-                        });
-                        return;
-                    }
-                };
-                const getStorageKey = (initType) => {
-                    switch (initType) {
-                        case 'filters': return 'filters';
-                        case 'units': return 'visibleUnits';
-                        default: throw Error('Bad Init Type');
-                    }
-                };
-                const init = (initType) => {
-                    if (!hasInit.includes(initType)) {
-                        listen$3('STORAGE_ON', storageOn);
-                        setDraft((draft) => {
-                            draft.hasInit = [...draft.hasInit, initType];
-                        });
-                        send$3({ type: 'STORAGE_GET', key: getStorageKey(initType) });
-                        return true;
-                    }
-                    return false;
-                };
-                return {
-                    hasInit,
-                    init,
-                };
-            };
-
-            const useRememberSelections = () => {
-                const trackedState = Global$2.useTrackedState();
-                const { init } = useInit$2();
-                react.useEffect(() => {
-                    init('filters');
-                }, []);
-                const setRememberSelections = (nextState) => {
-                    chrome$1.runtime.send({
-                        type: 'STORAGE_SET',
-                        key: 'filters',
-                        data: {
-                            rememberSelections: nextState,
-                            storedFilters: [],
-                        },
-                    });
-                };
-                return {
-                    rememberSelections: trackedState.rememberSelections,
-                    setRememberSelections,
-                };
-            };
-
-            const allVisibleUnits = [
-                'github',
-                'highlights',
-                'history',
-                'jira',
-                'links',
-            ];
-
-            const useUnits = () => {
-                const { visibleUnits } = Global$2.useTrackedState();
-                const setDraft = Global$2.useSetDraft();
-                const { init } = useInit$2();
-                react.useEffect(() => {
-                    init('units');
-                }, []);
-                const setVisibleUnit = (unit, nextState) => {
-                    const units = nextState ? [...visibleUnits, unit] : visibleUnits.filter((u) => u !== unit);
-                    setDraft((draft) => {
-                        draft.visibleUnits = units;
-                    });
-                    chrome$1.runtime.send({
-                        type: 'STORAGE_SET',
-                        key: 'visibleUnits',
-                        data: units,
-                    });
-                };
-                return {
-                    allUnits: allVisibleUnits,
-                    visibleUnits,
-                    setVisibleUnit,
-                };
             };
 
             const useInitFeed = () => {
@@ -46153,11 +50550,22 @@
             };
 
             const useFeed = () => {
-                const { feed } = history.useTrackedState();
+                const state = history.useTrackedState();
                 const { init: initFeed } = useInit$1();
+                const { visibleUnits } = useUnits();
                 const init = () => {
                     initFeed('feed');
                 };
+                const feed = state.feed
+                    .filter((feedItem) => {
+                    if (feedItem.app === 'github' && visibleUnits.includes('github')) {
+                        return true;
+                    }
+                    if (feedItem.app === 'jira' && visibleUnits.includes('jira')) {
+                        return true;
+                    }
+                    return false;
+                });
                 return {
                     feed,
                     init,
@@ -46215,6 +50623,15 @@
                 return {
                     authStatus: auth,
                     logout,
+                };
+            };
+
+            const useFilteredIssues = () => {
+                const { appliedFiltersByGroup } = useAppliedFilters();
+                const state = useTrackedState$2();
+                const issues = filterBuilder.applyFilter(state.issues, appliedFiltersByGroup);
+                return {
+                    issues: issues,
                 };
             };
 
@@ -46745,18 +51162,6 @@
                 };
             };
 
-            const useHide$1 = () => {
-                const setDraft = modalContext.useSetDraft();
-                const units = react.useCallback((units) => {
-                    setDraft((draft) => {
-                        draft.hiddenUnits = units;
-                    });
-                }, [setDraft]);
-                return {
-                    units,
-                };
-            };
-
             const useHide = () => {
                 const trackedState = modalContext.useTrackedState();
                 return {
@@ -47114,7 +51519,7 @@
   width: 16px;
   margin: 0 ${({ textWidth }) => (textWidth - 28) / 2}px;  
 `;
-            const Container$k = qe.button `
+            const Container$l = qe.button `
   align-items: center;
   align-self: center;
   position: ${({ absolute }) => typeof absolute === 'undefined' ? 'relative' : 'absolute'};
@@ -47182,7 +51587,7 @@
                         simulate(buttonRef.current, 'click');
                     }
                 };
-                return (react.createElement(Container$k, Object.assign({ ref: mergeRefs([buttonRef, ref]), onlyIcon: !!Icon && !children }, rest),
+                return (react.createElement(Container$l, Object.assign({ ref: mergeRefs([buttonRef, ref]), onlyIcon: !!Icon && !children }, rest),
                     react.createElement(IconContainer$1, null, Icon && react.createElement(Icon, null)),
                     label || children));
             });
@@ -47210,7 +51615,7 @@
               return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","stroke":"#000","strokeWidth":"2","d":"M3,3 L21,21 M3,21 L21,3"}}]})(props);
             }
 
-            const Container$j = qe.div `
+            const Container$k = qe.div `
   position: absolute;
   /* z-index: 999; */
   left: 0;
@@ -47282,7 +51687,7 @@
   top: 8px;
   right: 12px;
 `;
-            const Close$1 = qe(GrClose) `
+            const Close$2 = qe(GrClose) `
   & > path {
     stroke: ${({ theme }) => theme.colors.secondary.foreground};
   }
@@ -47335,7 +51740,7 @@
   bottom: ${({ theme }) => theme.sizes.md.marginY};;
 `;
 
-            const Container$i = qe.div `
+            const Container$j = qe.div `
   height: 100%;
   grid-area: tabs;
   padding-top: 20%;
@@ -47398,7 +51803,7 @@
                 const handleClick = (screen) => {
                     setSelectedTab(screen);
                 };
-                return (react.createElement(Container$i, null, tabs.map((tab) => react.createElement(Tab, Object.assign({}, tab, { key: tab.screen, handleClick: handleClick, isSelected: tab.screen === selectedTab })))));
+                return (react.createElement(Container$j, null, tabs.map((tab) => react.createElement(Tab, Object.assign({}, tab, { key: tab.screen, handleClick: handleClick, isSelected: tab.screen === selectedTab })))));
             };
 
             const Modal = () => {
@@ -47442,9 +51847,9 @@
                 if (!selection) {
                     return null;
                 }
-                return (react.createElement(Container$j, { ref: fullScreenRef },
+                return (react.createElement(Container$k, { ref: fullScreenRef },
                     react.createElement(ContentContainer$1, null,
-                        react.createElement(CloseButton$1, { onClick: closeModal, round: true, Icon: Close$1 }),
+                        react.createElement(CloseButton$1, { onClick: closeModal, round: true, Icon: Close$2 }),
                         react.createElement(Content$4, null,
                             react.createElement(SelectionContentContainer, null,
                                 react.createElement(Heading$1, null,
@@ -47458,7 +51863,7 @@
                     react.createElement(Global$2.Provider, null, children)));
             };
 
-            const Container$h = qe.div `
+            const Container$i = qe.div `
   width: calc(100% - 8px);
   height: 8px;
   background: #ccc;
@@ -47477,7 +51882,7 @@
                 if (hide) {
                     return null;
                 }
-                return (react.createElement(Container$h, null,
+                return (react.createElement(Container$i, null,
                     react.createElement(Bar, { percent: percent })));
             };
 
@@ -47524,7 +51929,7 @@
   display: flex;
   flex-direction: column;
 `;
-            const Container$g = qe.div `
+            const Container$h = qe.div `
   overflow-y: hidden;
   position: relative;
   padding: 0 ${({ theme }) => theme.sizes.lg.marginX};
@@ -47537,9 +51942,7 @@
 `;
             const ContentValue = qe.div `
   overflow-y: hidden;
-  will-change: max-height;
   max-height: ${({ hasData, theme }) => hasData ? `${theme.windowHeight}px` : 0};
-  transition: max-height 1s;
 `;
             const ContentContainer = qe.div `
   margin-top: ${(props) => props.hideProgress ? '8px' : '0'};
@@ -47590,7 +51993,7 @@
               return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"polyline","attr":{"points":"20 6 9 17 4 12"}}]})(props);
             }
 
-            const Container$f = qe.div `
+            const Container$g = qe.div `
   position: fixed;
   left: 0;
   top: 0;
@@ -47617,7 +52020,7 @@
                 if (!live) {
                     return null;
                 }
-                return (react.createElement(Container$f, { ref: fullScreenRef }));
+                return (react.createElement(Container$g, { ref: fullScreenRef }));
             };
 
             qe.div `
@@ -47759,7 +52162,7 @@
     cursor: ${({ isDisabled }) => isDisabled ? 'default' : 'pointer'};;
   }
 `;
-            const Checkmark$1 = qe.span `
+            const Checkmark = qe.span `
   position: absolute;
   top: 1px;
   left: 0;
@@ -47788,7 +52191,7 @@
     cursor: ${({ isDisabled }) => isDisabled ? 'default' : 'pointer'};;
   }
 `;
-            const Container$e = qe.label `
+            const Container$f = qe.label `
   display: block;
   position: relative;
   width: min-content;
@@ -47802,7 +52205,7 @@
     cursor: ${({ isDisabled }) => isDisabled ? 'default' : 'pointer'};;
   }
 
-  & > ${Checkmark$1} {
+  & > ${Checkmark} {
     background-color: ${(props) => {
     const { isHovered, isChecked, theme: { colors, baseColors }, isDisabled } = props;
     const { secondary, quaternary } = colors;
@@ -47846,6 +52249,7 @@
                 };
                 const onClick = (event) => {
                     event.preventDefault();
+                    event.stopPropagation();
                     if (!isDisabled) {
                         if (handleClick) {
                             handleClick(!isCheckedLocal);
@@ -47853,19 +52257,19 @@
                         setIsCheckedLocal(!isCheckedLocal);
                     }
                 };
-                return (react.createElement(Container$e, { isDisabled: isDisabled, ref: containerRef, isHovered: isHovered, hasLabel: !!label, onClick: onClick, isChecked: isCheckedLocal },
+                return (react.createElement(Container$f, { isDisabled: isDisabled, ref: containerRef, isHovered: isHovered, hasLabel: !!label, onClick: onClick, isChecked: isCheckedLocal },
                     react.createElement(Label$4, { ref: ref, capitalize: capitalize, isDisabled: isDisabled }, label || children || ''),
                     react.createElement(Input$3, { isDisabled: isDisabled, type: "checkbox" }),
-                    react.createElement(Checkmark$1, { isDisabled: isDisabled, isChecked: isCheckedLocal })));
+                    react.createElement(Checkmark, { isDisabled: isDisabled, isChecked: isCheckedLocal })));
             });
 
-            function Option$1(props) {
+            const Option$1 = (props) => {
                 const { option, onItemSelect } = props;
                 const selectItem = (nextValue) => {
                     onItemSelect(option, nextValue);
                 };
                 return (react.createElement(Checkbox, { handleClick: selectItem, key: option.value, label: option.label }));
-            }
+            };
 
             function Floating(props) {
                 const { onCancel, isActive, selectedItem, onItemSelect, title, footerOptions, hideCaret, options } = props;
@@ -47912,7 +52316,7 @@
   left: -40px;
   transform: rotate(270deg);
 `;
-            const Container$d = qe.div `
+            const Container$e = qe.div `
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto;
@@ -47951,12 +52355,21 @@
   align-self: flex-start;
   display: flex;
 `;
+            const SideNode = qe.div `
+  left: ${({ align, theme }) => align === 'left' ? theme.sizes.lg.marginX : 'auto'};
+  right: ${({ align, theme }) => align === 'right' ? theme.sizes.lg.marginX : 'auto'};
+  color: ${({ theme }) => theme.colors.secondary.foreground};
+  background-color: ${({ theme }) => theme.colors.secondary.background};
+  border-radius: ${({ theme }) => theme.sizes.lg.borderRadius};
+  padding: ${({ theme }) => theme.sizes.md.padding};
+  position: absolute;
+`;
             const MenuLeftContainer = qe(MenuBaseContainer) `
   grid-area: left;
   justify-self: start;
 
 
-  & > ${Container$k} {
+  & > ${Container$l} {
     margin-right: 2px;
   }
 `;
@@ -47964,7 +52377,7 @@
   grid-area: right;
   justify-self: end;
 
-  & > ${Container$k} {
+  & > ${Container$l} {
     margin-left: 2px;
   }
 `;
@@ -48056,14 +52469,14 @@
             };
 
             const Title$4 = (props) => {
-                const { text, rotated, subText, isDark, menuConfigurations, align } = props;
+                const { text, sideNode, rotated, subText, isDark, menuConfigurations, align } = props;
                 const { left, right } = menuConfigurations || {};
                 return (react.createElement(Rotator, { rotated: rotated },
-                    react.createElement(Container$d, null,
-                        left &&
-                            react.createElement(Menu, { menuItems: left, menuLocation: "left" }),
+                    react.createElement(Container$e, null,
+                        align === 'left' &&
+                            react.createElement(SideNode, { align: align }, sideNode),
                         react.createElement(CenterContainer, { hasLeft: !!left, hasRight: !!right },
-                            react.createElement(Text$1, { horizontal: align },
+                            react.createElement(Text$1, null,
                                 props.icon &&
                                     react.createElement(Icon, null,
                                         react.createElement(props.icon, null)),
@@ -48074,7 +52487,7 @@
             };
 
             var Unit$1 = {
-                Container: Container$g,
+                Container: Container$h,
                 Content: Content$3,
                 Console,
                 Data,
@@ -48100,7 +52513,7 @@
                 }
             };
 
-            const Container$c = qe.div `
+            const Container$d = qe.div `
   margin: 8px 0;
   position: relative;
   display: ${({ inline }) => inline ? 'inline-block' : 'flex'};
@@ -48124,7 +52537,7 @@
     if (isDisabled) {
         return colors.tertiary.background;
     }
-    return alpha(colors.primary.background, 0.6);
+    return colors.primary.background;
 }};
   user-select: ${({ isDisabled }) => isDisabled ? 'none' : 'auto'};;
   border-radius: ${({ theme }) => theme.sizes.md.borderRadius};
@@ -48181,10 +52594,9 @@
     return `${inputWidth - afterNodeWidth}px`;
 }};
 `;
-            qe(IoIosCloseCircleOutline) `
+            const Clear = qe(IoIosCloseCircleOutline) `
   position: absolute;
   right: 4px;
-  top: 3px;
 
   &:hover {
     cursor: pointer;
@@ -48194,8 +52606,9 @@
     stroke: #ffffff;
   }
 `;
-            qe.div `
+            const SearchContainer = qe.div `
   display: flex;
+  position: relative;
   align-items: center;
 `;
             qe.div `
@@ -48298,12 +52711,29 @@
                 return (react.createElement(react.Fragment, null,
                     label &&
                         react.createElement(Label$3, { inlineLabel: inlineLabel, htmlFor: uuidRef.current }, label),
-                    react.createElement(Container$c, { inline: inline, containerPosition: containerPosition },
+                    react.createElement(Container$d, { inline: inline, containerPosition: containerPosition },
                         react.createElement(InputContainer, null,
                             react.createElement(Input$2, Object.assign({ afterNodeWidth: afterNodeWidth, size: maxSize ? maxSize + 1 : undefined, maxSize: maxSize, ref: inputRef, ifDisabledColorSteady: ifDisabledColorSteady, disabled: isDisabled, isDisabled: isDisabled, id: uuidRef.current, value: localValue, onChange: handleChange, hasLabel: !!label && label.length > 0 }, rest)),
                             react.createElement(InvalidText, { noMargin: props.noMargin }, invalidText)),
                         afterNode &&
                             react.createElement(AfterNode, { ref: afterNodeRef, hasMaxSize: typeof maxSize !== 'undefined', afterNodeWidth: afterNodeWidth, inputWidth: inputWidth }, afterNode))));
+            };
+
+            const Search = (props) => {
+                const { clearSearch, label, onReactChange, ...rest } = props;
+                const [hasValue, setHasValue] = react.useState(typeof rest.defaultValue === 'undefined' ? false : `${rest.defaultValue}`.length > 0);
+                const internalReactChange = (value) => {
+                    const nextHasValue = value.length > 0;
+                    if (nextHasValue !== hasValue) {
+                        setHasValue(nextHasValue);
+                    }
+                    if (onReactChange) {
+                        onReactChange(value);
+                    }
+                };
+                return (react.createElement(SearchContainer, null,
+                    react.createElement(Input$1, Object.assign({ label: label || 'Search', onReactChange: internalReactChange }, rest)),
+                    clearSearch && hasValue && react.createElement(Clear, { onClick: clearSearch })));
             };
 
             qe.div `
@@ -48328,6 +52758,13 @@
   justify-content: ${({ justifyCenter }) => justifyCenter ? 'center' : 'inherit'};
   display: flex;
   flex-direction: ${({ flexRow }) => flexRow ? 'row' : 'column'};
+`;
+            const SectionTitleContainer = qe.div `
+  display: flex;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
             const SectionTitle = qe.div `
   flex: 1;
@@ -48363,7 +52800,8 @@
             const RightContainer = qe.div `
   position: sticky;
   float: right;
-  bottom: ${({ theme }) => theme.sizes.md.marginY};;
+  top: ${({ theme }) => theme.sizes.lg.marginY};
+  margin-right: -${({ theme }) => theme.sizes.xl.marginX};
 `;
 
             const LoginError = (props) => {
@@ -52726,6 +57164,231 @@
               CellMeasurer.__internalCellMeasurerFlag = true;
             }
 
+            var DEFAULT_HEIGHT = 30;
+            var DEFAULT_WIDTH = 100; // Enables more intelligent mapping of a given column and row index to an item ID.
+            // This prevents a cell cache from being invalidated when its parent collection is modified.
+
+            /**
+             * Caches measurements for a given cell.
+             */
+            var CellMeasurerCache$1 =
+            /*#__PURE__*/
+            function () {
+              function CellMeasurerCache() {
+                var _this = this;
+
+                var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+                _classCallCheck$8(this, CellMeasurerCache);
+
+                _defineProperty$6(this, "_cellHeightCache", {});
+
+                _defineProperty$6(this, "_cellWidthCache", {});
+
+                _defineProperty$6(this, "_columnWidthCache", {});
+
+                _defineProperty$6(this, "_rowHeightCache", {});
+
+                _defineProperty$6(this, "_defaultHeight", void 0);
+
+                _defineProperty$6(this, "_defaultWidth", void 0);
+
+                _defineProperty$6(this, "_minHeight", void 0);
+
+                _defineProperty$6(this, "_minWidth", void 0);
+
+                _defineProperty$6(this, "_keyMapper", void 0);
+
+                _defineProperty$6(this, "_hasFixedHeight", void 0);
+
+                _defineProperty$6(this, "_hasFixedWidth", void 0);
+
+                _defineProperty$6(this, "_columnCount", 0);
+
+                _defineProperty$6(this, "_rowCount", 0);
+
+                _defineProperty$6(this, "columnWidth", function (_ref) {
+                  var index = _ref.index;
+
+                  var key = _this._keyMapper(0, index);
+
+                  return _this._columnWidthCache[key] !== undefined ? _this._columnWidthCache[key] : _this._defaultWidth;
+                });
+
+                _defineProperty$6(this, "rowHeight", function (_ref2) {
+                  var index = _ref2.index;
+
+                  var key = _this._keyMapper(index, 0);
+
+                  return _this._rowHeightCache[key] !== undefined ? _this._rowHeightCache[key] : _this._defaultHeight;
+                });
+
+                var defaultHeight = params.defaultHeight,
+                    defaultWidth = params.defaultWidth,
+                    fixedHeight = params.fixedHeight,
+                    fixedWidth = params.fixedWidth,
+                    keyMapper = params.keyMapper,
+                    minHeight = params.minHeight,
+                    minWidth = params.minWidth;
+                this._hasFixedHeight = fixedHeight === true;
+                this._hasFixedWidth = fixedWidth === true;
+                this._minHeight = minHeight || 0;
+                this._minWidth = minWidth || 0;
+                this._keyMapper = keyMapper || defaultKeyMapper;
+                this._defaultHeight = Math.max(this._minHeight, typeof defaultHeight === 'number' ? defaultHeight : DEFAULT_HEIGHT);
+                this._defaultWidth = Math.max(this._minWidth, typeof defaultWidth === 'number' ? defaultWidth : DEFAULT_WIDTH);
+
+                {
+                  if (this._hasFixedHeight === false && this._hasFixedWidth === false) {
+                    console.warn("CellMeasurerCache should only measure a cell's width or height. " + 'You have configured CellMeasurerCache to measure both. ' + 'This will result in poor performance.');
+                  }
+
+                  if (this._hasFixedHeight === false && this._defaultHeight === 0) {
+                    console.warn('Fixed height CellMeasurerCache should specify a :defaultHeight greater than 0. ' + 'Failing to do so will lead to unnecessary layout and poor performance.');
+                  }
+
+                  if (this._hasFixedWidth === false && this._defaultWidth === 0) {
+                    console.warn('Fixed width CellMeasurerCache should specify a :defaultWidth greater than 0. ' + 'Failing to do so will lead to unnecessary layout and poor performance.');
+                  }
+                }
+              }
+
+              _createClass$8(CellMeasurerCache, [{
+                key: "clear",
+                value: function clear(rowIndex) {
+                  var columnIndex = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+                  var key = this._keyMapper(rowIndex, columnIndex);
+
+                  delete this._cellHeightCache[key];
+                  delete this._cellWidthCache[key];
+
+                  this._updateCachedColumnAndRowSizes(rowIndex, columnIndex);
+                }
+              }, {
+                key: "clearAll",
+                value: function clearAll() {
+                  this._cellHeightCache = {};
+                  this._cellWidthCache = {};
+                  this._columnWidthCache = {};
+                  this._rowHeightCache = {};
+                  this._rowCount = 0;
+                  this._columnCount = 0;
+                }
+              }, {
+                key: "hasFixedHeight",
+                value: function hasFixedHeight() {
+                  return this._hasFixedHeight;
+                }
+              }, {
+                key: "hasFixedWidth",
+                value: function hasFixedWidth() {
+                  return this._hasFixedWidth;
+                }
+              }, {
+                key: "getHeight",
+                value: function getHeight(rowIndex) {
+                  var columnIndex = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+                  if (this._hasFixedHeight) {
+                    return this._defaultHeight;
+                  } else {
+                    var _key = this._keyMapper(rowIndex, columnIndex);
+
+                    return this._cellHeightCache[_key] !== undefined ? Math.max(this._minHeight, this._cellHeightCache[_key]) : this._defaultHeight;
+                  }
+                }
+              }, {
+                key: "getWidth",
+                value: function getWidth(rowIndex) {
+                  var columnIndex = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+                  if (this._hasFixedWidth) {
+                    return this._defaultWidth;
+                  } else {
+                    var _key2 = this._keyMapper(rowIndex, columnIndex);
+
+                    return this._cellWidthCache[_key2] !== undefined ? Math.max(this._minWidth, this._cellWidthCache[_key2]) : this._defaultWidth;
+                  }
+                }
+              }, {
+                key: "has",
+                value: function has(rowIndex) {
+                  var columnIndex = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+                  var key = this._keyMapper(rowIndex, columnIndex);
+
+                  return this._cellHeightCache[key] !== undefined;
+                }
+              }, {
+                key: "set",
+                value: function set(rowIndex, columnIndex, width, height) {
+                  var key = this._keyMapper(rowIndex, columnIndex);
+
+                  if (columnIndex >= this._columnCount) {
+                    this._columnCount = columnIndex + 1;
+                  }
+
+                  if (rowIndex >= this._rowCount) {
+                    this._rowCount = rowIndex + 1;
+                  } // Size is cached per cell so we don't have to re-measure if cells are re-ordered.
+
+
+                  this._cellHeightCache[key] = height;
+                  this._cellWidthCache[key] = width;
+
+                  this._updateCachedColumnAndRowSizes(rowIndex, columnIndex);
+                }
+              }, {
+                key: "_updateCachedColumnAndRowSizes",
+                value: function _updateCachedColumnAndRowSizes(rowIndex, columnIndex) {
+                  // :columnWidth and :rowHeight are derived based on all cells in a column/row.
+                  // Pre-cache these derived values for faster lookup later.
+                  // Reads are expected to occur more frequently than writes in this case.
+                  // Only update non-fixed dimensions though to avoid doing unnecessary work.
+                  if (!this._hasFixedWidth) {
+                    var columnWidth = 0;
+
+                    for (var i = 0; i < this._rowCount; i++) {
+                      columnWidth = Math.max(columnWidth, this.getWidth(i, columnIndex));
+                    }
+
+                    var columnKey = this._keyMapper(0, columnIndex);
+
+                    this._columnWidthCache[columnKey] = columnWidth;
+                  }
+
+                  if (!this._hasFixedHeight) {
+                    var rowHeight = 0;
+
+                    for (var _i = 0; _i < this._columnCount; _i++) {
+                      rowHeight = Math.max(rowHeight, this.getHeight(rowIndex, _i));
+                    }
+
+                    var rowKey = this._keyMapper(rowIndex, 0);
+
+                    this._rowHeightCache[rowKey] = rowHeight;
+                  }
+                }
+              }, {
+                key: "defaultHeight",
+                get: function get() {
+                  return this._defaultHeight;
+                }
+              }, {
+                key: "defaultWidth",
+                get: function get() {
+                  return this._defaultWidth;
+                }
+              }]);
+
+              return CellMeasurerCache;
+            }();
+
+            function defaultKeyMapper(rowIndex, columnIndex) {
+              return "".concat(rowIndex, "-").concat(columnIndex);
+            }
+
             function ownKeys$9(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
             function _objectSpread$9(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$9(source, true).forEach(function (key) { _defineProperty$6(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$9(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -55752,8 +60415,8 @@
             _defineProperty$6(Masonry, "defaultProps", {
               autoHeight: false,
               keyMapper: identity,
-              onCellsRendered: noop,
-              onScroll: noop,
+              onCellsRendered: noop$1,
+              onScroll: noop$1,
               overscanByPixels: 20,
               role: 'grid',
               scrollingResetTimeInterval: DEFAULT_SCROLLING_RESET_TIME_INTERVAL,
@@ -55766,7 +60429,7 @@
               return value;
             }
 
-            function noop() {}
+            function noop$1() {}
 
             ({
               "defaultHeight": propTypes.number.isRequired,
@@ -58277,6 +62940,7 @@
   border: 1px solid #898C9F;
 `;
             const Repos = qe.div `
+  height: 300px;
   padding: ${({ theme }) => theme.sizes.xl.padding};
 `;
             qe.input `
@@ -58308,6 +62972,7 @@
 `;
             const RepoContainer = qe.div `
   display: flex;
+  width: 100%;
 
   &:hover {
     cursor: pointer;
@@ -61736,7 +66401,7 @@
   text-align: center;
   text-transform: ${(props) => props.capitalize ? 'capitalize' : 'inherit'};
 `;
-            const Container$b = qe.div `
+            const Container$c = qe.div `
   display: ${({ inline }) => inline ? 'inline-block' : 'inherit'};
   margin: 0 ${({ marginY, theme }) => marginY ? theme.sizes.md.marginY : 'inherit'};
   text-overflow: ${(props) => props.truncate ? 'ellipsis' : 'inherit'};
@@ -61849,9 +66514,9 @@
                     }
                 }, [instance, containerHovered, tipHovered]);
                 if (isDisabled) {
-                    return (react.createElement(Container$b, { truncate: truncate, cursorType: cursorType }, children));
+                    return (react.createElement(Container$c, { truncate: truncate, cursorType: cursorType }, children));
                 }
-                return (react.createElement(Container$b, { ref: ref, cursorType: cursorType, truncate: truncate, inline: inline, marginY: marginY }, children));
+                return (react.createElement(Container$c, { ref: ref, cursorType: cursorType, truncate: truncate, inline: inline, marginY: marginY }, children));
             };
 
             const ErrorTooltip = (props) => {
@@ -61896,36 +66561,50 @@
                     }
                     removeRepo();
                 };
-                const select = () => {
+                const clickCheckbox = () => {
                     setIsSelected(true);
                     onClick();
                 };
-                return (react.createElement(RepoContainer, { style: style, onClick: select },
+                const clickContainer = (event) => {
+                    event.stopPropagation();
+                    event.preventDefault();
+                    if (event.currentTarget === event.target) {
+                        setIsSelected(true);
+                        onClick();
+                    }
+                };
+                return (react.createElement(RepoContainer, { style: style, onClick: clickContainer },
                     react.createElement(Tooltip$2, { truncate: true, size: "sm", isDisabled: !isEllipsis, text: repository.fullName, cursorType: "pointer" },
-                        react.createElement(Checkbox, { handleClick: select, label: repository.fullName, ref: labelRef, isChecked: false }))));
+                        react.createElement(Checkbox, { handleClick: clickCheckbox, label: repository.fullName, ref: labelRef, isChecked: false }))));
             };
 
+            const createCache = () => new CellMeasurerCache$1({
+                fixedHeight: false,
+                fixedWidth: true,
+                defaultHeight: 20,
+            });
             const RepositoryList = (props) => {
                 const { repositories, type, loadingMessage, title } = props;
-                const [count, setCount] = react.useState(0);
-                react.useEffect(() => {
-                    const cancel = setInterval(() => {
-                        setCount(count + 1);
-                    }, 300);
-                    return () => {
-                        clearInterval(cancel);
-                    };
-                }, []);
+                const cacheRef = react.useRef(createCache());
                 return (react.createElement(RepoListContainer, null,
                     react.createElement(Title$3, null, title),
                     react.createElement(Repos, null,
-                        react.createElement(List, { noRowsRenderer: () => react.createElement(Loading$1, { message: loadingMessage }), height: 200, width: 300, rowHeight: 20, rowCount: repositories.length, rowRenderer: ({ index, style, key }) => (react.createElement(Repo, { key: key, style: style, repository: repositories[index], type: type })) }))));
+                        react.createElement(AutoSizer, null, ({ width, height }) => react.createElement(List, { noRowsRenderer: () => react.createElement(Loading$1, { message: loadingMessage }), height: height, deferredMeasurementCache: cacheRef.current, width: width, rowHeight: cacheRef.current.rowHeight, rowCount: repositories.length, rowRenderer: ({ index, parent, style }) => (react.createElement(CellMeasurer, { key: repositories[index].id, parent: parent, cache: cacheRef.current, columnIndex: 0, rowIndex: index },
+                                react.createElement(Repo, { style: style, repository: repositories[index], type: type }))) })))));
             };
 
             const Repositories = () => {
-                const { repositories: { watched, unwatched, }, } = useRepositories();
+                const { repositories: { watched, unwatched, }, filter, } = useRepositories();
+                const handleSearchChange = (value) => {
+                    filter(value);
+                };
+                const clearSearch = () => {
+                    filter('');
+                };
                 return (react.createElement(react.Fragment, null,
-                    react.createElement(SectionTitle, null, "Repositories"),
+                    react.createElement(SectionTitleContainer, null,
+                        react.createElement(SectionTitle, null, "Repositories"),
+                        react.createElement(Search, { onReactChange: handleSearchChange, clearSearch: clearSearch })),
                     react.createElement(SectionContent, null,
                         react.createElement(RepositoryListsWrapper, null,
                             react.createElement(RepositoryList, { type: "watched", repositories: watched, title: "Currently Watched Repositories", loadingMessage: unwatched.length === 0 ? 'Fetching Repositories' : 'Add Repos to Watch' }),
@@ -61952,7 +66631,7 @@
 
             const Main$2 = () => {
                 const { logout } = useAuthStatus$1();
-                const { init } = useInit$3();
+                const { init } = useInit$2();
                 const { hasInit } = useTrackedState$5();
                 react.useEffect(() => {
                     if (!hasInit.includes('repositories')) {
@@ -61992,6 +66671,7 @@
                 const { unit } = props;
                 const { visibleUnits, setVisibleUnit } = useUnits();
                 const handleClick = (nextState) => {
+                    console.log('~ nextState', nextState, (() => { const now = new Date(); return `${now.getSeconds()}.${now.getMilliseconds()}`; })());
                     setVisibleUnit(unit, nextState);
                 };
                 return (react.createElement(Checkbox, { capitalize: true, isChecked: visibleUnits.includes(unit), handleClick: handleClick, label: unit }));
@@ -62035,7 +66715,7 @@
                 }
                 return handleRGBA(theme.colors[themeColor], isLight, opacity);
             };
-            const Container$a = qe.div `
+            const Container$b = qe.div `
   display: flex;
   align-items: center;
   margin: ${({ theme: { sizes }, size }) => sizes[size || 'md'].margin};
@@ -62069,7 +66749,7 @@
     cursor: ${({ noCursor, onClick }) => !noCursor && !!onClick ? 'pointer' : 'default'};
   }
 `;
-            const Close = qe(IoIosCloseCircleOutline) `
+            const Close$1 = qe(IoIosCloseCircleOutline) `
   &:hover {
     cursor: pointer;
   }
@@ -62077,10 +66757,10 @@
 
             const Pill = (props) => {
                 const { label, size, children, onClose, ...rest } = props;
-                return (react.createElement(Container$a, Object.assign({ unselectable: "on", size: size || 'md' }, rest),
+                return (react.createElement(Container$b, Object.assign({ unselectable: "on", size: size || 'md' }, rest),
                     label || children,
                     onClose &&
-                        react.createElement(Close, { onClick: onClose })));
+                        react.createElement(Close$1, { onClick: onClose })));
             };
 
             const DataContainer = qe.div `
@@ -62617,7 +67297,7 @@
   padding: 2px 4px;
   font-size: ${(props) => props.theme.sizes.lg.fontSize};
 `;
-            const Container$9 = qe.div `
+            const Container$a = qe.div `
   border-radius: ${({ theme }) => theme.sizes.xxl.borderRadius};
   box-shadow: ${({ theme: { colors: { secondary: { 'accent-rgb': { r, g, b } } } } }) => {
     const lead = `rgba(${r}, ${g}, ${b},`;
@@ -62691,7 +67371,7 @@
 
             const Card = react.forwardRef((props, ref) => {
                 const { children, isDisabled, title, contentSize, contentDisplay, contentColumns, centerTitle, endTitle, footer, endFooter } = props;
-                return (react.createElement(Container$9, { ref: ref, isDisabled: isDisabled },
+                return (react.createElement(Container$a, { ref: ref, isDisabled: isDisabled },
                     react.createElement(Heading, null,
                         title && react.createElement(Title$1, { title: title }),
                         centerTitle &&
@@ -62750,7 +67430,7 @@
   justify-self: left;
 `;
 
-            const Container$8 = qe.label `
+            const Container$9 = qe.label `
   position: relative;
   display: block;
   min-width: 45px;
@@ -62890,7 +67570,7 @@
                         onChange(value);
                     }
                 };
-                return (react.createElement(Container$8, { halfSize: halfSize },
+                return (react.createElement(Container$9, { halfSize: halfSize },
                     react.createElement(Slider, { isDisabled: isDisabled, isBackgroundReverse: isBackgroundReverse, isChecked: isChecked, isFocused: isFocused, rightOptionWidth: rightOptionWidth, leftOptionWidth: leftOptionWidth }),
                     react.createElement(Options$1, { isDisabled: isDisabled },
                         react.createElement(LeftOption, { isChecked: isChecked, isDisabled: isDisabled, ref: leftOptionRef }, leftOption.isIcon ?
@@ -63271,17 +67951,6 @@
                     react.createElement(SectionContent, { displayType: "grid" }, custom.map((customLink) => react.createElement(Link$1, { key: customLink.url, type: "custom", link: customLink })))));
             };
 
-            const Reorder = () => {
-                const update = useUpdate();
-                const hide = useHide$1();
-                const handleClick = () => {
-                    update.selection('save');
-                    hide.units(['github', 'jira', 'settings-icon']);
-                };
-                return (react.createElement(RightContainer, null,
-                    react.createElement(Button, { onClick: handleClick }, "Adjust link order")));
-            };
-
             const StandardLinks = () => {
                 const { standard } = useLinks();
                 return (react.createElement(Section$1, null,
@@ -63291,7 +67960,6 @@
 
             const Main = () => {
                 return (react.createElement(react.Fragment, null,
-                    react.createElement(Reorder, null),
                     react.createElement(CustomLinks, null),
                     react.createElement(StandardLinks, null)));
             };
@@ -67836,12 +72504,11 @@
                         react.createElement("div", null, loadingMessage)));
             };
 
-            const Container$7 = qe.div `
-  height: 100%;
+            const Container$8 = qe.div `
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 48px;
   overflow-y: scroll;
 
 
@@ -68035,7 +72702,7 @@
                     }
                     setEnabled(false);
                 }, [selection]);
-                return (react.createElement(Container$7, null,
+                return (react.createElement(Container$8, null,
                     react.createElement(DndProvider, { backend: HTML5Backend }, active.map((link) => react.createElement(Link, { isFocused: isFocused, key: link.id, id: link.id })))));
             };
 
@@ -68059,7 +72726,7 @@
                         react.createElement(Main, null))));
             };
 
-            const Container$6 = qe.div `
+            const Container$7 = qe.div `
   align-self: center;
 
   &:hover {
@@ -68077,22 +72744,22 @@
                 if (hiddenUnits.includes('settings-icon')) {
                     return null;
                 }
-                return (react.createElement(Container$6, { onClick: handleSettingsClick },
+                return (react.createElement(Container$7, { onClick: handleSettingsClick },
                     react.createElement(VscSettingsGear, null)));
             };
 
-            const Container$5 = qe.div `
+            const Container$6 = qe.div `
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  /* height: 100%; */
+  height: 100%;
 `;
 
             const Center = (props) => {
                 const { showLinks } = props;
                 return (react.createElement(Unit$1.Container, { column: "second" },
-                    react.createElement(Container$5, null,
+                    react.createElement(Container$6, null,
                         react.createElement(links.Provider, null,
                             react.createElement(Links, { isVisible: showLinks })),
                         react.createElement(Settings, null))));
@@ -68113,28 +72780,13 @@
                     react.createElement(Button, { onClick: handleClick, size: "lg" }, "Login")));
             };
 
-            // THIS FILE IS AUTO GENERATED
-            function BsFillQuestionOctagonFill (props) {
-              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"path","attr":{"fillRule":"evenodd","d":"M11.46.146A.5.5 0 0011.107 0H4.893a.5.5 0 00-.353.146L.146 4.54A.5.5 0 000 4.893v6.214a.5.5 0 00.146.353l4.394 4.394a.5.5 0 00.353.146h6.214a.5.5 0 00.353-.146l4.394-4.394a.5.5 0 00.146-.353V4.893a.5.5 0 00-.146-.353L11.46.146zM6.57 6.033H5.25C5.22 4.147 6.68 3.5 8.006 3.5c1.397 0 2.673.73 2.673 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.355H7.117l-.007-.463c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.901 0-1.358.603-1.358 1.384zm1.251 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z","clipRule":"evenodd"}}]})(props);
-            }function BsCircleFill (props) {
-              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"circle","attr":{"cx":"8","cy":"8","r":"8"}}]})(props);
-            }function BsCircleHalf (props) {
-              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"path","attr":{"fillRule":"evenodd","d":"M8 15V1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z","clipRule":"evenodd"}}]})(props);
-            }function BsCircle (props) {
-              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"path","attr":{"fillRule":"evenodd","d":"M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z","clipRule":"evenodd"}}]})(props);
-            }function BsExclamationCircleFill (props) {
-              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"path","attr":{"fillRule":"evenodd","d":"M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z","clipRule":"evenodd"}}]})(props);
-            }function BsQuestionCircleFill (props) {
-              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"path","attr":{"fillRule":"evenodd","d":"M16 8A8 8 0 110 8a8 8 0 0116 0zM6.57 6.033H5.25C5.22 4.147 6.68 3.5 8.006 3.5c1.397 0 2.673.73 2.673 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.355H7.117l-.007-.463c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.901 0-1.358.603-1.358 1.384zm1.251 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z","clipRule":"evenodd"}}]})(props);
-            }
-
             const BadgeContainer = qe.div `
   font-size: ${({ theme }) => theme.sizes.sm.fontSize};
   position: absolute;
-  background-color: ${({ theme, isFiltered }) => isFiltered ?
+  background-color: ${({ theme, isWeak }) => isWeak ?
     theme.baseColors['red-light'] :
     theme.baseColors['white']};
-  color: ${({ theme, isFiltered }) => isFiltered ?
+  color: ${({ theme, isWeak }) => isWeak ?
     theme.baseColors['white'] :
     theme.baseColors['grey-dark']};
   border-radius: 6px;
@@ -68148,9 +72800,1095 @@
     cursor: pointer;
   }
 `;
+
+            const Badge = (props) => {
+                const { label, isWeak, children } = props;
+                return (react.createElement(BadgeContainer, { isWeak: isWeak }, label || children));
+            };
+
+            function _inheritsLoose(subClass, superClass) {
+              subClass.prototype = Object.create(superClass.prototype);
+              subClass.prototype.constructor = subClass;
+              _setPrototypeOf(subClass, superClass);
+            }
+
+            /**
+             * Checks if a given element has a CSS class.
+             * 
+             * @param element the element
+             * @param className the CSS class name
+             */
+            function hasClass(element, className) {
+              if (element.classList) return !!className && element.classList.contains(className);
+              return (" " + (element.className.baseVal || element.className) + " ").indexOf(" " + className + " ") !== -1;
+            }
+
+            /**
+             * Adds a CSS class to a given element.
+             * 
+             * @param element the element
+             * @param className the CSS class name
+             */
+
+            function addClass(element, className) {
+              if (element.classList) element.classList.add(className);else if (!hasClass(element, className)) if (typeof element.className === 'string') element.className = element.className + " " + className;else element.setAttribute('class', (element.className && element.className.baseVal || '') + " " + className);
+            }
+
+            function replaceClassName(origClass, classToRemove) {
+              return origClass.replace(new RegExp("(^|\\s)" + classToRemove + "(?:\\s|$)", 'g'), '$1').replace(/\s+/g, ' ').replace(/^\s*|\s*$/g, '');
+            }
+            /**
+             * Removes a CSS class from a given element.
+             * 
+             * @param element the element
+             * @param className the CSS class name
+             */
+
+
+            function removeClass$1(element, className) {
+              if (element.classList) {
+                element.classList.remove(className);
+              } else if (typeof element.className === 'string') {
+                element.className = replaceClassName(element.className, className);
+              } else {
+                element.setAttribute('class', replaceClassName(element.className && element.className.baseVal || '', className));
+              }
+            }
+
+            var config = {
+              disabled: false
+            };
+
+            var timeoutsShape = propTypes.oneOfType([propTypes.number, propTypes.shape({
+              enter: propTypes.number,
+              exit: propTypes.number,
+              appear: propTypes.number
+            }).isRequired]) ;
+            var classNamesShape = propTypes.oneOfType([propTypes.string, propTypes.shape({
+              enter: propTypes.string,
+              exit: propTypes.string,
+              active: propTypes.string
+            }), propTypes.shape({
+              enter: propTypes.string,
+              enterDone: propTypes.string,
+              enterActive: propTypes.string,
+              exit: propTypes.string,
+              exitDone: propTypes.string,
+              exitActive: propTypes.string
+            })]) ;
+
+            var TransitionGroupContext = react.createContext(null);
+
+            var UNMOUNTED = 'unmounted';
+            var EXITED = 'exited';
+            var ENTERING = 'entering';
+            var ENTERED = 'entered';
+            var EXITING = 'exiting';
+            /**
+             * The Transition component lets you describe a transition from one component
+             * state to another _over time_ with a simple declarative API. Most commonly
+             * it's used to animate the mounting and unmounting of a component, but can also
+             * be used to describe in-place transition states as well.
+             *
+             * ---
+             *
+             * **Note**: `Transition` is a platform-agnostic base component. If you're using
+             * transitions in CSS, you'll probably want to use
+             * [`CSSTransition`](https://reactcommunity.org/react-transition-group/css-transition)
+             * instead. It inherits all the features of `Transition`, but contains
+             * additional features necessary to play nice with CSS transitions (hence the
+             * name of the component).
+             *
+             * ---
+             *
+             * By default the `Transition` component does not alter the behavior of the
+             * component it renders, it only tracks "enter" and "exit" states for the
+             * components. It's up to you to give meaning and effect to those states. For
+             * example we can add styles to a component when it enters or exits:
+             *
+             * ```jsx
+             * import { Transition } from 'react-transition-group';
+             *
+             * const duration = 300;
+             *
+             * const defaultStyle = {
+             *   transition: `opacity ${duration}ms ease-in-out`,
+             *   opacity: 0,
+             * }
+             *
+             * const transitionStyles = {
+             *   entering: { opacity: 1 },
+             *   entered:  { opacity: 1 },
+             *   exiting:  { opacity: 0 },
+             *   exited:  { opacity: 0 },
+             * };
+             *
+             * const Fade = ({ in: inProp }) => (
+             *   <Transition in={inProp} timeout={duration}>
+             *     {state => (
+             *       <div style={{
+             *         ...defaultStyle,
+             *         ...transitionStyles[state]
+             *       }}>
+             *         I'm a fade Transition!
+             *       </div>
+             *     )}
+             *   </Transition>
+             * );
+             * ```
+             *
+             * There are 4 main states a Transition can be in:
+             *  - `'entering'`
+             *  - `'entered'`
+             *  - `'exiting'`
+             *  - `'exited'`
+             *
+             * Transition state is toggled via the `in` prop. When `true` the component
+             * begins the "Enter" stage. During this stage, the component will shift from
+             * its current transition state, to `'entering'` for the duration of the
+             * transition and then to the `'entered'` stage once it's complete. Let's take
+             * the following example (we'll use the
+             * [useState](https://reactjs.org/docs/hooks-reference.html#usestate) hook):
+             *
+             * ```jsx
+             * function App() {
+             *   const [inProp, setInProp] = useState(false);
+             *   return (
+             *     <div>
+             *       <Transition in={inProp} timeout={500}>
+             *         {state => (
+             *           // ...
+             *         )}
+             *       </Transition>
+             *       <button onClick={() => setInProp(true)}>
+             *         Click to Enter
+             *       </button>
+             *     </div>
+             *   );
+             * }
+             * ```
+             *
+             * When the button is clicked the component will shift to the `'entering'` state
+             * and stay there for 500ms (the value of `timeout`) before it finally switches
+             * to `'entered'`.
+             *
+             * When `in` is `false` the same thing happens except the state moves from
+             * `'exiting'` to `'exited'`.
+             */
+
+            var Transition = /*#__PURE__*/function (_React$Component) {
+              _inheritsLoose(Transition, _React$Component);
+
+              function Transition(props, context) {
+                var _this;
+
+                _this = _React$Component.call(this, props, context) || this;
+                var parentGroup = context; // In the context of a TransitionGroup all enters are really appears
+
+                var appear = parentGroup && !parentGroup.isMounting ? props.enter : props.appear;
+                var initialStatus;
+                _this.appearStatus = null;
+
+                if (props.in) {
+                  if (appear) {
+                    initialStatus = EXITED;
+                    _this.appearStatus = ENTERING;
+                  } else {
+                    initialStatus = ENTERED;
+                  }
+                } else {
+                  if (props.unmountOnExit || props.mountOnEnter) {
+                    initialStatus = UNMOUNTED;
+                  } else {
+                    initialStatus = EXITED;
+                  }
+                }
+
+                _this.state = {
+                  status: initialStatus
+                };
+                _this.nextCallback = null;
+                return _this;
+              }
+
+              Transition.getDerivedStateFromProps = function getDerivedStateFromProps(_ref, prevState) {
+                var nextIn = _ref.in;
+
+                if (nextIn && prevState.status === UNMOUNTED) {
+                  return {
+                    status: EXITED
+                  };
+                }
+
+                return null;
+              } // getSnapshotBeforeUpdate(prevProps) {
+              //   let nextStatus = null
+              //   if (prevProps !== this.props) {
+              //     const { status } = this.state
+              //     if (this.props.in) {
+              //       if (status !== ENTERING && status !== ENTERED) {
+              //         nextStatus = ENTERING
+              //       }
+              //     } else {
+              //       if (status === ENTERING || status === ENTERED) {
+              //         nextStatus = EXITING
+              //       }
+              //     }
+              //   }
+              //   return { nextStatus }
+              // }
+              ;
+
+              var _proto = Transition.prototype;
+
+              _proto.componentDidMount = function componentDidMount() {
+                this.updateStatus(true, this.appearStatus);
+              };
+
+              _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+                var nextStatus = null;
+
+                if (prevProps !== this.props) {
+                  var status = this.state.status;
+
+                  if (this.props.in) {
+                    if (status !== ENTERING && status !== ENTERED) {
+                      nextStatus = ENTERING;
+                    }
+                  } else {
+                    if (status === ENTERING || status === ENTERED) {
+                      nextStatus = EXITING;
+                    }
+                  }
+                }
+
+                this.updateStatus(false, nextStatus);
+              };
+
+              _proto.componentWillUnmount = function componentWillUnmount() {
+                this.cancelNextCallback();
+              };
+
+              _proto.getTimeouts = function getTimeouts() {
+                var timeout = this.props.timeout;
+                var exit, enter, appear;
+                exit = enter = appear = timeout;
+
+                if (timeout != null && typeof timeout !== 'number') {
+                  exit = timeout.exit;
+                  enter = timeout.enter; // TODO: remove fallback for next major
+
+                  appear = timeout.appear !== undefined ? timeout.appear : enter;
+                }
+
+                return {
+                  exit: exit,
+                  enter: enter,
+                  appear: appear
+                };
+              };
+
+              _proto.updateStatus = function updateStatus(mounting, nextStatus) {
+                if (mounting === void 0) {
+                  mounting = false;
+                }
+
+                if (nextStatus !== null) {
+                  // nextStatus will always be ENTERING or EXITING.
+                  this.cancelNextCallback();
+
+                  if (nextStatus === ENTERING) {
+                    this.performEnter(mounting);
+                  } else {
+                    this.performExit();
+                  }
+                } else if (this.props.unmountOnExit && this.state.status === EXITED) {
+                  this.setState({
+                    status: UNMOUNTED
+                  });
+                }
+              };
+
+              _proto.performEnter = function performEnter(mounting) {
+                var _this2 = this;
+
+                var enter = this.props.enter;
+                var appearing = this.context ? this.context.isMounting : mounting;
+
+                var _ref2 = this.props.nodeRef ? [appearing] : [reactDom.findDOMNode(this), appearing],
+                    maybeNode = _ref2[0],
+                    maybeAppearing = _ref2[1];
+
+                var timeouts = this.getTimeouts();
+                var enterTimeout = appearing ? timeouts.appear : timeouts.enter; // no enter animation skip right to ENTERED
+                // if we are mounting and running this it means appear _must_ be set
+
+                if (!mounting && !enter || config.disabled) {
+                  this.safeSetState({
+                    status: ENTERED
+                  }, function () {
+                    _this2.props.onEntered(maybeNode);
+                  });
+                  return;
+                }
+
+                this.props.onEnter(maybeNode, maybeAppearing);
+                this.safeSetState({
+                  status: ENTERING
+                }, function () {
+                  _this2.props.onEntering(maybeNode, maybeAppearing);
+
+                  _this2.onTransitionEnd(enterTimeout, function () {
+                    _this2.safeSetState({
+                      status: ENTERED
+                    }, function () {
+                      _this2.props.onEntered(maybeNode, maybeAppearing);
+                    });
+                  });
+                });
+              };
+
+              _proto.performExit = function performExit() {
+                var _this3 = this;
+
+                var exit = this.props.exit;
+                var timeouts = this.getTimeouts();
+                var maybeNode = this.props.nodeRef ? undefined : reactDom.findDOMNode(this); // no exit animation skip right to EXITED
+
+                if (!exit || config.disabled) {
+                  this.safeSetState({
+                    status: EXITED
+                  }, function () {
+                    _this3.props.onExited(maybeNode);
+                  });
+                  return;
+                }
+
+                this.props.onExit(maybeNode);
+                this.safeSetState({
+                  status: EXITING
+                }, function () {
+                  _this3.props.onExiting(maybeNode);
+
+                  _this3.onTransitionEnd(timeouts.exit, function () {
+                    _this3.safeSetState({
+                      status: EXITED
+                    }, function () {
+                      _this3.props.onExited(maybeNode);
+                    });
+                  });
+                });
+              };
+
+              _proto.cancelNextCallback = function cancelNextCallback() {
+                if (this.nextCallback !== null) {
+                  this.nextCallback.cancel();
+                  this.nextCallback = null;
+                }
+              };
+
+              _proto.safeSetState = function safeSetState(nextState, callback) {
+                // This shouldn't be necessary, but there are weird race conditions with
+                // setState callbacks and unmounting in testing, so always make sure that
+                // we can cancel any pending setState callbacks after we unmount.
+                callback = this.setNextCallback(callback);
+                this.setState(nextState, callback);
+              };
+
+              _proto.setNextCallback = function setNextCallback(callback) {
+                var _this4 = this;
+
+                var active = true;
+
+                this.nextCallback = function (event) {
+                  if (active) {
+                    active = false;
+                    _this4.nextCallback = null;
+                    callback(event);
+                  }
+                };
+
+                this.nextCallback.cancel = function () {
+                  active = false;
+                };
+
+                return this.nextCallback;
+              };
+
+              _proto.onTransitionEnd = function onTransitionEnd(timeout, handler) {
+                this.setNextCallback(handler);
+                var node = this.props.nodeRef ? this.props.nodeRef.current : reactDom.findDOMNode(this);
+                var doesNotHaveTimeoutOrListener = timeout == null && !this.props.addEndListener;
+
+                if (!node || doesNotHaveTimeoutOrListener) {
+                  setTimeout(this.nextCallback, 0);
+                  return;
+                }
+
+                if (this.props.addEndListener) {
+                  var _ref3 = this.props.nodeRef ? [this.nextCallback] : [node, this.nextCallback],
+                      maybeNode = _ref3[0],
+                      maybeNextCallback = _ref3[1];
+
+                  this.props.addEndListener(maybeNode, maybeNextCallback);
+                }
+
+                if (timeout != null) {
+                  setTimeout(this.nextCallback, timeout);
+                }
+              };
+
+              _proto.render = function render() {
+                var status = this.state.status;
+
+                if (status === UNMOUNTED) {
+                  return null;
+                }
+
+                var _this$props = this.props,
+                    children = _this$props.children;
+                    _this$props.in;
+                    _this$props.mountOnEnter;
+                    _this$props.unmountOnExit;
+                    _this$props.appear;
+                    _this$props.enter;
+                    _this$props.exit;
+                    _this$props.timeout;
+                    _this$props.addEndListener;
+                    _this$props.onEnter;
+                    _this$props.onEntering;
+                    _this$props.onEntered;
+                    _this$props.onExit;
+                    _this$props.onExiting;
+                    _this$props.onExited;
+                    _this$props.nodeRef;
+                    var childProps = _objectWithoutPropertiesLoose$1(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
+
+                return (
+                  /*#__PURE__*/
+                  // allows for nested Transitions
+                  react.createElement(TransitionGroupContext.Provider, {
+                    value: null
+                  }, typeof children === 'function' ? children(status, childProps) : react.cloneElement(react.Children.only(children), childProps))
+                );
+              };
+
+              return Transition;
+            }(react.Component);
+
+            Transition.contextType = TransitionGroupContext;
+            Transition.propTypes = {
+              /**
+               * A React reference to DOM element that need to transition:
+               * https://stackoverflow.com/a/51127130/4671932
+               *
+               *   - When `nodeRef` prop is used, `node` is not passed to callback functions
+               *      (e.g. `onEnter`) because user already has direct access to the node.
+               *   - When changing `key` prop of `Transition` in a `TransitionGroup` a new
+               *     `nodeRef` need to be provided to `Transition` with changed `key` prop
+               *     (see
+               *     [test/CSSTransition-test.js](https://github.com/reactjs/react-transition-group/blob/13435f897b3ab71f6e19d724f145596f5910581c/test/CSSTransition-test.js#L362-L437)).
+               */
+              nodeRef: propTypes.shape({
+                current: typeof Element === 'undefined' ? propTypes.any : propTypes.instanceOf(Element)
+              }),
+
+              /**
+               * A `function` child can be used instead of a React element. This function is
+               * called with the current transition status (`'entering'`, `'entered'`,
+               * `'exiting'`, `'exited'`), which can be used to apply context
+               * specific props to a component.
+               *
+               * ```jsx
+               * <Transition in={this.state.in} timeout={150}>
+               *   {state => (
+               *     <MyComponent className={`fade fade-${state}`} />
+               *   )}
+               * </Transition>
+               * ```
+               */
+              children: propTypes.oneOfType([propTypes.func.isRequired, propTypes.element.isRequired]).isRequired,
+
+              /**
+               * Show the component; triggers the enter or exit states
+               */
+              in: propTypes.bool,
+
+              /**
+               * By default the child component is mounted immediately along with
+               * the parent `Transition` component. If you want to "lazy mount" the component on the
+               * first `in={true}` you can set `mountOnEnter`. After the first enter transition the component will stay
+               * mounted, even on "exited", unless you also specify `unmountOnExit`.
+               */
+              mountOnEnter: propTypes.bool,
+
+              /**
+               * By default the child component stays mounted after it reaches the `'exited'` state.
+               * Set `unmountOnExit` if you'd prefer to unmount the component after it finishes exiting.
+               */
+              unmountOnExit: propTypes.bool,
+
+              /**
+               * By default the child component does not perform the enter transition when
+               * it first mounts, regardless of the value of `in`. If you want this
+               * behavior, set both `appear` and `in` to `true`.
+               *
+               * > **Note**: there are no special appear states like `appearing`/`appeared`, this prop
+               * > only adds an additional enter transition. However, in the
+               * > `<CSSTransition>` component that first enter transition does result in
+               * > additional `.appear-*` classes, that way you can choose to style it
+               * > differently.
+               */
+              appear: propTypes.bool,
+
+              /**
+               * Enable or disable enter transitions.
+               */
+              enter: propTypes.bool,
+
+              /**
+               * Enable or disable exit transitions.
+               */
+              exit: propTypes.bool,
+
+              /**
+               * The duration of the transition, in milliseconds.
+               * Required unless `addEndListener` is provided.
+               *
+               * You may specify a single timeout for all transitions:
+               *
+               * ```jsx
+               * timeout={500}
+               * ```
+               *
+               * or individually:
+               *
+               * ```jsx
+               * timeout={{
+               *  appear: 500,
+               *  enter: 300,
+               *  exit: 500,
+               * }}
+               * ```
+               *
+               * - `appear` defaults to the value of `enter`
+               * - `enter` defaults to `0`
+               * - `exit` defaults to `0`
+               *
+               * @type {number | { enter?: number, exit?: number, appear?: number }}
+               */
+              timeout: function timeout(props) {
+                var pt = timeoutsShape;
+                if (!props.addEndListener) pt = pt.isRequired;
+
+                for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+                  args[_key - 1] = arguments[_key];
+                }
+
+                return pt.apply(void 0, [props].concat(args));
+              },
+
+              /**
+               * Add a custom transition end trigger. Called with the transitioning
+               * DOM node and a `done` callback. Allows for more fine grained transition end
+               * logic. Timeouts are still used as a fallback if provided.
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+               *
+               * ```jsx
+               * addEndListener={(node, done) => {
+               *   // use the css transitionend event to mark the finish of a transition
+               *   node.addEventListener('transitionend', done, false);
+               * }}
+               * ```
+               */
+              addEndListener: propTypes.func,
+
+              /**
+               * Callback fired before the "entering" status is applied. An extra parameter
+               * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+               *
+               * @type Function(node: HtmlElement, isAppearing: bool) -> void
+               */
+              onEnter: propTypes.func,
+
+              /**
+               * Callback fired after the "entering" status is applied. An extra parameter
+               * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+               *
+               * @type Function(node: HtmlElement, isAppearing: bool)
+               */
+              onEntering: propTypes.func,
+
+              /**
+               * Callback fired after the "entered" status is applied. An extra parameter
+               * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+               *
+               * @type Function(node: HtmlElement, isAppearing: bool) -> void
+               */
+              onEntered: propTypes.func,
+
+              /**
+               * Callback fired before the "exiting" status is applied.
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+               *
+               * @type Function(node: HtmlElement) -> void
+               */
+              onExit: propTypes.func,
+
+              /**
+               * Callback fired after the "exiting" status is applied.
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+               *
+               * @type Function(node: HtmlElement) -> void
+               */
+              onExiting: propTypes.func,
+
+              /**
+               * Callback fired after the "exited" status is applied.
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed
+               *
+               * @type Function(node: HtmlElement) -> void
+               */
+              onExited: propTypes.func
+            } ; // Name the function so it is clearer in the documentation
+
+            function noop() {}
+
+            Transition.defaultProps = {
+              in: false,
+              mountOnEnter: false,
+              unmountOnExit: false,
+              appear: false,
+              enter: true,
+              exit: true,
+              onEnter: noop,
+              onEntering: noop,
+              onEntered: noop,
+              onExit: noop,
+              onExiting: noop,
+              onExited: noop
+            };
+            Transition.UNMOUNTED = UNMOUNTED;
+            Transition.EXITED = EXITED;
+            Transition.ENTERING = ENTERING;
+            Transition.ENTERED = ENTERED;
+            Transition.EXITING = EXITING;
+
+            var _addClass = function addClass$1(node, classes) {
+              return node && classes && classes.split(' ').forEach(function (c) {
+                return addClass(node, c);
+              });
+            };
+
+            var removeClass = function removeClass(node, classes) {
+              return node && classes && classes.split(' ').forEach(function (c) {
+                return removeClass$1(node, c);
+              });
+            };
+            /**
+             * A transition component inspired by the excellent
+             * [ng-animate](https://docs.angularjs.org/api/ngAnimate) library, you should
+             * use it if you're using CSS transitions or animations. It's built upon the
+             * [`Transition`](https://reactcommunity.org/react-transition-group/transition)
+             * component, so it inherits all of its props.
+             *
+             * `CSSTransition` applies a pair of class names during the `appear`, `enter`,
+             * and `exit` states of the transition. The first class is applied and then a
+             * second `*-active` class in order to activate the CSS transition. After the
+             * transition, matching `*-done` class names are applied to persist the
+             * transition state.
+             *
+             * ```jsx
+             * function App() {
+             *   const [inProp, setInProp] = useState(false);
+             *   return (
+             *     <div>
+             *       <CSSTransition in={inProp} timeout={200} classNames="my-node">
+             *         <div>
+             *           {"I'll receive my-node-* classes"}
+             *         </div>
+             *       </CSSTransition>
+             *       <button type="button" onClick={() => setInProp(true)}>
+             *         Click to Enter
+             *       </button>
+             *     </div>
+             *   );
+             * }
+             * ```
+             *
+             * When the `in` prop is set to `true`, the child component will first receive
+             * the class `example-enter`, then the `example-enter-active` will be added in
+             * the next tick. `CSSTransition` [forces a
+             * reflow](https://github.com/reactjs/react-transition-group/blob/5007303e729a74be66a21c3e2205e4916821524b/src/CSSTransition.js#L208-L215)
+             * between before adding the `example-enter-active`. This is an important trick
+             * because it allows us to transition between `example-enter` and
+             * `example-enter-active` even though they were added immediately one after
+             * another. Most notably, this is what makes it possible for us to animate
+             * _appearance_.
+             *
+             * ```css
+             * .my-node-enter {
+             *   opacity: 0;
+             * }
+             * .my-node-enter-active {
+             *   opacity: 1;
+             *   transition: opacity 200ms;
+             * }
+             * .my-node-exit {
+             *   opacity: 1;
+             * }
+             * .my-node-exit-active {
+             *   opacity: 0;
+             *   transition: opacity 200ms;
+             * }
+             * ```
+             *
+             * `*-active` classes represent which styles you want to animate **to**, so it's
+             * important to add `transition` declaration only to them, otherwise transitions
+             * might not behave as intended! This might not be obvious when the transitions
+             * are symmetrical, i.e. when `*-enter-active` is the same as `*-exit`, like in
+             * the example above (minus `transition`), but it becomes apparent in more
+             * complex transitions.
+             *
+             * **Note**: If you're using the
+             * [`appear`](http://reactcommunity.org/react-transition-group/transition#Transition-prop-appear)
+             * prop, make sure to define styles for `.appear-*` classes as well.
+             */
+
+
+            var CSSTransition = /*#__PURE__*/function (_React$Component) {
+              _inheritsLoose(CSSTransition, _React$Component);
+
+              function CSSTransition() {
+                var _this;
+
+                for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+                  args[_key] = arguments[_key];
+                }
+
+                _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
+                _this.appliedClasses = {
+                  appear: {},
+                  enter: {},
+                  exit: {}
+                };
+
+                _this.onEnter = function (maybeNode, maybeAppearing) {
+                  var _this$resolveArgument = _this.resolveArguments(maybeNode, maybeAppearing),
+                      node = _this$resolveArgument[0],
+                      appearing = _this$resolveArgument[1];
+
+                  _this.removeClasses(node, 'exit');
+
+                  _this.addClass(node, appearing ? 'appear' : 'enter', 'base');
+
+                  if (_this.props.onEnter) {
+                    _this.props.onEnter(maybeNode, maybeAppearing);
+                  }
+                };
+
+                _this.onEntering = function (maybeNode, maybeAppearing) {
+                  var _this$resolveArgument2 = _this.resolveArguments(maybeNode, maybeAppearing),
+                      node = _this$resolveArgument2[0],
+                      appearing = _this$resolveArgument2[1];
+
+                  var type = appearing ? 'appear' : 'enter';
+
+                  _this.addClass(node, type, 'active');
+
+                  if (_this.props.onEntering) {
+                    _this.props.onEntering(maybeNode, maybeAppearing);
+                  }
+                };
+
+                _this.onEntered = function (maybeNode, maybeAppearing) {
+                  var _this$resolveArgument3 = _this.resolveArguments(maybeNode, maybeAppearing),
+                      node = _this$resolveArgument3[0],
+                      appearing = _this$resolveArgument3[1];
+
+                  var type = appearing ? 'appear' : 'enter';
+
+                  _this.removeClasses(node, type);
+
+                  _this.addClass(node, type, 'done');
+
+                  if (_this.props.onEntered) {
+                    _this.props.onEntered(maybeNode, maybeAppearing);
+                  }
+                };
+
+                _this.onExit = function (maybeNode) {
+                  var _this$resolveArgument4 = _this.resolveArguments(maybeNode),
+                      node = _this$resolveArgument4[0];
+
+                  _this.removeClasses(node, 'appear');
+
+                  _this.removeClasses(node, 'enter');
+
+                  _this.addClass(node, 'exit', 'base');
+
+                  if (_this.props.onExit) {
+                    _this.props.onExit(maybeNode);
+                  }
+                };
+
+                _this.onExiting = function (maybeNode) {
+                  var _this$resolveArgument5 = _this.resolveArguments(maybeNode),
+                      node = _this$resolveArgument5[0];
+
+                  _this.addClass(node, 'exit', 'active');
+
+                  if (_this.props.onExiting) {
+                    _this.props.onExiting(maybeNode);
+                  }
+                };
+
+                _this.onExited = function (maybeNode) {
+                  var _this$resolveArgument6 = _this.resolveArguments(maybeNode),
+                      node = _this$resolveArgument6[0];
+
+                  _this.removeClasses(node, 'exit');
+
+                  _this.addClass(node, 'exit', 'done');
+
+                  if (_this.props.onExited) {
+                    _this.props.onExited(maybeNode);
+                  }
+                };
+
+                _this.resolveArguments = function (maybeNode, maybeAppearing) {
+                  return _this.props.nodeRef ? [_this.props.nodeRef.current, maybeNode] // here `maybeNode` is actually `appearing`
+                  : [maybeNode, maybeAppearing];
+                };
+
+                _this.getClassNames = function (type) {
+                  var classNames = _this.props.classNames;
+                  var isStringClassNames = typeof classNames === 'string';
+                  var prefix = isStringClassNames && classNames ? classNames + "-" : '';
+                  var baseClassName = isStringClassNames ? "" + prefix + type : classNames[type];
+                  var activeClassName = isStringClassNames ? baseClassName + "-active" : classNames[type + "Active"];
+                  var doneClassName = isStringClassNames ? baseClassName + "-done" : classNames[type + "Done"];
+                  return {
+                    baseClassName: baseClassName,
+                    activeClassName: activeClassName,
+                    doneClassName: doneClassName
+                  };
+                };
+
+                return _this;
+              }
+
+              var _proto = CSSTransition.prototype;
+
+              _proto.addClass = function addClass(node, type, phase) {
+                var className = this.getClassNames(type)[phase + "ClassName"];
+
+                var _this$getClassNames = this.getClassNames('enter'),
+                    doneClassName = _this$getClassNames.doneClassName;
+
+                if (type === 'appear' && phase === 'done' && doneClassName) {
+                  className += " " + doneClassName;
+                } // This is for to force a repaint,
+                // which is necessary in order to transition styles when adding a class name.
+
+
+                if (phase === 'active') {
+                  /* eslint-disable no-unused-expressions */
+                  node && node.scrollTop;
+                }
+
+                if (className) {
+                  this.appliedClasses[type][phase] = className;
+
+                  _addClass(node, className);
+                }
+              };
+
+              _proto.removeClasses = function removeClasses(node, type) {
+                var _this$appliedClasses$ = this.appliedClasses[type],
+                    baseClassName = _this$appliedClasses$.base,
+                    activeClassName = _this$appliedClasses$.active,
+                    doneClassName = _this$appliedClasses$.done;
+                this.appliedClasses[type] = {};
+
+                if (baseClassName) {
+                  removeClass(node, baseClassName);
+                }
+
+                if (activeClassName) {
+                  removeClass(node, activeClassName);
+                }
+
+                if (doneClassName) {
+                  removeClass(node, doneClassName);
+                }
+              };
+
+              _proto.render = function render() {
+                var _this$props = this.props;
+                    _this$props.classNames;
+                    var props = _objectWithoutPropertiesLoose$1(_this$props, ["classNames"]);
+
+                return /*#__PURE__*/react.createElement(Transition, _extends({}, props, {
+                  onEnter: this.onEnter,
+                  onEntered: this.onEntered,
+                  onEntering: this.onEntering,
+                  onExit: this.onExit,
+                  onExiting: this.onExiting,
+                  onExited: this.onExited
+                }));
+              };
+
+              return CSSTransition;
+            }(react.Component);
+
+            CSSTransition.defaultProps = {
+              classNames: ''
+            };
+            CSSTransition.propTypes = _extends({}, Transition.propTypes, {
+              /**
+               * The animation classNames applied to the component as it appears, enters,
+               * exits or has finished the transition. A single name can be provided, which
+               * will be suffixed for each stage, e.g. `classNames="fade"` applies:
+               *
+               * - `fade-appear`, `fade-appear-active`, `fade-appear-done`
+               * - `fade-enter`, `fade-enter-active`, `fade-enter-done`
+               * - `fade-exit`, `fade-exit-active`, `fade-exit-done`
+               *
+               * A few details to note about how these classes are applied:
+               *
+               * 1. They are _joined_ with the ones that are already defined on the child
+               *    component, so if you want to add some base styles, you can use
+               *    `className` without worrying that it will be overridden.
+               *
+               * 2. If the transition component mounts with `in={false}`, no classes are
+               *    applied yet. You might be expecting `*-exit-done`, but if you think
+               *    about it, a component cannot finish exiting if it hasn't entered yet.
+               *
+               * 2. `fade-appear-done` and `fade-enter-done` will _both_ be applied. This
+               *    allows you to define different behavior for when appearing is done and
+               *    when regular entering is done, using selectors like
+               *    `.fade-enter-done:not(.fade-appear-done)`. For example, you could apply
+               *    an epic entrance animation when element first appears in the DOM using
+               *    [Animate.css](https://daneden.github.io/animate.css/). Otherwise you can
+               *    simply use `fade-enter-done` for defining both cases.
+               *
+               * Each individual classNames can also be specified independently like:
+               *
+               * ```js
+               * classNames={{
+               *  appear: 'my-appear',
+               *  appearActive: 'my-active-appear',
+               *  appearDone: 'my-done-appear',
+               *  enter: 'my-enter',
+               *  enterActive: 'my-active-enter',
+               *  enterDone: 'my-done-enter',
+               *  exit: 'my-exit',
+               *  exitActive: 'my-active-exit',
+               *  exitDone: 'my-done-exit',
+               * }}
+               * ```
+               *
+               * If you want to set these classes using CSS Modules:
+               *
+               * ```js
+               * import styles from './styles.css';
+               * ```
+               *
+               * you might want to use camelCase in your CSS file, that way could simply
+               * spread them instead of listing them one by one:
+               *
+               * ```js
+               * classNames={{ ...styles }}
+               * ```
+               *
+               * @type {string | {
+               *  appear?: string,
+               *  appearActive?: string,
+               *  appearDone?: string,
+               *  enter?: string,
+               *  enterActive?: string,
+               *  enterDone?: string,
+               *  exit?: string,
+               *  exitActive?: string,
+               *  exitDone?: string,
+               * }}
+               */
+              classNames: classNamesShape,
+
+              /**
+               * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
+               * applied.
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+               *
+               * @type Function(node: HtmlElement, isAppearing: bool)
+               */
+              onEnter: propTypes.func,
+
+              /**
+               * A `<Transition>` callback fired immediately after the 'enter-active' or
+               * 'appear-active' class is applied.
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+               *
+               * @type Function(node: HtmlElement, isAppearing: bool)
+               */
+              onEntering: propTypes.func,
+
+              /**
+               * A `<Transition>` callback fired immediately after the 'enter' or
+               * 'appear' classes are **removed** and the `done` class is added to the DOM node.
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+               *
+               * @type Function(node: HtmlElement, isAppearing: bool)
+               */
+              onEntered: propTypes.func,
+
+              /**
+               * A `<Transition>` callback fired immediately after the 'exit' class is
+               * applied.
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed
+               *
+               * @type Function(node: HtmlElement)
+               */
+              onExit: propTypes.func,
+
+              /**
+               * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed
+               *
+               * @type Function(node: HtmlElement)
+               */
+              onExiting: propTypes.func,
+
+              /**
+               * A `<Transition>` callback fired immediately after the 'exit' classes
+               * are **removed** and the `exit-done` class is added to the DOM node.
+               *
+               * **Note**: when `nodeRef` prop is passed, `node` is not passed
+               *
+               * @type Function(node: HtmlElement)
+               */
+              onExited: propTypes.func
+            }) ;
+
             const FilterContainer = qe.div `
   border-radius: 50%;
-  margin: 0 3px;
+  margin: 0 4px;
   font-size: 14px;
   position: relative;
   display: flex;
@@ -68161,9 +73899,26 @@
   height: 30px;
   text-align: center;
   background-color: ${({ color, count }) => alpha(color, count > 0 ? 1 : 0.4)};
-  border-style: solid;
-  border-width: 1px;
-  border-color: ${({ theme }) => alpha(theme.baseColors['grey-dark'], 0.4)};
+  border: 1px ${({ theme }) => theme.baseColors['grey-dark']} solid;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    border-radius: 50%;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: ${({ theme, state }) => {
+    switch (state) {
+        case 'exclude': return theme.baseColors.red;
+        case 'include': return theme.baseColors.green;
+        default: return 'transparent';
+    }
+}};
+  }
 
   &:hover {
     cursor: pointer;
@@ -68175,60 +73930,86 @@
     cursor: pointer;
   }
 `;
-            const Cross = qe(BsCircleFill) `
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  opacity: 0.8;
-  color: ${(props) => props.theme.baseColors.red};
-`;
-            const Checkmark = qe(BsCircleFill) `
-  transform: scale(0.8);
-  position:absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  opacity: 0.7;
-  color: ${(props) => props.theme.baseColors.green};
+            const FiltersContainer = qe.div `
+  display: flex;
 `;
             const GroupContainer = qe.div `
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: top;
   background-color: ${(props) => props.theme.colors.secondary.background};
   color: ${(props) => props.theme.colors.secondary.foreground};
   box-shadow: 0 0 2px ${(props) => props.theme.colors.secondary.accent};
-  width: min-content;
   padding: 2px 4px;
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.sizes.lg.borderRadius};;
   margin: 2px 0;
+  overflow: hidden;
+  
+  &.visible-enter {
+    max-width: ${({ defaultMaxWidth }) => `${defaultMaxWidth + 4}px`};
+    max-height: ${({ defaultMaxHeight }) => `${defaultMaxHeight + 2}px`};
+  }
+
+  &.visible-enter-active {
+    max-height: 38px;
+    max-width: ${({ defaultMaxWidth, filterCount }) => `${defaultMaxWidth + ((filterCount + 8) * 30) + 10}px`};
+    transition: max-height 300ms, max-width 1200ms;
+  }
+
+  &.visible-exit {
+    max-height: 38px;
+    max-width: ${({ defaultMaxWidth, filterCount }) => `${defaultMaxWidth + ((filterCount + 8) * 30) + 10}px`};
+  }
+
+  &.visible-exit-active {
+    max-height: ${({ defaultMaxHeight }) => `${defaultMaxHeight + 2}px`};
+    max-width: ${({ defaultMaxWidth }) => `${defaultMaxWidth + 4}px`};
+    transition: max-height 100ms 500ms, max-width 700ms;
+  }
 `;
             const LabelWrapper = qe.div `
   margin-right: 4px;
   white-space: nowrap;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: center;
-`;
-            const Label$1 = qe.div `
-
-`;
-            const Clear = qe.div `
-  opacity: ${({ isHidden }) => isHidden ? '0' : '1'};
-  font-size: ${(props) => props.theme.sizes.sm.fontSize};
 
   &:hover {
-    cursor: ${({ isHidden }) => isHidden ? 'inherit' : 'pointer'};
+    cursor: ${({ isPointer }) => isPointer ? 'pointer' : 'default'};
+  }
+`;
+            const Label$1 = qe.div `
+  &:hover {
+    cursor: inherit;
+  }
+`;
+            const Close = qe.div `
+  font-size: ${(props) => props.theme.sizes.xs.fontSize};
+  color: ${({ theme }) => theme.baseColors.black};
+  text-align: center;
+  width: min-content;
+  height: min-content;
+  padding: 0 ${({ theme }) => theme.sizes.xs.paddingY};
+  background-color: ${({ theme }) => theme.baseColors['grey-light']};
+  border: 1px ${({ theme }) => alpha(theme.baseColors.grey, 0.3)} solid;
+  border-radius: ${({ theme }) => theme.sizes.md.borderRadius};
+  transition: all 400ms;
+  
+  &:hover {
+    cursor: pointer;
+    color: ${({ theme }) => theme.baseColors['grey-dark']};
+    background-color: ${({ theme }) => theme.baseColors.grey};
   }
 `;
             qe.div `
   width: 100%;
   overflow-x: hidden;
 `;
-            const Container$4 = qe.div `
+            const GroupWrapper = qe.div `
+  position: relative;
+`;
+            const Container$5 = qe.div `
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -68253,16 +74034,11 @@
   }
 `;
 
-            const Badge = (props) => {
-                const { currentCount, total } = props.counts;
-                return (react.createElement(BadgeContainer, { isFiltered: currentCount !== total }, currentCount));
-            };
-
             const Filter = (props) => {
                 const { current, disableTooltip } = props;
                 const { filter, groupId, counts } = current;
                 const { currentFilters } = filters.useTrackedState();
-                const { handle } = useClickFilter();
+                const apply = useApplyFilter();
                 const containerRef = react.useRef(null);
                 const [scale, setScale] = react.useState(1);
                 react.useEffect(() => {
@@ -68274,43 +74050,98 @@
                     }
                 }, [containerRef]);
                 const onClick = () => {
-                    handle(current);
+                    apply(groupId, current.filter.id);
                 };
                 const currentFilter = currentFilters.find((currentFilter) => currentFilter.filter.id === filter.id &&
                     currentFilter.groupId === groupId);
                 return (react.createElement(Tooltip$2, { appColor: filter.color, key: filter.id, capitalize: filter.capitalize, text: filter.full, isDisabled: disableTooltip, noDelay: true },
-                    react.createElement(FilterContainer, { count: counts.currentCount, color: filter.color, onClick: onClick },
+                    react.createElement(FilterContainer, { count: counts.currentCount, color: filter.color, onClick: onClick, state: currentFilter?.state },
                         react.createElement(Text, { ref: containerRef, scale: scale }, filter.abbreviation),
-                        currentFilter?.state === 'include' &&
-                            react.createElement(Checkmark, null),
-                        currentFilter?.state === 'exclude' &&
-                            react.createElement(Cross, null),
-                        counts.currentCount > 0 && react.createElement(Badge, { counts: counts }))));
+                        react.createElement(Badge, { isWeak: counts.currentCount !== counts.total, label: counts.currentCount }))));
             };
 
             function FilterGroup(props) {
-                const { filterGroup } = props;
+                const { filterGroup, handleExitComplete, isExpanded, isElementsVisible, showGroup, hideGroup } = props;
+                const [defaultMaxWidth, setDefaultMaxWidth] = react.useState(0);
+                const [defaultMaxHeight, setDefaultMaxHeight] = react.useState(0);
+                const labelRef = react.useRef(null);
                 const { currentFilters } = filters.useTrackedState();
-                const { handle } = useClearFilters();
                 const { filters: filterGroupFilters } = useFilterGroupFilters(filterGroup.id);
-                const hasFilters = currentFilters.filter((filter) => filter.state !== 'omit' && filter.groupId === filterGroup.id).length > 0;
-                const handleClear = () => {
-                    if (hasFilters) {
-                        handle(filterGroup.id);
+                const appliedFilterCount = filterGroupFilters.filter((filter) => filter.state !== 'omit').length;
+                react.useEffect(() => {
+                    if (labelRef.current && defaultMaxWidth === 0) {
+                        const { clientWidth, clientHeight } = labelRef.current;
+                        setDefaultMaxWidth(clientWidth + 8);
+                        setDefaultMaxHeight(clientHeight + 4);
+                    }
+                }, [labelRef.current]);
+                const handleOpen = (event) => {
+                    if (!isExpanded && event.target === event.currentTarget) {
+                        showGroup(filterGroup.id);
                     }
                 };
-                return (react.createElement(GroupContainer, null,
-                    react.createElement(LabelWrapper, null,
-                        react.createElement(Label$1, null, filterGroup.label),
-                        react.createElement(Clear, { onClick: handleClear, isHidden: !hasFilters }, "Clear")),
-                    filterGroupFilters.map((filter) => react.createElement(Filter, { key: filter.filter.id, current: filter }))));
+                const handleClose = () => {
+                    if (isExpanded) {
+                        hideGroup();
+                    }
+                };
+                return (react.createElement(GroupWrapper, null,
+                    react.createElement(CSSTransition, { in: isExpanded, timeout: 1000, classNames: "visible", onExited: handleExitComplete },
+                        react.createElement(GroupContainer, { defaultMaxWidth: defaultMaxWidth, defaultMaxHeight: defaultMaxHeight, filterCount: currentFilters.length },
+                            react.createElement(LabelWrapper, { ref: labelRef, isPointer: !isExpanded, onClick: handleOpen },
+                                react.createElement(Label$1, { onClick: handleOpen }, filterGroup.label),
+                                isExpanded &&
+                                    react.createElement(Close, { onClick: handleClose }, "Close")),
+                            react.createElement(FiltersContainer, null, isElementsVisible && filterGroupFilters.map((filter) => react.createElement(Filter, { key: filter.filter.id, current: filter }))))),
+                    !isExpanded && appliedFilterCount > 0 &&
+                        react.createElement(Badge, null, appliedFilterCount)));
             }
 
             const Filters = () => {
                 const { filterGroups } = filters.useTrackedState();
+                const [groupVisible, setGroupVisible] = react.useState();
+                const [groupElementsVisible, setGroupElementsVisible] = react.useState();
+                const [pendingGroupVisible, setPendingGroupVisible] = react.useState();
                 const groups = filterGroups.filter((group) => Object.keys(group.filters).length > 0);
-                return (react.createElement(Container$4, null, groups.map((group) => react.createElement(FilterGroup, { key: group.label, filterGroup: group }))));
+                const showGroup = (groupId) => {
+                    if (!groupVisible) {
+                        setGroupVisible(groupId);
+                        setGroupElementsVisible(groupId);
+                        return;
+                    }
+                    setPendingGroupVisible(groupId);
+                    setGroupVisible(null);
+                };
+                const hideGroup = () => {
+                    setGroupVisible(null);
+                    setPendingGroupVisible(null);
+                };
+                const handleExitComplete = () => {
+                    if (pendingGroupVisible) {
+                        setGroupVisible(pendingGroupVisible);
+                        setGroupElementsVisible(pendingGroupVisible);
+                        setPendingGroupVisible(null);
+                        return;
+                    }
+                    setGroupElementsVisible(null);
+                };
+                return (react.createElement(Container$5, null, groups.map((group) => react.createElement(FilterGroup, { isExpanded: groupVisible === group.id, isElementsVisible: groupElementsVisible === group.id, key: group.id, handleExitComplete: handleExitComplete, filterGroup: group, hideGroup: hideGroup, showGroup: showGroup }))));
             };
+
+            // THIS FILE IS AUTO GENERATED
+            function BsFillQuestionOctagonFill (props) {
+              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"path","attr":{"fillRule":"evenodd","d":"M11.46.146A.5.5 0 0011.107 0H4.893a.5.5 0 00-.353.146L.146 4.54A.5.5 0 000 4.893v6.214a.5.5 0 00.146.353l4.394 4.394a.5.5 0 00.353.146h6.214a.5.5 0 00.353-.146l4.394-4.394a.5.5 0 00.146-.353V4.893a.5.5 0 00-.146-.353L11.46.146zM6.57 6.033H5.25C5.22 4.147 6.68 3.5 8.006 3.5c1.397 0 2.673.73 2.673 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.355H7.117l-.007-.463c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.901 0-1.358.603-1.358 1.384zm1.251 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z","clipRule":"evenodd"}}]})(props);
+            }function BsCircleFill (props) {
+              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"circle","attr":{"cx":"8","cy":"8","r":"8"}}]})(props);
+            }function BsCircleHalf (props) {
+              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"path","attr":{"fillRule":"evenodd","d":"M8 15V1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z","clipRule":"evenodd"}}]})(props);
+            }function BsCircle (props) {
+              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"path","attr":{"fillRule":"evenodd","d":"M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z","clipRule":"evenodd"}}]})(props);
+            }function BsExclamationCircleFill (props) {
+              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"path","attr":{"fillRule":"evenodd","d":"M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z","clipRule":"evenodd"}}]})(props);
+            }function BsQuestionCircleFill (props) {
+              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 16 16","fill":"currentColor"},"child":[{"tag":"path","attr":{"fillRule":"evenodd","d":"M16 8A8 8 0 110 8a8 8 0 0116 0zM6.57 6.033H5.25C5.22 4.147 6.68 3.5 8.006 3.5c1.397 0 2.673.73 2.673 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.355H7.117l-.007-.463c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.901 0-1.358.603-1.358 1.384zm1.251 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z","clipRule":"evenodd"}}]})(props);
+            }
 
             qe(BsCircleHalf) `
   transform: rotate(90deg);
@@ -68359,7 +74190,7 @@
   font-size: ${({ theme: { sizes: { md } } }) => md.fontSize};
   font-weight: 600;
 `;
-            const Container$3 = qe.div `
+            const Container$4 = qe.div `
   display: flex;
   align-items: center;
 
@@ -68391,7 +74222,7 @@
             };
 
             const create$5 = (pullRequest, mapping) => {
-                const { createdBy, author } = pullRequest;
+                const { createdBy, author, id } = pullRequest;
                 if (!mapping[status]) {
                     const abbreviation = createdBy
                         .split('-')
@@ -68407,7 +74238,7 @@
                     };
                 }
             };
-            const run$5 = (pullRequest, full) => pullRequest.createdBy === full;
+            const run$5 = (pullRequest, id) => pullRequest.id === id;
             var createdBy = {
                 id: 'github-createdBy',
                 label: 'Creator',
@@ -68424,7 +74255,7 @@
                             id: 'No Labels',
                             abbreviation: 'NL',
                             full: 'No Labels',
-                            color: `#FF0000`,
+                            color: '#FF0000',
                         };
                         mapping[labelName] = filter;
                     }
@@ -68447,11 +74278,11 @@
                     }
                 });
             };
-            const run$4 = (pullRequest, full) => {
-                if (pullRequest.labels.length === 0 && full === 'No Labels') {
+            const run$4 = (pullRequest, id) => {
+                if (pullRequest.labels.length === 0 && id === 'No Labels') {
                     return true;
                 }
-                return pullRequest.labels.findIndex((label) => label.name === full) > -1;
+                return pullRequest.labels.findIndex((label) => label.name === id) > -1;
             };
             var labels = {
                 id: 'github-labels',
@@ -68483,7 +74314,7 @@
                     };
                 }
             };
-            const run$3 = (pullRequest, full) => readable[pullRequest.status.state] === full;
+            const run$3 = (pullRequest, id) => readable[pullRequest.status.state] === id;
             var status$2 = {
                 id: 'github-status',
                 label: 'Status',
@@ -68497,81 +74328,6 @@
                 labels,
             };
             var filterConfigs$3 = filterBuilder.createFilterConfigs(filterConfigs$2);
-
-            function requiredArgs(required, args) {
-              if (args.length < required) {
-                throw new TypeError(required + ' argument' + (required > 1 ? 's' : '') + ' required, but only ' + args.length + ' present');
-              }
-            }
-
-            /**
-             * @name toDate
-             * @category Common Helpers
-             * @summary Convert the given argument to an instance of Date.
-             *
-             * @description
-             * Convert the given argument to an instance of Date.
-             *
-             * If the argument is an instance of Date, the function returns its clone.
-             *
-             * If the argument is a number, it is treated as a timestamp.
-             *
-             * If the argument is none of the above, the function returns Invalid Date.
-             *
-             * **Note**: *all* Date arguments passed to any *date-fns* function is processed by `toDate`.
-             *
-             * @param {Date|Number} argument - the value to convert
-             * @returns {Date} the parsed date in the local time zone
-             * @throws {TypeError} 1 argument required
-             *
-             * @example
-             * // Clone the date:
-             * const result = toDate(new Date(2014, 1, 11, 11, 30, 30))
-             * //=> Tue Feb 11 2014 11:30:30
-             *
-             * @example
-             * // Convert the timestamp to date:
-             * const result = toDate(1392098430000)
-             * //=> Tue Feb 11 2014 11:30:30
-             */
-
-            function toDate(argument) {
-              requiredArgs(1, arguments);
-              var argStr = Object.prototype.toString.call(argument); // Clone the date
-
-              if (argument instanceof Date || typeof argument === 'object' && argStr === '[object Date]') {
-                // Prevent the date to lose the milliseconds when passed to new Date() in IE10
-                return new Date(argument.getTime());
-              } else if (typeof argument === 'number' || argStr === '[object Number]') {
-                return new Date(argument);
-              } else {
-                if ((typeof argument === 'string' || argStr === '[object String]') && typeof console !== 'undefined') {
-                  // eslint-disable-next-line no-console
-                  console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://git.io/fjule"); // eslint-disable-next-line no-console
-
-                  console.warn(new Error().stack);
-                }
-
-                return new Date(NaN);
-              }
-            }
-
-            /**
-             * Google Chrome as of 67.0.3396.87 introduced timezones with offset that includes seconds.
-             * They usually appear for dates that denote time before the timezones were introduced
-             * (e.g. for 'Europe/Prague' timezone the offset is GMT+00:57:44 before 1 October 1891
-             * and GMT+01:00:00 after that date)
-             *
-             * Date#getTimezoneOffset returns the offset in minutes and would return 57 for the example above,
-             * which would lead to incorrect calculations.
-             *
-             * This function returns the timezone offset in milliseconds that takes seconds in account.
-             */
-            function getTimezoneOffsetInMilliseconds(date) {
-              var utcDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds()));
-              utcDate.setUTCFullYear(date.getFullYear());
-              return date.getTime() - utcDate.getTime();
-            }
 
             /**
              * @name compareAsc
@@ -68872,515 +74628,6 @@
               var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / 1000;
               return diff > 0 ? Math.floor(diff) : Math.ceil(diff);
             }
-
-            var formatDistanceLocale = {
-              lessThanXSeconds: {
-                one: 'less than a second',
-                other: 'less than {{count}} seconds'
-              },
-              xSeconds: {
-                one: '1 second',
-                other: '{{count}} seconds'
-              },
-              halfAMinute: 'half a minute',
-              lessThanXMinutes: {
-                one: 'less than a minute',
-                other: 'less than {{count}} minutes'
-              },
-              xMinutes: {
-                one: '1 minute',
-                other: '{{count}} minutes'
-              },
-              aboutXHours: {
-                one: 'about 1 hour',
-                other: 'about {{count}} hours'
-              },
-              xHours: {
-                one: '1 hour',
-                other: '{{count}} hours'
-              },
-              xDays: {
-                one: '1 day',
-                other: '{{count}} days'
-              },
-              aboutXWeeks: {
-                one: 'about 1 week',
-                other: 'about {{count}} weeks'
-              },
-              xWeeks: {
-                one: '1 week',
-                other: '{{count}} weeks'
-              },
-              aboutXMonths: {
-                one: 'about 1 month',
-                other: 'about {{count}} months'
-              },
-              xMonths: {
-                one: '1 month',
-                other: '{{count}} months'
-              },
-              aboutXYears: {
-                one: 'about 1 year',
-                other: 'about {{count}} years'
-              },
-              xYears: {
-                one: '1 year',
-                other: '{{count}} years'
-              },
-              overXYears: {
-                one: 'over 1 year',
-                other: 'over {{count}} years'
-              },
-              almostXYears: {
-                one: 'almost 1 year',
-                other: 'almost {{count}} years'
-              }
-            };
-            function formatDistance$1(token, count, options) {
-              options = options || {};
-              var result;
-
-              if (typeof formatDistanceLocale[token] === 'string') {
-                result = formatDistanceLocale[token];
-              } else if (count === 1) {
-                result = formatDistanceLocale[token].one;
-              } else {
-                result = formatDistanceLocale[token].other.replace('{{count}}', count);
-              }
-
-              if (options.addSuffix) {
-                if (options.comparison > 0) {
-                  return 'in ' + result;
-                } else {
-                  return result + ' ago';
-                }
-              }
-
-              return result;
-            }
-
-            function buildFormatLongFn(args) {
-              return function (dirtyOptions) {
-                var options = dirtyOptions || {};
-                var width = options.width ? String(options.width) : args.defaultWidth;
-                var format = args.formats[width] || args.formats[args.defaultWidth];
-                return format;
-              };
-            }
-
-            var dateFormats = {
-              full: 'EEEE, MMMM do, y',
-              long: 'MMMM do, y',
-              medium: 'MMM d, y',
-              short: 'MM/dd/yyyy'
-            };
-            var timeFormats = {
-              full: 'h:mm:ss a zzzz',
-              long: 'h:mm:ss a z',
-              medium: 'h:mm:ss a',
-              short: 'h:mm a'
-            };
-            var dateTimeFormats = {
-              full: "{{date}} 'at' {{time}}",
-              long: "{{date}} 'at' {{time}}",
-              medium: '{{date}}, {{time}}',
-              short: '{{date}}, {{time}}'
-            };
-            var formatLong = {
-              date: buildFormatLongFn({
-                formats: dateFormats,
-                defaultWidth: 'full'
-              }),
-              time: buildFormatLongFn({
-                formats: timeFormats,
-                defaultWidth: 'full'
-              }),
-              dateTime: buildFormatLongFn({
-                formats: dateTimeFormats,
-                defaultWidth: 'full'
-              })
-            };
-
-            var formatRelativeLocale = {
-              lastWeek: "'last' eeee 'at' p",
-              yesterday: "'yesterday at' p",
-              today: "'today at' p",
-              tomorrow: "'tomorrow at' p",
-              nextWeek: "eeee 'at' p",
-              other: 'P'
-            };
-            function formatRelative(token, _date, _baseDate, _options) {
-              return formatRelativeLocale[token];
-            }
-
-            function buildLocalizeFn(args) {
-              return function (dirtyIndex, dirtyOptions) {
-                var options = dirtyOptions || {};
-                var context = options.context ? String(options.context) : 'standalone';
-                var valuesArray;
-
-                if (context === 'formatting' && args.formattingValues) {
-                  var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
-                  var width = options.width ? String(options.width) : defaultWidth;
-                  valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
-                } else {
-                  var _defaultWidth = args.defaultWidth;
-
-                  var _width = options.width ? String(options.width) : args.defaultWidth;
-
-                  valuesArray = args.values[_width] || args.values[_defaultWidth];
-                }
-
-                var index = args.argumentCallback ? args.argumentCallback(dirtyIndex) : dirtyIndex;
-                return valuesArray[index];
-              };
-            }
-
-            var eraValues = {
-              narrow: ['B', 'A'],
-              abbreviated: ['BC', 'AD'],
-              wide: ['Before Christ', 'Anno Domini']
-            };
-            var quarterValues = {
-              narrow: ['1', '2', '3', '4'],
-              abbreviated: ['Q1', 'Q2', 'Q3', 'Q4'],
-              wide: ['1st quarter', '2nd quarter', '3rd quarter', '4th quarter'] // Note: in English, the names of days of the week and months are capitalized.
-              // If you are making a new locale based on this one, check if the same is true for the language you're working on.
-              // Generally, formatted dates should look like they are in the middle of a sentence,
-              // e.g. in Spanish language the weekdays and months should be in the lowercase.
-
-            };
-            var monthValues = {
-              narrow: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
-              abbreviated: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-              wide: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-            };
-            var dayValues = {
-              narrow: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-              short: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-              abbreviated: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-              wide: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-            };
-            var dayPeriodValues = {
-              narrow: {
-                am: 'a',
-                pm: 'p',
-                midnight: 'mi',
-                noon: 'n',
-                morning: 'morning',
-                afternoon: 'afternoon',
-                evening: 'evening',
-                night: 'night'
-              },
-              abbreviated: {
-                am: 'AM',
-                pm: 'PM',
-                midnight: 'midnight',
-                noon: 'noon',
-                morning: 'morning',
-                afternoon: 'afternoon',
-                evening: 'evening',
-                night: 'night'
-              },
-              wide: {
-                am: 'a.m.',
-                pm: 'p.m.',
-                midnight: 'midnight',
-                noon: 'noon',
-                morning: 'morning',
-                afternoon: 'afternoon',
-                evening: 'evening',
-                night: 'night'
-              }
-            };
-            var formattingDayPeriodValues = {
-              narrow: {
-                am: 'a',
-                pm: 'p',
-                midnight: 'mi',
-                noon: 'n',
-                morning: 'in the morning',
-                afternoon: 'in the afternoon',
-                evening: 'in the evening',
-                night: 'at night'
-              },
-              abbreviated: {
-                am: 'AM',
-                pm: 'PM',
-                midnight: 'midnight',
-                noon: 'noon',
-                morning: 'in the morning',
-                afternoon: 'in the afternoon',
-                evening: 'in the evening',
-                night: 'at night'
-              },
-              wide: {
-                am: 'a.m.',
-                pm: 'p.m.',
-                midnight: 'midnight',
-                noon: 'noon',
-                morning: 'in the morning',
-                afternoon: 'in the afternoon',
-                evening: 'in the evening',
-                night: 'at night'
-              }
-            };
-
-            function ordinalNumber(dirtyNumber, _dirtyOptions) {
-              var number = Number(dirtyNumber); // If ordinal numbers depend on context, for example,
-              // if they are different for different grammatical genders,
-              // use `options.unit`:
-              //
-              //   var options = dirtyOptions || {}
-              //   var unit = String(options.unit)
-              //
-              // where `unit` can be 'year', 'quarter', 'month', 'week', 'date', 'dayOfYear',
-              // 'day', 'hour', 'minute', 'second'
-
-              var rem100 = number % 100;
-
-              if (rem100 > 20 || rem100 < 10) {
-                switch (rem100 % 10) {
-                  case 1:
-                    return number + 'st';
-
-                  case 2:
-                    return number + 'nd';
-
-                  case 3:
-                    return number + 'rd';
-                }
-              }
-
-              return number + 'th';
-            }
-
-            var localize = {
-              ordinalNumber: ordinalNumber,
-              era: buildLocalizeFn({
-                values: eraValues,
-                defaultWidth: 'wide'
-              }),
-              quarter: buildLocalizeFn({
-                values: quarterValues,
-                defaultWidth: 'wide',
-                argumentCallback: function (quarter) {
-                  return Number(quarter) - 1;
-                }
-              }),
-              month: buildLocalizeFn({
-                values: monthValues,
-                defaultWidth: 'wide'
-              }),
-              day: buildLocalizeFn({
-                values: dayValues,
-                defaultWidth: 'wide'
-              }),
-              dayPeriod: buildLocalizeFn({
-                values: dayPeriodValues,
-                defaultWidth: 'wide',
-                formattingValues: formattingDayPeriodValues,
-                defaultFormattingWidth: 'wide'
-              })
-            };
-
-            function buildMatchPatternFn(args) {
-              return function (dirtyString, dirtyOptions) {
-                var string = String(dirtyString);
-                var options = dirtyOptions || {};
-                var matchResult = string.match(args.matchPattern);
-
-                if (!matchResult) {
-                  return null;
-                }
-
-                var matchedString = matchResult[0];
-                var parseResult = string.match(args.parsePattern);
-
-                if (!parseResult) {
-                  return null;
-                }
-
-                var value = args.valueCallback ? args.valueCallback(parseResult[0]) : parseResult[0];
-                value = options.valueCallback ? options.valueCallback(value) : value;
-                return {
-                  value: value,
-                  rest: string.slice(matchedString.length)
-                };
-              };
-            }
-
-            function buildMatchFn(args) {
-              return function (dirtyString, dirtyOptions) {
-                var string = String(dirtyString);
-                var options = dirtyOptions || {};
-                var width = options.width;
-                var matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
-                var matchResult = string.match(matchPattern);
-
-                if (!matchResult) {
-                  return null;
-                }
-
-                var matchedString = matchResult[0];
-                var parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
-                var value;
-
-                if (Object.prototype.toString.call(parsePatterns) === '[object Array]') {
-                  value = findIndex(parsePatterns, function (pattern) {
-                    return pattern.test(matchedString);
-                  });
-                } else {
-                  value = findKey(parsePatterns, function (pattern) {
-                    return pattern.test(matchedString);
-                  });
-                }
-
-                value = args.valueCallback ? args.valueCallback(value) : value;
-                value = options.valueCallback ? options.valueCallback(value) : value;
-                return {
-                  value: value,
-                  rest: string.slice(matchedString.length)
-                };
-              };
-            }
-
-            function findKey(object, predicate) {
-              for (var key in object) {
-                if (object.hasOwnProperty(key) && predicate(object[key])) {
-                  return key;
-                }
-              }
-            }
-
-            function findIndex(array, predicate) {
-              for (var key = 0; key < array.length; key++) {
-                if (predicate(array[key])) {
-                  return key;
-                }
-              }
-            }
-
-            var matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i;
-            var parseOrdinalNumberPattern = /\d+/i;
-            var matchEraPatterns = {
-              narrow: /^(b|a)/i,
-              abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
-              wide: /^(before christ|before common era|anno domini|common era)/i
-            };
-            var parseEraPatterns = {
-              any: [/^b/i, /^(a|c)/i]
-            };
-            var matchQuarterPatterns = {
-              narrow: /^[1234]/i,
-              abbreviated: /^q[1234]/i,
-              wide: /^[1234](th|st|nd|rd)? quarter/i
-            };
-            var parseQuarterPatterns = {
-              any: [/1/i, /2/i, /3/i, /4/i]
-            };
-            var matchMonthPatterns = {
-              narrow: /^[jfmasond]/i,
-              abbreviated: /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
-              wide: /^(january|february|march|april|may|june|july|august|september|october|november|december)/i
-            };
-            var parseMonthPatterns = {
-              narrow: [/^j/i, /^f/i, /^m/i, /^a/i, /^m/i, /^j/i, /^j/i, /^a/i, /^s/i, /^o/i, /^n/i, /^d/i],
-              any: [/^ja/i, /^f/i, /^mar/i, /^ap/i, /^may/i, /^jun/i, /^jul/i, /^au/i, /^s/i, /^o/i, /^n/i, /^d/i]
-            };
-            var matchDayPatterns = {
-              narrow: /^[smtwf]/i,
-              short: /^(su|mo|tu|we|th|fr|sa)/i,
-              abbreviated: /^(sun|mon|tue|wed|thu|fri|sat)/i,
-              wide: /^(sunday|monday|tuesday|wednesday|thursday|friday|saturday)/i
-            };
-            var parseDayPatterns = {
-              narrow: [/^s/i, /^m/i, /^t/i, /^w/i, /^t/i, /^f/i, /^s/i],
-              any: [/^su/i, /^m/i, /^tu/i, /^w/i, /^th/i, /^f/i, /^sa/i]
-            };
-            var matchDayPeriodPatterns = {
-              narrow: /^(a|p|mi|n|(in the|at) (morning|afternoon|evening|night))/i,
-              any: /^([ap]\.?\s?m\.?|midnight|noon|(in the|at) (morning|afternoon|evening|night))/i
-            };
-            var parseDayPeriodPatterns = {
-              any: {
-                am: /^a/i,
-                pm: /^p/i,
-                midnight: /^mi/i,
-                noon: /^no/i,
-                morning: /morning/i,
-                afternoon: /afternoon/i,
-                evening: /evening/i,
-                night: /night/i
-              }
-            };
-            var match = {
-              ordinalNumber: buildMatchPatternFn({
-                matchPattern: matchOrdinalNumberPattern,
-                parsePattern: parseOrdinalNumberPattern,
-                valueCallback: function (value) {
-                  return parseInt(value, 10);
-                }
-              }),
-              era: buildMatchFn({
-                matchPatterns: matchEraPatterns,
-                defaultMatchWidth: 'wide',
-                parsePatterns: parseEraPatterns,
-                defaultParseWidth: 'any'
-              }),
-              quarter: buildMatchFn({
-                matchPatterns: matchQuarterPatterns,
-                defaultMatchWidth: 'wide',
-                parsePatterns: parseQuarterPatterns,
-                defaultParseWidth: 'any',
-                valueCallback: function (index) {
-                  return index + 1;
-                }
-              }),
-              month: buildMatchFn({
-                matchPatterns: matchMonthPatterns,
-                defaultMatchWidth: 'wide',
-                parsePatterns: parseMonthPatterns,
-                defaultParseWidth: 'any'
-              }),
-              day: buildMatchFn({
-                matchPatterns: matchDayPatterns,
-                defaultMatchWidth: 'wide',
-                parsePatterns: parseDayPatterns,
-                defaultParseWidth: 'any'
-              }),
-              dayPeriod: buildMatchFn({
-                matchPatterns: matchDayPeriodPatterns,
-                defaultMatchWidth: 'any',
-                parsePatterns: parseDayPeriodPatterns,
-                defaultParseWidth: 'any'
-              })
-            };
-
-            /**
-             * @type {Locale}
-             * @category Locales
-             * @summary English locale (United States).
-             * @language English
-             * @iso-639-2 eng
-             * @author Sasha Koss [@kossnocorp]{@link https://github.com/kossnocorp}
-             * @author Lesha Koss [@leshakoss]{@link https://github.com/leshakoss}
-             */
-
-            var locale = {
-              code: 'en-US',
-              formatDistance: formatDistance$1,
-              formatLong: formatLong,
-              formatRelative: formatRelative,
-              localize: localize,
-              match: match,
-              options: {
-                weekStartsOn: 0
-                /* Sunday */
-                ,
-                firstWeekContainsDate: 1
-              }
-            };
 
             function assign(target, dirtyObject) {
               if (target == null) {
@@ -69710,23 +74957,10 @@
 
             const Statuses = (props) => {
                 const { pullRequest } = props;
-                return (react.createElement(Container$3, null,
+                return (react.createElement(Container$4, null,
                     react.createElement(Checks, { pullRequest: pullRequest }),
                     react.createElement(Reviews, { pullRequest: pullRequest })));
             };
-
-            const Container$2 = qe.div `
-  display: flex;
-`;
-            qe.div `
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-size: ${(props) => props.theme.sizes.md.fontSize};
-  background-color: ${(props) => props.bgColor};
-  color: ${({ theme: { baseColors }, isLight }) => isLight ? baseColors.black : baseColors.white};
-  margin-left: 4px;
-  box-shadow: 0 0 1px ${({ theme: { baseColors }, isLight }) => isLight ? baseColors['grey-dark'] : baseColors['grey-light']} ;
-`;
 
             const Label = (props) => {
                 const { label } = props;
@@ -69736,7 +74970,7 @@
                 const filter = labelsGroup && Object.values(labelsGroup.filters).find((filter) => filter.filter.full === label.name);
                 const handleClick = () => {
                     if (filter) {
-                        handle(filter);
+                        handle(filter.filter.id, 'github-labels');
                     }
                 };
                 return (react.createElement(Pill, { onClick: handleClick, size: "sm", key: label.name, overrideBackground: `#${label.color}`, isLight: true, foreground: lightOrDark(`#${label.color}`) ? 'black' : 'white' }, label.name));
@@ -69749,16 +74983,29 @@
                 const filter = labelsGroup && Object.values(labelsGroup.filters).find((filter) => filter.filter.full === 'No Labels');
                 const handleClick = () => {
                     if (filter) {
-                        handle(filter);
+                        handle(filter.filter.id, 'github-labels');
                     }
                 };
                 return (react.createElement(Pill, { onClick: handleClick, size: "md", background: "red", foreground: "black" }, "No Labels"));
             };
 
+            const Container$3 = qe.div `
+  display: flex;
+`;
+            qe.div `
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: ${(props) => props.theme.sizes.md.fontSize};
+  background-color: ${(props) => props.bgColor};
+  color: ${({ theme: { baseColors }, isLight }) => isLight ? baseColors.black : baseColors.white};
+  margin-left: 4px;
+  box-shadow: 0 0 1px ${({ theme: { baseColors }, isLight }) => isLight ? baseColors['grey-dark'] : baseColors['grey-light']} ;
+`;
+
             const Labels = (props) => {
                 const { labels } = props.pullRequest;
                 const labelCount = labels.length;
-                return (react.createElement(Container$2, null, labelCount > 0 ?
+                return (react.createElement(Container$3, null, labelCount > 0 ?
                     labels.map((label) => react.createElement(Label, { key: label.name, label: label }))
                     :
                         react.createElement(NoLabels, null)));
@@ -69777,11 +75024,8 @@
                     full: current.filter.full,
                     color: current.filter.color,
                 })) : [];
-                const filter = assigneeGroup && Object.values(assigneeGroup.filters).find((filter) => filter.filter.full === pullRequest.createdBy);
                 const handleClickCreatedBy = () => {
-                    if (filter) {
-                        handle(filter);
-                    }
+                    handle(pullRequest.id, 'github-createdBy');
                 };
                 const color = colors.find((c) => c.full === pullRequest.createdBy)?.color;
                 return (react.createElement(Card, { ref: ref, title: {
@@ -69808,7 +75052,7 @@
                 const callback = (event) => {
                     const filter = find(event);
                     if (filter) {
-                        handle(filter);
+                        handle(filter.filter.id, filter.groupId);
                     }
                 };
                 return (react.createElement(react.Fragment, null, filteredItems.map((pullRequest) => react.createElement(PullRequest, { key: pullRequest.prNumber, pullRequest: pullRequest }))));
@@ -69824,7 +75068,7 @@
 
             const Router$1 = () => {
                 const { check, authStatus } = useAuthCheck$2();
-                const { init } = useInit$3();
+                const { init } = useInit$2();
                 react.useEffect(() => {
                     init('pullRequests');
                     init('settings');
@@ -69889,13 +75133,16 @@
 
             const CloseButton = qe(AiFillDownCircle) `
   position: absolute;
-  bottom: ${({ theme }) => theme.sizes.xxl.marginY};
+  bottom: ${({ theme }) => theme.sizes.xxl.marginX};
   transform: scale(2);
   color: ${({ theme }) => theme.colors.tertiary.foreground};
+  transition: 500ms;
 
   &:hover {
     cursor: pointer;
-    color: ${({ theme }) => theme.colors.primary.background};
+    transform: scale(2.1);
+    transition: 100ms;
+    color: ${({ theme }) => alpha(theme.colors.tertiary.foreground, 0.7)};
   }
 `;
             const FeedContainer = qe.div `
@@ -69904,6 +75151,9 @@
   max-height: 30vh;
   width: calc(100vw - 50px);
   display: inline-block;
+  &:hover {
+    cursor: ${({ isHidden }) => isHidden ? 'pointer' : 'default'};
+  }
 `;
             const HistoryIcon = qe(BiHistory) `
   color: ${({ theme }) => theme.colors.tertiary.foreground};
@@ -69912,17 +75162,18 @@
 `;
             const SidebarContainer = qe.div `
   height: 100%;
+  visibility: ${({ isHidden }) => isHidden ? 'hidden' : 'visible'};
   position: relative;
   width: 50px;
   display: inline-flex;
   justify-content: center;
 `;
-            const Container$1 = qe.div `
-  max-height: ${({ hasHistory, isHidden, isTease }) => {
+            const Container$2 = qe.div `
+  max-height: ${({ isHidden, isTease }) => {
     if (isHidden && isTease) {
         return '20px';
     }
-    if (hasHistory && !isHidden) {
+    if (!isHidden) {
         return '500px';
     }
     return '14px';
@@ -69930,7 +75181,6 @@
   position: relative;
   grid-area: footer;
   margin-top: ${({ isHidden }) => isHidden ? '4px' : 0};
-  visibility: ${({ hasHistory }) => hasHistory ? 'visible' : 'hidden'};
   transition: max-height ${({ isHidden }) => isHidden ? '0.2' : '2'}s ease-out;
   box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
   border-top: ${({ theme }) => theme.colors.secondary.accent};
@@ -69983,21 +75233,33 @@
             };
 
             const Feed = (props) => {
-                const { isHidden } = props;
+                const { isHidden, show } = props;
                 const { feed } = useFeed();
-                return (react.createElement(FeedContainer, { isHidden: isHidden }, feed.map((feedItem) => react.createElement(FeedItem, { key: feedItem.id, feedItem: feedItem }))));
+                const handleClick = () => {
+                    if (isHidden) {
+                        show();
+                    }
+                };
+                return (react.createElement(FeedContainer, { onClick: handleClick, isHidden: isHidden }, feed.map((feedItem) => react.createElement(FeedItem, { key: feedItem.id, feedItem: feedItem }))));
             };
 
             const Sidebar = (props) => {
-                const { hide } = props;
-                return (react.createElement(SidebarContainer, null,
-                    react.createElement(CloseButton, { onClick: hide })));
+                const { hide, isHidden } = props;
+                const handleClick = (event) => {
+                    event.preventDefault();
+                    hide();
+                };
+                return (react.createElement(SidebarContainer, { isHidden: isHidden },
+                    react.createElement(CloseButton, { onClick: handleClick })));
             };
 
             const Wrapper$1 = () => {
+                const { visibleUnits, setVisibleUnit } = useUnits();
                 const { init, feed } = useFeed();
+                const { hasInit } = useTrackedState$3();
                 const [isHidden, setIsHidden] = react.useState(true);
                 const [isTease, setIsTease] = react.useState(false);
+                const hasHistory = visibleUnits.includes('history');
                 const hasFeed = feed.length > 0;
                 react.useEffect(() => {
                     if (isHidden && hasFeed) {
@@ -70005,36 +75267,45 @@
                     }
                 }, [feed.length]);
                 react.useEffect(() => {
-                    init();
-                }, []);
+                    if (hasHistory && !hasInit.includes('feed')) {
+                        init();
+                    }
+                }, [hasHistory]);
                 const hide = () => {
                     setIsHidden(true);
+                    setVisibleUnit('history', false);
                 };
                 const onMouseEnter = () => {
-                    if (isHidden && hasFeed) {
+                    if (isHidden) {
                         setIsTease(true);
                     }
                 };
                 const onMouseLeave = () => {
-                    if (isHidden && hasFeed) {
+                    if (isHidden) {
                         setIsTease(false);
                     }
                 };
-                const onClick = () => {
-                    if (isHidden && hasFeed) {
+                const onClick = (event) => {
+                    if (event.currentTarget === event.target) {
+                        show();
+                    }
+                };
+                const show = () => {
+                    setVisibleUnit('history', true);
+                    if (isHidden) {
                         setIsTease(false);
                         setIsHidden(false);
                     }
                 };
-                return (react.createElement(Container$1, { onClick: onClick, onMouseLeave: onMouseLeave, onMouseEnter: onMouseEnter, hasHistory: hasFeed, isHidden: isHidden, isTease: isTease },
+                return (react.createElement(Container$2, { onClick: onClick, onMouseLeave: onMouseLeave, onMouseEnter: onMouseEnter, isHidden: isHidden, isTease: isTease },
                     react.createElement(Unit$1.Title, { text: "History", icon: HistoryIcon, rotated: true }),
-                    react.createElement(Sidebar, { hide: hide }),
-                    react.createElement(Feed, { isHidden: isHidden })));
+                    react.createElement(Sidebar, { isHidden: isHidden, hide: hide }),
+                    react.createElement(Feed, { show: show, isHidden: isHidden })));
             };
 
-            const History = (props) => {
-                const { isVisible } = props;
-                return (react.createElement(history.Provider, null, isVisible && react.createElement(Wrapper$1, null)));
+            const History = () => {
+                return (react.createElement(history.Provider, null,
+                    react.createElement(Wrapper$1, null)));
             };
 
             const UNASSIGNED = 'Unassigned';
@@ -70050,9 +75321,9 @@
                     };
                 }
             };
-            const run$2 = (issue, full) => {
+            const run$2 = (issue, id) => {
                 const fullName = issue.assignee || UNASSIGNED;
-                return fullName === full;
+                return fullName === id;
             };
             var assignee = {
                 id: 'jira-assignee',
@@ -70077,55 +75348,54 @@
                     const full = capitalize(sprint.state);
                     if (!mapping[full]) {
                         mapping[full] = {
-                            id: full,
+                            id: sprint.id,
                             abbreviation: full[0],
                             full,
                         };
                     }
                 });
             };
-            const run$1 = (issue, full) => {
+            const run$1 = (issue, id) => {
                 const { sprints } = issue;
-                if (sprints.length === 0 && full === NO_SPRINT) {
+                if (sprints.length === 0 && id === NO_SPRINT) {
                     return true;
                 }
                 return sprints.some((sprint) => {
                     const sprintState = capitalize(sprint.state);
-                    return full === sprintState;
+                    return id === sprintState;
                 });
             };
             var sprints = {
                 id: 'jira-sprint',
-                label: 'Sprint State',
+                label: 'Sprint',
                 run: run$1,
                 create: create$1,
             };
 
             const setColors = {
-                'In Progress': baseColorsBase['green'],
-                'In Code Review': baseColorsBase['yellow'],
-                'In QA': baseColorsBase['red'],
-                'Rejected': baseColorsBase['red'],
-                'Ready for Deployment': baseColorsBase['yellow'],
-                'Unprioritized': baseColorsBase['grey-light'],
-                'Verified on QA': baseColorsBase['green'],
-                'Done': baseColorsBase['green'],
+                '10824': baseColorsBase['green'],
+                '10820': baseColorsBase['green'],
+                '3': baseColorsBase['green'],
+                '10203': baseColorsBase['yellow'],
+                '10823': baseColorsBase['grey-light'],
+                '10010': baseColorsBase['grey-light'],
+                '10825': baseColorsBase['yellow'],
+                '10817': baseColorsBase['red'],
+                '10205': baseColorsBase['red'],
+                '10009': baseColorsBase['green'],
             };
             const create = (issue, mapping) => {
                 const { id, name } = issue.status;
                 if (!mapping[id]) {
                     mapping[id] = {
-                        id: name,
+                        id,
                         abbreviation: name.split(' ').map((word) => word[0]).join(''),
                         full: name,
-                        color: setColors[name],
+                        color: setColors[id],
                     };
                 }
             };
-            const run = (issue, full) => {
-                const { name } = issue.status;
-                return name === full;
-            };
+            const run = (issue, id) => issue.status.id === id;
             var status$1 = {
                 id: 'jira-status',
                 label: 'Status',
@@ -70141,6 +75411,11 @@
             var filterConfigs$1 = filterBuilder.createFilterConfigs(filterConfigs);
 
             // THIS FILE IS AUTO GENERATED
+            function GiNightSleep (props) {
+              return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M294.8 26.57L238 60.37l7.8 13.17L281 52.59 270.8 118l6.3 10.6L336 93.53l-7.8-13.17-37.3 22.14L301 37.12l-6.2-10.55zM147.1 60.55A224 224 0 0 0 32 256a224 224 0 0 0 224 224 224 224 0 0 0 214.9-161.2A208 208 0 0 1 320 384a208 208 0 0 1-208-208 208 208 0 0 1 35.1-115.45zm244.5 52.05l-6.9 16.5 44.1 18.4-68.3 35.9-5.5 13.2 73.7 30.8 6.9-16.5-46.7-19.5 68.3-35.9 5.5-13.2-71.1-29.7zm-115 64l-97.8 35 8.1 22.7 60.6-21.7-35.4 97.9 6.5 18.1L320 292.4l-8.1-22.7-64.2 23 35.4-97.9-6.5-18.2z"}}]})(props);
+            }
+
+            // THIS FILE IS AUTO GENERATED
             function RiErrorWarningFill (props) {
               return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"g","attr":{},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0z"}},{"tag":"path","attr":{"d":"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z"}}]}]})(props);
             }
@@ -70150,6 +75425,13 @@
 `;
             const ErrorIcon = qe(RiErrorWarningFill) `
   color: ${(props) => props.theme.baseColors.red};
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+            const StaleIcon = qe(GiNightSleep) `
+  color: ${(props) => props.theme.baseColors['grey-light']};
 
   &:hover {
     cursor: pointer;
@@ -70170,13 +75452,13 @@
   }
 `;
             const UnknownIcon = qe(BsFillQuestionOctagonFill) `
-  color: ${(props) => props.theme.baseColors.blue};
+  color: ${(props) => props.theme.baseColors.white};
 
   &:hover {
     cursor: pointer;
   }
 `;
-            const Container = qe.div `
+            const Container$1 = qe.div `
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -70231,26 +75513,21 @@
 `;
 
             const State = (props) => {
-                const { state, names } = props;
-                const { handle } = useClickFilter();
-                const { groups } = useFilterGroups();
-                const stateGroup = groups.find((filter) => filter.id === 'jira-sprint');
-                const filter = stateGroup && Object.values(stateGroup.filters).find((filter) => filter.filter.full.toUpperCase() === state.toUpperCase());
+                const { state, issue, names } = props;
+                const applyFilter = useApplyFilter();
                 const handleClick = () => {
-                    if (filter) {
-                        handle(filter);
-                    }
+                    applyFilter('jira-sprint', issue.id);
                 };
                 return (react.createElement(Tooltip$2, { text: names, isDisabled: names.length === 0 },
                     react.createElement(StateContainer, { onClick: handleClick, isError: names.length === 0, isRed: names.length === 0, isGreen: state === 'active', isYellow: state === 'closed' }, capitalize(state))));
             };
 
             const SprintState = (props) => {
-                const { sprints } = props;
-                if (sprints.length === 0) {
-                    return (react.createElement(State, { state: NO_SPRINT, names: [] }));
+                const { issue } = props;
+                if (issue.sprints.length === 0) {
+                    return (react.createElement(State, { issue: issue, state: NO_SPRINT, names: [] }));
                 }
-                const states = sprints
+                const states = issue.sprints
                     .reduce((acc, cur) => {
                     if (!acc[cur.state]) {
                         acc[cur.state] = [];
@@ -70258,7 +75535,7 @@
                     acc[cur.state].push(cur.name);
                     return acc;
                 }, {});
-                return (react.createElement(StateValuesContainer, null, Object.entries(states).map(([state, names]) => react.createElement(State, { key: state, state: state, names: names }))));
+                return (react.createElement(StateValuesContainer, null, Object.entries(states).map(([state, names]) => react.createElement(State, { key: state, issue: issue, state: state, names: names }))));
             };
 
             const statusState = {
@@ -70266,7 +75543,8 @@
                 '10820': 'ok',
                 '3': 'ok',
                 '10203': 'wip',
-                '10823': 'wip',
+                '10823': 'stale',
+                '10010': 'stale',
                 '10825': 'wip',
                 '10817': 'needs-attention',
                 '10205': 'needs-attention',
@@ -70286,6 +75564,10 @@
                         color: 'red',
                         icon: ErrorIcon,
                     };
+                    case 'stale': return {
+                        color: 'grey-light',
+                        icon: StaleIcon,
+                    };
                     default: return {
                         color: 'white',
                         icon: UnknownIcon,
@@ -70293,42 +75575,34 @@
                 }
             };
             const Status = (props) => {
-                const { status } = props;
-                const { filterGroups } = filters.useTrackedState();
-                const { handle } = useClickFilter();
-                const assigneeGroup = filterGroups.find((filter) => filter.id === 'jira-status');
-                const filter = assigneeGroup && Object.values(assigneeGroup.filters).find((filter) => filter.filter.full === status.name);
-                const icon = getIcon(status);
+                const { issue } = props;
+                const applyFilter = useApplyFilter();
+                const icon = getIcon(issue.status);
                 const handleClick = () => {
-                    if (filter) {
-                        handle(filter);
-                    }
+                    applyFilter('jira-status', issue.id);
                 };
-                return (react.createElement(Container, { onClick: handleClick, appColor: icon.color },
+                return (react.createElement(Container$1, { onClick: handleClick, appColor: icon.color },
                     react.createElement(icon.icon, null),
-                    react.createElement(StatusName, null, status.name)));
+                    react.createElement(StatusName, null, issue.status.name)));
             };
 
             const Issue = react.forwardRef((props, ref) => {
                 const { issue } = props;
                 const { filterGroups } = filters.useTrackedState();
-                const { handle } = useClickFilter();
+                const applyFilter = useApplyFilter();
                 const link = `${issue.appUrl}/browse/${issue.key}`;
                 const issueAssignee = issue.assignee || 'Unassigned';
                 const navigate = () => {
                     window.location.href = link;
                 };
                 const assigneeGroup = filterGroups.find((filter) => filter.id === 'jira-assignee');
-                const filter = assigneeGroup && Object.values(assigneeGroup.filters).find((filter) => filter.filter.full === issue.assignee);
                 const colors = assigneeGroup ? Object.values(assigneeGroup.filters).map((current) => ({
                     full: current.filter.full,
                     color: current.filter.color,
                 })) : [];
                 const color = colors.find((c) => c.full === issueAssignee)?.color;
                 const handleClick = () => {
-                    if (filter) {
-                        handle(filter);
-                    }
+                    applyFilter('jira-assignee', issue.id);
                 };
                 return (react.createElement(Card, { ref: ref, title: {
                         pill: true,
@@ -70338,14 +75612,14 @@
                         text: issueAssignee,
                         color,
                         handleClick: handleClick,
-                    }, footer: react.createElement(Status, { status: issue.status }), endFooter: {
-                        text: react.createElement(SprintState, { sprints: issue.sprints }),
+                    }, footer: react.createElement(Status, { issue: issue }), endFooter: {
+                        text: react.createElement(SprintState, { issue: issue }),
                     } }, issue.summary));
             });
 
             const Issues = () => {
                 const { listen } = useListenEvents('jira');
-                const { filteredItems } = useItems();
+                const { issues } = useFilteredIssues();
                 const { find } = useGetFilter();
                 const { handle } = useClickFilter();
                 react.useEffect(() => {
@@ -70354,10 +75628,10 @@
                 const callback = (event) => {
                     const filter = find(event);
                     if (filter) {
-                        handle(filter);
+                        handle(filter.filter.id, filter.groupId);
                     }
                 };
-                return (react.createElement(react.Fragment, null, filteredItems.map((issue) => (react.createElement(Issue, { key: issue.key, issue: issue })))));
+                return (react.createElement(react.Fragment, null, issues.map((issue) => (react.createElement(Issue, { key: issue.key, issue: issue })))));
             };
 
             const Content = () => {
@@ -70395,32 +75669,54 @@
             };
 
             const Wrapper = () => {
-                return (react.createElement(Unit$1.Container, { rightMargin: true, column: "first" },
-                    react.createElement(Unit$1.Title, { text: "Jira Issues", icon: FaJira }),
+                return (react.createElement(react.Fragment, null,
+                    react.createElement(Unit$1.Title, { align: "left", text: "Jira Issues", icon: FaJira, sideNode: react.createElement(Search, null) }),
                     react.createElement(Router, null)));
+            };
+
+            const Container = () => {
+                const { issues } = useIssues();
+                const { projects } = useProjects();
+                const settings = useSettings(['filters']);
+                const allOnlyActive = Object
+                    .values(projects.watches)
+                    .every((project) => project.filters.onlyActive);
+                const useFilters = settings.filters
+                    .filter((filter) => {
+                    if (allOnlyActive) {
+                        return filter !== 'sprints';
+                    }
+                    return true;
+                });
+                return (react.createElement(Unit$1.Container, { rightMargin: true, column: "first" },
+                    react.createElement(filters.Provider, { filterConfigs: filterConfigs$1(useFilters), items: issues },
+                        react.createElement(Wrapper, null))));
             };
 
             const Jira = (props) => {
                 const { isVisible } = props;
                 return (react.createElement(jira.Provider, null,
                     isVisible &&
-                        react.createElement(Wrapper, null),
+                        react.createElement(Container, null),
                     react.createElement(Portal, { selectionTrigger: "jira" },
                         react.createElement(Jira$1, null))));
             };
 
             const Application$1 = () => {
+                const { init } = useRememberSelections();
                 const { visibleUnits } = useUnits();
                 const hasJira = visibleUnits.includes('jira');
                 const hasGithub = visibleUnits.includes('github');
-                const hasHistory = visibleUnits.includes('history');
                 const hasLinks = visibleUnits.includes('links');
+                react.useEffect(() => {
+                    init();
+                }, []);
                 return (react.createElement(Unit$1.Console, null,
                     react.createElement(Unit$1.Row, { hasLeft: hasJira, hasRight: hasGithub, columns: 3 },
                         react.createElement(Jira, { isVisible: hasJira }),
                         react.createElement(Center, { showLinks: hasLinks }),
                         react.createElement(Github, { isVisible: hasGithub })),
-                    react.createElement(History, { isVisible: hasHistory }),
+                    react.createElement(History, null),
                     react.createElement(Global, null)));
             };
 
@@ -70432,6 +75728,7 @@
                         react.createElement(Modal, null))));
             };
 
+            sn(false);
             reactDom.render(react.createElement(Application, null), document.getElementById('root'));
 
 }());

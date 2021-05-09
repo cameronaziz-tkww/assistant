@@ -1,6 +1,6 @@
 import { UNASSIGNED } from '@units/jira/constants';
 
-const create = (issue: App.Jira.Issue, mapping: App.Filter.CreateMapping): void => {
+const create: App.Filter.Create<App.Jira.Issue> = (issue, mapping): void => {
   const full = issue.assignee || UNASSIGNED;
   if (!mapping[full]) {
     mapping[full] = {
@@ -11,9 +11,9 @@ const create = (issue: App.Jira.Issue, mapping: App.Filter.CreateMapping): void 
   }
 };
 
-const run = (issue: App.Jira.Issue, full: string): boolean => {
+const run = (issue: App.Jira.Issue, id: string): boolean => {
   const fullName = issue.assignee || UNASSIGNED;
-  return fullName === full;
+  return fullName === id;
 };
 
 export default {

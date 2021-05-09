@@ -5,5 +5,5 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   position: relative;
-  /* height: 100%; */
+  height: 100%;
 `;

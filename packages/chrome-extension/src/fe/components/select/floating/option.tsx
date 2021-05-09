@@ -6,7 +6,7 @@ interface OptionProps<T extends App.Menu.SelectOption<string>> {
   onItemSelect(option: T, nextValue: boolean): void;
 }
 
-function Option<T extends App.Menu.SelectOption<string>>(props: OptionProps<T>): ReactElement<OptionProps<T>> | null {
+const Option = <T extends App.Menu.SelectOption<string>>(props: OptionProps<T>): ReactElement<OptionProps<T>> | null => {
   const { option, onItemSelect } = props;
 
   const selectItem = (nextValue: boolean) => {
@@ -19,6 +19,6 @@ function Option<T extends App.Menu.SelectOption<string>>(props: OptionProps<T>):
       label={option.label}
     />
   );
-}
+};
 
 export default Option;

@@ -17,7 +17,7 @@ class History {
     this.storage.listen('historyFeed', this.listener);
   }
 
-  listener = (feed: Storage.History.HistoryFeed) => {
+  listener = (feed: Storage.History.HistoryFeed | null) => {
 
   }
 

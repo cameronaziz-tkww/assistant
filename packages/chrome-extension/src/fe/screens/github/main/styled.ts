@@ -22,6 +22,7 @@ export const RepoListContainer = styled.div`
 `;
 
 export const Repos = styled.div`
+  height: 300px;
   padding: ${({ theme }) => theme.sizes.xl.padding};
 `;
 
@@ -61,6 +62,7 @@ export const Label = styled.div`
 
 export const RepoContainer = styled.div`
   display: flex;
+  width: 100%;
 
   &:hover {
     cursor: pointer;

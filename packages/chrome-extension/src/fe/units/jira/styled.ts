@@ -1,5 +1,6 @@
 import { AiFillCheckCircle, AiFillWarning } from 'react-icons/ai';
 import { BsFillQuestionOctagonFill } from 'react-icons/bs';
+import { GiNightSleep } from 'react-icons/gi';
 import { RiErrorWarningFill } from 'react-icons/ri';
 import styled, { PropsWithTheme } from 'styled-components';
 
@@ -9,6 +10,14 @@ export const StateValuesContainer = styled.div`
 
 export const ErrorIcon = styled(RiErrorWarningFill)`
   color: ${(props) => props.theme.baseColors.red};
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const StaleIcon = styled(GiNightSleep)`
+  color: ${(props) => props.theme.baseColors['grey-light']};
 
   &:hover {
     cursor: pointer;
@@ -32,7 +41,7 @@ export const SuccessIcon = styled(AiFillCheckCircle)`
 `;
 
 export const UnknownIcon = styled(BsFillQuestionOctagonFill)`
-  color: ${(props) => props.theme.baseColors.blue};
+  color: ${(props) => props.theme.baseColors.white};
 
   &:hover {
     cursor: pointer;

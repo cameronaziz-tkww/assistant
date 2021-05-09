@@ -25,4 +25,7 @@ declare namespace Utilities {
   type DistributiveOmit<T, K extends keyof any> = T extends any
     ? Omit<T, K>
     : never;
+
+  type PickByValue<T, V> = Pick<T, { [K in keyof T]: T[K] extends V ? K : never }[keyof T]>;
+  type KeysMatching<T, V> = { [K in keyof T]: T[K] extends V ? K : never }[keyof T];
 }

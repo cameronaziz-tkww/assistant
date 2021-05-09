@@ -12,7 +12,7 @@ const NoLabels: FunctionComponent = () => {
 
   const handleClick = () => {
     if (filter) {
-      handle(filter);
+      handle(filter.filter.id, 'github-labels');
     }
   };
 

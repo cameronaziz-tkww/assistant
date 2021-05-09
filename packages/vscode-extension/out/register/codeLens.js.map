@@ -1,0 +1,1 @@
+{"version":3,"file":"codeLens.js","sourceRoot":"","sources":["../../src/register/codeLens.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;AAAA,+CAAkD;AAClD,6CAAiC;AAEjC,6EAAuD;AAEvD,IAAM,QAAQ,GAAG,UAAC,WAAwB;IACxC,IAAM,qBAAqB,GAAG,IAAI,uBAAa,CAAC,WAAW,CAAC,CAAC;IAE7D,MAAM,CAAC,SAAS,CAAC,wBAAwB,CAAC,iBAAS,CAAC,oBAAoB,EAAE,qBAAqB,CAAC,CAAC;AACnG,CAAC,CAAC;AAEF,kBAAe,QAAQ,CAAC"}

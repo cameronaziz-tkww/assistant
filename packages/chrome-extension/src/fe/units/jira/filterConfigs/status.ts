@@ -1,32 +1,31 @@
 import { baseColorsBase } from '@utils';
 
 const setColors = {
-  'In Progress': baseColorsBase['green'],
-  'In Code Review': baseColorsBase['yellow'],
-  'In QA': baseColorsBase['red'],
-  'Rejected': baseColorsBase['red'],
-  'Ready for Deployment': baseColorsBase['yellow'],
-  'Unprioritized': baseColorsBase['grey-light'],
-  'Verified on QA': baseColorsBase['green'],
-  'Done': baseColorsBase['green'],
+  '10824': baseColorsBase['green'], // Verified on QA
+  '10820': baseColorsBase['green'], // Ready for Deployment
+  '3': baseColorsBase['green'], // In Progress
+  '10203': baseColorsBase['yellow'], // Code Review
+  '10823': baseColorsBase['grey-light'], // Unprioritized
+  '10010': baseColorsBase['grey-light'], // To Do
+  '10825': baseColorsBase['yellow'], // Ready for QA
+  '10817': baseColorsBase['red'], // Rejected
+  '10205': baseColorsBase['red'], // In QA
+  '10009': baseColorsBase['green'], // Done
 };
 
-const create = (issue: App.Jira.Issue, mapping: App.Filter.CreateMapping): void => {
+const create: App.Filter.Create<App.Jira.Issue> = (issue, mapping): void => {
   const { id, name } = issue.status;
   if (!mapping[id]) {
     mapping[id] = {
-      id: name,
+      id,
       abbreviation: name.split(' ').map((word) => word[0]).join(''),
       full: name,
-      color: setColors[name],
+      color: setColors[id],
     };
   }
 };
 
-const run = (issue: App.Jira.Issue, full: string): boolean => {
-  const { name } = issue.status;
-  return name === full;
-};
+const run = (issue: App.Jira.Issue, id: string): boolean => issue.status.id === id;
 
 export default {
   id: 'jira-status',

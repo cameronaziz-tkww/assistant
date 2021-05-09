@@ -44,7 +44,7 @@ class Auth {
     return this.storage.removeProperty('githubAuth');
   }
 
-  private watchAuth = (value: Storage.Github.AuthStore): void => {
+  private watchAuth = (value: Storage.Github.AuthStore | null): void => {
     if (!value) {
       this.destroy();
     }

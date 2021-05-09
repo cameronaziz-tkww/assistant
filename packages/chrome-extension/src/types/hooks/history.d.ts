@@ -2,7 +2,9 @@ declare namespace Hooks {
   namespace Global {
     type UseRememberSelectionsDispatch = {
       rememberSelections: boolean;
+      storeSelections<T extends App.Filter.Item>(filters: App.Filter.FilterWrapper<T>[]): void;
       setRememberSelections(nextState: boolean): void;
+      init(): void;
     };
 
     interface UseRememberSelections {

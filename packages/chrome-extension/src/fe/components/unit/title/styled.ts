@@ -59,7 +59,7 @@ interface CenterContainerProps {
 }
 
 interface TextProps {
-  horizontal?: 'left'
+  horizontal?: 'left' | 'right'
 }
 
 export const Text = styled.div<TextProps>`
@@ -92,6 +92,20 @@ export const CenterContainer = styled.div<CenterContainerProps>`
 export const MenuBaseContainer = styled.div`
   align-self: flex-start;
   display: flex;
+`;
+
+interface SideNodeProps {
+  align: 'left' | 'right';
+}
+
+export const SideNode = styled.div<SideNodeProps>`
+  left: ${({ align, theme }) => align === 'left' ? theme.sizes.lg.marginX : 'auto'};
+  right: ${({ align, theme }) => align === 'right' ? theme.sizes.lg.marginX : 'auto'};
+  color: ${({ theme }) => theme.colors.secondary.foreground};
+  background-color: ${({ theme }) => theme.colors.secondary.background};
+  border-radius: ${({ theme }) => theme.sizes.lg.borderRadius};
+  padding: ${({ theme }) => theme.sizes.md.padding};
+  position: absolute;
 `;
 
 export const MenuLeftContainer = styled(MenuBaseContainer)`

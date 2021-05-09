@@ -78,9 +78,7 @@ interface ContentValueProps {
 
 export const ContentValue = styled.div<ContentValueProps>`
   overflow-y: hidden;
-  will-change: max-height;
   max-height: ${({ hasData, theme }) => hasData ? `${theme.windowHeight}px` : 0};
-  transition: max-height 1s;
 `;
 
 interface ContentContainerProps {

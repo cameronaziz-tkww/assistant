@@ -53,6 +53,7 @@ const Checkbox = forwardRef<HTMLDivElement, PropsWithChildren<CheckboxProps>>((p
 
   const onClick = (event: MouseEvent) => {
     event.preventDefault();
+    event.stopPropagation();
     if (!isDisabled) {
       if (handleClick) {
         handleClick(!isCheckedLocal);

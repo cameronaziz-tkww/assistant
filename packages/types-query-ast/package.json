@@ -1,0 +1,7 @@
+{
+  "name": "@tkww-assistant-types/types-query-ast",
+  "version": "0.1.0",
+  "main": "",
+  "license": "UNLICENSED",
+  "types": "src/index.d.ts"
+}

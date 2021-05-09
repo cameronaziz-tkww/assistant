@@ -1,6 +1,6 @@
 import Unit from '@components/unit';
 import { global } from '@hooks';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Center from './center';
 import Github from './github';
 import Global from './global';
@@ -8,11 +8,18 @@ import History from './history';
 import Jira from './jira';
 
 const Application: React.FunctionComponent = () => {
+  const { init } = global.useRememberSelections();
   const { visibleUnits } = global.useUnits();
   const hasJira = visibleUnits.includes('jira');
   const hasGithub = visibleUnits.includes('github');
-  const hasHistory = visibleUnits.includes('history');
   const hasLinks = visibleUnits.includes('links');
+
+  useEffect(
+    () => {
+      init();
+    },
+    [],
+  );
 
   return (
     <Unit.Console>
@@ -21,7 +28,7 @@ const Application: React.FunctionComponent = () => {
         <Center showLinks={hasLinks} />
         <Github isVisible={hasGithub} />
       </Unit.Row>
-      <History isVisible={hasHistory} />
+      <History />
       <Global />
     </Unit.Console>
   );

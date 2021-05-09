@@ -1,8 +1,10 @@
+import log from '../log';
 import uuid from '../uuid';
 
 declare const chrome: Chrome.Instance;
 
 const respond = <T extends Runtime.Responses>(message: Runtime.MessageWithMeta<T>): void => {
+  log.message(message, 'Respond');
   chrome.runtime.sendMessage(message);
 };
 

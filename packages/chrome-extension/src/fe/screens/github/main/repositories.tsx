@@ -1,3 +1,4 @@
+import { SearchInput } from '@components/input';
 import { github } from '@hooks';
 import React, { Fragment, FunctionComponent } from 'react';
 import * as Styled from '../../styled';
@@ -9,13 +10,28 @@ const Repositories: FunctionComponent = () => {
       watched,
       unwatched,
     },
+    filter,
   } = github.useRepositories();
+
+  const handleSearchChange = (value: string) => {
+    filter(value);
+  };
+
+  const clearSearch = () => {
+    filter('');
+  };
 
   return (
     <Fragment>
-      <Styled.SectionTitle>
-        Repositories
-      </Styled.SectionTitle>
+      <Styled.SectionTitleContainer>
+        <Styled.SectionTitle>
+          Repositories
+        </Styled.SectionTitle>
+        <SearchInput
+          onReactChange={handleSearchChange}
+          clearSearch={clearSearch}
+        />
+      </Styled.SectionTitleContainer>
       <Styled.SectionContent>
         <Styled.RepositoryListsWrapper>
           <RepositoryList

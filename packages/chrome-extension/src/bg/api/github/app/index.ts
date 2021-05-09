@@ -27,7 +27,7 @@ class APIApp {
     this.pullRequests = new PullRequests(this.app, reactor);
   }
 
-  fetchRepositories = async (id: string): Promise<API.Github.RepositoryFull[]> => this.repositories.fetch(id);
+  fetchRepositories = async (): Promise<API.Github.RepositoryFull[]> => this.repositories.fetch();
   fetchPullRequests = async (id: string, config: API.Utilities.PullRequestsConfig[]): Promise<API.Github.PullRequest[]> => this.pullRequests.fetchAll(id, config);
   fetchPullRequest = async (config: API.Utilities.PullRequestConfig): Promise<API.Github.UpdatePullRequest> => this.pullRequests.fetchSingle(config);
   fetchPullRequestsHistory = async (config: API.Utilities.HistoryConfig[]): Promise<API.Github.CleanHistoryPullRequest[]> => this.pullRequestsHistory.fetchAll(config);

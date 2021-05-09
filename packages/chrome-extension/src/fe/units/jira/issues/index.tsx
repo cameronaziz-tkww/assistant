@@ -1,10 +1,10 @@
-import { filters, global } from '@hooks';
+import { filters, global, jira } from '@hooks';
 import React, { Fragment, FunctionComponent, useEffect } from 'react';
 import Issue from './issue';
 
 const Issues: FunctionComponent = () => {
   const { listen } = global.useListenEvents('jira');
-  const { filteredItems } = filters.useItems<App.Jira.Issue>();
+  const { issues } = jira.useFilteredIssues();
   const { find } = filters.useGetFilter<App.Jira.Issue>();
   const { handle } = filters.useClickFilter<App.Jira.Issue>();
 
@@ -18,13 +18,13 @@ const Issues: FunctionComponent = () => {
   const callback = (event: Hooks.Global.Event) => {
     const filter = find(event);
     if (filter) {
-      handle(filter);
+      handle(filter.filter.id, filter.groupId);
     }
   };
 
   return (
     <Fragment>
-      {filteredItems.map((issue) => (
+      {issues.map((issue) => (
         <Issue
           key={issue.key}
           issue={issue}

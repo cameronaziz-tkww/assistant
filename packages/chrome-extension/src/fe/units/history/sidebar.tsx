@@ -1,16 +1,24 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, MouseEvent } from 'react';
 import * as Styled from './styled';
 
 interface SidebarProps {
   hide(): void;
+  isHidden: boolean;
 }
 
 const Sidebar: FunctionComponent<SidebarProps> = (props) => {
-  const { hide } = props;
+  const { hide, isHidden } = props;
+
+  const handleClick = (event: MouseEvent<SVGElement>) => {
+    event.preventDefault();
+    hide();
+  };
 
   return (
-    <Styled.SidebarContainer>
-      <Styled.CloseButton onClick={hide} />
+    <Styled.SidebarContainer isHidden={isHidden}>
+      <Styled.CloseButton
+        onClick={handleClick}
+      />
     </Styled.SidebarContainer>
   );
 };

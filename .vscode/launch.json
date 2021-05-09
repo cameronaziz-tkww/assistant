@@ -1,0 +1,45 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch Extension",
+			"type": "extensionHost",
+			"request": "launch",
+			"args": [
+				"--extensionDevelopmentPath=${workspaceFolder}/packages/vscode-extension"
+			],
+			"outFiles": [
+				"${workspaceFolder}/packages/vscode-extension/lib/**/*.js"
+			],
+			"preLaunchTask": "${defaultBuildTask}",
+		},
+		{
+			"type": "extensionHost",
+			"request": "launch",
+			"name": "Launch Client",
+			"args": [
+				"--extensionDevelopmentPath=${workspaceRoot}/packages/lsp"
+			],
+			"outFiles": [
+				"${workspaceRoot}/packages/lsp/client/out/**/*.js"
+			],
+			"preLaunchTask": {
+				"type": "npm",
+				"script": "lsp-extension:watch"
+			}
+		},
+		{
+			"name": "Extension Tests",
+			"type": "extensionHost",
+			"request": "launch",
+			"args": [
+				"--extensionDevelopmentPath=${workspaceFolder}/packages/vscode-extension",
+				"--extensionTestsPath=${workspaceFolder}/packages/vscode-extension/lib/test/suite/index"
+			],
+			"outFiles": [
+				"${workspaceFolder}/packages/vscode-extension/lib/test/**/*.js"
+			],
+			"preLaunchTask": "${defaultBuildTask}"
+		}
+	]
+}

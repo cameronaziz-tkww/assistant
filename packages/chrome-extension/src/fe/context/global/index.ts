@@ -5,6 +5,7 @@ import { createContainer } from 'react-tracked';
 
 interface GlobalContextValue {
   rememberSelections: boolean;
+  storedFilters: Storage.Global.StoredFilter[];
   visibleUnits: App.VisibleUnit[];
   hasInit: App.GlobalContextInit[];
   reactor: Reactor<'filter'>;
@@ -13,6 +14,7 @@ interface GlobalContextValue {
 const initialState: GlobalContextValue = {
   rememberSelections: false,
   hasInit: [],
+  storedFilters: [],
   visibleUnits: [],
   reactor: new Reactor<'filter'>(),
 };

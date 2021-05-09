@@ -56,6 +56,7 @@ declare namespace API {
     type PullRequestState = 'OPEN' | 'CLOSED' | 'MERGED';
 
     interface PullRequest {
+      id: string;
       url: string;
       state: PullRequestState;
       number: number;
@@ -180,6 +181,7 @@ declare namespace API {
     }
 
     interface PullRequest {
+      id: string;
       url: string;
       state: PullRequestState;
       number: number;

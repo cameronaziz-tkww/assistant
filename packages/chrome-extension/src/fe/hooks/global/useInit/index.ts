@@ -9,8 +9,9 @@ const useInit: Hooks.UseInit<App.GlobalContextInit> = () => {
 
   const storageOn = (message: Runtime.StorageOn) => {
     if (guards.filters(message)) {
-      const { rememberSelections } = message.data;
+      const { rememberSelections, storedFilters } = message.data;
       setDraft((draft) => {
+        draft.storedFilters = storedFilters;
         draft.rememberSelections = rememberSelections;
       });
       return;

@@ -3,11 +3,11 @@ import produce from 'immer';
 import { useCallback, useState } from 'react';
 import { createContainer } from 'react-tracked';
 
-interface JiraContextValue {
+export interface JiraContextValue {
   auth: App.AuthStatus;
   allProjects: App.Jira.Project[];
   watches: App.Jira.Watched;
-  filters: App.Filter.FilterGroupConfig<App.Jira.Issue>[];
+  filters: App.Filter.GroupConfig<App.Jira.Issue>[];
   issues: App.Jira.Issue[];
   settings: Storage.Jira.SettingsStore;
   hasInit: App.Jira.ContextInit[];
@@ -29,6 +29,7 @@ const {
   Provider,
   useTrackedState,
   useUpdate,
+  useSelector,
 } = createContainer(useJiraState);
 
 const useSetDraft = (): App.SetDraft<JiraContextValue> => {
@@ -48,11 +49,13 @@ export {
   Provider as JiraProvider,
   useTrackedState as useJiraTrackedState,
   useSetDraft as useJiraSetDraft,
+  useSelector as useJiraSelector,
 };
 
 export default {
   Provider,
   useTrackedState,
   useSetDraft,
+  useSelector,
 };
 

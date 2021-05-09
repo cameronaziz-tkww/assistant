@@ -1,0 +1,21 @@
+{
+  "name": "@tkww-assistant/atrules",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w"
+  },
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tkww-assistant-types/types-query-ast": "0.1.0",
+    "@tkww-assistant-types/types-scss-parser": "0.1.0",
+    "@tkww-assistant/utils": "0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}

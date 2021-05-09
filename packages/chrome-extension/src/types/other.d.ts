@@ -4,6 +4,12 @@ declare namespace Other {
   }
 
   namespace Immer {
+    type PrimitiveType = number | string | boolean;
+
+    type Immutable<T> = T extends PrimitiveType ? T : T extends AtomicObject ? T : T extends IfAvailable<ReadonlyMap<infer K, infer V>> ? ReadonlyMap<Immutable<K>, Immutable<V>> : T extends IfAvailable<ReadonlySet<infer V>> ? ReadonlySet<Immutable<V>> : T extends WeakReferences ? T : T extends App.UnknownObject ? {
+      readonly [K in keyof T]: Immutable<T[K]>;
+    } : T;
+
     type AtomicObject =
       | App.UnknownFunction
       | Promise<App.Any>

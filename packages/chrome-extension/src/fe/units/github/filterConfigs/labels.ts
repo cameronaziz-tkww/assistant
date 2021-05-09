@@ -1,13 +1,13 @@
-const create = (pullRequest: App.Github.PullRequest, mapping: App.Filter.CreateMapping): void => {
+const create: App.Filter.Create<App.Github.PullRequest> = (pullRequest, mapping): void => {
   const { labels } = pullRequest;
   if (labels.length === 0) {
     const labelName = 'No Labels';
     if (!mapping[labelName]) {
-      const filter: App.Filter.Filter = {
+      const filter: App.Filter.Filter<App.Github.PullRequest> = {
         id: 'No Labels',
         abbreviation: 'NL',
         full: 'No Labels',
-        color: `#FF0000`,
+        color: '#FF0000',
       };
 
       mapping[labelName] = filter;
@@ -22,7 +22,7 @@ const create = (pullRequest: App.Github.PullRequest, mapping: App.Filter.CreateM
         .join('')
         .toUpperCase();
 
-      const filter: App.Filter.Filter = {
+      const filter: App.Filter.Filter<App.Github.PullRequest> = {
         id: labelName,
         abbreviation,
         full: labelName,
@@ -34,11 +34,11 @@ const create = (pullRequest: App.Github.PullRequest, mapping: App.Filter.CreateM
   });
 };
 
-const run = (pullRequest: App.Github.PullRequest, full: string): boolean => {
-  if (pullRequest.labels.length === 0 && full === 'No Labels') {
+const run = (pullRequest: App.Github.PullRequest, id: string): boolean => {
+  if (pullRequest.labels.length === 0 && id === 'No Labels') {
     return true;
   }
-  return pullRequest.labels.findIndex((label) => label.name === full) > -1;
+  return pullRequest.labels.findIndex((label) => label.name === id) > -1;
 };
 
 export default {

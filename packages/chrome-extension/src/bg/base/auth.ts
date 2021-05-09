@@ -8,7 +8,7 @@ class ServiceAuth {
     this.storage.listen(service, this.watchAuth);
   }
 
-  private watchAuth = <T extends keyof Storage.Auth>(value: Storage.Auth[T]): void => {
+  private watchAuth = <T extends keyof Storage.Auth>(value: Storage.Auth[T] | null): void => {
     if (!value) {
       this.destroy();
     }

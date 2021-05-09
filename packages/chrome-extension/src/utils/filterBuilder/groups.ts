@@ -1,20 +1,20 @@
 import counts from './counts';
 import getColor from './getColor';
 
-const groups = <T extends App.Filter.Item>(filterConfigs: App.Filter.FilterGroupConfig<T>[], items: T[]): App.Filter.CurrentFilterGroup<T>[] =>
+const groups = <T extends App.Filter.Item>(filterConfigs: App.Filter.GroupConfig<T>[], items: T[]): App.Filter.Group<T>[] =>
   filterConfigs
     .map(
-      (config): App.Filter.CurrentFilterGroup<T> | void => {
+      (config): App.Filter.Group<T> | void => {
         if (!config) {
           return;
         }
-        const current: App.Filter.CreateMapping = {};
+        const current: App.Filter.CreateMapping<T> = {};
 
         items.forEach((item, index) => {
           config.create(item, current, index);
         });
 
-        const currentFilters =
+        const currentFilters: App.Filter.Mapping<T> =
           Object
             .entries(current)
             .sort(([, a], [, b]) => {
@@ -28,38 +28,39 @@ const groups = <T extends App.Filter.Item>(filterConfigs: App.Filter.FilterGroup
 
               return 0;
             })
-            .map(([key, filter], index) => [
-              key,
-              {
+            .map(([key, filter], index): App.Filter.FilterWrapper<T> & { key: string } => {
+              const filterCounts = counts(config, filter.full, items);
+              return {
+                key,
+                config,
+                counts: {
+                  currentCount: filterCounts,
+                  total: filterCounts,
+                },
                 groupId: config.id,
                 state: 'omit',
                 filter: {
                   ...filter,
                   color: getColor(index, filter.color),
                 },
-              },
-            ] as [string, App.Filter.FilterItem<T>])
+              };
+            })
             .reduce(
-              (acc, [key, filter]) => {
-                const filterCounts = counts(config, filter.filter.full, items);
-                filter.counts = {
-                  currentCount: filterCounts,
-                  total: filterCounts,
-                };
-                filter.config = config;
-                acc[key] = filter;
+              (acc, filter) => {
+                acc[filter.key] = filter;
                 return acc;
               },
-              {} as App.Filter.Mapping<T>,
+              {},
             );
 
         return {
+          appliedFilters: [],
           id: config.id,
           label: config.label,
           filters: currentFilters,
           lastState: 'omit',
         };
       })
-    .filter((group) => !!group) as App.Filter.CurrentFilterGroup<T>[];
+    .filter((group) => !!group) as App.Filter.Group<T>[];
 
 export default groups;

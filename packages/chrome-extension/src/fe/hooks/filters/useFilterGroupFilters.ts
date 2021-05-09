@@ -10,9 +10,11 @@ const useFilterGroupFilters = <T extends App.Filter.Item>(groupId: string): Hook
     };
   }
 
-  const data: App.Filter.FilterItem<T>[] = [];
+  const data: App.Filter.FilterWrapper<T>[] = [];
+
   for (const filter in group.filters) {
-    data.push(group.filters[filter]);
+    const item = group.filters[filter] as unknown as App.Filter.FilterWrapper<T>;
+    data.push(item);
   }
 
   return {

@@ -1,7 +1,7 @@
 import { NO_SPRINT } from '@units/jira/constants';
 import { capitalize } from '@utils';
 
-const create = (issue: App.Jira.Issue, mapping: App.Filter.CreateMapping): void => {
+const create: App.Filter.Create<App.Jira.Issue> = (issue, mapping): void => {
   const { sprints } = issue;
 
   if (sprints.length === 0) {
@@ -19,7 +19,7 @@ const create = (issue: App.Jira.Issue, mapping: App.Filter.CreateMapping): void 
     const full = capitalize(sprint.state);
     if (!mapping[full]) {
       mapping[full] = {
-        id: full,
+        id: sprint.id,
         abbreviation: full[0],
         full,
       };
@@ -27,20 +27,20 @@ const create = (issue: App.Jira.Issue, mapping: App.Filter.CreateMapping): void 
   });
 };
 
-const run = (issue: App.Jira.Issue, full: string): boolean => {
+const run = (issue: App.Jira.Issue, id: string): boolean => {
   const { sprints } = issue;
-  if (sprints.length === 0 && full === NO_SPRINT) {
+  if (sprints.length === 0 && id === NO_SPRINT) {
     return true;
   }
 
   return sprints.some((sprint) => {
     const sprintState = capitalize(sprint.state);
-    return full === sprintState;
+    return id === sprintState;
   });
 };
 export default {
   id: 'jira-sprint',
-  label: 'Sprint State',
+  label: 'Sprint',
   run,
   create,
 };

@@ -13,7 +13,7 @@ interface IssueProps {
 const Issue = forwardRef<HTMLDivElement, IssueProps>((props, ref) => {
   const { issue } = props;
   const { filterGroups } = filtersContext.useTrackedState();
-  const { handle } = filters.useClickFilter();
+  const applyFilter = filters.useApplyFilter();
   const link = `${issue.appUrl}/browse/${issue.key}`;
   const issueAssignee = issue.assignee || 'Unassigned';
   const navigate = () => {
@@ -21,7 +21,6 @@ const Issue = forwardRef<HTMLDivElement, IssueProps>((props, ref) => {
   };
 
   const assigneeGroup = filterGroups.find((filter) => filter.id === 'jira-assignee');
-  const filter = assigneeGroup && Object.values(assigneeGroup.filters).find((filter) => filter.filter.full === issue.assignee);
   const colors = assigneeGroup ? Object.values(assigneeGroup.filters).map((current) => ({
     full: current.filter.full,
     color: current.filter.color,
@@ -30,9 +29,7 @@ const Issue = forwardRef<HTMLDivElement, IssueProps>((props, ref) => {
   const color = colors.find((c) => c.full === issueAssignee)?.color;
 
   const handleClick = () => {
-    if (filter) {
-      handle(filter);
-    }
+    applyFilter('jira-assignee', issue.id);
   };
 
   return (
@@ -49,9 +46,9 @@ const Issue = forwardRef<HTMLDivElement, IssueProps>((props, ref) => {
         color,
         handleClick: handleClick,
       }}
-      footer={<Status status={issue.status} />}
+      footer={<Status issue={issue} />}
       endFooter={{
-        text: <SprintState sprints={issue.sprints} />,
+        text: <SprintState issue={issue} />,
       }}
     >
       {issue.summary}

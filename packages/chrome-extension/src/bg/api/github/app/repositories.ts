@@ -11,7 +11,7 @@ class RepositoriesAPI {
     this.reactor = reactor;
   }
 
-  fetch = async (id: string): Promise<API.Github.RepositoryFull[]> => {
+  fetch = async (): Promise<API.Github.RepositoryFull[]> => {
     const query = builders.repositories({
       moreRepos: [],
     });
@@ -23,23 +23,15 @@ class RepositoriesAPI {
       },
     );
 
-    const data = await this.fetchMore(id, response, [], []);
+    const data = await this.fetchMore(response, [], []);
     return data;
   }
 
   private fetchMore = async (
-    id: string,
     lastResponse: API.Response.Repositories,
     current: API.Github.RepositoryFull[],
     moreRepos: API.Utilities.MoreRepo[],
   ): Promise<API.Github.RepositoryFull[]> => {
-    this.reactor.dispatchEvent(
-      'partial-repository-list',
-      [
-        id,
-        current,
-      ],
-    );
 
     const { organizations, repositories } = lastResponse.viewer;
     const repos = this.parseRepositories(repositories);
@@ -67,7 +59,7 @@ class RepositoriesAPI {
       },
     );
 
-    return this.fetchMore(id, response, current, moreOrgRepos);
+    return this.fetchMore(response, current, moreOrgRepos);
   };
 
   private parseOrgs = (orgs: API.DataStructure.Organization[], current: API.Github.RepositoryFull[]) =>

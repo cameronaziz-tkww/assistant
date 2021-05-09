@@ -8,11 +8,7 @@ const useIssues: Hooks.Jira.UseIssues = () => {
 
   useEffect(
     () => {
-      const hangup = init('issues');
-
-      // return () => {
-      //   hangup();
-      // };
+      init('issues');
     },
     [],
   );

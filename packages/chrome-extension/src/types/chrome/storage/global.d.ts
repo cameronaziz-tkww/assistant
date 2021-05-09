@@ -8,7 +8,6 @@ declare namespace Storage {
     interface FilterSettings {
       rememberSelections: boolean;
       storedFilters: StoredFilter[];
-
     }
 
     interface StoredFilter {

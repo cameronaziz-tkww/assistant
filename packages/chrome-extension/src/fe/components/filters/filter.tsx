@@ -1,20 +1,20 @@
+import Badge from '@components/badge';
+import Tooltip from '@components/tooltip';
 import { filters as filtersContext } from '@context';
 import { filters } from '@hooks';
-import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
-import Tooltip from '../tooltip';
-import Badge from './badge';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import * as Styled from './styled';
 
-interface FilterProps {
-  current: App.Filter.FilterItem<App.ShouldDefineType>;
+interface FilterProps<T extends App.Filter.Item> {
+  current: App.Filter.FilterWrapper<T>;
   disableTooltip?: boolean;
 }
 
-const Filter: FunctionComponent<FilterProps> = (props) => {
+const Filter = <T extends App.Filter.Item>(props: FilterProps<T>): ReactElement<FilterProps<T>> => {
   const { current, disableTooltip } = props;
   const { filter, groupId, counts } = current;
   const { currentFilters } = filtersContext.useTrackedState();
-  const { handle } = filters.useClickFilter();
+  const apply = filters.useApplyFilter();
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
 
@@ -31,7 +31,7 @@ const Filter: FunctionComponent<FilterProps> = (props) => {
   );
 
   const onClick = () => {
-    handle(current);
+    apply(groupId, current.filter.id);
   };
 
   const currentFilter = currentFilters.find((currentFilter) =>
@@ -52,17 +52,15 @@ const Filter: FunctionComponent<FilterProps> = (props) => {
         count={counts.currentCount}
         color={filter.color}
         onClick={onClick}
+        state={currentFilter?.state}
       >
         <Styled.Text ref={containerRef} scale={scale}>
           {filter.abbreviation}
         </Styled.Text>
-        {currentFilter?.state === 'include' &&
-          <Styled.Checkmark />
-        }
-        {currentFilter?.state === 'exclude' &&
-          <Styled.Cross />
-        }
-        {counts.currentCount > 0 && <Badge counts={counts} />}
+        <Badge
+          isWeak={counts.currentCount !== counts.total}
+          label={counts.currentCount}
+        />
       </Styled.FilterContainer>
     </Tooltip>
   );

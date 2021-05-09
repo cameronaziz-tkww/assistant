@@ -1,10 +1,42 @@
 import { github } from '@context';
-import { chrome } from '@utils';
-import { useCallback } from 'react';
+import { chrome, throttle } from '@utils';
+import Fuse from 'fuse.js';
+import { useCallback, useEffect, useState } from 'react';
 
 const useRepositories: Hooks.Github.UseRepositories = () => {
   const setDraft = github.useSetDraft();
   const { repositories } = github.useTrackedState();
+  const [localRepositories, setLocalRepositories] = useState(repositories);
+
+  useEffect(
+    () => {
+      setLocalRepositories(repositories);
+    },
+    [repositories],
+  );
+
+  const filter = throttle((value: string) => {
+    if (value.length === 0) {
+      setLocalRepositories(repositories);
+      return;
+    }
+    const options: Fuse.IFuseOptions<App.Github.Repository> = {
+      isCaseSensitive: false,
+      keys: [{
+        name: 'name',
+        weight: 0.8,
+      },
+      {
+        name: 'organizationName',
+        weight: 0.2,
+      }],
+    };
+
+    const fuse = new Fuse(repositories, options);
+
+    const result = fuse.search(value);
+    setLocalRepositories(result.map((item) => item.item));
+  }, 100);
 
   const updateWatched = useCallback(
     (repository: App.Github.Repository) => {
@@ -26,17 +58,18 @@ const useRepositories: Hooks.Github.UseRepositories = () => {
     [],
   );
 
-  const unwatched = repositories.filter((repo) => !repo.isWatched);
+  const unwatched = localRepositories.filter((repo) => !repo.isWatched);
 
   const state = {
-    all: repositories,
-    watched: repositories.filter((repo) => repo.isWatched),
+    all: localRepositories,
+    watched: localRepositories.filter((repo) => repo.isWatched),
     unwatched,
   };
 
   return {
     repositories: state,
     updateWatched,
+    filter,
   };
 };
 

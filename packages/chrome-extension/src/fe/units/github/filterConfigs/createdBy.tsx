@@ -1,8 +1,8 @@
 import React from 'react';
 import AuthorTooltip from '../authorTooltip';
 
-const create = (pullRequest: App.Github.PullRequest, mapping: App.Filter.CreateMapping): void => {
-  const { createdBy, author } = pullRequest;
+const create: App.Filter.Create<App.Github.PullRequest> = (pullRequest, mapping): void => {
+  const { createdBy, author, id } = pullRequest;
   if (!mapping[status]) {
     const abbreviation = createdBy
       .split('-')
@@ -20,8 +20,8 @@ const create = (pullRequest: App.Github.PullRequest, mapping: App.Filter.CreateM
   }
 };
 
-const run = (pullRequest: App.Github.PullRequest, full: string): boolean =>
-  pullRequest.createdBy === full;
+const run = (pullRequest: App.Github.PullRequest, id: string): boolean =>
+  pullRequest.id === id;
 
 export default {
   id: 'github-createdBy',

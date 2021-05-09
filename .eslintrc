@@ -19,12 +19,16 @@
       }
     ],
     "comma-dangle": [
-      2,
+      1,
       "always-multiline"
     ],
     "semi": [
-      2,
+      1,
       "always"
+    ],
+    "quotes": [
+      2,
+      "single"
     ]
   },
   "settings": {

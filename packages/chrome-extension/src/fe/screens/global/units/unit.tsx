@@ -11,6 +11,7 @@ const Unit: FunctionComponent<UnitProps> = (props) => {
   const { visibleUnits, setVisibleUnit } = global.useUnits();
 
   const handleClick = (nextState: boolean) => {
+    /* ~ LOG */ console.log('~ nextState', nextState, (() => { const now = new Date(); return `${now.getSeconds()}.${now.getMilliseconds()}`; })());
     setVisibleUnit(unit, nextState);
   };
 

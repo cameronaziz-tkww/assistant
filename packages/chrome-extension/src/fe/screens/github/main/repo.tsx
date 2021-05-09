@@ -1,13 +1,13 @@
 import Checkbox from '@components/checkbox';
 import Tooltip from '@components/tooltip';
 import { github } from '@hooks';
-import React, { CSSProperties, FunctionComponent, useEffect, useRef, useState } from 'react';
+import React, { CSSProperties, FunctionComponent, MouseEvent, useEffect, useRef, useState } from 'react';
 import * as Styled from './styled';
 
 interface RepoProps {
   repository: App.Github.Repository;
   type: 'unwatched' | 'watched';
-  style: CSSProperties
+  style: CSSProperties;
 }
 
 const Repo: FunctionComponent<RepoProps> = (props) => {
@@ -50,13 +50,22 @@ const Repo: FunctionComponent<RepoProps> = (props) => {
     removeRepo();
   };
 
-  const select = () => {
+  const clickCheckbox = () => {
     setIsSelected(true);
     onClick();
   };
 
+  const clickContainer = (event: MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    event.preventDefault();
+    if (event.currentTarget === event.target) {
+      setIsSelected(true);
+      onClick();
+    }
+  };
+
   return (
-    <Styled.RepoContainer style={style} onClick={select}>
+    <Styled.RepoContainer style={style} onClick={clickContainer}>
       <Tooltip
         truncate
         size="sm"
@@ -65,7 +74,7 @@ const Repo: FunctionComponent<RepoProps> = (props) => {
         cursorType="pointer"
       >
         <Checkbox
-          handleClick={select}
+          handleClick={clickCheckbox}
           label={repository.fullName}
           ref={labelRef}
           isChecked={false}

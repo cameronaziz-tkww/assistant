@@ -1,7 +1,7 @@
 declare namespace Hooks {
   namespace Filters {
     interface UseClickFilterDispatch<T extends App.Filter.Item> {
-      handle(filter: App.Filter.Current<T>): void;
+      handle(id: string | number, groupId: string): void;
     }
 
     interface UseClickFilter<T extends App.Filter.Item> {
@@ -9,21 +9,12 @@ declare namespace Hooks {
     }
 
     interface UseGetFilterDispatch<T extends App.Filter.Item> {
-      find(event: Hooks.Global.Event): App.Filter.FilterItem<T> | null;
+      find(event: Hooks.Global.Event): App.Filter.FilterWrapper<T> | null;
     }
 
     interface UseGetFilter<T extends App.Filter.Item> {
       (): UseGetFilterDispatch<T>
     }
-
-    interface UseClickFilterDispatch<T extends App.Filter.Item> {
-      handle(filter: App.Filter.Current<T>): void;
-    }
-
-    interface UseClickFilter<T extends App.Filter.Item> {
-      (): UseClickFilterDispatch<T>
-    }
-
     interface UseClearFiltersDispatch {
       handle(groupId: string): void;
     }
@@ -37,12 +28,41 @@ declare namespace Hooks {
       filteredItems: T[]
     }
 
+    interface UseApplyFilterDispatch {
+      (groupId: string, itemId: string | number): void;
+    }
+
+    interface UseApplyFilter {
+      (): UseApplyFilterDispatch
+    }
+
+    interface AppliedGroupFilters<T extends App.Filter.Item> {
+      config: App.Filter.GroupConfig<T>;
+      state: App.Filter.FilterState;
+      applied: App.Filter.AppliedFilter[];
+      groupId: string;
+    }
+
+    interface ByGroup<T extends App.Filter.Item> {
+      [groupId: string]: AppliedGroupFilters<T>
+    }
+
+    interface UseAppliedFiltersDispatch<T extends App.Filter.Item> {
+      configs: Other.Immer.Immutable<App.Filter.GroupConfig<T>[]>;
+      appliedFilters: Other.Immer.Immutable<App.Filter.AppliedFilter[]>;
+      appliedFiltersByGroup: ByGroup;
+    }
+
+    interface UseAppliedFilters {
+      (): UseAppliedFiltersDispatch
+    }
+
     interface UseFilterGroupsDispatch<T extends App.Filter.Item> {
-      groups: App.Filter.CurrentFilterGroup<T>[]
+      groups: App.Filter.Group<T>[]
     }
 
     interface UseFilterGroupFiltersDispatch<T extends App.Filter.Item> {
-      filters: App.Filter.FilterItem<T>[]
+      filters: App.Filter.FilterWrapper<T>[]
     }
 
     interface UseItems<T extends App.Filter.Item> {

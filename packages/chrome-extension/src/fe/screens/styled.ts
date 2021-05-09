@@ -37,6 +37,14 @@ export const Section = styled.div<SectionProps>`
   flex-direction: ${({ flexRow }) => flexRow ? 'row' : 'column'};
 `;
 
+export const SectionTitleContainer = styled.div`
+  display: flex;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const SectionTitle = styled.div`
   flex: 1;
   display: flex;
@@ -75,5 +83,6 @@ export const SectionSubContent = styled.div`
 export const RightContainer = styled.div`
   position: sticky;
   float: right;
-  bottom: ${({ theme }) => theme.sizes.md.marginY};;
+  top: ${({ theme }) => theme.sizes.lg.marginY};
+  margin-right: -${({ theme }) => theme.sizes.xl.marginX};
 `;

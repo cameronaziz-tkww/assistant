@@ -8,7 +8,7 @@ export const baseColorsBase: BaseMapping<App.Theme.BaseColor> = {
   'blue-dark': '#4169e1',
   blue: '#007FFF',
   green: '#26FF64',
-  grey: '#696969',
+  grey: '#B6B6B6',
   'grey-dark': '#3D4035',
   'grey-light': '#DBD7D2',
   red: '#FF2626',

@@ -95,7 +95,7 @@ class Github {
   };
 
   private killCurrent = async () => {
-    await this.pullRequests.kill();
+    // await this.pullRequests.kill();
     await this.repositories.kill();
     await this.auth.kill();
   };

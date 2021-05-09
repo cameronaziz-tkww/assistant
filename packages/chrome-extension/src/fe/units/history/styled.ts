@@ -11,13 +11,16 @@ interface FeedContainerProps {
 
 export const CloseButton = styled(AiFillDownCircle)`
   position: absolute;
-  bottom: ${({ theme }) => theme.sizes.xxl.marginY};
+  bottom: ${({ theme }) => theme.sizes.xxl.marginX};
   transform: scale(2);
   color: ${({ theme }) => theme.colors.tertiary.foreground};
+  transition: 500ms;
 
   &:hover {
     cursor: pointer;
-    color: ${({ theme }) => theme.colors.primary.background};
+    transform: scale(2.1);
+    transition: 100ms;
+    color: ${({ theme }) => getRGBA(theme.colors.tertiary.foreground, 0.7)};
   }
 `;
 
@@ -27,6 +30,9 @@ export const FeedContainer = styled.div<FeedContainerProps>`
   max-height: 30vh;
   width: calc(100vw - 50px);
   display: inline-block;
+  &:hover {
+    cursor: ${({ isHidden }) => isHidden ? 'pointer' : 'default'};
+  }
 `;
 
 export const HistoryIcon = styled(BiHistory)`
@@ -37,13 +43,17 @@ export const DismissIcon = styled(AiFillCloseCircle)`
 `;
 
 interface ContainerProps {
-  hasHistory: boolean;
   isHidden: boolean;
   isTease: boolean;
 }
 
-export const SidebarContainer = styled.div`
+interface SidebarContainerProps {
+  isHidden: boolean;
+}
+
+export const SidebarContainer = styled.div<SidebarContainerProps>`
   height: 100%;
+  visibility: ${({ isHidden }) => isHidden ? 'hidden' : 'visible'};
   position: relative;
   width: 50px;
   display: inline-flex;
@@ -51,12 +61,12 @@ export const SidebarContainer = styled.div`
 `;
 
 export const Container = styled.div<ContainerProps>`
-  max-height: ${({ hasHistory, isHidden, isTease }) => {
+  max-height: ${({ isHidden, isTease }) => {
     if (isHidden && isTease) {
       return '20px';
     }
 
-    if (hasHistory && !isHidden) {
+    if (!isHidden) {
       return '500px';
     }
 
@@ -65,7 +75,6 @@ export const Container = styled.div<ContainerProps>`
   position: relative;
   grid-area: footer;
   margin-top: ${({ isHidden }) => isHidden ? '4px' : 0};
-  visibility: ${({ hasHistory }) => hasHistory ? 'visible' : 'hidden'};
   transition: max-height ${({ isHidden }) => isHidden ? '0.2' : '2'}s ease-out;
   box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
   border-top: ${({ theme }) => theme.colors.secondary.accent};

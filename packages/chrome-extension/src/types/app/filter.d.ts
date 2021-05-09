@@ -1,6 +1,8 @@
 
 declare namespace App {
-  import { ReactNode } from "react";
+  import { ReactNode } from 'react';
+  import { Immutable } from 'immer';
+
   type UnitColumn = 'first' | 'second' | 'third' | 'none';
   namespace Filter {
 
@@ -14,12 +16,12 @@ declare namespace App {
 
     type FilterState = 'include' | 'exclude' | 'omit';
 
-    interface FilterItem<T = Item> {
+    interface FilterWrapper<T = Item> {
       state: FilterState;
       groupId: string;
-      filter: Filter;
+      filter: Filter<T>;
       counts: Counts;
-      config: FilterGroupConfig<T>
+      config: GroupConfig<T>
     }
 
     interface Counts {
@@ -27,28 +29,27 @@ declare namespace App {
       currentCount: number;
     }
 
-    // interface FilterGroup {
-    //   id: string;
-    //   label?: string;
-    //   lastState: FilterState;
-    //   filters: CreateMapping;
-    // }
-
     type Search<T extends Item> = {
-      [state in FilterState]: FilterItem<T>[]
+      [state in FilterState]: Filter<T>[]
     }
     interface SearchState<T extends Item> {
       [groupId as string]: Search<T>;
     }
 
-    interface CurrentFilterGroup<T extends Item> {
+    interface Group<T extends Item> {
       id: string;
       label?: string;
       filters: Mapping<T>;
+      appliedFilters: AppliedFilter[];
       lastState: FilterState;
     }
 
-    interface Filter {
+    interface AppliedFilter {
+      state: FilterState;
+      groupId: string;
+      itemId: string | number;
+    }
+    interface Filter<T extends Item> {
       capitalize?: boolean;
       abbreviation: string;
       full: string;
@@ -57,27 +58,27 @@ declare namespace App {
       id: number | string;
     }
 
-    interface CreateMapping {
-      [full: string]: Filter;
+    interface CreateMapping<T extends Item> {
+      [full: string]: Filter<T>;
     }
 
     interface Mapping<T extends Item> {
-      [full: string]: FilterItem<T>;
+      [full: string]: FilterWrapper<T>;
     }
 
-    interface Create {
-      <T extends Item>(item: T, mapping: CreateMapping, index: number): void;
+    interface Create<T extends Item> {
+      (item: T, mapping: CreateMapping<T>, index: number): void;
     }
 
-    interface FilterGroupConfig<T extends Item> {
+    interface GroupConfig<T extends Item> {
       id: string;
       label?: string;
       create: Create<T>;
-      run<T extends Item>(item: T, full: string, index: number): boolean;
+      run<T extends Item>(item: T, id: string | number): boolean;
     }
 
     type FilterMapping<T extends string> = {
-      [key in T]: FilterGroupConfig
+      [key in T]: GroupConfig
     }
   }
 }

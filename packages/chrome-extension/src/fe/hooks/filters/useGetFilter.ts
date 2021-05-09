@@ -23,12 +23,12 @@ const useGetFilter = <T extends App.Filter.Item>(): Hooks.Filters.UseGetFilterDi
     return type;
   };
 
-  const find = (event: Hooks.Global.Event) => {
+  const find = (event: Hooks.Global.Event): App.Filter.FilterWrapper<T> | null => {
     const name = `${event.unit}-${getKey(event.type, event.unit)}`;
     const group = trackedStateRef.current.currentFilters.find((filter) => filter.groupId === name && filter.filter.full === event.full);
 
     if (group) {
-      return group;
+      return group as unknown as App.Filter.FilterWrapper<T>;
     }
 
     return null;

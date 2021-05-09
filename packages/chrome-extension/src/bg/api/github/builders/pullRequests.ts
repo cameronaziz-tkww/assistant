@@ -14,6 +14,7 @@ query {${configs.map((config) => `
       `, after: "${config.endCursor}"`
     }, orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
+        id
         commits(first: 100) {
           nodes {
             commit {

@@ -61,12 +61,38 @@ const plugins = [
   rollupTypescript(),
 ];
 
+const onwarn = (warning, warn) => {
+  const ignoredCircular = [
+    'react-virtualized',
+  ];
+  const noExport = [
+    'react-virtualized',
+  ];
+
+  if (
+    warning.code === 'CIRCULAR_DEPENDENCY' &&
+    ignoredCircular.some(d => warning.importer.includes(d))
+  ) {
+    return;
+  }
+
+  if (
+    warning.code === 'NON_EXISTENT_EXPORT' &&
+    noExport.some(d => warning.source.includes(d))
+  ) {
+    return;
+  }
+
+  warn(warning);
+};
+
 const background = {
   input: 'src/bg/index.ts',
   output: {
     file: 'app/bundle-bg.js',
     format: 'iife',
   },
+  onwarn,
   plugins,
 };
 
@@ -77,6 +103,7 @@ const frontend = {
     format: 'iife',
   },
   plugins,
+  onwarn,
   context: 'null',
   moduleContext: 'null',
 };

@@ -8,6 +8,7 @@ export * from './helpers';
 export * from './hidash';
 export * as hidash from './hidash';
 export { default as lightOrDark } from './lightOrDark';
+export { default as log } from './log';
 export { default as mergeRefs } from './mergeRefs';
 export { default as messageTypes } from './messageTypes';
 export * from './reactor';

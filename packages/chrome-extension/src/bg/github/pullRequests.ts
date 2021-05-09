@@ -1,4 +1,4 @@
-import { chrome, secondsAgo } from '@utils';
+import { chrome, secondsAgo, uuid } from '@utils';
 import type { GithubAPI } from '../api';
 import type Storage from '../storage';
 
@@ -20,7 +20,7 @@ class PullRequests {
     this.api = api;
     this.pullRequestsInstance = [];
     this.isRunning = false;
-    chrome.storage.addListener('githubRepositories', this.watchGithubRepositories);
+    this.storage.listen('githubRepositories', this.watchGithubRepositories);
   }
 
   fetch = async (message: Runtime.Github.PullRequestsFetch): Promise<void> => {
@@ -31,6 +31,7 @@ class PullRequests {
   };
 
   public kill = (): Promise<void> => {
+    /* ~ LOG */ console.log('~ kill', (() => { const now = new Date(); return `${now.getSeconds()}.${now.getMilliseconds()}`; })());
     this.pullRequestsInstance = [];
     return this.storage.removeProperty('githubPullRequests');
   }
@@ -39,13 +40,13 @@ class PullRequests {
     return this.pullRequestsInstance;
   }
 
-  private send = (id: string, done: boolean): void => {
+  private send = (id?: string, done?: boolean): void => {
     chrome.runtime.respond({
       type: 'github/PULL_REQUESTS_RESPONSE',
       data: this.pullRequests,
       meta: {
-        done,
-        id,
+        done: done || true,
+        id: id || uuid(),
       },
     });
   }
@@ -55,12 +56,16 @@ class PullRequests {
     }
   };
 
-  private watchGithubRepositories = async (changes: Storage.Change<'githubRepositories'>) => {
-    const { newValue } = changes;
-    this.pullRequestsInstance = [];
-    if (newValue) {
-      this.remoteGet('storage-change: githubRepositories', newValue.watchedList);
+  private watchGithubRepositories = async (data: Storage.Github.GithubRepositories | null) => {
+    /* ~ LOG */ console.log('~ data', data, (() => { const now = new Date(); return `${now.getSeconds()}.${now.getMilliseconds()}`; })());
+    if (!data) {
+      this.pullRequestsInstance = [];
+      this.send();
+      return;
     }
+
+    await this.remoteGet('storage-change: githubRepositories', data.watchedList);
+    this.send();
   }
 
   private localFetch = async (id: string | null): Promise<void> => {
@@ -96,9 +101,9 @@ class PullRequests {
   };
 
   private remoteGet = async (id: string, watched: Storage.Github.Watched[]): Promise<void> => {
+    /* ~ LOG */ console.log('~ watched', watched, (() => { const now = new Date(); return `${now.getSeconds()}.${now.getMilliseconds()}`; })());
     if (!watched || watched.length === 0) {
       this.pullRequestsInstance = [];
-      this.save(id);
       return;
     }
 
@@ -110,7 +115,6 @@ class PullRequests {
     const clean = pullRequests.map(PullRequests.parsePullRequest);
     this.pullRequestsInstance = clean;
     this.isRunning = false;
-    this.save(id);
   }
 
   private remoteFetch = async (id: string): Promise<void> => {
@@ -124,9 +128,10 @@ class PullRequests {
       return;
     }
 
+    /* ~ LOG */ console.log('~ local', local, (() => { const now = new Date(); return `${now.getSeconds()}.${now.getMilliseconds()}`; })());
     await this.remoteGet(id, local.watchedList);
-    this.send(id, true);
-
+    this.save(id);
+    this.send(id);
   };
 
   private static parsePullRequest = (pr: API.Github.PullRequest): App.Github.PullRequest => ({

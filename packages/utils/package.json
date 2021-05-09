@@ -1,0 +1,23 @@
+{
+  "name": "@tkww-assistant/utils",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w"
+  },
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "glob": "^7.1.6"
+  },
+  "devDependencies": {
+    "@tkww-assistant-types/types-query-ast": "0.1.0",
+    "@tkww-assistant-types/types-scss-parser": "0.1.0",
+    "@types/glob": "^7.1.3",
+    "typescript": "^4.1.3"
+  }
+}

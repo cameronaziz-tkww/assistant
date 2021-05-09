@@ -1,7 +1,7 @@
 declare namespace Hooks {
   namespace History {
     type UseFeedDispatch = {
-      init(): void
+      init(): void;
       feed: App.History.FeedItem[];
     };
 

@@ -45,6 +45,7 @@ declare namespace App {
     type Reactors = 'partial-repository-list';
 
     interface PullRequest {
+      id: string;
       url: string;
       owner: string;
       repository: string;

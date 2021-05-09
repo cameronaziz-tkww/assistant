@@ -105,6 +105,12 @@ declare namespace API {
     type SuccessResponse<T extends string, U, V = void, W = void> = V & {
       [key in T]: (U & W)[];
     }
+    interface SuccessMeta {
+      expand: string;
+      startAt: number;
+      maxResults: number;
+      total: number;
+    }
 
     interface Board {
       id: number;

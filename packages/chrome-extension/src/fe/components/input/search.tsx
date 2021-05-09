@@ -1,30 +1,34 @@
-import React, { ChangeEvent, FunctionComponent, useCallback } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import Input from './base';
 import * as Styled from './styled';
 
-interface SearchComponentProps {
-  handleChange(event: ChangeEvent<HTMLInputElement>): void;
-  clearSearch(): void;
-  label?: string;
-  focusOnMount?: boolean;
+interface SearchComponentProps extends App.Input.InputProps {
+  clearSearch?(): void;
 }
 
 const Search: FunctionComponent<SearchComponentProps> = (props) => {
-  const { handleChange, clearSearch, focusOnMount, label } = props;
+  const { clearSearch, label, onReactChange, ...rest } = props;
+  const [hasValue, setHasValue] = useState(typeof rest.defaultValue === 'undefined' ? false : `${rest.defaultValue}`.length > 0);
 
-  const change = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      handleChange(event);
-      // updateHasValue(event.target.value);
-    }, []);
+  const internalReactChange = (value: string) => {
+    const nextHasValue = value.length > 0;
+    if (nextHasValue !== hasValue) {
+      setHasValue(nextHasValue);
+    }
+
+    if (onReactChange) {
+      onReactChange(value);
+    }
+  };
 
   return (
     <Styled.SearchContainer>
-      <Styled.SearchLabel>
-        {label || 'Search'}
-      </Styled.SearchLabel>
-      <Input focusOnMount={focusOnMount} onChange={change} />
-      {<Styled.Clear onClick={clearSearch} />}
+      <Input
+        label={label || 'Search'}
+        onReactChange={internalReactChange}
+        {...rest}
+      />
+      {clearSearch && hasValue && <Styled.Clear onClick={clearSearch} />}
     </Styled.SearchContainer>
   );
 };

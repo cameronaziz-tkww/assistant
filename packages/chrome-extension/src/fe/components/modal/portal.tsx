@@ -3,7 +3,7 @@ import { FunctionComponent, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 interface PortalProps {
-  selectionTrigger: App.SettingsTab | "save" | null;
+  selectionTrigger: App.SettingsTab | 'save' | null;
 }
 
 const getElement = () => {

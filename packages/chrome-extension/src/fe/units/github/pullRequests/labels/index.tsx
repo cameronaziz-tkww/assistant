@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import * as Styled from './styled';
 import Label from './label';
 import NoLabels from './noLabels';
+import * as Styled from './styled';
 
 interface DetailsProps {
   pullRequest: App.Github.PullRequest;
@@ -15,9 +15,12 @@ const Labels: FunctionComponent<DetailsProps> = (props) => {
     <Styled.Container>
       {labelCount > 0 ?
         labels.map((label) =>
-          <Label key={label.name} label={label} />,
+          <Label
+            key={label.name}
+            label={label}
+          />,
         )
-      :
+        :
         <NoLabels />
       }
     </Styled.Container>

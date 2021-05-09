@@ -1,16 +1,19 @@
-import filters, { FiltersContextValue } from '@context/filters';
+import { FiltersContextValue, useFiltersSetDraft, useFiltersTrackedState } from '@context/filters';
 import { useCallback } from 'react';
+import { useRememberSelections } from '../global';
 
 interface FilterPredicate<T extends App.Filter.Item> {
-  config: App.Filter.FilterGroupConfig<T> | undefined;
-  filter: App.Filter.FilterItem<T>;
+  config: App.Filter.GroupConfig<T> | undefined;
+  filter: App.Filter.FilterWrapper<T>;
 }
 
 const useClickFilter = <T extends App.Filter.Item>(): Hooks.Filters.UseClickFilterDispatch<T> => {
-  const setDraft = filters.useSetDraft();
+  const setDraft = useFiltersSetDraft();
+  const state = useFiltersTrackedState();
+  const { storeSelections } = useRememberSelections();
   const has = (group: FilterPredicate<T>[], state: App.Filter.FilterState) => group.some((item) => item.filter.state === state);
 
-  const filterItems = <U extends App.Filter.Item>(draft: FiltersContextValue<U>): U[] => {
+  const filterItems = (draft: FiltersContextValue<T>): T[] => {
     const { currentFilters, allItems } = draft;
 
     if (currentFilters.length === 0) {
@@ -43,7 +46,7 @@ const useClickFilter = <T extends App.Filter.Item>(): Hooks.Filters.UseClickFilt
     return allItems.filter(
       (item, index) => {
         const predicate = (state: FilterPredicate<T>, hasIncludes: boolean, hasIgnore: boolean): boolean => {
-          const match = !!state.config?.run(item, state.filter.filter.full, index);
+          const match = !!state.config?.run(item, state.filter.filter.full);
           if (match === true) {
             if (state.filter.state === 'include') {
               return true;
@@ -109,8 +112,13 @@ const useClickFilter = <T extends App.Filter.Item>(): Hooks.Filters.UseClickFilt
   };
 
   const handle = useCallback(
-    (clickedFilter: App.Filter.FilterItem<T>) => {
-      const { filter: { id: filterId }, groupId, state: clickedFilterState } = clickedFilter;
+    (id: string | number, groupId: string) => {
+      const clickedFilter = state.currentFilters.find((filter) => filter.filter.id === id && filter.groupId === groupId);
+      if (!clickedFilter) {
+        return;
+      }
+
+      const { filter: { id: filterId }, state: clickedFilterState } = clickedFilter;
 
       setDraft((draft) => {
         const { currentFilters, filterGroups } = draft;
@@ -120,7 +128,7 @@ const useClickFilter = <T extends App.Filter.Item>(): Hooks.Filters.UseClickFilt
           return;
         }
 
-        const group = filterGroups.find((filterGroup) => filterGroup.id === groupId) || {} as App.Filter.CurrentFilterGroup<T>;
+        const group = filterGroups.find((filterGroup) => filterGroup.id === groupId) || {} as App.Filter.Group<T>;
 
         const currentFiltersInGroup = currentFilters
           .filter((draftCurrent) => groupId === draftCurrent.groupId);
@@ -135,7 +143,7 @@ const useClickFilter = <T extends App.Filter.Item>(): Hooks.Filters.UseClickFilt
           return draft;
         }
 
-        const has = (filters: App.Filter.FilterItem<App.Filter.Item>[], state: App.Filter.FilterState) =>
+        const has = (filters: App.Filter.FilterWrapper<App.Filter.Item>[], state: App.Filter.FilterState) =>
           filters.some((filter) => filter.state === state);
 
         const hasIncludes = has(allButClicked, 'include');
@@ -148,7 +156,6 @@ const useClickFilter = <T extends App.Filter.Item>(): Hooks.Filters.UseClickFilt
           currentFilter.state = state;
           group.lastState = state;
           return draft;
-          // draft.filteredItems = filterItems(draft as unknown as FiltersContextValue<App.Filter.Item>);
         }
 
         const hasExclude = has(allButClicked, 'exclude');
@@ -161,7 +168,6 @@ const useClickFilter = <T extends App.Filter.Item>(): Hooks.Filters.UseClickFilt
           currentFilter.state = state;
           group.lastState = state;
           return draft;
-          // draft.filteredItems = filterItems(draft as unknown as FiltersContextValue<App.Filter.Item>);
         }
 
         currentFilter.state = 'omit';
@@ -172,7 +178,8 @@ const useClickFilter = <T extends App.Filter.Item>(): Hooks.Filters.UseClickFilt
 
       setDraft(
         (draft) => {
-          draft.filteredItems = filterItems(draft as unknown as FiltersContextValue<App.Filter.Item>);
+          storeSelections(draft.currentFilters);
+          draft.filteredItems = filterItems(draft as unknown as FiltersContextValue<T>);
         },
       );
 

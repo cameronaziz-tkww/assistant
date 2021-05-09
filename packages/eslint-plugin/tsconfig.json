@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "sourceMap": false,
+    "strict": true,
+    "lib": [
+      "es5",
+      "es6",
+      "es7",
+      "es2015",
+      "es2016",
+      "es2017",
+      "es2018",
+      "esnext"
+    ],
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "outDir": "./lib",
+    "rootDir": "./src",
+  },
+  "exclude": [
+    ".eslintrc.js",
+    "**/test.jsx?",
+    "**/test.tsx?",
+    "**/lib/**/*",
+    "**/coverage/**/*",
+    "src/tests/**/*",
+    "**/settings/**/*"
+  ],
+  "typeRoots": [
+    "./typings",
+    "./node_modules/@types/",
+    "../../node_modules/@types/"
+  ]
+}

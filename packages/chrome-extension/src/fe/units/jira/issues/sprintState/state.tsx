@@ -7,19 +7,15 @@ import * as Styled from '../../styled';
 interface StateProps {
   state: string;
   names: string[];
+  issue: App.Jira.Issue;
 }
 
 const State: FunctionComponent<StateProps> = (props) => {
-  const { state, names } = props;
-  const { handle } = filters.useClickFilter();
-  const { groups } = filters.useFilterGroups();
-  const stateGroup = groups.find((filter) => filter.id === 'jira-sprint');
-  const filter = stateGroup && Object.values(stateGroup.filters).find((filter) => filter.filter.full.toUpperCase() === state.toUpperCase());
+  const { state, issue, names } = props;
+  const applyFilter = filters.useApplyFilter();
 
   const handleClick = () => {
-    if (filter) {
-      handle(filter);
-    }
+    applyFilter('jira-sprint', issue.id);
   };
 
   return (

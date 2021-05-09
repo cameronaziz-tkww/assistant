@@ -1,0 +1,210 @@
+{
+	"name": "@tkww-assistant/vscode-extension",
+	"private": true,
+	"license": "UNLICENSED",
+	"displayName": "TKWW Assistant",
+	"description": "The Knot Worldwide Assistant VSCode Extension",
+	"version": "1.4.0",
+	"publisher": "TKWW",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tkww/tkww-assistant"
+	},
+	"icon": "images/union-128.png",
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"categories": [
+		"Language Packs"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./lib/extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "TKWW Assistant",
+			"properties": {
+				"TKWW Assistant.start": {
+					"type": "string",
+					"default": "Always",
+					"enum": [
+						"Always",
+						"On Command"
+					],
+					"enumDescriptions": [
+						"The extension will load and search for dependencies on workspace open.",
+						"The extension will load only necessary pieces and will only search for dependencies on `TKWW: Start Assistant` command."
+					],
+					"description": "Convert CSS, SASS, or SCSS file on save."
+				},
+				"TKWW Assistant.useTildes": {
+					"type": "boolean",
+					"default": true,
+					"description": "Conversions will apply a tilde in the import statement"
+				},
+				"TKWW Assistant.localStorage": {
+					"type": "boolean",
+					"default": true,
+					"description": "Locally store dependency parsing for faster load times."
+				},
+				"TKWW Assistant.convertFileOnSave": {
+					"type": "boolean",
+					"default": false,
+					"description": "Convert CSS, SASS, or SCSS file on save."
+				},
+				"TKWW Assistant.colorize.enable": {
+					"type": "boolean",
+					"default": true,
+					"description": "Change the text color of the variables."
+				},
+				"TKWW Assistant.colorize.invertBackgroundColor": {
+					"type": "boolean",
+					"default": true,
+					"description": "When a variable is colorized, if the theme and the color of the variable are both either light or dark, the background color will be the color of the variable will be the inverse ."
+				},
+				"TKWW Assistant.codeLens.findConverts": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show code lens advice for property values that can be converted into variables."
+				},
+				"TKWW Assistant.codeLens.findUnusedImports": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show code lens advice for unused variables."
+				},
+				"TKWW Assistant.codeLens.findInvalidImports": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show code lens advice for invalid imports."
+				},
+				"TKWW Assistant.codeLens.gutterIcon": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show an icon in the gutter when a change is suggested."
+				},
+				"TKWW Assistant.intellisense": {
+					"type": "boolean",
+					"default": true,
+					"description": "Valid variables will be suggested when typing."
+				},
+				"TKWW Assistant.hover": {
+					"type": "boolean",
+					"default": true,
+					"description": "Hover over a Union variable to see what the CSS value will be converted to."
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "tkww.initializeExtension",
+				"title": "Initialize TKWW Assistant",
+				"category": "TKWW",
+				"enablement": "extension:initialized != true"
+			},
+			{
+				"command": "tkww.clearLocalStorage",
+				"title": "Clear Local Storage",
+				"category": "TKWW",
+				"enablement": "extension:clearLocalStorage == true"
+			},
+			{
+				"command": "tkww.convertFile",
+				"title": "Convert file to Union variables and clean file",
+				"category": "TKWW",
+				"enablement": "extension:convertFile == true"
+			},
+			{
+				"command": "tkww.toggleConvertFileOnSave",
+				"title": "Toggle Convert and file on save",
+				"category": "TKWW",
+				"enablement": "extension:toggleConvertFileOnSave == true"
+			},
+			{
+				"command": "tkww.convertValue",
+				"title": "This should never show to the user",
+				"category": "TKWW"
+			},
+			{
+				"command": "tkww.removeVariables",
+				"title": "This should never show to the user",
+				"category": "TKWW"
+			},
+			{
+				"command": "tkww.intellisense",
+				"title": "This should never show to the user",
+				"category": "TKWW"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "tkww.initializeExtension",
+					"when": "extension:initialized != true"
+				},
+				{
+					"command": "tkww.convertValue",
+					"when": "resourceScheme =~ /^This-should-never-show$/"
+				},
+				{
+					"command": "tkww.removeVariables",
+					"when": "resourceScheme =~ /^This-should-never-show$/"
+				},
+				{
+					"command": "tkww.intellisense",
+					"when": "resourceScheme =~ /^This-should-never-show$/"
+				},
+				{
+					"command": "tkww.convertFile",
+					"when": "extension:convertFile == true"
+				},
+				{
+					"command": "tkww.toggleConvertFileOnSave",
+					"when": "extension:toggleConvertFileOnSave == true"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"docs": "typedoc",
+		"local": "node -e 'require(\"./deploy/installLocal\")()'",
+		"deploy": "node -e 'require(\"./deploy\")()'",
+		"package": "node -e 'require(\"./deploy/buildPackage\")()'",
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./tsconfig.json",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./tsconfig.json",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./lib/test/runTest.js"
+	},
+	"devDependencies": {
+		"@tkww-assistant-types/types-query-ast": "0.1.0",
+		"@tkww-assistant-types/types-scss-parser": "0.1.0",
+		"@types/esprima": "^4.0.2",
+		"@types/glob": "^7.1.3",
+		"@types/lodash": "^4.14.165",
+		"@types/node": "^12.11.7",
+		"@types/semver": "^7.3.4",
+		"@types/vscode": "^1.50.0",
+		"@typescript-eslint/eslint-plugin": "^4.6.1",
+		"@typescript-eslint/parser": "^4.7.0",
+		"eslint": "^7.12.1",
+		"eslint-config-prettier": "^6.15.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"glob": "^7.1.6",
+		"prettier": "2.1.2",
+		"typescript": "^4.0.5",
+		"vscode-test": "^1.4.0"
+	},
+	"dependencies": {
+		"@phenomnomnominal/tsquery": "^4.1.1",
+		"@tkww-assistant/atrules": "0.1.0",
+		"@tkww-assistant/dependencies": "0.1.0",
+		"@tkww-assistant/utils": "0.1.0",
+		"esprima": "^4.0.1",
+		"lodash": "^4.17.20",
+		"query-ast": "^1.0.3",
+		"scss-parser": "^1.0.4",
+		"semver": "^7.3.2"
+	}
+}

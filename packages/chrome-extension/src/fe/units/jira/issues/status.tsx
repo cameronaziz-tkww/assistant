@@ -1,14 +1,13 @@
-import { filters as filtersContext } from '@context';
 import { filters } from '@hooks';
 import React, { FunctionComponent } from 'react';
 import type { IconType } from 'react-icons';
 import * as Styled from '../styled';
 
 interface StatusProps {
-  status: App.Jira.SimpleStatus;
+  issue: App.Jira.Issue;
 }
 
-type State = 'ok' | 'wip' | 'needs-attention';
+type State = 'ok' | 'wip' | 'stale' | 'needs-attention';
 
 interface Icon {
   icon: IconType;
@@ -24,7 +23,8 @@ const statusState: StatusState = {
   '10820': 'ok', // Ready for Deployment
   '3': 'ok', // In Progress
   '10203': 'wip', // Code Review
-  '10823': 'wip', // Unprioritized
+  '10823': 'stale', // Unprioritized
+  '10010': 'stale', // To Do
   '10825': 'wip', // Ready for QA
   '10817': 'needs-attention', // Rejected
   '10205': 'needs-attention', // In QA
@@ -45,6 +45,10 @@ const getIcon = (status: App.Jira.SimpleStatus): Icon => {
       color: 'red',
       icon: Styled.ErrorIcon,
     };
+    case 'stale': return {
+      color: 'grey-light',
+      icon: Styled.StaleIcon,
+    };
     default: return {
       color: 'white',
       icon: Styled.UnknownIcon,
@@ -53,25 +57,20 @@ const getIcon = (status: App.Jira.SimpleStatus): Icon => {
 };
 
 const Status: FunctionComponent<StatusProps> = (props) => {
-  const { status } = props;
-  const { filterGroups } = filtersContext.useTrackedState();
-  const { handle } = filters.useClickFilter();
-  const assigneeGroup = filterGroups.find((filter) => filter.id === 'jira-status');
-  const filter = assigneeGroup && Object.values(assigneeGroup.filters).find((filter) => filter.filter.full === status.name);
+  const { issue } = props;
+  const applyFilter = filters.useApplyFilter();
 
-  const icon = getIcon(status);
+  const icon = getIcon(issue.status);
 
   const handleClick = () => {
-    if (filter) {
-      handle(filter);
-    }
+    applyFilter('jira-status', issue.id);
   };
 
   return (
     <Styled.Container onClick={handleClick} appColor={icon.color}>
       <icon.icon />
       <Styled.StatusName>
-        {status.name}
+        {issue.status.name}
       </Styled.StatusName>
     </Styled.Container>
   );

@@ -1,0 +1,18 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"lib": [
+      "esNext"
+		],
+		"baseUrl": "./",
+		"outDir": "lib",
+		"rootDir": "src",
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"lib"
+	]
+}

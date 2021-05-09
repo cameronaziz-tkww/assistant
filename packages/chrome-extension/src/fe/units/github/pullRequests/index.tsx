@@ -6,7 +6,7 @@ const PullRequests: FunctionComponent = () => {
   const { listen } = global.useListenEvents('github');
   const { filteredItems } = filters.useItems<App.Github.PullRequest>();
   const { find } = filters.useGetFilter<App.Github.PullRequest>();
-  const { handle } = filters.useClickFilter<App.Github.PullRequest>();
+  const { handle } = filters.useClickFilter();
 
   useEffect(
     () => {
@@ -18,7 +18,7 @@ const PullRequests: FunctionComponent = () => {
   const callback = (event: Hooks.Global.Event) => {
     const filter = find(event);
     if (filter) {
-      handle(filter);
+      handle(filter.filter.id, filter.groupId);
     }
   };
 

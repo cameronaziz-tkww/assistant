@@ -27,12 +27,8 @@ const PullRequest = forwardRef<HTMLDivElement, PullRequestProps>((props, ref) =>
     color: current.filter.color,
   })) : [];
 
-  const filter = assigneeGroup && Object.values(assigneeGroup.filters).find((filter) => filter.filter.full === pullRequest.createdBy);
-
   const handleClickCreatedBy = () => {
-    if (filter) {
-      handle(filter);
-    }
+    handle(pullRequest.id, 'github-createdBy');
   };
 
   const color = colors.find((c) => c.full === pullRequest.createdBy)?.color;

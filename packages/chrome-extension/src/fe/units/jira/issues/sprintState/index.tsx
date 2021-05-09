@@ -4,7 +4,7 @@ import * as Styled from '../../styled';
 import State from './state';
 
 interface SprintStateProps {
-  sprints: App.Jira.Sprint[]
+  issue: App.Jira.Issue;
 }
 
 interface Mapping {
@@ -12,15 +12,15 @@ interface Mapping {
 }
 
 const SprintState: FunctionComponent<SprintStateProps> = (props) => {
-  const { sprints } = props;
+  const { issue } = props;
 
-  if (sprints.length === 0) {
+  if (issue.sprints.length === 0) {
     return (
-      <State state={NO_SPRINT} names={[]} />
+      <State issue={issue} state={NO_SPRINT} names={[]} />
     );
   }
 
-  const states = sprints
+  const states = issue.sprints
     .reduce(
       (acc, cur) => {
         if (!acc[cur.state]) {
@@ -37,7 +37,12 @@ const SprintState: FunctionComponent<SprintStateProps> = (props) => {
   return (
     <Styled.StateValuesContainer>
       {Object.entries(states).map(([state, names]) =>
-        <State key={state} state={state} names={names} />,
+        <State
+          key={state}
+          issue={issue}
+          state={state}
+          names={names}
+        />,
       )}
     </Styled.StateValuesContainer>
   );

@@ -1,12 +1,11 @@
-import styled from 'styled-components';
 import { getRGBA } from '@utils';
+import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 48px;
   overflow-y: scroll;
 
 

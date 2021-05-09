@@ -18,7 +18,7 @@ const Label: FunctionComponent<LabelProps> = (props) => {
 
   const handleClick = () => {
     if (filter) {
-      handle(filter);
+      handle(filter.filter.id, 'github-labels');
     }
   };
 

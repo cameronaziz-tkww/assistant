@@ -114,7 +114,7 @@ class Jira {
 
   };
 
-  private watchAuth = (auth: Storage.Jira.AuthStore) => {
+  private watchAuth = (auth: Storage.Jira.AuthStore | null) => {
     if (!auth && this.isAuth) {
       this.destroy();
       return;

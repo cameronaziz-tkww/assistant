@@ -5,14 +5,21 @@ import * as Styled from './styled';
 
 interface FeedProps {
   isHidden: boolean;
+  show(): void;
 }
 
 const Feed: FunctionComponent<FeedProps> = (props) => {
-  const { isHidden } = props;
+  const { isHidden, show } = props;
   const { feed } = history.useFeed();
 
+  const handleClick = () => {
+    if (isHidden) {
+      show();
+    }
+  };
+
   return (
-    <Styled.FeedContainer isHidden={isHidden}>
+    <Styled.FeedContainer onClick={handleClick} isHidden={isHidden}>
       {feed.map((feedItem) =>
         <FeedItem key={feedItem.id} feedItem={feedItem} />,
       )}

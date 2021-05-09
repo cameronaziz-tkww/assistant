@@ -1,14 +1,11 @@
-import { UnitProps } from '@components/unit';
 import { history } from '@context';
 import React, { FunctionComponent } from 'react';
 import Wrapper from './wrapper';
 
-const History: FunctionComponent<UnitProps> = (props) => {
-  const { isVisible } = props;
-
+const History: FunctionComponent = () => {
   return (
     <history.Provider>
-      {isVisible && <Wrapper />}
+      <Wrapper />
     </history.Provider>
   );
 };

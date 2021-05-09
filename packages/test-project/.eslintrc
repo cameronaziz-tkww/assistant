@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "@tkww-assistant/eslint-plugin"
+  ],
+  "extends": [
+    "@tkww-assistant/eslint-config/all"
+  ],
+  "parser": "@typescript-eslint/parser"
+}

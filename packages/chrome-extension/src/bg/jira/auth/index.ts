@@ -54,7 +54,7 @@ class Auth {
     };
   }
 
-  private watchAuth = (value: Storage.Jira.AuthStore): void => {
+  private watchAuth = (value: Storage.Jira.AuthStore | null): void => {
     if (!value) {
       this.destroy();
     }

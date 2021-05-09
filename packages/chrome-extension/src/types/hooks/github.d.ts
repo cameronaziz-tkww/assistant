@@ -27,10 +27,7 @@ declare namespace Hooks {
     interface UseRepositoriesDispatch {
       updateWatched(repository: App.Github.Repository): void;
       repositories: Repositories;
-    }
-
-    interface UseRepositories {
-      (): UseRepositoriesDispatch;
+      filter(value: string): void;
     }
 
     interface UseRepositories {
