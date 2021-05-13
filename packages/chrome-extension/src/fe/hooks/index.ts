@@ -12,4 +12,4 @@ export { default as useForceUpdate } from './useForceUpdate';
 export { default as useInterval } from './useInterval';
 export { default as useIsHovered } from './useIsHovered';
 export { default as useLoading } from './useLoading';
-
+export { default as useWhyDidYouUpdate } from './useWhyDidYouUpdate';

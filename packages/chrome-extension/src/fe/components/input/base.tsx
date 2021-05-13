@@ -18,6 +18,7 @@ export const Input: FunctionComponent<App.Input.InputProps> = (props) => {
     maxSize,
     onChange,
     onlyNumbers,
+    isLarge,
     onReactChange,
     ifDisabledColorSteady,
     forceRerender,
@@ -161,6 +162,7 @@ export const Input: FunctionComponent<App.Input.InputProps> = (props) => {
       <Styled.Container inline={inline} containerPosition={containerPosition}>
         <Styled.InputContainer>
           <Styled.Input
+            isLarge={isLarge}
             afterNodeWidth={afterNodeWidth}
             size={maxSize ? maxSize + 1 : undefined}
             maxSize={maxSize}

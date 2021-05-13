@@ -55,7 +55,7 @@ declare namespace App {
   type TimeAgo = 'hour' | 'day' | 'week' | 'month';
 
   type LoginUnit = 'jira' | 'github';
-  type VisibleUnit = LoginUnit | 'highlights' | 'links' | 'history';
+  type VisibleUnit = LoginUnit | 'links' | 'history';
   type Unit = VisibleUnit | 'settings-icon' | 'save' | 'global';
 
   type Feature = 'none' | 'notes' | 'jira' | 'github';

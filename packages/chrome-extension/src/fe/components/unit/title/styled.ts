@@ -24,23 +24,7 @@ export const TitleText = styled.h2<TitleTextProps>`
   color: ${({ theme, isDark }) => isDark ? theme.colors.secondary.foreground : 'inherit'};
 `;
 
-interface ContainerProps {
-  rotated?: boolean;
-}
-
-export const RotateElementOuter = styled.div`
-  display: block;
-  position: relative;
-`;
-
-export const RotateElement = styled.div`
-  position: absolute;
-  top: 80px;
-  left: -40px;
-  transform: rotate(270deg);
-`;
-
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div`
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto;

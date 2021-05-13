@@ -76,11 +76,11 @@ export const Container = styled.div<ContainerProps>`
   grid-area: footer;
   margin-top: ${({ isHidden }) => isHidden ? '4px' : 0};
   transition: max-height ${({ isHidden }) => isHidden ? '0.2' : '2'}s ease-out;
-  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0 10px ${({ theme }) => getRGBA(theme.colors.primary.background, 0.5)};
   border-top: ${({ theme }) => theme.colors.secondary.accent};
   background-color: ${({ theme }) => theme.colors.tertiary.background};
   overflow: hidden;
-  
+
   &:hover {
     cursor: ${({ isHidden, isTease }) => isHidden && isTease ? 'pointer' : 'default'};
   }
@@ -95,7 +95,7 @@ export const DismissContainer = styled.div`
   justify-content: center;
   transition: all 500ms;
   transform: scale(0.8);
-  
+
   &:hover {
     transform: scale(1);
     background-color:${({ theme }) => getRGBA(theme.baseColors['red'], 0.5)};
@@ -111,9 +111,8 @@ export const FeedItem = styled(Pill)`
   overflow-x: scroll;
   white-space: nowrap;
   background-color: ${({ theme }) => getRGBA(theme.baseColors['grey-light'], 0.2)};
-  color: ${({ theme }) => theme.colors.primary.foreground}
+  color: ${({ theme }) => theme.colors.primary.foreground};
   `;
-// color: ${({ theme }) => theme.baseColors.black};
 
 export const FeedItemMessage = styled.div`
   white-space: nowrap;

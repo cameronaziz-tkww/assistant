@@ -33,6 +33,7 @@ declare namespace App {
       isDisabled?: boolean;
       maxSize?: number;
       noMargin?: boolean;
+      isLarge?: boolean;
       ifDisabledColorSteady?: boolean;
       inlineLabel?: boolean;
     }

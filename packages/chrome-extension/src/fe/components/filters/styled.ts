@@ -78,7 +78,7 @@ export const GroupContainer = styled.div<GroupContainerProps>`
   border-radius: ${({ theme }) => theme.sizes.lg.borderRadius};;
   margin: 2px 0;
   overflow: hidden;
-  
+
   &.visible-enter {
     max-width: ${({ defaultMaxWidth }) => `${defaultMaxWidth + 4}px`};
     max-height: ${({ defaultMaxHeight }) => `${defaultMaxHeight + 2}px`};

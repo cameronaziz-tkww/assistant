@@ -88,6 +88,8 @@ export const Input = styled.input<App.Input.StyledInputProps>`
     return '100%';
 
   }};
+  line-height: ${({ isLarge, theme }) => isLarge ? theme.sizes.xxl.fontSize : 'normal'};
+  font-size: ${({ isLarge, theme }) => isLarge ? theme.sizes.xxl.fontSize : 'medium'};
 `;
 
 interface InvalidTextProps {
